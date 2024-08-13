@@ -3,6 +3,6 @@
 
 <form id="users-create-form">
     Name:<input name="name"><br>
-    Age:<input name="age"><br>
+    correo electronico:<input name="mail"><br>
     <input type="button" value="Save" id="users-create-button">
 </form>
