@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Pagina13</h1>
-        <div class="topnav">
+        <div id="bar_nav">
             <input type="text" placeholder="ingrese su busqueda">
         </div>
 

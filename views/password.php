@@ -8,7 +8,7 @@
 <body>
 <header>
         <h1>Pagina13</h1>
-        <div class="searchbar">
+        <div id="bar_nav">
             <input type="text" placeholder="ingrese su busqueda" id="search_article">
         </div>
         </header>
