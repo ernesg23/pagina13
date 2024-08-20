@@ -10,37 +10,41 @@
 
 <body>
     <header>
-        <h1>Pagina13</h1>
-        <div id="bar_nav">
-            <input type="text" placeholder="ingrese su busqueda">
-        </div>
+        <nav>
+            <ul class="navBar">
+                <li>
+                    <a href="../index.php">Pagina13</a>
+                </li>
+            </ul>
+        </nav>
+
 
     </header>
     <main>
         <section>
-            <div>
+            <div class="form">
+                <div class="form-user">
                 <p>Formulario de registro de usuario</p>
+                </div>
+                <div class="user-name">
                 <p>Correo Electronico</p>
-                <div class="topnav">
-                    <input type="text" placeholder="Ejemplo@gmail.com">
-                </div>
+                <input type="text" placeholder="Ejemplo@gmail.com" class="textArea">
                 <p>Nombre y Apellido</p>
-                <div class="topnav">
-                    <input type="text" placeholder="ingrese tu nombre y apellido">
-                </div>
+                <input type="text" placeholder="ingrese tu nombre y apellido" class="textArea">
                 <p>Contraseña</p>
-                <div class="topnav">
-                    <input type="text" placeholder="Crea tu contraseña">
-                </div>
-                <FONT COLOR="gray">La contraseña necesita </FONT><br>
+                <input type="text" placeholder="Crea tu contraseña" class="textArea">
+                
+                <div class="text-registrer">
+                <FONT COLOR="gray">La contraseña necesita: </FONT><br>
                 <FONT COLOR="gray">Al menos una mayúscula</FONT><br>
                 <FONT COLOR="gray">Al menos un número </FONT><br>
                 <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
                 <FONT COLOR="gray">Al menos una minúscula</FONT><br>
+                </div>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Recordar contraseña</label><br>
+                <input type="button" class="password" value="Registrarse" />
             </div>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Recordar contraseña</label><br>
-            <input type="button" value="Registrarse" />
-         </section>
+        </section>
     </main>
 </body>
 
