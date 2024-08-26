@@ -12,10 +12,10 @@
     <header>
         <nav clas="navigation">
         <div>
-            <h1 class="tituloPrincipal">Pagina 13</h1>
+            <h1 class="title">Pagina 13</h1>
         </div>
         <search>
-            <form>
+            <form id="bar_nav">
                 <input name="searchBar" id="searchBar" placeholder="Buscar">
             </form>
         </search>
@@ -33,8 +33,8 @@
         </section>
         <section>
             <div><h1>Configuracion</h1></div>
-            <div><h3>General</h3></div>
-            <div><h3>Administracion</h3></div>
+            <input class="general" type="button" value="General">
+            <input class="User-admin" type="button" value="Administracion">
         </section>
         <section>
             <h1>Administracion</h1>
