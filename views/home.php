@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/home.css">
     <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav clas="navigation">
+        <nav class="navigation">
         <div>
             <h1 class="tituloPrincipal">Pagina 13</h1>
         </div>
@@ -21,56 +21,61 @@
         </search>
             <input class="login" type="button" value="iniciar sesion"/>
             <input class="registrer" type="button" value="registrarse"/>
+        </nav>
+        <div class="category-parent">
+
             <input class="category" type="button" value="categoria 1"/>
             <input class="category" type="button" value="categoria 2"/>
             <input class="category" type="button" value="categoria 3"/>
             <input class="category" type="button" value="categoria 4"/>
             <input class="category" type="button" value="categoria 5"/>
-            <input class="category" type="button" value="cateogira 6"/>
+            <input class="category" type="button" value="categoria 6"/>
             <input class="category" type="button" value="categoria 7"/>
             <input class="category" type="button" value="categoria 8"/>
             <input class="category" type="button" value="categoria 9"/>
-            <input class="category" type="button" value="cateogira 10"/>
-        </nav>
+            <input class="category" type="button" value="categoria 10"/>
+        </div>
     </header>
-    <main>
+    <main >
         <section>
-            <div>
-                <img class="img" id="big" src="./img/sociedad.jfif">
+            <div class="article">
+                <div class="big-article">
+                <img class="img" id="big" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" src="./img/sociedad.jfif">
+                </div>
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" src="./img/sociedad.jfif">
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" id="big" src="./img/sociedad.jfif">
+                <img class="img" id="big" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" src="./img/sociedad.jfif">
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
                 inserte anuncio
                 <h2>Articulos recientes</h2>
-                <img class="img" src="./img/sociedad.jfif">
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" id="big" src="./img/sociedad.jfif">
+                <img class="img" id="big" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" src="./img/sociedad.jfif">
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                <img class="img" src="./img/sociedad.jfif">
+                <img class="img" src="./img/society.jfif">
                 <h2>Titulo</h2>
                 <input type="button" value="categoria" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
