@@ -11,41 +11,33 @@
 </head>
 <body>
     <header>
-    <nav>
-        <div class="main-title">
-            <h1 >Pagina 13</h1>
+    <nav clas="navigation">
+        <div>
+            <h1 class="tituloPrincipal">Pagina 13</h1>
         </div>
-    </header>    
-    <section>
-        <div class="form">
-           
-         </nav>
-    
-          <main>
-            
-            <div class="title-login" >
-            <h1>Formulario de inicio de sesion</h1>    
-            </div>
-            <div class="title-email">
+        <search>
+            <form>
+                <input name="searchBar" id="searchBar" placeholder="Buscar">
+            </form>
+        </search>
+            <input class="login" type="button" value="iniciar sesion" />
+            <input class="registrer" type="button" value="registrarse" />
+        </nav>
+    </header>
+        <main>
+            <section>
+            <div class="title-login" ><h1>Formulario de inicio de sesion</h1></div>
             <h2>Correo electronico</h2>
-            </div>
             <form>
-                <input name="searchBar" id="searchBar" class="search-email" placeholder="ejemplo@example.com">
+                <input name="searchBar" id="searchBar" placeholder="ejemplo@example.com">
             </form>
-            <div class="password">
             <h2>Contraseña</h2>
-            </div>
             <form>
-                <input name="searchBar" id="searchBar" class="search" placeholder="Introduce tu contraseña">
+                <input name="searchBar" id="searchBar" placeholder="Introduce tu contraseña">
             </form>
-            
-            <div class="forgotten-password">
             <h2>¿Olvidaste tu contraseña?</h2>
-            </div>
-            
-            <input type="button" class="login" value="iniciar sesion"/>
-        </div>
-    </section>
+            <input class="login" type="button" value="iniciar sesion"/>
+            </section>
         </main>
 </body>
 </html> 

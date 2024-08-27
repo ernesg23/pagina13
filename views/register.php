@@ -9,28 +9,22 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="navBar">
-                <li>
-                    <a href="../index.php">Pagina13</a>
-                </li>
-            </ul>
-        </nav>
-
-
-    </header>
     <main>
         <section>
             <div class="form">
-                <div class="form-user">
+                <div class="title">
+                    <h1>Pagina13</h1>
+                </div>
+                <div class="form-user">   
                 <p>Formulario de registro de usuario</p>
                 </div>
                 <div class="user-name">
+                <p>Nombre</p>
+                <input type="text" placeholder="ingrese tu nombre" class="textArea">
+                <p>Apellido</p>
+                <input type="text" placeholder="ingrese tu apellido" class="textArea">
                 <p>Correo Electronico</p>
                 <input type="text" placeholder="Ejemplo@gmail.com" class="textArea">
-                <p>Nombre y Apellido</p>
-                <input type="text" placeholder="ingrese tu nombre y apellido" class="textArea">
                 <p>Contraseña</p>
                 <input type="text" placeholder="Crea tu contraseña" class="textArea">
                 

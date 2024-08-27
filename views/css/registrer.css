@@ -7,7 +7,7 @@
 }
 
 html {
-    background-color: #0A8AA6;
+    background-color: black;
     font-size: 22px;
    
   
@@ -49,11 +49,11 @@ main {
 
 
 .form {
-  background-color: lightcyan;
+  background-color: rgb(230, 229, 227);
   height: fit-content;
   margin: 130px;
   padding: 0 5px 5px 5px;
-  border: 3px solid lightcyan;
+  border: 3px solid rgb(230, 229, 227);
   width: 22rem;
   display: flex;
   flex-direction: column;
@@ -77,23 +77,21 @@ ul {
 }
 ul li a {
     text-decoration: none;
-    color: #FFFFFF;
+    color:black;
     font-weight: 700;
     font-size: 1.5em;
 }
-.navBar {
-    text-align: center;
-    font-size:40px;
-    color:white;
-    border-bottom: 3px solid #8C1AFF;
-    padding: 0 0 5px 0;
+.title {
+  font-size: 20px;
+  text-align: center;
+  padding: 0px 5px 5px ; 
 }
 .textArea {
     background-color:transparent;
     border: none;
-    border-bottom: 2px solid lightblue;
-    border-left: 2px solid lightblue;
-    border-right: 2px solid lightblue;
+    border-bottom: 2px solid rgb(201, 200, 199);
+    border-left: 2px solid rgb(201, 200, 199) ;
+    border-right: 2px solid rgb(201, 200, 199);
     border-radius: 0.5rem;
     height: 3em;
     padding: 20px;
