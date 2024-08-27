@@ -8,6 +8,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina 13</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script src="./js/users.js"></script>
 </head>
 
 <body>
@@ -37,14 +39,13 @@
             <div>
                 <h1>Configuracion</h1>
             </div>
-            <div>
-                <h3>General</h3>
+                <button class="nav-config" id="usersConfigurationInterface1">General</button>
             </div>
             <div>
-                <h3>Administracion</h3>
+                <button class="nav-config" id="usersConfigurationInterface2">Administración</button>
             </div>
         </section>
-        <section>
+        <section class="contenedor">
             <h1>General</h1>
             <div class="title-login">
                 <h1>Formulario de inicio de sesion</h1>
@@ -62,7 +63,7 @@
                 <input name="searchBar" id="searchBar" placeholder="Ingrese una nueva contraseña">
             </form>
         </section>
-        <section>
+        <section class="contenedor">
             <h2>Cambiar Avatar</h2>
             <img class="img" src="./img/descarga1.png">
             <h1>Nuevo Avatar</h1>
