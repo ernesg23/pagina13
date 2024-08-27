@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/styles.css">
@@ -8,31 +9,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina 13</title>
 </head>
+
 <body>
     <header>
         <nav clas="navigation">
-        <div>
-            <h1 class="title">Pagina 13</h1>
-        </div>
-        <search>
-            <form id="bar_nav">
-                <input name="searchBar" id="searchBar" placeholder="Buscar">
-            </form>
-        </search>
+            <div>
+                <h1 class="title">Pagina 13</h1>
+            </div>
+            <search>
+                <form id="bar_nav">
+                    <input name="searchBar" id="searchBar" placeholder="Buscar">
+                </form>
+            </search>
             <input class="User-name" type="button" value="Nombre de usuario">
             <img class="img" src="./img/descarga1.png">
         </nav>
     </header>
     <main>
         <section>
-        <img class="img" src="./img/descarga1.png">
-        <h1>Nombre de usuario</h1>
-        <h2>Ejemplo@example.com</h2>
-        <h2>Rol de administrador</h2>
-        <h3>Descripcion de usuario</h3>
+            <img class="img" src="./img/descarga1.png">
+            <h1>Nombre de usuario</h1>
+            <h2>Ejemplo@example.com</h2>
+            <h2>Rol de administrador</h2>
+            <h3>Descripcion de usuario</h3>
         </section>
         <section>
-            <div><h1>Configuracion</h1></div>
+            <div>
+                <h1>Configuracion</h1>
+            </div>
             <input class="general" type="button" value="General">
             <input class="User-admin" type="button" value="Administracion">
         </section>
@@ -48,10 +52,10 @@
             <input class="Edit" type="button" value="Editar Articulo">
             <h2>Eliminar</h2>
             <form>
-            <input name="searchBar" id="searchBar" placeholder="Razon de Eliminacion">
-            <h6>Este campo es obligatorio*</h6>
-            <input class="Delete" type="button" value="Eliminar">
-        </form>
+                <input name="searchBar" id="searchBar" placeholder="Razon de Eliminacion">
+                <h6>Este campo es obligatorio*</h6>
+                <input class="Delete" type="button" value="Eliminar">
+            </form>
         </section>
         <section>
             <h1>Articulos Publicados</h1>
@@ -62,6 +66,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
             </div>
         </section>
-        </main>
+    </main>
 </body>
-</html> 
+
+</html>
