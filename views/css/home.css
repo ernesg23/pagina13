@@ -9,16 +9,17 @@ main{
     background-color: rgb(33, 33, 33);
 }
 .navigation {
-    background-color: rgb(2, 62, 138);
+    background-color: #0E2E59;
     display: flex;
+    height: 60px;
 }
-.registrer{
+.login-registrer{
+    display: flex;
     margin: auto;
-    text-align: end;
-}
-.login{
-    display: flex;
-    justify-content: flex-end;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    margin-right: 100px;
 }
 .category{
   color: black; 
@@ -27,7 +28,8 @@ main{
   padding: 14px 28px;
   cursor: pointer;
   border-right-width: 2px;
-  border-color: rgb(2, 62, 138);
+  border-color: #0E2E59;
+  min-height: 20px;
 }
 .article{
     background-color: black;
@@ -39,5 +41,4 @@ main{
 }
 .category-parent {
     display: flex;
-
 }

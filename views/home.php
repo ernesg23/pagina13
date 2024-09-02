@@ -19,8 +19,10 @@
                 <input name="searchBar" id="searchBar" placeholder="Buscar">
             </form>
         </search>
+        <div class="login-registrer">
             <input class="login" type="button" value="iniciar sesion"/>
             <input class="registrer" type="button" value="registrarse"/>
+</div>
         </nav>
         <div class="category-parent">
 
