@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/styles.css">
@@ -8,42 +9,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina 13</title>
 </head>
+
 <body>
     <header>
         <nav clas="navigation">
-        <div>
-            <h1 class="tituloPrincipal">Pagina 13</h1>
-        </div>
-        <search>
-            <form>
-                <input name="searchBar" id="searchBar" placeholder="Buscar">
-            </form>
-        </search>
+            <div>
+                <h1 class="tituloPrincipal">Pagina 13</h1>
+            </div>
+            <search>
+                <form>
+                    <input name="searchBar" id="searchBar" placeholder="Buscar">
+                </form>
+            </search>
             <input class="login" type="button" value="iniciar sesion" />
             <input class="registrer" type="button" value="registrarse" />
         </nav>
     </header>
     <main>
         <section>
-            <div><h1>Titulo Articulo</h1></div>
-            <div><h3>Escrito por: Autor</h3></div>
+            <div>
+                <h1>Titulo Articulo</h1>
+            </div>
+            <div>
+                <h3>Escrito por: Autor</h3>
+            </div>
             <div>
                 <img class="img" id="big" src="./img/sociedad.jfif">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-                </div>
-</section>
-        </main>
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="inforedes">
             <h3 class="titles">Explorar</h3>
             <img class="img" src="./img/logo de empresa.png">
             <ul>
-                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i class='bx bxl-twitter' ></i></a></li>
-                <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i class='bx bxl-instagram bx-flip-horizontal' ></i></a></li>
-                <li><a href="https://facebook.com" class="socialMedia" target="_blank"><i class='bx bxl-facebook' ></i></a></li>
-                <li><a href="https://github.com/ho-axed" class="socialMedia" target="_blank"><i class='bx bxl-github' ></i></a></li>
+                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i class='bx bxl-instagram bx-flip-horizontal'></i></a></li>
+                <li><a href="https://facebook.com" class="socialMedia" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                <li><a href="https://github.com/ho-axed" class="socialMedia" target="_blank"><i class='bx bxl-github'></i></a></li>
             </ul>
         </div>
     </footer>
 </body>
-</html> 
+
+</html>
