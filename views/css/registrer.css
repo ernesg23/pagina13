@@ -6,27 +6,39 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html {
-    background-color: black;
-    font-size: 22px;
-   
-  
+
+
+body {
+    background-color: #212121;
 }
 .user-name {
-    margin: -20px 30px 18px 32px;
+    display: flex;
+    margin: 12px;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    padding: 0rem 0rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fill-available;
 }
 main {
     display: flex;
     align-content: center;
     justify-content: center;
 }
+.remember-password {
+  margin: 12px 1px 2px ;
+}
 .form-user{
-    margin: 18px 31px 18px;
+    margin: 12px;
    text-align: center;
-   font-weight: 700;
+   font-size: large;
 }
 .password{
-    margin: 18px 2px 18px 2px;
+    margin: 12px;
     text-align: center;
     font-size: 1em;
     padding: 2px 20px;
@@ -51,13 +63,13 @@ main {
 .form {
   background-color: rgb(230, 229, 227);
   height: fit-content;
-  margin: 130px;
   padding: 0 5px 5px 5px;
   border: 3px solid rgb(230, 229, 227);
-  width: 22rem;
+  width: 25rem;
+  top: 15dvh;
+    position: relative;
   display: flex;
   flex-direction: column;
-
   align-self: center;
   border-radius: 1rem;
   font-size: 16px;
@@ -68,9 +80,10 @@ line-height: 2;
 }
 .text-registrer{
     font-size: 14px;
+    text-align: left;
   line-height: 1;
-  margin: auto;
-  padding: 1em 0;
+  margin: 20px;
+  padding: 1em 1em;
 }
 ul {
     list-style: none;
@@ -86,14 +99,20 @@ ul li a {
   text-align: center;
   padding: 0px 5px 5px ; 
 }
+.text {
+  margin: 1px 12px 0px;
+}
 .textArea {
     background-color:transparent;
     border: none;
-    border-bottom: 2px solid rgb(201, 200, 199);
-    border-left: 2px solid rgb(201, 200, 199) ;
-    border-right: 2px solid rgb(201, 200, 199);
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000 ;
+    border-right: 2px solid #000;
     border-radius: 0.5rem;
     height: 3em;
     padding: 20px;
-    min-width: -webkit-fill-available;
+    margin: 12px;
+}
+.username {
+  width: 10rem;
 }
