@@ -15,7 +15,9 @@ html {
     height: -webkit-fill-available;
     justify-content: center;
     align-items: center;
-    margin: 150px;
+    position: relative;
+    top: 15dvh;
+    margin: 0rem 1em;
 }
 .form {
     background-color: #FFFFFF;
@@ -23,7 +25,7 @@ html {
     margin: auto;
     padding: 0 5px 5px 5px;
     border: 3px solid #FFFFFF;
-    width: 22rem;
+    width: 20rem;
     display: flex;
     flex-direction: column;
 
