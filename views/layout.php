@@ -25,7 +25,7 @@
                 </form>
             </search>
             <div class="login-registrer">
-                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login"/>
+                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-creator"/>
                 <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register"/>
             </div>
         </nav>
