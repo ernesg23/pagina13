@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./img/logo de empresa.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./views/css/login.css">
+    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./views/css/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesion de Página 13</title>
