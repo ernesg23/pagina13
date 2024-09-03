@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<header>
+    <header>
         <h1>Pagina13</h1>
         <div id="bar_nav">
             <input type="text" placeholder="ingrese su busqueda" id="search_article">
         </div>
-        </header>
-        <main>
+    </header>
+    <main>
         <section>
             <div>
                 <p>Formulario de recuperacion de cuenta</p>
@@ -23,7 +25,8 @@
                 <FONT COLOR="gray">Se le enviara un mail con un link que le permitira recuperar su contraseña </FONT><br>
             </div>
             <button id="Recovery_password">Recuperar contraseña</button>
-         </section>
+        </section>
     </main>
 </body>
+
 </html>
