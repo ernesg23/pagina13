@@ -12,44 +12,45 @@
 
 <body>
     <header>
-        <nav clas="navigation">
-            <div>
-                <h1 class="tituloPrincipal">Pagina 13</h1>
-            </div>
-            <search>
-                <form>
-                    <input name="searchBar" id="searchBar" placeholder="Buscar">
-                </form>
-            </search>
-            <input class="login" type="button" value="iniciar sesion" />
-            <input class="registrer" type="button" value="registrarse" />
-        </nav>
+        <!-- Acá va el layout (navbar) -->
     </header>
     <main>
         <section>
             <div>
-                <h1>Titulo Articulo</h1>
+                <p class="categoryPost">Categoría</p>
             </div>
             <div>
-                <h3>Escrito por: Autor</h3>
+                <h1 class="titlePost">Título Artículo</h1>
+                <hr>
+                <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                <img class="imgPost" src="./img/descarga1.png">
+                <p class="writerName">Nombre Autor</p>
+                <img class="imgWriter" src="">
+                <p class="descriptionPost">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia sit qui, harum nobis laudantium, reprehenderit animi temporibus sequi, laborum quos incidunt optio veritatis! Perspiciatis dolorem aspernatur iure similique harum!</p>
             </div>
-            <div>
-                <img class="img" id="big" src="./img/sociedad.jfif">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae architecto molestias laborum mollitia voluptatum ipsa.</p>
-            </div>
+        </section>
+        <section>
+            <h2>Artículos Recientes</h2>
+            <div class="articles-container">
+                <div class="article">
+                    <img src="ruta/a/tu/imagen1.jpg" alt="Imagen del artículo 1">
+                    <h3>Título del Artículo 1</h3>
+                    <p>Descripción breve del artículo 1</p>
+                </div>
+                <div class="article">
+                    <img src="ruta/a/tu/imagen2.jpg" alt="Imagen del artículo 2">
+                    <h3>Título del Artículo 2</h3>
+                    <p>Descripción breve del artículo 2</p>
+                </div>
+                <div class="article">
+                    <img src="ruta/a/tu/imagen3.jpg" alt="Imagen del artículo 3">
+                    <h3>Título del Artículo 3</h3>
+                    <p>Descripción breve del artículo 3</p>
+                </div>
         </section>
     </main>
     <footer>
-        <div class="inforedes">
-            <h3 class="titles">Explorar</h3>
-            <img class="img" src="./img/logo de empresa.png">
-            <ul>
-                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i class='bx bxl-instagram bx-flip-horizontal'></i></a></li>
-                <li><a href="https://facebook.com" class="socialMedia" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                <li><a href="https://github.com/ho-axed" class="socialMedia" target="_blank"><i class='bx bxl-github'></i></a></li>
-            </ul>
-        </div>
+        <!-- Acá va el layout (footer) -->
     </footer>
 </body>
 
