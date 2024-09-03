@@ -2,51 +2,56 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-    <link rel="stylesheet" href="./views/css/home.css">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./views/css/register.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/registrer.css">
+    <title>Página 13</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="navBar">
-                <li>
-                    <a href="../index.php">Pagina13</a>
-                </li>
-            </ul>
-        </nav>
-
-
-    </header>
     <main>
         <section>
-            <div class="form">
-                <div class="form-user">
-                    <p>Formulario de registro de usuario</p>
-                </div>
-                <div class="user-name">
-                    <p>Correo Electronico</p>
-                    <input type="text" placeholder="Ejemplo@gmail.com" class="textArea">
-                    <p>Nombre y Apellido</p>
-                    <input type="text" placeholder="ingrese tu nombre y apellido" class="textArea">
-                    <p>Contraseña</p>
-                    <input type="text" placeholder="Crea tu contraseña" class="textArea">
+            <div class="container">
 
-                    <div class="text-registrer">
-                        <FONT COLOR="gray">La contraseña necesita: </FONT><br>
-                        <FONT COLOR="gray">Al menos una mayúscula</FONT><br>
-                        <FONT COLOR="gray">Al menos un número </FONT><br>
-                        <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
-                        <FONT COLOR="gray">Al menos una minúscula</FONT><br>
+                <div class="form">
+                    <div class="title">
+                        <h1>Página13</h1>
                     </div>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Recordar contraseña</label><br>
+                    <div class="form-user">   
+                    <p>Formulario de registro de usuario</p>
+                    </div>
+                    <div class="user-name">
+                        <div class="name">
+                            <p>Nombre</p>
+                            <input type="text" placeholder="Nombre" class="textArea username">
+                        </div>
+                        <div class="lastname">
+                            <p>Apellido</p>
+                            <input type="text" placeholder="Apellido" class="textArea username">
+    
+                        </div>
+                    
+                    </div>
+                    <div class="text">
+                    <p>Correo Electronico</p>
+                    </div>
+                    <input type="text" placeholder="Ejemplo@gmail.com" class="textArea">
+                    <div class="text">
+                    <p>Contraseña</p>
+                    </div>
+                    <input type="text" placeholder="Crea tu contraseña" class="textArea">
+                    
+                    <div class="text-registrer">
+                    <FONT COLOR="gray">La contraseña necesita: </FONT><br>
+                    <FONT COLOR="gray">Al menos una mayúscula</FONT><br>
+                    <FONT COLOR="gray">Al menos un número </FONT><br>
+                    <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
+                    <FONT COLOR="gray">Al menos una minúscula</FONT><br>
+                    </div>
+                    <label><input class="remember-password" type="checkbox" id="cbox1" value="first_checkbox" /> Recordar contraseña</label><br>
                     <input type="button" class="password" value="Registrarse" />
                 </div>
+            </div>
         </section>
     </main>
 </body>
