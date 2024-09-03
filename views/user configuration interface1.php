@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/user configuration interface1.css">
     <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
 </head>
 <body>
     <header>
-        <nav clas="navigation">
+    <nav clas="navigation">
         <div>
-            <h1 class="tituloPrincipal">Pagina 13</h1>
+            <h1 class="title">Pagina 13</h1>
         </div>
         <search>
-            <form>
-                <input name="searchBar" id="searchBar" placeholder="Buscar">
+            <form class="form">
+                <input name="searchBar" class="navbar" id="searchBar" placeholder="Buscar articulos">
             </form>
         </search>
             <input class="User-name" type="button" value="Nombre de usuario">
             <img class="img" src="./img/descarga1.png">
-        </nav>
+     </nav>
     </header>
     <main>
         <section>
