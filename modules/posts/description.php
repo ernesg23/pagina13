@@ -3,17 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../views/css/description.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina 13</title>
 </head>
 
 <body>
-    <header>
-        <!-- Acá va el layout (navbar) -->
-    </header>
     <main>
         <section>
             <div>
@@ -30,28 +27,24 @@
             </div>
         </section>
         <section>
+            <div id="posts-container">
             <h2>Artículos Recientes</h2>
-            <div class="articles-container">
-                <div class="article">
+                <div class="recentsPosts">
                     <img src="ruta/a/tu/imagen1.jpg" alt="Imagen del artículo 1">
                     <h3>Título del Artículo 1</h3>
                     <p>Descripción breve del artículo 1</p>
                 </div>
-                <div class="article">
+                <div class="recentsPosts">
                     <img src="ruta/a/tu/imagen2.jpg" alt="Imagen del artículo 2">
                     <h3>Título del Artículo 2</h3>
                     <p>Descripción breve del artículo 2</p>
                 </div>
-                <div class="article">
+                <div class="recentesPosts">
                     <img src="ruta/a/tu/imagen3.jpg" alt="Imagen del artículo 3">
                     <h3>Título del Artículo 3</h3>
                     <p>Descripción breve del artículo 3</p>
                 </div>
         </section>
     </main>
-    <footer>
-        <!-- Acá va el layout (footer) -->
-    </footer>
 </body>
-
 </html>
