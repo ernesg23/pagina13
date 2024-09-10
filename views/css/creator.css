@@ -79,7 +79,7 @@ i {
     background-color: #302c2c;
     border: 1px solid black;
     border-radius: 5px;
-    width: 900px;
+    width: -webkit-fill-available;
     overflow: hidden;
 }
 #containerPost {
