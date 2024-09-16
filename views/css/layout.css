@@ -7,14 +7,23 @@
 }
 .MainTitle{
     color: #ffffff;
+    position: relative;
+    float:left;
 }
+.search-father{
+    position: relative;
+    float: center;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+}
+
 .searchBar{
     width: 300px;
     height: 36;
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
+  justify-content: center;
     border-radius: 0.5rem;
     border-color: #0E2E59;
 }
