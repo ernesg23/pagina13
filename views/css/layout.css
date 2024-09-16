@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    bottom: 44px;
     border-radius: 0.5rem;
     border-color: #0E2E59;
 }
@@ -36,11 +37,15 @@ main{
 }
 .login-buttonnav{
     position: relative;
+    bottom: 80px;
     float:right;
     height: 30px;
 }
 .registrer-buttonnav{
     position: relative;
+    bottom: 80
+    
+    .000000px;
     float:right;
     height: 30px;
 }
@@ -52,14 +57,6 @@ main{
   border-right-width: 2px;
   border-color: #0E2E59;
   min-height: 20px;
-}
-.article{
-    background-color: black;
-    color: white;
-}
-.big-article{
-    background-color: aliceblue;
-    margin: 193px 164px;
 }
 .category-parent {
     display: flex;
