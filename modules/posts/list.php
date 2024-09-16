@@ -13,7 +13,7 @@
 <body>
     <header>
         <!-- Acá va el layout (navbar) -->
-    </header>
+    </header>/5
     <main>
         <section>
             <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
@@ -25,28 +25,27 @@
                         <p class="categoryPost">Categoría</p>
                         <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                 </div>
-
+                <div class="articles-container">
                     <div class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
                             <p class="categoryPost">Categoría</p>
                             <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </div>
-
+                    <div class="articles-container">
                         <div class="article">
                             <img class="imgPost" src="../../views/img/society.jfif">
                             <h3 class="titlePost">Título Artículo</h>
                                 <p class="categoryPost">Categoría</p>
                                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                         </div>
-
+                        <div class="articles-container">
                             <div class="article">
                                 <img class="imgPost" src="../../views/img/society.jfif">
                                 <h3 class="titlePost">Título Artículo</h>
                                     <p class="categoryPost">Categoría</p>
                                     <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                             </div>
-</div>
         </section>
         <section id="multiplePages">
             <div>
