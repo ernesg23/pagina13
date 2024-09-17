@@ -17,14 +17,18 @@
 <body>
     <header>
         <nav class="navigation">
-                <h1 class="MainTitle">Pagina 13</h1>
-                <search class="search-father">
-                    <form>
-                        <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
-                    </form>
-                </search>
-                <input class="login-buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
-                <input class="registrer-buttonnav" type="button" value="registrarse" data-page="users-register" />
+            <div>
+                <h1 class="tituloPrincipal">Pagina 13</h1>
+            </div>
+            <search>
+                <form>
+                    <input name="searchBar" id="searchBar" placeholder="Buscar">
+                </form>
+            </search>
+            <div class="login-registrer">
+                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-creator"/>
+                <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register"/>
+            </div>
         </nav>
         <div class="category-parent">
 
