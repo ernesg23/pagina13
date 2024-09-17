@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./views/css/layout.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -17,18 +17,14 @@
 <body>
     <header>
         <nav class="navigation">
-            <div>
-                <h1 class="tituloPrincipal">Pagina 13</h1>
-            </div>
-            <search>
-                <form>
-                    <input name="searchBar" id="searchBar" placeholder="Buscar">
-                </form>
-            </search>
-            <div class="login-registrer">
-                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-creator"/>
-                <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register"/>
-            </div>
+                <h1 class="MainTitle">Pagina 13</h1>
+                <search>
+                        <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
+                </search>
+                <div class="login-register">
+                    <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
+                    <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register" />
+                </div>
         </nav>
         <div class="category-parent">
 
