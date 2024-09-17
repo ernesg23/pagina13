@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../views/css/configPosts.css">
     <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,17 +15,25 @@
 <body>
     <header>
         <!-- Acá va el layout (navbar) -->
+
     </header>
     <main>
-        <section>
-            <div>
-                <img src="./img/descarga1.png" loading="lazy" />
+    <div class="container">
+        
+                <img src="../../views/img/profile_default.png" loading="lazy" 
+                width="200px"
+                height="200px"
+                />
+            
                 <h1 class="userName">Nombre de usuario</h1>
                 <p class="userEmail">ejemplo@ejemplo.com.ar</p>
                 <p class="userRol">Rol de Usuario</p>
                 <p>Descripción</p>
                 <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
+
+               
                 <div>
+
         </section>
         <section>
             <div>
@@ -42,7 +50,7 @@
             <h3 class="titlePost">Título Artículo</h>
                 <p class="categoryPost">Categoría</p>
                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-        </section>
+        </section>                                                      
         <section>
         <div>
                 <button id="editPost">Editar Artículo</button>
@@ -71,6 +79,8 @@
             </div>
             <!-- Add more posts here -->
         </div>
+        </div>
+
     </section>
 </body>
 

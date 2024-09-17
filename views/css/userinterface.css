@@ -1,0 +1,15 @@
+html {
+    background-color: #000;
+   
+    
+}
+
+.container {
+    width: 1280px;
+    height: 826px;
+    background-color: rgb(12, 40, 78);
+    margin: auto;
+    border: 55px solid;
+    border: 55px solid;
+    border-radius: 35px;
+}
