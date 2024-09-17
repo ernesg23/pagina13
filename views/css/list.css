@@ -17,15 +17,35 @@
     border-radius: 0.5rem;
     border-color: #0E2E59;
 }
+.articles-containers{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 25px;
+    margin-left: 300px;
+    background-color: black;
+}
 .article{
-display: flex;
-flex-wrap: wrap;
-flex-direction: column row;
-width: 300px;
-margin-left: 40%;
-margin-top: 5%;
-border-color: black;
-border: 5px;
-justify-content: center;
-align-items:stretch;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 168px;
+
+}
+.categoryPost{
+    font-size:small;
+    background-color: black;
+}
+.subtitlePost{
+    font-size: x-small;
+    background-color: black;
+}
+.article img{
+    display: flex;
+    
+}
+.titlePost{
+    background-color: black;
+}
+.imgPost{
+    max-width: auto;
+    max-height: 1000px;
 }

@@ -13,11 +13,11 @@
 <body>
     <header>
         <!-- Acá va el layout (navbar) -->
-    </header>
+    </header>/5
     <main>
-        <section>
             <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
             <hr>
+
             <div class="articles-containers">
                 <div class="article">
                     <img class="imgPost" src="../../views/img/society.jfif">
@@ -25,21 +25,18 @@
                         <p class="categoryPost">Categoría</p>
                         <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                 </div>
-
                     <div class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
                             <p class="categoryPost">Categoría</p>
                             <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </div>
-
                         <div class="article">
                             <img class="imgPost" src="../../views/img/society.jfif">
                             <h3 class="titlePost">Título Artículo</h>
                                 <p class="categoryPost">Categoría</p>
                                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                         </div>
-
                             <div class="article">
                                 <img class="imgPost" src="../../views/img/society.jfif">
                                 <h3 class="titlePost">Título Artículo</h>
@@ -47,7 +44,7 @@
                                     <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                             </div>
 </div>
-        </section>
+
         <section id="multiplePages">
             <div>
                 <button id="previousPage">Anterior Página</button>
@@ -59,7 +56,8 @@
         </section>
         <section>
             <h2>Artículos Recientes</h2>
-            <div class="articles-container">
+
+            <div class="new-articles">
                 <div class="article">
                     <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
                     <h3>Título del Artículo 1</h3>
@@ -74,6 +72,7 @@
                     <img src="../../views/img/society.jfif" alt="Imagen del artículo 3">
                     <h3>Título del Artículo 3</h3>
                     <p>Descripción breve del artículo 3</p>
+                </div>
                 </div>
         </section>
     </main>
