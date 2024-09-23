@@ -17,14 +17,14 @@
 <body>
     <header>
         <nav class="navigation">
-                <h1 class="MainTitle">Pagina 13</h1>
-                <search>
-                        <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
-                </search>
-                <div class="login-register">
-                    <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
-                    <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register" />
-                </div>
+            <h1 class="MainTitle">Pagina 13</h1>
+            <search>
+                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
+            </search>
+            <div class="login-register">
+                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
+                <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register" />
+            </div>
         </nav>
         <div class="category-parent">
 
@@ -41,30 +41,29 @@
         </div>
     </header>
     <div id="content">
-        <?php include_once "views/home.php" ;?>
+        <?php include_once "views/home.php"; ?>
     </div>
-    <footer>
-        <div class="inforedes">
-            <h3 class="titles">Explorar</h3>
-            <img class="img" src="./views/img/enterprise_logo.png">
+    <footer class="footer">
+        <img class="img-foot" src="./views/img/enterprise_logo.png">
+        <div class="social">
             <ul>
-                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <h4 class="text-title">Seguinos en las redes</h4>
+                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i
+                            class='bx bxl-twitter'></i></a><a class="text">Pagina13</a>
                 </li>
                 <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i
-                            class='bx bxl-instagram bx-flip-horizontal'></i></a></li>
-                <li><a href="https://facebook.com" class="socialMedia" target="_blank"><i
-                            class='bx bxl-facebook'></i></a></li>
+                            class='bx bxl-instagram bx-flip-horizontal'></i></a><a class="text">Pagina13</a></li>
                 <li><a href="https://github.com/ho-axed" class="socialMedia" target="_blank"><i
-                            class='bx bxl-github'></i></a></li>
+                            class='bx bxl-github'></i></a><a class="text">Pagina13</a></li>
             </ul>
         </div>
-        <div>
+        <div class="article-today">
             <h4>Articulos publicados hoy</h4>
             <h5>Titulo Articulo</h5>
             <h5>Titulo Articulo</h5>
             <h5>Titulo Articulo</h5>
         </div>
-        <div>
+        <div class="public-today">
             <h4>Temas mas visitados hoy</h4>
             <h5>Tema 1</h5>
             <h5>Tema 2</h5>
