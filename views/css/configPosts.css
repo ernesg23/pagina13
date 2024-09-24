@@ -11,9 +11,24 @@ html {
     width: 1240px;
     height: 816px;
     background-color: rgb(12 , 40, 78);
-    margin: auto;
+    margin: px 54px 54px 50px ;
     border: 55px;
     border: 55px;
     border-radius: 35px;
     color: azure;
+    
+}
+.text {
+    justify-content: center;
+    margin: 50px 0 0 50px ;
+    font-size: large;
+    
+}
+#head {
+   display: flex;
+   flex-wrap: nowrap;
+  
+}
+.icon {
+    margin: 50px 0 0 30px ;
 }
