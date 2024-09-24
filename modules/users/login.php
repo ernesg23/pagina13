@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../views/css/login.css">
+    <link rel="stylesheet" href="./views/css/login.css">
     <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./views/css/login.css">
@@ -42,7 +42,7 @@
                     </b>
                 </div>
 
-                <input type="button" class="login" value="iniciar sesion" />
+                <input type="button" class="loginbtn" value="iniciar sesion" />
 
             </div>
 

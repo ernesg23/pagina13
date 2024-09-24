@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <main>
         <section>
             <div class="article">
                 <div class="big-article">
@@ -85,7 +84,6 @@
                 <input class="category" type="button" value="Pensamiento computacional" />
             </div>
         </section>
-    </main>
 
 </body>
 

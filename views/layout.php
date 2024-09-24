@@ -40,9 +40,11 @@
                 <input class="category-buttonnav" type="button" value="categoria 10" />
             </div>
     </header>
-    <div id="content">
-        <?php include_once "views/home.php"; ?>
-    </div>
+    <main>
+        <div id="content">
+            <?php include_once "views/home.php"; ?>
+        </div>
+    </main>
     <footer class="footer">
             <img class="img-foot" src="./views/img/enterprise_logo.png">
             <div class="social">
