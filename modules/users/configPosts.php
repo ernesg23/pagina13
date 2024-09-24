@@ -19,18 +19,19 @@
     </header>
     <main>
     <div class="container">
-        
-                <img src="../../views/img/profile_default.png" loading="lazy" 
+        <div id=head>
+                <img class="icon" src="../../views/img/sin perfil.png" loading="lazy" 
                 width="200px"
                 height="200px"
                 />
-            
+            <div class="text">
                 <h1 class="userName">Nombre de usuario</h1>
                 <p class="userEmail">ejemplo@ejemplo.com.ar</p>
                 <p class="userRol">Rol de Usuario</p>
                 <p>Descripción</p>
                 <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
-
+</div> 
+            </div>
                
                 <div>
 
