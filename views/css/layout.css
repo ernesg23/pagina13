@@ -32,7 +32,7 @@
 main{
     background-color: rgb(33, 33, 33);
 }
-.login-register {
+.navMenu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,4 +121,41 @@ footer{
 }
 .socialMedia{
     font-size: 1rem;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+@media(max-width:933px) {
+    .navigationMenu {
+        display: block;
+    }
+    .navigationMenu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .navigationMenu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navigationMenu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .navmenu {
+        position: fixed;
+        left: -100%;
+        top: 110px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #3f006b;
+        width: 100%;
+        text-align: center;
+        transition: .3s;
+    }
+    .navItem {
+        margin: 16px 0;
+    }
+    .navmenu.active {
+        left: 0;
+    }
 }
