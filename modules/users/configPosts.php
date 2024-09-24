@@ -37,10 +37,8 @@
 
         </section>
         <section>
-            <div>
+            <div class="buttons">
                 <button class="nav-config" id="users-configSettings">Ajustes</button>
-            </div>
-            <div>
                 <button class="nav-config" id="users-configPosts">Mis Artículos</button>
             </div>
         </section>
