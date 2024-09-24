@@ -8,10 +8,10 @@ html {
     background-color: #212121;
 }
 .container {
-    width: 1240px;
-    height: 816px;
+    width: 1070px;
+    height: 879px;
     background-color: rgb(12 , 40, 78);
-    margin: px 54px 54px 50px ;
+    margin: 50px 40px 35px 417px;
     border: 55px;
     border: 55px;
     border-radius: 35px;
@@ -20,8 +20,9 @@ html {
 }
 .text {
     justify-content: center;
-    margin: 50px 0 0 50px ;
+    margin: 50px 14px 0px 43px ;
     font-size: large;
+    line-height: 25px;
     
 }
 #head {
@@ -30,5 +31,15 @@ html {
   
 }
 .icon {
-    margin: 50px 0 0 30px ;
+    margin: 35px 0 15px 45px ;
+}
+.buttons {
+    width: 991px;
+    height: 583px;
+    background-color: gray;
+    margin: 20px 11px 32px 40px;
+    border: 55px;
+    border: 55px;
+    border-radius: 35px;
+    
 }
