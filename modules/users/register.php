@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../views/css/registrer.css">
+    <link rel="stylesheet" href="./views/css/registrer.css">
     <title>Página 13</title>
 </head>
 
 <body>
-    <main>
         <section>
             <div class="container">
 
@@ -17,9 +16,7 @@
                     <div class="title">
                         <h1><strong>Página13</strong></h1>
                     </div>
-                    <div class="form-user">   
-                    <p><strong>Formulario de registro de usuario</strong></p>
-                    </div>
+                    <p class="form-user">Formulario de registro de usuario</p>
                     <div class="user-name">
                         <div class="name">
                             <p><strong>Nombre</strong></p>
@@ -32,12 +29,12 @@
                         </div>
                     
                     </div>
-                    <div class="text">
-                    <p><strong>Correo Electronico</strong></p>
+                    <div class="textreg">
+                    <p>Correo Electronico</p>
                     </div>
                     <input type="text" placeholder="Ejemplo@gmail.com" class="textArea">
-                    <div class="text">
-                    <p><strong>Contraseña</strong></p>
+                    <div class="textreg">
+                    <p>Contraseña</p>
                     </div>
                     <input type="text" placeholder="Crea tu contraseña" class="textArea">
                     
@@ -48,12 +45,10 @@
                     <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
                     <FONT COLOR="gray">Al menos una minúscula</strong></FONT><br>
                     </div>
-                    <label><input class="remember-password" type="checkbox" id="cbox1" value="first_checkbox" /> <strong>Recordar contraseña</strong></label><br>
-                    <input type="button" class="password" value="Registrarse">
+                    <input type="button" class="password" value="Registrarse" />
                 </div>
             </div>
         </section>
-    </main>
 </body>
 
 </html>

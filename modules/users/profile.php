@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
 
 <body>
-    <header>
-        <!--
-        Acá va el layout (navbar)
-        -->
-    </header>
     <section>
         <div>
             <img src="./img/descarga1.png" loading="lazy" />
@@ -24,46 +20,47 @@
         </div>
     </section>
     <section>
-        <div>
-            <hr>
+        <div class="writtenPostContainer">
             <h2>Artículos Escritos</h2>
-            <div id="writtenPosts_left">
+            <div class="writtenPosts">
                 <img class="imgPost" src="./img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
-                    <p class="categoryPost">Categoría</p>
-                    <img class="editArticle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAORJREFUSEvVlNsNwjAQBDedQCfQCZ0AlVAK0AmdgCeKkXOyjV/54KTIiqLMnvfsnbRxTRvzNUJgJ+m0NHqxDfcKAL9JOizgl6SjE2Sdq1cAuO/eM4HvRwmwg7sk1rCu7mW2q2UHwM7uXyB0GxNpFgg9D/0ORZotsgPFASvCTBjyt0otisHDoa5OTq1ADu5ZD9t56Skqga88r7lo3fDcMR0CTwkMg6cEuJk+W2Jhm/W8ZAbvTIRXwWM7ILi4LN2dp44pAUXO2KruPCXwM34z9kU/2ahgwNTTDZrbydNVpVnULPL/Ah+ORy8Z8tsoHAAAAABJRU5ErkJggg==" loading="lazy" />
-                    <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    <i class='bx bx-edit editArticle'></i>
+                    <div class="postDescription">
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </div>
             </div>
-            <div id="writtenPosts_right">
+            <div class="writtenPosts">
                 <img class="imgPost" src="./img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
-                    <p class="categoryPost">Categoría</p>
-                    <img class="editArticle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAORJREFUSEvVlNsNwjAQBDedQCfQCZ0AlVAK0AmdgCeKkXOyjV/54KTIiqLMnvfsnbRxTRvzNUJgJ+m0NHqxDfcKAL9JOizgl6SjE2Sdq1cAuO/eM4HvRwmwg7sk1rCu7mW2q2UHwM7uXyB0GxNpFgg9D/0ORZotsgPFASvCTBjyt0otisHDoa5OTq1ADu5ZD9t56Skqga88r7lo3fDcMR0CTwkMg6cEuJk+W2Jhm/W8ZAbvTIRXwWM7ILi4LN2dp44pAUXO2KruPCXwM34z9kU/2ahgwNTTDZrbydNVpVnULPL/Ah+ORy8Z8tsoHAAAAABJRU5ErkJggg==" loading="lazy" />
-                    <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    <i class='bx bx-edit editArticle'></i>
+                    <div class="postDescription">
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </div>
             </div>
         </div>
-        <div>
+        <div class="favoritePostContainer">
             <h2>Artículos Favoritos</h2>
-            <div id="favoritePosts_left">
+            <div class="favoritePosts">
                 <img class="imgPost" src="./img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
-                    <p class="categoryPost">Categoría</p>
-                    <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    <div class="postDescription">
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </div>
             </div>
-            <div id="favoritePosts_right">
+            <div class="favoritePosts">
                 <img class="imgPost" src="./img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
-                    <p class="categoryPost">Categoría</p>
-                    <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    <div class="postDescription">
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </div>
             </div>
-        </div>
-
-
         </div>
     </section>
-    <footer>
-        <!-- Acá va el layout(footer) -->
-    </footer>
 </body>
 
 </html>
