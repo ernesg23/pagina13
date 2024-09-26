@@ -11,39 +11,127 @@
 </head>
 
 <body>
-    <header>
-        <!-- Acá va el layout (navbar) -->
-    </header>/5
-    <main>
-            <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
-            <hr>
 
-            <div class="articles-containers">
-                <div class="article">
-                    <img class="imgPost" src="../../views/img/society.jfif">
-                    <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                </div>
-                    <div class="article">
+    <main>
+        <div class="containerSearchAll">
+            <div class="articles-containers" >
+                <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
+                <ul class="listPosts">
+                    
+                    <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
+                        <div class="postDesc">
+                            <h3 class="titlePost">Título Artículo</h>
                             <p class="categoryPost">Categoría</p>
                             <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </div>
-                        <div class="article">
-                            <img class="imgPost" src="../../views/img/society.jfif">
-                            <h3 class="titlePost">Título Artículo</h>
-                                <p class="categoryPost">Categoría</p>
-                                <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                         </div>
-                            <div class="article">
-                                <img class="imgPost" src="../../views/img/society.jfif">
-                                <h3 class="titlePost">Título Artículo</h>
-                                    <p class="categoryPost">Categoría</p>
-                                    <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                            </div>
-</div>
+                    </li>
+                    <li class="article">
+                        <img class="imgPost" src="../../views/img/society.jfif">
+                        <h3 class="titlePost">Título Artículo</h>
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </li>
+                    <li class="article">
+                        <img class="imgPost" src="../../views/img/society.jfif">
+                        <h3 class="titlePost">Título Artículo</h>
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </li>
+                    <li class="article">
+                        <img class="imgPost" src="../../views/img/society.jfif">
+                        <h3 class="titlePost">Título Artículo</h>
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </li>
+                    <li class="article">
+                        <img class="imgPost" src="../../views/img/society.jfif">
+                        <h3 class="titlePost">Título Artículo</h>
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </li>
+                    <li class="article">
+                        <img class="imgPost" src="../../views/img/society.jfif">
+                        <h3 class="titlePost">Título Artículo</h>
+                        <p class="categoryPost">Categoría</p>
+                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                    </li>
+                    
+                </ul>
+            </div>
+            <template id="article-template">
+                <li class="article">
+                    <img class="imgPost" src="">
+                    <h3 class="titlePost"></h3>
+                    <p class="categoryPost"></p>
+                    <p class="subtitlePost"></p>
+                </li>
+            </template>
+            
+            <div class="recent-articles">
+                <h2>Artículos Recientes</h2>
+                <ul class="recent-post-list">
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                    <li class="recent-article">
+                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
+                        <div class="recent-description">
+                            <h3 class="backgorund-color">Título del Artículo 1</h3>
+                            <p class="backgorund-color">Descripción breve del artículo 1</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <template id="recent-article-template">
+                <li class="recent-article">
+                    <img class="recent-image" src="">
+                    <div class="recent-description">
+                        <h3 class="backgorund-color"></h3>
+                        <p class="backgorund-color"></p>
+                    </div>
+                </li>
+            </template>
+        </div>
 
         <section id="multiplePages">
             <div>
@@ -54,31 +142,10 @@
                 <button id="nextPage">Siguiente Página</button>
             </div>
         </section>
-        <section>
-            <h2>Artículos Recientes</h2>
 
-            <div class="new-articles">
-                <div class="article">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
-                    <h3>Título del Artículo 1</h3>
-                    <p>Descripción breve del artículo 1</p>
-                </div>
-                <div class="article">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 2">
-                    <h3>Título del Artículo 2</h3>
-                    <p>Descripción breve del artículo 2</p>
-                </div>
-                <div class="article">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 3">
-                    <h3>Título del Artículo 3</h3>
-                    <p>Descripción breve del artículo 3</p>
-                </div>
-                </div>
-        </section>
+            
+
     </main>
-    <footer>
-        <!-- Acá va el layout (footer) -->
-    </footer>
 </body>
 
 </html>
