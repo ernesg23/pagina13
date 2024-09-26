@@ -8,21 +8,13 @@
 </head>
 
 <body>
-    <header>
-        <h1>Pagina13</h1>
-        <div id="bar_nav">
-            <input type="text" placeholder="ingrese su busqueda" id="search_article">
-        </div>
-    </header>
     <main>
         <section>
             <div>
                 <p>Formulario de recuperacion de cuenta</p>
                 <p>Ingresa tu Correo Electronico</p>
-                <div class="navbar_password_Recovery">
-                    <input type="text" placeholder="Ejemplo@gmail.com" id="examplebar">
-                </div>
-                <FONT COLOR="gray">Se le enviara un mail con un link que le permitira recuperar su contraseña </FONT><br>
+                <input type="text" placeholder="Ejemplo@gmail.com" id="examplebar class="navbar_password_Recovery"">
+                <p id="recovery-text">Se le enviara un mail con un link que le permitira recuperar su contraseña</p>
             </div>
             <button id="Recovery_password">Recuperar contraseña</button>
         </section>
