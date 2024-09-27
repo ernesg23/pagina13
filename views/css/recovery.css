@@ -48,18 +48,22 @@ main {
 }
 
 #recoveryEmail {
-    width: 95%;
-    margin-left: 10px;
-    background-color: #FFFFFF;
-    height: fit-content;
-    border: 1px solid #FFF;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    border-radius: 1rem;
-    font-size: 1em;
-    line-height: 3;
-    text-align: left;
+        background-color: rgb(173, 173, 173);
+        height: fit-content;
+        margin: auto;
+        padding: 0 5px 5px 5px;
+        border: 1px solid black;
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        border-radius: 1rem;
+        font-size: 1em;
+        line-height: 3;
+        text-align: left;
+        border-right: rgb(173, 173, 173);
+        border-top: rgb(173, 173, 173);
+        border-left: rgb(173, 173, 173);
 }
 
 .button {
