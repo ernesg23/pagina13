@@ -13,7 +13,10 @@
 <body>
     <main>
         <div id="main-post">
-            <p id="categoryPost">Categoría</p>
+            <div id="categoriesPost">
+                <p id="category1" class="categoryPost" style="background-color: rgb(244, 164, 49);">Categoría</p>
+                <p id="category2" class="categoryPost" style="background-color: rgb(14, 46, 89);">Categoría</p>
+            </div>
             <h2 id="titlePost">Título Artículo</h2>
             <div id="content">
                 <p id="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>

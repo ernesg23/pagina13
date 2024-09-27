@@ -24,9 +24,20 @@ main {
     width: center 80%;
 }
 
-#categoryPost {
+#categoriesPost {
+    display: flex;
+    flex-wrap: nowrap;
     background-color: #212121;
     padding: 10px 0px;
+}
+.categoryPost{
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+}
+.categoryPost:hover{
+    text-shadow: 0 0 15px whitesmoke;
 }
 
 #content {
@@ -96,6 +107,9 @@ hr {
     max-height: 80px;
     align-items: center;
     background-color: rgb(45, 45, 45);
+}
+.recentPosts:hover{
+    box-shadow: 0 0 15px whitesmoke;
 }
 
 .recentPosts img {
