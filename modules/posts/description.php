@@ -27,7 +27,7 @@
             </div>
         </div>
         <div id="posts-container">
-            <h2>Artículos Recientes</h2>
+            <h3 id="titleRecents">Artículos Recientes</h3>
             <div class="recentPosts">
                 <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
                 <div>
