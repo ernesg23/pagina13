@@ -61,6 +61,16 @@
                 <div class="article small">
                     <img class="img" src="./views/img/advertisement.webp">
                 </div>
+                <template id="article-template">
+                    <div class="article">
+                        <img class="img" src="">
+                        <div class="articlesDescriptions">
+                            <h2></h2>
+                            <p class="category"></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </template>
                 <div id="recentArticlesListContainer">
                     <ul class="recent-post-list">
                         <h4>Articulos recientes</h4>
@@ -87,6 +97,15 @@
                         </li>
                     </ul>
                 </div>
+                <template id="recent-article-template">
+                    <li class="recent-article">
+                        <img class="img recent" src="">
+                        <div class="recent-description">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </li>
+                </template>
             </div>
             <h3>Categorias mas visitadas</h3>
             <div class="categoriesSearchContainer">
