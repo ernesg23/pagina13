@@ -24,7 +24,7 @@ main {
     grid-column-end: 11;
     grid-row-start: 2;
     background-color: rgb(173, 173, 173);
-    height: 250px;
+    height: 280px;
     width: auto;
     align-items: center;
     justify-content: space-around;
@@ -50,6 +50,16 @@ main {
 #recoveryEmail {
     width: 95%;
     margin-left: 10px;
+    background-color: #FFFFFF;
+    height: fit-content;
+    border: 1px solid #FFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 1rem;
+    font-size: 1em;
+    line-height: 3;
+    text-align: left;
 }
 
 .button {
