@@ -61,29 +61,32 @@
                 <div class="article small">
                     <img class="img" src="./views/img/advertisement.webp">
                 </div>
-                <ul class="recent-post-list">
-                    <li class="recent-article">
-                        <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                        <div class="recent-description">
-                            <h3>Título del Artículo 1</h3>
-                            <p>Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                        <div class="recent-description">
-                            <h3>Título del Artículo 1</h3>
-                            <p>Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                        <div class="recent-description">
-                            <h3>Título del Artículo 1</h3>
-                            <p>Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                </ul>
+                <div id="recentArticlesListContainer">
+                    <ul class="recent-post-list">
+                        <h4>Articulos recientes</h4>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <h3>Categorias mas visitadas</h3>
             <div class="categoriesSearchContainer">
