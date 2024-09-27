@@ -104,3 +104,43 @@ hr {
     padding: 5px;
     padding-right: 10px;
 }
+.recentPosts div{
+    padding: 5px;
+    padding-left: 0px;
+}
+
+@media (max-width: 1820px) {
+    #main-post{
+        grid-column-start: 2;
+        grid-column-end: 14;
+    }
+    #posts-container{
+        grid-column-start: 14;
+        grid-column-end: 20;
+    }
+}
+@media (max-width: 1220px) {
+    #main-post{
+        grid-column-start: 2;
+        grid-column-end: 20;
+    }
+    #posts-container{
+        grid-column-start: 5;
+        grid-column-end: 15;
+        grid-row-start: 2;
+        margin-top: 15px;
+        margin-right: 0;
+    }
+}
+@media (max-width: 1024px) {
+    #posts-container{
+        grid-column-start: 3;
+        grid-column-end: 17;
+    }
+}
+@media (max-width: 767px) {
+    #posts-container{
+        grid-column-start: 1;
+        grid-column-end: 19;
+    }
+}

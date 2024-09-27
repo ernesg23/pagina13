@@ -39,7 +39,7 @@
                 <img src="../../views/img/society.jfif" alt="Imagen del artículo 2">
                 <div>
                     <h3>Título del Artículo 2</h3>
-                    <p>Descripción breve del artículo 2 hhoiijofioj kshifihosiof jshdvsijv</p>
+                    <p>Descripción breve del artículo 2 hhoiijofioj kshifihosiof</p>
                 </div>
             </div>
             <div class="recentPosts">
