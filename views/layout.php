@@ -19,11 +19,11 @@
         <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
             <search>
-                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
+                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
             </search>
             <div class="navMenu">
-                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
-                <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register" />
+                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
         </nav>
         <div class="category-parent">
@@ -36,7 +36,7 @@
             <input class="category-buttonnav" type="button" value="categoria 7" />
             <input class="category-buttonnav" type="button" value="categoria 8" />
             <input class="category-buttonnav" type="button" value="categoria 9" />
-            <input class="category-buttonnav" type="button" value="categoria 10" />
+            <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
         </div>
         <script>
             const navigationMenu = document.querySelector(".navigationMenu");
