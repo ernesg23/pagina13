@@ -133,17 +133,14 @@
             </template>
         </div>
 
-        <section id="multiplePages">
-            <div>
-                <button id="previousPage">Anterior Página</button>
-            </div>
-            <div id="num"></div>
-            <div>
-                <button id="nextPage">Siguiente Página</button>
-            </div>
-        </section>
-
-            
+        <section>
+                <ul class="pagination">
+                    <li class="paginationItem disabled arrowBackwards"><p>&laquo;</p></li>
+                    <li class="paginationItem number active"><p>1</p></li>
+                    <li class="paginationItem number"><p>2</p></li>
+                    <!-- Esto se va a generar automaticamente con  -->
+                    <li class='paginationItem arrowForward'><p>&raquo;</p></li>
+                </ul>       
 
     </main>
 </body>
