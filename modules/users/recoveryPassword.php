@@ -10,14 +10,13 @@
 
 <body>
     <main>
-        <div id="content">
-            <div>
-                <h2>Recuperá tu Cuenta</h2>
-                <p>Ingresa tu Correo Electrónico de Recuperación</p>
-                <input type="text" placeholder="ejemplo@dominio.com" id="recoveryEmail">
-            </div>
-            <input type="button" class="button" id="recoveryButton" value="Recuperar contraseña">
+        <h1>Página13</h1>
+        <h2>Recuperá tu Cuenta</h2>
+        <div>
+            <p>Ingresá tu Correo Electrónico de Recuperación</p>
+            <input type="text" placeholder="ejemplo@dominio.com" id="recoveryEmail">
         </div>
+        <input type="button" class="button" id="recoveryButton" value="Recuperar contraseña">
     </main>
 </body>
 
