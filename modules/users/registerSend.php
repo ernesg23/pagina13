@@ -21,4 +21,5 @@ $r = mysqli_query($connection, $query);
 $cookie_name = "username";
 $cookie_value = $name;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+$_SESSION['username'] = $name;
 echo "true";
