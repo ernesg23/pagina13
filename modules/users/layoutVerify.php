@@ -1,7 +1,10 @@
 <?php
 session_start();
-$username = $_SESSION['username'];
-if (isset($_COOKIE['username']) or isset(($_SESSION['username']))) {
+if (isset($_COOKIE['username'])) {
+    $username = $_COOKIE['username'];
+    echo $username;
+} else if (isset(($_SESSION['username']))) {
+    $username = $_SESSION['username'];
     echo $username;
 }else {
     echo false;

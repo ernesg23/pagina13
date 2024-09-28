@@ -37,7 +37,14 @@
             <input class="category-buttonnav" type="button" value="categoria 9" />
             <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
         </div>
-        <script>
+        <ul class='actionsMenu'>
+                <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun' ></i></label></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+                <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+            </ul>
+        <!-- <script>
             const navigationMenu = document.querySelector(".navigationMenu");
             const navMenu = document.querySelector(".navmenu");
 
@@ -49,7 +56,7 @@
                 navigationMenu.classList.remove("active");
                 navMenu.classList.remove("active");
             }))
-        </script>
+        </script> -->
     </header>
     <main>
         <div id="content">

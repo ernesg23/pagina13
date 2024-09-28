@@ -4,10 +4,20 @@
     dataType: "html",
     success: (data) => {
       if(data != false) {
-          let profile = `<p class='userName'>${data} </p>
-          <img src="./views/img/sin perfil.png" class='userImg' alt="${data} profile picture" loading="lazy">`;
+          let profile = `<p class='userName userActionsClick'>${data} </p>
+          <img src="./views/img/sin perfil.png" class='userImg userActionsClick' alt="${data} profile picture" loading="lazy">`;
           const menu = document.querySelector(".navMenu");
           $(menu).html(profile);
+          $(".userActionsClick").click (()=> {
+            const menu = document.querySelector(".actionsMenu");
+            menu.classList.toggle("active")
+            document.addEventListener('click', (event) => {
+                const menuActions = document.querySelector(".actionsMenu");
+                if (menuActions.classList.contains("active") && !menuActions.contains(event.target) && !event.target.classList.contains("userActionsClick")) {
+                  menuActions.classList.remove("active");
+                }
+              });
+          })
       }
     },
   });

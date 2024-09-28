@@ -32,6 +32,9 @@ $(sendBtn).click(() => {
         alert("Sesion iniciada con exito")
         location.reload();
       },
+      error: (jqXHR, textStatus, errorThrown) => {
+        alert("Error en la solicitud: " + textStatus + " - " + errorThrown);
+      }
     });
   }
 });
