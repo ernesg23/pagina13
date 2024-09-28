@@ -17,7 +17,7 @@
 
                 <div class="form">
                     <div class="title">
-                        <h1>Página13</h1>
+                        <h1><strong>Página13</strong></h1>
                     </div>
                     <p class="form-user">Formulario de registro de usuario</p>
                     <div class="user-name">
@@ -42,11 +42,11 @@
                     <input type="password" placeholder="Crea tu contraseña" class="textArea" id="userPassword" required>
                     
                     <div class="text-registrer">
-                    <FONT COLOR="gray">La contraseña necesita: </FONT><br>
+                    <FONT COLOR="gray"><strong>La contraseña necesita: </FONT><br>
                     <FONT COLOR="gray">Al menos una mayúscula</FONT><br>
                     <FONT COLOR="gray">Al menos un número </FONT><br>
                     <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
-                    <FONT COLOR="gray">Al menos una minúscula</FONT><br>
+                    <FONT COLOR="gray">Al menos una minúscula</strong></FONT><br>
                     </div>
                     <input type="button" class="password" value="Registrarse" id="sendButton"/>
                 </div>

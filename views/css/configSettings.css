@@ -2,16 +2,13 @@ html {
    background-color: white;
 }
 
-.container {
-    width: 1240px;
-    height: 816px;
+.containerUserSettings {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(12, 40, 78);
-    margin: auto;
-    border: 55px;
-    border: 55px;
-    border-radius: 35px;
+    border-radius: 2rem;
     color: white;
-
 }
 
 .name {
@@ -23,19 +20,12 @@ html {
 }
 
 .text {
-    position: relative;
     padding: 0 0 0 50px;
 }
 .contentPage {
-    position: relative;
     padding: 0 0 0 50px;
 }
 
 .nav-config {
-    position: relative;
     padding: 0 0 0 50px;
-}
-
-.image {
-    
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./views/css/creator.css">
     <script type="module" src="./views/js/creator.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./views/css/layout.css">
     <title>Creador de articulos</title>
 </head>
 
@@ -42,7 +43,7 @@
                     </div>
                     <div class="categories">
                         <div class="categoryCreator">Categoria</div>
-                        <i class='bx bx-plus-medical'></i>
+                        <i class='bx bx-plus-medical categoryAdd'></i>
 
                     </div>
                     <div class="buttonsContainer">
