@@ -1,6 +1,6 @@
 <?php
+include 'connection.php';
 session_start();
-$connection = mysqli_connect("localhost", "root", "", "pagina13");
 $name = mysqli_real_escape_string($connection, $_POST['name'] . " " . $_POST['lastname']);
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $password = mysqli_real_escape_string($connection, $_POST['pass']);
