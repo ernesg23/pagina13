@@ -8,39 +8,38 @@
 
 body {
     background-color: #212121;
-}
-
-main {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     gap: 5px;
 }
 
 /* ARTICULO CENTRAL */
-#main-post {
+main{
     grid-column-start: 7;
     grid-column-end: 16;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(45, 45, 45);
     width: center 80%;
 }
 
-#categoriesPost {
+#categoriesReader {
     display: flex;
     flex-wrap: nowrap;
     background-color: #212121;
     padding: 10px 0px;
 }
-.categoryPost{
+.category{
     margin-right: 10px;
     box-sizing: border-box;
     padding: 5px;
     border-radius: 10px;
 }
-.categoryPost:hover{
+.category:hover{
     text-shadow: 0 0 15px whitesmoke;
 }
 
-#content {
+#reader {
     padding: 10px;
     padding-top: 0px;
     border: 0.5px solid black;
@@ -51,7 +50,7 @@ hr {
     border: 0.1px solid black;
 }
 
-#titlePost {
+#readerTitle {
     border: 0.5px solid black;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -60,11 +59,17 @@ hr {
     border-radius: 5px;
 }
 
-#subtitlePost {
+#readerSubtitle {
     padding-top: 5px;
 }
 
-#writer {
+#readerPortrait {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#author {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -72,24 +77,18 @@ hr {
     padding-bottom: 10px;
 }
 
-#imgPost {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#imgWriter {
+#author img{
     max-height: 35px;
     padding-right: 10px;
 }
 
-#descriptionPost {
+#descriptionReader {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
 /* ARTICULOS LATERALES */
-#posts-container {
+#recentPosts {
     margin-top: 50px;
     margin-left: 45px;
     grid-column-start: 16;
@@ -97,10 +96,10 @@ hr {
     grid-row-start: 1;
 }
 
-#titleRecents{
+#recentPosts h2{
     padding-bottom: 15px;
 }
-.recentPosts {
+.recent {
     display: flex;
     flex-wrap: nowrap;
     margin-bottom: 20px;
@@ -108,37 +107,37 @@ hr {
     align-items: center;
     background-color: rgb(45, 45, 45);
 }
-.recentPosts:hover{
+.recent:hover{
     box-shadow: 0 0 15px whitesmoke;
 }
 
-.recentPosts img {
+.recent img {
     max-width: 100px;
     min-height: 75px;
     padding: 5px;
     padding-right: 10px;
 }
-.recentPosts div{
+.recent div{
     padding: 5px;
     padding-left: 0px;
 }
 
 @media (max-width: 1820px) {
-    #main-post{
+    main{
         grid-column-start: 2;
         grid-column-end: 14;
     }
-    #posts-container{
+    #recentPosts{
         grid-column-start: 14;
         grid-column-end: 20;
     }
 }
 @media (max-width: 1220px) {
-    #main-post{
+    main{
         grid-column-start: 2;
         grid-column-end: 20;
     }
-    #posts-container{
+    #recentPosts{
         grid-column-start: 5;
         grid-column-end: 15;
         grid-row-start: 2;
@@ -147,13 +146,13 @@ hr {
     }
 }
 @media (max-width: 1024px) {
-    #posts-container{
+    #recentPosts{
         grid-column-start: 3;
         grid-column-end: 17;
     }
 }
 @media (max-width: 767px) {
-    #posts-container{
+    #recentPosts{
         grid-column-start: 1;
         grid-column-end: 19;
     }
