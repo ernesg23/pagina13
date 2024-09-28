@@ -313,3 +313,14 @@ section {
     flex-direction: column;
     margin-left: 0.5rem;
 }
+.userName {
+    font-size: 1rem;
+    align-self: center;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    color: #fff;
+}
+.userImg {
+    width: 3rem;
+    margin-right: 1rem;
+}
