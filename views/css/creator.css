@@ -12,7 +12,7 @@
   display: flex;
   background-color: #d9d9d9;
   border-radius: 1em;
-  margin: .4em;
+  margin: 0.4em;
 }
 .mediaContainer.active i {
   align-self: center;
@@ -31,9 +31,9 @@
   align-items: center;
   padding: 0.2em 1.2em;
 }
-i.categoryAdd {
+/* i.categoryAdd {
   margin-left: 59px;
-}
+} */
 .buttonsContainer {
   display: flex;
   justify-content: flex-end;
@@ -42,7 +42,7 @@ i.categoryAdd {
   width: 6rem;
   height: 2rem;
   border: none;
-  margin: 2px;
+  margin: 0.3em;
   border-radius: 5px;
   color: white;
 }
@@ -109,6 +109,11 @@ i.categoryAdd {
   border-bottom: 1px solid black;
   padding: 5px;
   font-size: 1.5em;
+  transition: 0.3s ease;
+}
+.options:hover {
+  background-color: #4e4e4e;
+  cursor: pointer;
 }
 .btnLabel {
   border: 1px solid #000;
@@ -124,4 +129,50 @@ i.categoryAdd {
 
 .btnLabel:hover {
   background-color: #eee;
+}
+i.optionsResponsive {
+  display: none;
+}
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .creatorContainer {
+    width: 35rem;
+  }
+  .options {
+    text-wrap: nowrap;
+  }
+  .btnLabel {
+    padding: 4rem 4rem;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .creatorContainer {
+    width: 22rem;
+  }
+  .options {
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+  }
+  #containerPost {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+  }
+  .optionsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+  i.optionsResponsive {
+    display: flex;
+  }
+  h3 p {
+    display: none;
+  }
+  .btnLabel {
+    padding: 2rem 2rem;
+  }
 }
