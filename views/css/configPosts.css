@@ -11,7 +11,7 @@ html {
     width: 1070px;
     height: 879px;
     background-color: rgb(12 , 40, 78);
-    margin: 50px 40px 35px 417px;
+    margin: 50px 40px 35px 150px;
     border: 55px;
     border: 55px;
     border-radius: 35px;
@@ -33,13 +33,33 @@ html {
 .icon {
     margin: 35px 0 15px 45px ;
 }
-.buttons {
-    width: 991px;
-    height: 583px;
-    background-color: gray;
-    margin: 20px 11px 32px 40px;
-    border: 55px;
-    border: 55px;
-    border-radius: 35px;
-    
+.color-body {
+   
+    background: rgb(94, 93, 93);
+    border: none;
+    border-radius: 5px;
+    margin: 50px;
+}
+.boton {
+    font-size: 1em;
+    border-bottom: #212121;
+    margin: 12px; 
+    padding: 2px 20px;
+    min-width: -webkit-fill-available;
+    height: 4em;
+    cursor: pointer;
+    transition: ease .2s;
+    display: grid;
+    border-bottom: #212121;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+.setting-button {
+      background-color: transparent;
+     height: 2rem;
+}
+.cuerpo {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: antiquewhite;
 }

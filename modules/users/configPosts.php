@@ -37,27 +37,37 @@
 
         </section>
         <section>
-            <div class="buttons">
-                <button class="nav-config" id="users-configSettings">Ajustes</button>
-                <button class="nav-config" id="users-configPosts">Mis Artículos</button>
+<div class="cuerpo">            
+        <div class="color-body">
+            <div class=boton>
+                <div class="setting-button">     
+                    <input type="button"value="Ajustes" />
+                </div>
+                <div class="article-button">
+                    <input type="button"value="Mis articulos" />
+                </div>
             </div>
-        </section>
-        <section id="myPosts">
-            <h1>Mis Artículos</h1>
-            <h3>Vista Previa</h3>
-            <img class="imgPost" src="./img/descarga1.png">
-            <h3 class="titlePost">Título Artículo</h>
+        
+        
+            <section id="myPosts">
+                 <h1>Mis Artículos</h1>
+                 <h3>Vista Previa</h3>
+                 <img class="imgPost" src="./img/descarga1.png">
+                 <h3 class="titlePost">Título Artículo</h>
                 <p class="categoryPost">Categoría</p>
                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-        </section>                                                      
-        <section>
-        <div>
+                                                             
+        
+            <div>
                 <button id="editPost">Editar Artículo</button>
             </div>
             <div>
                 <button id="erasePost">Eliminar</button>
             </div>
-        </section>
+        </div>
+</div>      
+     </section>     
+        
     </main>
     <section>
         <div class="articles-container">
