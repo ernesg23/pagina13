@@ -10,7 +10,6 @@ body {
     background-color: #1e1f20;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     gap: 5px;
 }
 
@@ -18,18 +17,17 @@ main {
     display: flex;
     flex-direction: column;
     grid-column-start: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
-    min-height: 500px;
-    min-width: 300px;
+    height: 500px;
+    min-width: 400px;
     background-color: #0e0e0e;
     align-items: center;
+    margin-top: 25%;
     justify-content: space-around;
     border-radius: 1em;
 }
 
 #send {
-    /* exclsuiveFrom: recoverySend */
+    /* exclusiveFrom: recoverySend */
     justify-content: center;
 }
 
@@ -87,26 +85,4 @@ p {
 .button:hover {
     background-color: #02abfa;
     box-shadow: 0 0 5px #e3e3e3;
-}
-
-@media (max-width:1220px) {
-    body {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    main {
-        grid-column-start: 2;
-        grid-column-end: 4;
-    }
-}
-
-@media (max-width:767px) {
-    body {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-    main {
-        grid-column-start: 2;
-        grid-column-end: 6;
-    }
 }
