@@ -82,8 +82,8 @@ sendBtn.addEventListener("click", () => {
     method: "POST",
     contentType: false,
     processData: false,
-    success: (response) => {
-      alert(response);
+    success: () => {
+      alert("Articulo creado con exito");
     },
     error: (jqXHR, textStatus, errorThrown) => {
       console.error('Error:', textStatus, errorThrown);
