@@ -12,7 +12,11 @@ if (mysqli_num_rows($verifyLogin) > 0) {
     $cookie_name = "username";
     $cookie_value = $rows[0]['name'];
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    $cookie_nameEmail = "email";
+    $cookie_valueEmail = $rows[0]['email'];
+    setcookie($cookie_nameEmail, $cookie_valueEmail, time() + (86400 * 30), "/");
     $_SESSION['username'] = $cookie_value;
+    $_SESSION['email'] = $cookie_valueEmail;
     echo "true";
 } else {
     echo '

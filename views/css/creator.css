@@ -1,108 +1,127 @@
 .allContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 70dvh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 74dvh;
 }
 .mediaContainer {
-    display: none;
+  display: none;
 }
 .mediaContainer.active {
-    display: flex;
+  display: flex;
+  background-color: #d9d9d9;
+  border-radius: 1em;
+  margin: .4em;
 }
 .mediaContainer.active i {
-    align-self: center;
+  align-self: center;
 }
 .sourcesContainer {
-    display: none;
+  display: none;
 }
-.sourcesContainer.active{
-    display: flex;
+.sourcesContainer.active {
+  display: flex;
 }
-#sources{
-    height: 18dvh;
+#sources {
+  height: 18dvh;
 }
 .categories {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.2em 1.2em;
 }
 i.categoryAdd {
-    margin-left: 59px;
+  margin-left: 59px;
 }
 .buttonsContainer {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .buttonsCreator {
-    width: 6rem;
-    height: 2rem;
-    border: none;
-    margin: 2px;
-    border-radius: 5px;
-    color: white;
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  margin: 2px;
+  border-radius: 5px;
+  color: white;
 }
 #sendButton {
-    background-color: #005DB0;
+  background-color: #005db0;
 }
 #archiveButton {
-    background-color: #004D93;
+  background-color: #004d93;
 }
 #writecontainer {
-    display: none;
+  display: none;
 }
 #writecontainer.active {
-    display: block;
+  display: block;
 }
 .categoryCreator {
-    display: flex;
-    margin: 0;
-    width: 6rem;
-    background-color: #464646;
-    border: 1px solid black;
-    border-radius: 4px;
-    text-align: center;
-    justify-content: center;
+  display: flex;
+  margin: 0;
+  width: 6rem;
+  background-color: #464646;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
 }
 #creatorTitle {
-    color: #fff;
-    font-size: 2em;
+  color: #fff;
+  font-size: 2em;
 }
 .optionsContainer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .creatorContainer {
-    color: #fff;
-    background-color: #302c2c;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 60rem;
-    overflow: hidden;
+  color: #fff;
+  background-color: #302c2c;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 60rem;
+  overflow: hidden;
 }
 #containerPost {
-    display: flex;
-    flex-direction: column;
-    padding: 2px;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
 }
 .textArea {
-    width: -webkit-fill-available;
-    margin: 0 2px 5px;
-    background: transparent;
-    border: none;
-    padding: 4px;
-    border-radius: 3px;
-    background-color: #d9d9d9;
-    color: #817e7e;
+  width: -webkit-fill-available;
+  margin: 0 2px 5px;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  border-radius: 3px;
+  background-color: #d9d9d9;
+  color: #817e7e;
 }
 
 .options {
-    background-color: #353535;
-    width: -webkit-fill-available;
-    text-align: center;
-    border-bottom: 1px solid black;
-    padding: 5px;
-    font-size: 1.5em;
+  background-color: #353535;
+  width: -webkit-fill-available;
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  font-size: 1.5em;
+}
+.btnLabel {
+  border: 1px solid #000;
+  border-radius: 0.5em;
+  margin: 1em;
+  padding: 7rem 8rem;
+  transition: 0.5s;
+  color: #000;
+  .bx-plus {
+    font-size: 4em;
+  }
+}
+
+.btnLabel:hover {
+  background-color: #eee;
 }
