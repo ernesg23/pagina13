@@ -10,13 +10,12 @@
 
 <body>
     <main>
-        <div id="content">
-            <div>
-                <h2>Le enviamos un Correo</h2>
-                <p>Se le enviara un correo electrónico con un enlace que le permitirá recuperar su contraseña.</p>
-            </div>
-            <input type="button" class="button" value="Volver a Inicio">
+        <h1>Página13</h1>
+        <div id="send">
+            <h2>¡Revisá tu buzón!</h2>
+            <p>Se le enviara un correo electrónico con un enlace que le permitirá recuperar su contraseña.</p>
         </div>
+        <input type="button" class="button" value="Volver a Inicio">
     </main>
 </body>
 
