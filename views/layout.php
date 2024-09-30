@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
@@ -13,9 +14,10 @@
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
 </head>
+
 <body>
     <header>
-    <nav class="navigation">
+        <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
             <search>
                 <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
@@ -38,12 +40,12 @@
             <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
         </div>
         <ul class='actionsMenu'>
-                <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun' ></i></label></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
-                <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
-            </ul>
+            <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+        </ul>
     </header>
     <main>
         <div id="content">

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./views/css/configSettings.css">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página13 - Mi Configuración</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./views/css/configSettings.css">
+</head>
 
 <body>
     <div class="containerUserSettings">

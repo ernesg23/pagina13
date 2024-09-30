@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página13 - Home</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script type="module" src="./views/js/home.js"></script>
-    <title>Pagina 13</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 <div id="recentArticlesListContainer">
                     <ul class="recent-post-list">
                         <h4>Articulos recientes</h4>
-                        
+
                     </ul>
                 </div>
                 <template id="recent-article-template">

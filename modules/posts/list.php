@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../views/css/list.css">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina 13</title>
+    <title>Página13 - Búsqueda</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../views/css/list.css">
 </head>
 
 <body>
 
     <main>
         <div class="containerSearchAll">
-            <div class="articles-containers" >
+            <div class="articles-containers">
                 <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
                 <ul class="listPosts">
-                    
+
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <div class="postDesc">
                             <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                                <p class="categoryPost">Categoría</p>
+                                <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                         </div>
                     </li>
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                            <p class="categoryPost">Categoría</p>
+                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </li>
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                            <p class="categoryPost">Categoría</p>
+                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </li>
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                            <p class="categoryPost">Categoría</p>
+                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </li>
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                            <p class="categoryPost">Categoría</p>
+                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </li>
                     <li class="article">
                         <img class="imgPost" src="../../views/img/society.jfif">
                         <h3 class="titlePost">Título Artículo</h>
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                            <p class="categoryPost">Categoría</p>
+                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </li>
-                    
+
                 </ul>
             </div>
             <template id="article-template">
@@ -67,7 +67,7 @@
                     <p class="subtitlePost"></p>
                 </li>
             </template>
-            
+
             <div class="recent-articles">
                 <h2>Artículos Recientes</h2>
                 <ul class="recent-post-list">
@@ -134,13 +134,21 @@
         </div>
 
         <section>
-                <ul class="pagination">
-                    <li class="paginationItem disabled arrowBackwards"><p>&laquo;</p></li>
-                    <li class="paginationItem number active"><p>1</p></li>
-                    <li class="paginationItem number"><p>2</p></li>
-                    <!-- Esto se va a generar automaticamente con  -->
-                    <li class='paginationItem arrowForward'><p>&raquo;</p></li>
-                </ul>       
+            <ul class="pagination">
+                <li class="paginationItem disabled arrowBackwards">
+                    <p>&laquo;</p>
+                </li>
+                <li class="paginationItem number active">
+                    <p>1</p>
+                </li>
+                <li class="paginationItem number">
+                    <p>2</p>
+                </li>
+                <!-- Esto se va a generar automaticamente con  -->
+                <li class='paginationItem arrowForward'>
+                    <p>&raquo;</p>
+                </li>
+            </ul>
 
     </main>
 </body>

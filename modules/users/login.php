@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./views/css/login.css">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./views/css/login.css">
+    <title>Página13 - Inicio de Sesión</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./views/css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="module" src="./views/js/login.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesion de Página 13</title>
+    
 </head>
 
 <body>
