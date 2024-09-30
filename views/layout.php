@@ -15,49 +15,15 @@
 </head>
 <body>
     <header>
-        <nav class="navigation">
+    <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
-            <nav class="navigation">
-            <ul class="navmenu">
-                <li class="navItem"><search>
-                    <div id="container">
-                        <form role="search" method="get" id="searchform" action="">
-                            <label for="s">
-                                <i class="icon-search"></i>
-                            </label>
-                            <input type="text" value="" placeholder="search" class="" id="s" class="searchBar" name="searchBar"/>
-                        </form>
-                    </div>
-                    </search>
-                </li>
-                <input class="navItem" class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register"/>
-                <input class="navItem" class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login"/>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            </nav>
-            <!-- <search>
-                <div id="container">
-                <form role="search" method="get" id="searchform" action="">
-                <label for="s">
-                <i class="icon-search"></i>
-                </label>
-                <input type="text" value="" placeholder="search" class="" id="s" class="searchBar" name="searchBar"/>
-                </form>
-                </div>
+            <search>
+                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
             </search>
             <div class="navMenu">
-                <input class="navItem" class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
-                <input class="navItem" class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div> -->
         </nav>
         <div class="category-parent">
             <input class="category-buttonnav" type="button" value="categoria 1" />

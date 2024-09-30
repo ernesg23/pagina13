@@ -21,14 +21,3 @@
       }
     },
   });
-  const navigationMenu = document.querySelector(".navigationMenu");
-            const navMenu = document.querySelector(".navmenu");
-
-            navigationMenu.addEventListener("click", () => {
-                navigationMenu.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            })
-            document.querySelectorAll(".navlink").forEach(n => n.addEventListener("click", () => {
-                navigationMenu.classList.remove("active");
-                navMenu.classList.remove("active");
-            }))

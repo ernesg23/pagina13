@@ -76,6 +76,7 @@
 .optionsContainer {
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 
 .creatorContainer {
