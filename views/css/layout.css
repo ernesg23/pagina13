@@ -25,11 +25,6 @@
 body {
   background-color: rgb(33, 33, 33);
 }
-.navMenu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .login {
   background-color: #0063ae;
   border: none;
@@ -201,43 +196,68 @@ ul li a {
   font-weight: 700;
   font-size: 1.5rem;
 }
-@media (max-width: 933px) {
-  .searchBar {
-    width: 20rem;
-  }
-  .category-parent {
-    display: flex;
-    overflow: hidden;
-  }
-  /* .navigationMenu {
-        display: block;
+@media (max-width: 1000px) {
+  .hamburger {
+    display: block;
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.navmenu {
+    position: fixed;
+    left: -100%;
+    top: 110px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #3f006b;
+    width: 100%;
+    text-align: center;
+    transition: .3s;
+}
+.navItem {
+    margin: 16px 0;
+}
+.navmenu.active {
+    left: 0;
+}
+    #searchform{
+      display:inline;
+      font-size:1em;
+      border-radius: 8em;
+      border:0.1em solid rgba(218,208,190,1);
+      box-shadow:0 0 0.3em rgba(60,60,60,0.4);
+      padding:0.3em;
+      background:white;
     }
-    .navigationMenu.active .bar:nth-child(2) {
-        opacity: 0;
+    #s{
+      transition:all 0.2s ease-out;
+      width:1px;
+      border-radius:0;
+      box-shadow:none;
+      outline: none;
+      padding:0;
+      margin:0;
+      border:0;
+      background-color: transparent;
+      opacity:0;
     }
-    .navigationMenu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+    #s:focus{
+      width:8em;
+      opacity:1;
     }
-    .navigationMenu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .icon-search{
+      display:inline-block;
+      color:rgba(218,208,190,1);
+      text-shadow:0 0 0.1em rgba(60,60,60,0.3);
+      position: relative;
+      left:0.1em;
     }
-    .navmenu {
-        position: fixed;
-        left: -100%;
-        top: 110px;
-        gap: 0;
-        flex-direction: column;
-        background-color: #3f006b;
-        width: 100%;
-        text-align: center;
-        transition: .3s;
-    }
-    .navItem {
-        margin: 16px 0;
-    }
-    .navmenu.active {
-        left: 0;
-    } */
 }
 #content {
   display: flex;

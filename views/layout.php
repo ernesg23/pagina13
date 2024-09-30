@@ -17,13 +17,47 @@
     <header>
         <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
-            <search>
-                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
+            <nav class="navigation">
+            <ul class="navmenu">
+                <li class="navItem"><search>
+                    <div id="container">
+                        <form role="search" method="get" id="searchform" action="">
+                            <label for="s">
+                                <i class="icon-search"></i>
+                            </label>
+                            <input type="text" value="" placeholder="search" class="" id="s" class="searchBar" name="searchBar"/>
+                        </form>
+                    </div>
+                    </search>
+                </li>
+                <input class="navItem" class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register"/>
+                <input class="navItem" class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login"/>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            </nav>
+            <!-- <search>
+                <div id="container">
+                <form role="search" method="get" id="searchform" action="">
+                <label for="s">
+                <i class="icon-search"></i>
+                </label>
+                <input type="text" value="" placeholder="search" class="" id="s" class="searchBar" name="searchBar"/>
+                </form>
+                </div>
             </search>
             <div class="navMenu">
-                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
-                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                <input class="navItem" class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                <input class="navItem" class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> -->
         </nav>
         <div class="category-parent">
             <input class="category-buttonnav" type="button" value="categoria 1" />
@@ -44,19 +78,6 @@
                 <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
                 <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
             </ul>
-        <!-- <script>
-            const navigationMenu = document.querySelector(".navigationMenu");
-            const navMenu = document.querySelector(".navmenu");
-
-            navigationMenu.addEventListener("click", () => {
-                navigationMenu.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            })
-            document.querySelectorAll(".navlink").forEach(n => n.addEventListener("click", () => {
-                navigationMenu.classList.remove("active");
-                navMenu.classList.remove("active");
-            }))
-        </script> -->
     </header>
     <main>
         <div id="content">
