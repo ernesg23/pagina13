@@ -248,6 +248,9 @@ ul li a {
   #articlesContainerAll {
     padding: 1rem;
   }
+  #smallAndRecentContainer {
+    flex-direction: column;
+  }
   .bigMediumArticlesContainer {
     display: flex;
     flex-direction: column;
@@ -421,4 +424,11 @@ section {
     top: 3.5px;
     left: 17px;
 
+}
+#smallAndRecentContainer {
+  display: flex;
+  width: -webkit-fill-available;
+}
+#recentArticlesListContainer {
+  width: -webkit-fill-available;
 }
