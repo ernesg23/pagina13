@@ -8,13 +8,16 @@
 
 body {
     background-color: #f0f4f9;
+}
+
+main {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     gap: 5px;
 }
 
 /* ARTICULO CENTRAL */
-main {
+#main-post {
     grid-column-start: 7;
     grid-column-end: 16;
     display: flex;
@@ -47,6 +50,7 @@ main {
     padding: 10px;
     border-radius: 0.5em;
 }
+
 #reader {
     background-color: white;
     padding: 0 10px 10px;
@@ -81,6 +85,7 @@ main {
     max-height: 35px;
     padding-right: 10px;
 }
+
 hr {
     border: 0.1px solid #f0f4f9;
 }
@@ -126,7 +131,7 @@ hr {
 }
 
 @media (max-width: 1820px) {
-    main {
+    #main-post {
         grid-column-start: 2;
         grid-column-end: 14;
     }
@@ -138,7 +143,7 @@ hr {
 }
 
 @media (max-width: 1220px) {
-    main {
+    #main-post {
         grid-column-start: 2;
         grid-column-end: 20;
     }
