@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'connection.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $target_dir = "../../views/img/uploads/";
@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 echo print_r($_POST);
 $email = urldecode($_COOKIE['email']);
 // Query that creates the post, has a sub query that calls the id from the user that made the post 
-$queryCreatePost = "INSERT INTO `posts`(`title`, `subtitle`, `description`, `portraitImg`, `created_at`, `Users_idUsers`) 
+$queryCreatePost = "INSERT INTO `posts`(`title`, `subtitle`, `description`, `portraitImg`, `created_at`, `Users_idUsers`, `isArchived`) 
 VALUES ('" . $_POST['title'] . "', '" . $_POST['subtitle'] . "', '" . $_POST['description'] . "', '" . $target_file . "', '" . $_POST['publishedDate'] . "', 
-(SELECT idUsers FROM `users` WHERE email = '" . $email . "'))";
+(SELECT idUsers FROM `users` WHERE email = '" . $email . "'), '" . $_POST['isArchived'] . "')";
 
 // If that creates the category if it does not exist
 $category = mysqli_real_escape_string($connection, $_POST['categories']);

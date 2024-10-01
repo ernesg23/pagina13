@@ -1,104 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./img/webicon.webp" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina 13</title>
+    <title>Página13 - Home</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="./views/js/home.js"></script>
 </head>
 
 <body>
     <section>
         <div id="articlesContainerAll">
             <div class="bigMediumArticlesContainer">
-                <div class="article big">
-                    <img class="img" id="big" src="./views/img/society.jfif">
-                    <div class="articlesDescriptions">
-                        <h2>Titulo</h2>
-                        <p class="category">Categoria</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae, iure architecto deserunt ullam corrupti, porro, dolorum nostrum eligendi? </p>
-                    </div>
-                </div>
-                <div class="article medium">
-                    <img class="img" src="./views/img/society.jfif">
-                    <div class="articlesDescriptions">
-                        <h2>Titulo</h2>
-                        <p class="category">Categoria</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae. </p>
-                    </div>
-                </div>
-                <div class="article medium">
-                    <img class="img" src="./views/img/society.jfif">
-                    <div class="articlesDescriptions">
-                        <h2>Titulo</h2>
-                        <p class="category">Categoria</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae. </p>
-                    </div>
-                </div>
             </div>
-            <div id="smallArticlesContainer">
-                <div class="article small">
-                    <img class="img" src="./views/img/society.jfif">
-                    <div class="articlesDescriptions">
-                        <h2>Titulo</h2>
-                        <p class="category">Categoria</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div id="smallAndRecentContainer">
+                <div id="smallArticlesContainer">
+                    <div class="article small">
+                        <img class="img" src="./views/img/advertisement.webp">
                     </div>
-                </div>
-                <div class="article small">
-                    <img class="img" src="./views/img/society.jfif">
-                    <div class="articlesDescriptions">
-                        <h2>Titulo</h2>
-                        <p class="category">Categoria</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div class="article small">
+                        <img class="img" src="./views/img/advertisement.webp">
                     </div>
-                </div>
-                <div class="article small">
-                    <img class="img" src="./views/img/advertisement.webp">
-                </div>
-                <div class="article small">
-                    <img class="img" src="./views/img/advertisement.webp">
-                </div>
-                <template id="article-template">
-                    <div class="article">
-                        <img class="img" src="">
-                        <div class="articlesDescriptions">
-                            <h2></h2>
-                            <p class="category"></p>
-                            <p></p>
+                    <template id="article-template">
+                        <div class="article" id="">
+                            <img class="img" src="">
+                            <div class="articlesDescriptions">
+                                <h2></h2>
+                                <p class="category"></p>
+                                <p class="articleDescriptionParagraph"></p>
+                            </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
+                </div>
                 <div id="recentArticlesListContainer">
                     <ul class="recent-post-list">
                         <h4>Articulos recientes</h4>
-                        <li class="recent-article">
-                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                            <div class="recent-description">
-                                <h3>Título del Artículo 1</h3>
-                                <p>Descripción breve del artículo 1</p>
-                            </div>
-                        </li>
-                        <li class="recent-article">
-                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                            <div class="recent-description">
-                                <h3>Título del Artículo 1</h3>
-                                <p>Descripción breve del artículo 1</p>
-                            </div>
-                        </li>
-                        <li class="recent-article">
-                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
-                            <div class="recent-description">
-                                <h3>Título del Artículo 1</h3>
-                                <p>Descripción breve del artículo 1</p>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
                 <template id="recent-article-template">
-                    <li class="recent-article">
+                    <li class="recent-article" id="">
                         <img class="img recent" src="">
                         <div class="recent-description">
                             <h3></h3>
@@ -106,6 +49,7 @@
                         </div>
                     </li>
                 </template>
+
             </div>
             <h3>Categorias mas visitadas</h3>
             <div class="categoriesSearchContainer">

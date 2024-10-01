@@ -6,6 +6,6 @@ if (isset($_COOKIE['username'])) {
 } else if (isset(($_SESSION['username']))) {
     $username = $_SESSION['username'];
     echo $username;
-}else {
+} else {
     echo false;
 }

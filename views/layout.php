@@ -1,8 +1,10 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="views/img/enterprise_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./views/css/layout.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -12,7 +14,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
+    
 </head>
+
 <body>
     <header>
         <nav class="navigation">
@@ -38,25 +42,12 @@
             <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
         </div>
         <ul class='actionsMenu'>
-                <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun' ></i></label></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
-                <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
-                <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
-            </ul>
-        <!-- <script>
-            const navigationMenu = document.querySelector(".navigationMenu");
-            const navMenu = document.querySelector(".navmenu");
-
-            navigationMenu.addEventListener("click", () => {
-                navigationMenu.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            })
-            document.querySelectorAll(".navlink").forEach(n => n.addEventListener("click", () => {
-                navigationMenu.classList.remove("active");
-                navMenu.classList.remove("active");
-            }))
-        </script> -->
+            <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+        </ul>
     </header>
     <main>
         <div id="content">

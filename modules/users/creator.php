@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./views/css/creator.css">
-    <script type="module" src="./views/js/creator.js"></script>
+    <title>Página13 - Creador de Artículos</title>
+    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/layout.css">
-    <title>Creador de articulos</title>
+    <link rel="stylesheet" href="./views/css/creator.css">
+    <script type="module" src="./views/js/creator.js"></script>
 </head>
 
 <body>
@@ -19,9 +20,14 @@
                 <h2 id="creatorTitle">Creador de articulos</h2>
                 <div class="creatorContainer">
                     <div class="optionsContainer">
-                        <h3 id="write" class="options">Escribir</h3>
-                        <h3 id="imagesVideos" class="options">Imagenes y videos</h3>
-                        <h3 id="source" class="options">Fuentes</h3>
+                        <h3 id="write" class="options">
+                            <p>Escribir</p><i class="bx bx-pencil optionsResponsive"></i>
+                            <h3 id="imagesVideos" class="options">
+                                <p>Imagenes y videos</p><i class="bx bxs-image-add optionsResponsive"></i>
+                            </h3>
+                            <h3 id="source" class="options">
+                                <p>Fuentes</p><i class="bx bx-book-content optionsResponsive"></i>
+                            </h3>
                     </div>
                     <div id="containerPost">
                         <div id="writecontainer" class="active">
@@ -37,7 +43,7 @@
                             <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
                                 <div class="input_container">
                                     <label for="files" class="btnLabel"><i class='bx bx-plus'></i></label>
-                                    <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp">
+                                    <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4">
                                 </div>
                             </form>
                         </div>
@@ -48,7 +54,7 @@
                     </div>
                     <div class="categories">
                         <input class="categoryCreator" placeholder="Categoria">
-                        <i class='bx bx-plus-medical categoryAdd'></i>
+                        <!-- <i class='bx bx-plus-medical categoryAdd'></i> -->
                     </div>
                     <div class="buttonsContainer">
                         <button id="archiveButton" class="buttonsCreator">Archivar</button>

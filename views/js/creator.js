@@ -75,6 +75,7 @@ sendBtn.addEventListener("click", () => {
   formData.append('images', imagesAndVideos);
   formData.append('email', authorEmail);
   formData.append('publishedDate', actualDate);
+  formData.append('isArchived', 0);
 
   $.ajax({
     url: "./modules/users/creatorSend.php",
@@ -84,6 +85,46 @@ sendBtn.addEventListener("click", () => {
     processData: false,
     success: () => {
       alert("Articulo creado con exito");
+    },
+    error: (jqXHR, textStatus, errorThrown) => {
+      console.error('Error:', textStatus, errorThrown);
+    }
+  });
+});
+archiveBtn.addEventListener("click", () => {
+  let formData = new FormData();
+  let file = $("#files")[0].files[0];
+  const imagesAndVideos = $(".newImage").val();
+  const title = $(".titletextArea").val();
+  const subtitle = $(".subtitletextArea").val();
+  const description = $(".descriptiontextArea").val();
+  const sources = $("#sources").val();
+  const category = $(".categoryCreator").val();
+  const author = getCookie("username");
+  const authorEmail = getCookie("email");
+  const date = new Date();
+  let actualDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+
+  formData.append('file', file);
+  formData.append('title', title);
+  formData.append('subtitle', subtitle);
+  formData.append('description', description);
+  formData.append('sources', sources);
+  formData.append('categories', category);
+  formData.append('author', author);
+  formData.append('images', imagesAndVideos);
+  formData.append('email', authorEmail);
+  formData.append('publishedDate', actualDate);
+  formData.append('isArchived', 1);
+
+  $.ajax({
+    url: "./modules/users/creatorSend.php",
+    data: formData,
+    method: "POST",
+    contentType: false,
+    processData: false,
+    success: () => {
+      alert("Articulo creado y archivado con exito");
     },
     error: (jqXHR, textStatus, errorThrown) => {
       console.error('Error:', textStatus, errorThrown);
