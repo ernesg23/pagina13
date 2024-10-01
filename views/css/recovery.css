@@ -8,12 +8,15 @@
 
 body {
     background-color: #1e1f20;
+}
+
+main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
 }
 
-main {
+#content {
     display: flex;
     flex-direction: column;
     grid-column-start: 2;
@@ -31,7 +34,7 @@ main {
     justify-content: center;
 }
 
-main div {
+#content div {
     height: 120px;
 }
 
