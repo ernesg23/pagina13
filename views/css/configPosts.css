@@ -7,16 +7,19 @@
 html {
     background-color: #212121;
 }
-.containerUserConfig {
+.icon {
+    margin: 35px 0 15px 45px ;
+}
+.container {
     width: 1070px;
     height: 879px;
     background-color: rgb(12 , 40, 78);
-    margin: 50px 40px 35px 417px;
+    margin: 50px 40px 35px 150px;
     border: 55px;
     border: 55px;
     border-radius: 35px;
     color: azure;
-    
+       
 }
 .text {
     justify-content: center;
@@ -30,16 +33,47 @@ html {
    flex-wrap: nowrap;
   
 }
-.icon {
-    margin: 35px 0 15px 45px ;
+.nav-config {
+    background-color: #706f6f;
+     font-size: 1em;
+}
+#users-configPosts {
+    width: 6em;
+    margin: 5px;
+}
+#users-configSettings {
+    margin: 5px;
 }
 .buttons {
-    width: 991px;
-    height: 583px;
-    background-color: gray;
-    margin: 20px 11px 32px 40px;
-    border: 55px;
-    border: 55px;
-    border-radius: 35px;
-    
+    font-size: 20px;
+    border-bottom: #212121;
+    margin: 12px 6px; 
+    color: black;
+    min-width: -webkit-fill-available;
+    height: 4em;
+    cursor: pointer;
+    transition: ease .2s;
+    display: grid;
+    border-bottom: #212121;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+.color-body {
+    background: rgb(94, 93, 93);
+    border: none;
+    border-radius: 1em;
+    border: solid #212121;
+    margin: 50px;
+    display: flex;
+   flex-wrap: nowrap;
+}
+#texto {
+    justify-content: center;
+    margin: 0px 0px 11em 13px ;
+    font-size: large;
+    line-height: 25px;
+    border-color: #212121;
+    border-end-end-radius: 1em;
+    border-top-right-radius: 1em ;
+    border: solid #212121;
 }
