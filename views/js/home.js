@@ -74,48 +74,52 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
     <link rel="stylesheet" href="./views/css/reader.css">
 </head>
 <body>
-    <div id='containerAllReaderRecent'>
-        <div id='containerAllReader'>
-        <div id='readerRelatedContent'>
-            <div id="categoriesReader">
-                <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
-                <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${
-                  dataToUse["name"]
+    <main>
+        <section>
+            <div id="main-post">
+              <div id="categoriesReader">
+                  <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
+                  <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${dataToUse["name"]
                 }</p>
-            </div>
-            <h2 id="readerTitle">${dataToUse["title"]}</h2>
-            <div id="reader">
-                <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
-                <img id="readerPortrait" src="${dataToUse[
+              </div>
+              <h2 id="readerTitle">${dataToUse["title"]}</h2>
+              <div id="reader">
+                  <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
+                  <img id="readerPortrait" src="${dataToUse[
                   "portraitImg"
                 ].replace(/^(\.\.\/)+/, "")}">
-                <div id="author">
-                    <img src="./views/img/sin perfil.png" alt="Author Image">
-                    <p>${dataToUse["authorName"]}</p>
+                  <div id="author">
+                      <img src="./views/img/sin perfil.png" alt="Author Image">
+                      <p>${dataToUse["authorName"]}</p>
+                  </div>
+                  <hr>
+                  <p id="descriptionReader">${dataToUse["description"]}</p>
+              </div>
+            </div>
+            <div id="recentPosts">
+                <h2>Artículos Recientes</h2>
+                <div class="recent">
+                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
+                    <div>
+                        <h3>Título del Artículo 1</h3>
+                        <p>Descripción breve del artículo 1</p>
+                    </div>
                 </div>
-                <hr>
-                <p id="descriptionReader">${dataToUse["description"]}</p>
             </div>
-            </div>
-            <div id="recentArticlesListContainerReader">
-  <ul class="recent-post-list">
-    <h4>Artículos recientes</h4>
-  </ul>
-</div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 `;
               $("#content").html(ui);
               console.log(recentPosts);
-            //   const recentPostsReader = document.querySelector(
-            //     "#recentArticlesListContainerReader .recent-post-list"
-            //   );
+              //   const recentPostsReader = document.querySelector(
+              //     "#recentArticlesListContainerReader .recent-post-list"
+              //   );
 
-            //   recentPosts.forEach((post) => {
-            //     recentPostsReader.appendChild(post);
-            //     console.log(post);
-            //   });
+              //   recentPosts.forEach((post) => {
+              //     recentPostsReader.appendChild(post);
+              //     console.log(post);
+              //   });
             },
           });
         });
@@ -142,48 +146,54 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
     <link rel="stylesheet" href="./views/css/reader.css">
 </head>
 <body>
-    <div id='containerAllReaderRecent'>
-        <div id='containerAllReader'>
-        <div id='readerRelatedContent'>
-            <div id="categoriesReader">
-                <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
-                <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${
-                  dataToUse["name"]
+    <main>
+        <section>
+            <div id="main-post">
+              <div id="categoriesReader">
+                  <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
+                  <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${dataToUse["name"]
                 }</p>
-            </div>
-            <h2 id="readerTitle">${dataToUse["title"]}</h2>
-            <div id="reader">
-                <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
-                <img id="readerPortrait" src="${dataToUse[
+              </div>
+              <h2 id="readerTitle">${dataToUse["title"]}</h2>
+              <div id="reader">
+                  <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
+                  <img id="readerPortrait" src="${dataToUse[
                   "portraitImg"
                 ].replace(/^(\.\.\/)+/, "")}">
-                <div id="author">
-                    <img src="./views/img/sin perfil.png" alt="Author Image">
-                    <p>${dataToUse["authorName"]}</p>
+                  <div id="author">
+                      <img src="./views/img/sin perfil.png" alt="Author Image">
+                      <p>${dataToUse["authorName"]}</p>
+                  </div>
+                  <hr>
+                  <p id="descriptionReader">${dataToUse["description"]}</p>
+              </div>
+            </div>
+            <div id="recentPosts">
+                <h2>Artículos Recientes</h2>
+                <div class="recent">
+                    <img src="${dataToUse[
+                      "portraitImg"
+                    ].replace(/^(\.\.\/)+/, "")}" alt="Imagen del artículo 1">
+                    <div>
+                        <h3>${dataToUse["title"]}</h3>
+                        <p>${dataToUse["subtitle"]}</p>
+                    </div>
                 </div>
-                <hr>
-                <p id="descriptionReader">${dataToUse["description"]}</p>
             </div>
-            </div>
-            <div id="recentArticlesListContainerReader">
-  <ul class="recent-post-list">
-    <h4>Artículos recientes</h4>
-  </ul>
-</div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 `;
               $("#content").html(ui);
               console.log(recentPosts);
-            //   const recentPostsReader = document.querySelector(
-            //     "#recentArticlesListContainerReader .recent-post-list"
-            //   );
+              //   const recentPostsReader = document.querySelector(
+              //     "#recentArticlesListContainerReader .recent-post-list"
+              //   );
 
-            //   recentPosts.forEach((post) => {
-            //     recentPostsReader.appendChild(post);
-            //     console.log(post);
-            //   });
+              //   recentPosts.forEach((post) => {
+              //     recentPostsReader.appendChild(post);
+              //     console.log(post);
+              //   });
             },
           });
         });

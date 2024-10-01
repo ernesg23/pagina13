@@ -6,7 +6,7 @@
     padding: 0px;
 }
 
-main {
+section{
     background-color: #1e1f20;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
@@ -92,6 +92,7 @@ hr {
 
 /* ARTICULOS LATERALES */
 #recentPosts {
+    align-self: start;
     margin: 50px 0 0 45px;
     grid-column-start: 16;
     grid-column-end: 20;
@@ -107,6 +108,7 @@ hr {
     flex-wrap: nowrap;
     margin-bottom: 20px;
     max-height: 80px;
+    min-width: 100%;
     align-items: center;
     background-color: #0e0e0e;
     border-radius: 0.5em;
