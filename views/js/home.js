@@ -55,24 +55,20 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
           clonedRecentTemplate.querySelector(".recent-article");
         clickedRecentArticle.addEventListener("click", function () {
           const id = this.id;
-          console.log(id);
           $.ajax({
             url: "./modules/posts/reader.php",
             method: "post",
             data: { articleId: id },
             dataType: "html",
             success: (postReaderData) => {
-              console.log(postReaderData);
               $("#content").html(postReaderData);
-              console.log(recentPosts);
-              //   const recentPostsReader = document.querySelector(
-              //     "#recentArticlesListContainerReader .recent-post-list"
-              //   );
+                const recentPostsReader = postReaderData.querySelector(
+                  "#recentArticlesListContainerReader .recent-post-list"
+                );
 
-              //   recentPosts.forEach((post) => {
-              //     recentPostsReader.appendChild(post);
-              //     console.log(post);
-              //   });
+                recentPosts.forEach((post) => {
+                  recentPostsReader.appendChild(post);
+                });
             },
           });
         });
@@ -80,24 +76,14 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         const clickedArticle = clonedTemplate.querySelector(".article");
         clickedArticle.addEventListener("click", function () {
           const id = this.id;
-          console.log(id);
           $.ajax({
             url: "./modules/posts/reader.php",
             method: "post",
             data: { articleId: id },
             dataType: "html",
             success: (postReaderData) => {
-              console.log(postReaderData);
               $("#content").html(postReaderData);
-              console.log(recentPosts);
-              //   const recentPostsReader = document.querySelector(
-              //     "#recentArticlesListContainerReader .recent-post-list"
-              //   );
-
-              //   recentPosts.forEach((post) => {
-              //     recentPostsReader.appendChild(post);
-              //     console.log(post);
-              //   });
+              
             },
           });
         });

@@ -23,7 +23,7 @@ $cookie_value = $name;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 $_SESSION['username'] = $name;
 $cookie_nameEmail = "email";
-$cookie_valueEmail = $rows[0]['email'];
+$cookie_valueEmail = $email;
 setcookie($cookie_nameEmail, $cookie_valueEmail, time() + (86400 * 30), "/");
 $_SESSION['email'] = $cookie_valueEmail;
 echo "true";
