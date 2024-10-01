@@ -7,9 +7,14 @@
     <title>Página13 - Mi Perfil</title>
     <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../../views/js/profile.js"></script>
 </head>
 
-<body>
+<body id="content">
+    
     <section>
         <div>
             <img src="./img/descarga1.png" loading="lazy" />
@@ -41,7 +46,7 @@
                         <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
                     </div>
             </div>
-        </div>
+        </div>  
         <div class="favoritePostContainer">
             <h2>Artículos Favoritos</h2>
             <div class="favoritePosts">

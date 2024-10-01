@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,6 +9,9 @@
     <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/configSettings.css">
+    <link rel="stylesheet" href="../../views/css/configPosts.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="./views/js/configSettings.js"></script>
 </head>
 
 <body>
