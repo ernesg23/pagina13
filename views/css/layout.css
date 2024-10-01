@@ -9,6 +9,10 @@
   color: #ffffff;
   padding-left: 0.5rem;
 }
+#smallArticlesContainer {
+  display: flex;
+  width: -webkit-fill-available;
+}
 .searchBar {
   width: 30rem;
   padding: 1rem;
