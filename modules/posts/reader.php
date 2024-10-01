@@ -12,45 +12,48 @@
 
 <body>
     <main>
-        <div id="categoriesReader">
-            <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p>
-            <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">Categoría</p>
-        </div>
-        <h2 id="readerTitle">Título Artículo</h2>
-        <div id="reader">
-            <p id="readerSubtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-            <img id="readerPortrait" src="../../views/img/society.jfif">
-            <div id="author">
-                <img src="../../views/img/sin perfil.png">
-                <p>Nombre Autor</p>
+        <div id="main-post">
+            <div id="categoriesReader">
+                <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p>
+                <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">Categoría</p>
             </div>
-            <hr>
-            <p id="descriptionReader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia sit qui, harum nobis laudantium, reprehenderit animi temporibus sequi, laborum quos incidunt optio veritatis! Perspiciatis dolorem aspernatur iure similique harum!</p>
+            <h2 id="readerTitle">Título Artículo</h2>
+            <div id="reader">
+                <p id="readerSubtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                <img id="readerPortrait" src="../../views/img/society.jfif">
+                <div id="author">
+                    <img src="../../views/img/sin perfil.png">
+                    <p>Nombre Autor</p>
+                </div>
+                <hr>
+                <p id="descriptionReader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia sit qui, harum nobis laudantium, reprehenderit animi temporibus sequi, laborum quos incidunt optio veritatis! Perspiciatis dolorem aspernatur iure similique harum!</p>
+            </div>
+        </div>
+        <div id="recentPosts">
+            <h2>Artículos Recientes</h2>
+            <div class="recent">
+                <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
+                <div>
+                    <h3>Título del Artículo 1</h3>
+                    <p>Descripción breve del artículo 1</p>
+                </div>
+            </div>
+            <div class="recent">
+                <img src="../../views/img/society.jfif" alt="Imagen del artículo 2">
+                <div>
+                    <h3>Título del Artículo 2</h3>
+                    <p>Descripción breve del artículo 2 hhoiijofioj kshifihosiof</p>
+                </div>
+            </div>
+            <div class="recent">
+                <img src="../../views/img/society.jfif" alt="Imagen del artículo 3">
+                <div>
+                    <h3>Título del Artículo 3</h3>
+                    <p>Descripción breve del artículo 3</p>
+                </div>
+            </div>
+        </div>
     </main>
-    <div id="recentPosts">
-        <h2>Artículos Recientes</h2>
-        <div class="recent">
-            <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
-            <div>
-                <h3>Título del Artículo 1</h3>
-                <p>Descripción breve del artículo 1</p>
-            </div>
-        </div>
-        <div class="recent">
-            <img src="../../views/img/society.jfif" alt="Imagen del artículo 2">
-            <div>
-                <h3>Título del Artículo 2</h3>
-                <p>Descripción breve del artículo 2 hhoiijofioj kshifihosiof</p>
-            </div>
-        </div>
-        <div class="recent">
-            <img src="../../views/img/society.jfif" alt="Imagen del artículo 3">
-            <div>
-                <h3>Título del Artículo 3</h3>
-                <p>Descripción breve del artículo 3</p>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
