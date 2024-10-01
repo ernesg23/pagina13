@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
@@ -12,18 +11,18 @@
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
+    <script type="module" src="./views/js/layout.js"></script>
 </head>
-
 <body>
     <header>
         <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
             <search>
-                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar">
+                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
             </search>
             <div class="navMenu">
-                <input class="login buttonnav" type="button" value="iniciar sesion" data-page="users-login" />
-                <input class="registrer buttonnav" type="button" value="registrarse" data-page="users-register" />
+                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
         </nav>
         <div class="category-parent">
@@ -36,9 +35,16 @@
             <input class="category-buttonnav" type="button" value="categoria 7" />
             <input class="category-buttonnav" type="button" value="categoria 8" />
             <input class="category-buttonnav" type="button" value="categoria 9" />
-            <input class="category-buttonnav" type="button" value="categoria 10" />
+            <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
         </div>
-        <script>
+        <ul class='actionsMenu'>
+                <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun' ></i></label></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
+                <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+                <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+            </ul>
+        <!-- <script>
             const navigationMenu = document.querySelector(".navigationMenu");
             const navMenu = document.querySelector(".navmenu");
 
@@ -50,7 +56,7 @@
                 navigationMenu.classList.remove("active");
                 navMenu.classList.remove("active");
             }))
-        </script>
+        </script> -->
     </header>
     <main>
         <div id="content">

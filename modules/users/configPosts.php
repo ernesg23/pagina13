@@ -11,11 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/users.js"></script>
 </head>
-
 <body>
     <header>
         <!-- Acá va el layout (navbar) -->
-
     </header>
     <main>
     <div class="container">
@@ -30,44 +28,36 @@
                 <p class="userRol">Rol de Usuario</p>
                 <p>Descripción</p>
                 <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
-</div> 
-            </div>
+            </div> 
+        </div>
                
-                <div>
-
+    <div>
         </section>
         <section>
-<div class="cuerpo">            
-        <div class="color-body">
-            <div class=boton>
-                <div class="setting-button">     
-                    <input type="button"value="Ajustes" />
-                </div>
-                <div class="article-button">
-                    <input type="button"value="Mis articulos" />
-                </div>
+
+<div class="color-body">
+    <div class="body">
+            <div class="buttons">
+                <button class="nav-config" id="users-configSettings">Ajustes</button>
+
+                <button class="nav-config" id="users-configPosts">Mis Artículos</button>
             </div>
-        
-        
-            <section id="myPosts">
-                 <h1>Mis Artículos</h1>
-                 <h3>Vista Previa</h3>
-                 <img class="imgPost" src="./img/descarga1.png">
-                 <h3 class="titlePost">Título Artículo</h>
+    </div>        
+        <div id="texto">
+            <h1>Mis Artículos</h1>
+            <h3>Vista Previa</h3>
+            <img class="imgPost" src="./img/descarga1.png">
+            <h3 class="titlePost">Título Artículo</h>
                 <p class="categoryPost">Categoría</p>
                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                                                             
-        
-            <div>
+        </div>   
+        <div class="edit">
                 <button id="editPost">Editar Artículo</button>
-            </div>
-            <div>
                 <button id="erasePost">Eliminar</button>
             </div>
-        </div>
-</div>      
-     </section>     
-        
+        </div>    
+</div>            
+        </section>
     </main>
     <section>
         <div class="articles-container">
@@ -89,8 +79,5 @@
             <!-- Add more posts here -->
         </div>
         </div>
-
     </section>
 </body>
-
-</html>

@@ -55,7 +55,7 @@
     margin-left: 5rem;
 }
 .backgorund-color{
-    background-color: #000;
+    background-color: rgb(45, 45, 45);
 }
 .recent-post-list {
     list-style: none;
@@ -65,9 +65,9 @@
     height: 6rem;
     margin-bottom: 5px;
     width: 25rem;
-    background-color: #000;
+    background-color: rgb(45, 45, 45);
     padding: 5px;
-    border: 1px solid #000;
+    border: 1px solid rgb(45, 45, 45);
     border-radius: 0.5rem;
     
 }
@@ -85,7 +85,7 @@
     p {
         font-size: 0.8em;
     }
-    background-color: #000;
+    background-color: rgb(45, 45, 45);
     
 }
 .recent-image{
@@ -94,4 +94,154 @@
     object-fit: cover;
     border-radius: 15px;
 }
+.pagination{
+    height: 5rem;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.paginationItem {
+    display: flex;
+    height: 1rem;
+    padding: 0.8rem;
+    cursor: pointer;
+    width: 2rem;
+    border: 1px solid;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #023e8a; 
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    transition: .2s ease;
+    color: #fff;
+    p {
+        background-color: #023e8a;
+    }
+}
+.paginationItem:hover {
+    background-color: #0259ca;
+    p {
+        background-color: #0259ca;
+    }
+}
+@media (max-width: 1024px) {
+    .recent-articles {
+        margin-left: 1rem;
+    }
+    .articles-containers {
+        width: 23rem;
+    }
+    .listPosts{
+        columns: 2;
+        list-style: none;
+    }
+    .containerSearchAll{
+        display: flex;
+        justify-content: center;
+    }    
+    .article{
+        width: 11rem;
+        height: auto;
+        padding: 10px;
+        border: 1px solid #000;
+        background-color: #000;
+        border-radius: 0.5rem;
+        margin-bottom: 5px;
+        justify-content: space-evenly;
+    }
+    .subtitlePost{
+        font-size: 0.6rem;
+        background-color: #000;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .recent-article {
+        display: flex;
+        height: 4rem;
+        width: 15rem;
+        background-color: rgb(45, 45, 45);
+        padding: 5px;
+        border: 1px solid rgb(45, 45, 45);
+        border-radius: 0.5rem;
+        
+    }
+    .recent-description {
+        display: flex;
+        width: -webkit-fill-available;
+        flex-direction: column;
     
+        align-items: center;
+        margin-left: 5px; 
+        h3 {
+            font-size: 0.8em;
+            margin-bottom: 1em;
+        }
+        p {
+            font-size: 0.6em;
+        }
+        background-color: rgb(45, 45, 45);
+        
+    }
+}
+@media (max-width: 766px) {
+    .articles-containers {
+        width: 28rem;
+    }
+    .listPosts{
+        columns: 2;
+        list-style: none;
+    }
+    .containerSearchAll{
+        display:block;
+        
+    }
+    .article{
+        width: 12rem;
+        height: auto;
+        padding: 10px;
+        border: 1px solid #000;
+        background-color: #000;
+        border-radius: 0.5rem;
+        margin-bottom: 5px;
+        justify-content: space-evenly;
+    }
+    .subtitlePost{
+        font-size: 0.6rem;
+        background-color: #000;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .recent-article {
+        display: flex;
+        height: 4rem;
+        width: 20rem;
+        background-color: rgb(45, 45, 45);
+        padding: 5px;
+        border: 1px solid rgb(45, 45, 45);
+        border-radius: 0.5rem;
+        
+    }
+    .recent-description {
+        display: flex;
+        width: -webkit-fill-available;
+        flex-direction: column;
+    
+        align-items: center;
+        margin-left: 5px;
+        h3 {
+            font-size: 0.8em;
+            margin-bottom: 1em;
+        }
+        p {
+            font-size: 0.6em;
+        }
+        background-color: rgb(45, 45, 45);
+        
+    }
+}

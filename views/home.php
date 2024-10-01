@@ -11,53 +11,110 @@
 
 <body>
     <section>
-        <div id="articlesContainer">
-            <div class="big-article">
-                <img class="img" id="big" src="./views/img/society.jfif">
-                <h2>Titulo</h2>
-                <input type="button" value="categoria" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae, iure architecto deserunt ullam corrupti, porro, dolorum nostrum eligendi? Sit molestiae sint perspiciatis laudantium laborum, reiciendis rem excepturi fugiat consectetur voluptatum ea id amet quibusdam saepe tempora aliquid, voluptates placeat alias eum distinctio. Quasi praesentium fugit nesciunt dolorem, illum magni? Quae, atque, nemo doloremque iure harum saepe voluptate earum iusto repellendus nisi quidem quas illo? Totam, quaerat. Veniam.</p>
+        <div id="articlesContainerAll">
+            <div class="bigMediumArticlesContainer">
+                <div class="article big">
+                    <img class="img" id="big" src="./views/img/society.jfif">
+                    <div class="articlesDescriptions">
+                        <h2>Titulo</h2>
+                        <p class="category">Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae, iure architecto deserunt ullam corrupti, porro, dolorum nostrum eligendi? </p>
+                    </div>
+                </div>
+                <div class="article medium">
+                    <img class="img" src="./views/img/society.jfif">
+                    <div class="articlesDescriptions">
+                        <h2>Titulo</h2>
+                        <p class="category">Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae. </p>
+                    </div>
+                </div>
+                <div class="article medium">
+                    <img class="img" src="./views/img/society.jfif">
+                    <div class="articlesDescriptions">
+                        <h2>Titulo</h2>
+                        <p class="category">Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam soluta perspiciatis aliquid quis quia labore similique atque deleniti natus dolores quae. </p>
+                    </div>
+                </div>
             </div>
-            <div class="article medium">
-                <img class="img" src="./views/img/society.jfif">
-                <h2>Titulo</h2>
-                <input type="button" value="categoria" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima
-                    dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae
-                    architecto molestias laborum mollitia voluptatum ipsa.</p>
+            <div id="smallArticlesContainer">
+                <div class="article small">
+                    <img class="img" src="./views/img/society.jfif">
+                    <div class="articlesDescriptions">
+                        <h2>Titulo</h2>
+                        <p class="category">Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="article small">
+                    <img class="img" src="./views/img/society.jfif">
+                    <div class="articlesDescriptions">
+                        <h2>Titulo</h2>
+                        <p class="category">Categoria</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="article small">
+                    <img class="img" src="./views/img/advertisement.webp">
+                </div>
+                <div class="article small">
+                    <img class="img" src="./views/img/advertisement.webp">
+                </div>
+                <template id="article-template">
+                    <div class="article">
+                        <img class="img" src="">
+                        <div class="articlesDescriptions">
+                            <h2></h2>
+                            <p class="category"></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </template>
+                <div id="recentArticlesListContainer">
+                    <ul class="recent-post-list">
+                        <h4>Articulos recientes</h4>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                        <li class="recent-article">
+                            <img src="./views/img/society.jfif" alt="Imagen del artículo 1" class="img recent">
+                            <div class="recent-description">
+                                <h3>Título del Artículo 1</h3>
+                                <p>Descripción breve del artículo 1</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <template id="recent-article-template">
+                    <li class="recent-article">
+                        <img class="img recent" src="">
+                        <div class="recent-description">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </li>
+                </template>
             </div>
-            <div class="article medium">
-                <img class="img" src="./views/img/society.jfif">
-                <h2>Titulo</h2>
-                <input type="button" value="categoria" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sit optio culpa esse minima
-                    dolores dicta. Perspiciatis provident, deleniti asperiores officia omnis cupiditate repudiandae
-                    architecto molestias laborum mollitia voluptatum ipsa.</p>
+            <h3>Categorias mas visitadas</h3>
+            <div class="categoriesSearchContainer">
+                <input class="categorySearch" type="button" value="Matematicas" />
+                <input class="categorySearch" type="button" value="Fisica" />
+                <input class="categorySearch" type="button" value="Quimica" />
+                <input class="categorySearch" type="button" value="STEM" />
+                <input class="categorySearch" type="button" value="Pensamiento computacional" />
             </div>
-            <div class="article small">
-                <img class="img" src="./views/img/society.jfif">
-                <h2>Titulo</h2>
-                <input type="button" value="categoria" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-            </div>
-            <div class="article small">
-                <img class="img" src="./views/img/society.jfif">
-                <h2>Titulo</h2>
-                <input type="button" value="categoria" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div>
-            <h1>Categorias mas visitadas</h1>
-        </div>
-        <div>
-            <input class="category" type="button" value="Matematicas" />
-            <input class="category" type="button" value="Fisica" />
-            <input class="category" type="button" value="Quimica" />
-            <input class="category" type="button" value="STEM" />
-            <input class="category" type="button" value="Pensamiento computacional" />
         </div>
     </section>
 

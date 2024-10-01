@@ -18,6 +18,7 @@
 .title-email {
     text-align: left;
     margin: 2px 15px 2px;
+    font-size: 1em;
 }
 
 .search {
@@ -34,12 +35,16 @@
 }
 
 .forgotten-password {
-    font-size: 10px;
+    font-size: 0.9em;
     margin: 2px 15px 2px;
+    cursor: pointer;
+}
+.forgotten-password:hover {
+    text-decoration: underline;
 }
 
 .remember-password {
-    font-size: 15px;
+    font-size: 1em;
     margin: 2px 15px 2px;
 }
 
@@ -96,6 +101,7 @@ h2 {
     text-align: center;
     font-size: 1.2em;
     padding: 1em 1em 1em 1em;
+    color: #000;
 }
 
 .password {

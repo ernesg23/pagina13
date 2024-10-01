@@ -14,7 +14,14 @@
             // }
         })
             .done(function (html) {
-                $("#content").html(html);
+                let url = "modules/" + module + "/" + action + ".php"
+                if (url == "modules/users/logOut.php") {
+                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    location.reload();
+                    
+                } else{
+                    $("#content").html(html);
+                }
             });
 
     });

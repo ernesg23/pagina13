@@ -23,7 +23,7 @@
         <div class="writtenPostContainer">
             <h2>Artículos Escritos</h2>
             <div class="writtenPosts">
-                <img class="imgPost" src="./img/descarga1.png">
+                <img class="imgPost" src="./views/img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
                     <i class='bx bx-edit editArticle'></i>
                     <div class="postDescription">
@@ -32,7 +32,7 @@
                     </div>
             </div>
             <div class="writtenPosts">
-                <img class="imgPost" src="./img/descarga1.png">
+                <img class="imgPost" src="./views/img/descarga1.png">
                 <h3 class="titlePost">Título Artículo</h>
                     <i class='bx bx-edit editArticle'></i>
                     <div class="postDescription">

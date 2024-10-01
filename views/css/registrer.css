@@ -3,7 +3,7 @@ body {
 }
 .user-name {
     display: flex;
-    margin: 12px;
+    margin: 0px;
     justify-content: space-between;
     width: -webkit-fill-available;
     padding: 0rem 0rem;
@@ -68,15 +68,7 @@ line-height: 2;
   margin: 1rem 0 0 0;
   padding: 1em 1em;
 }
-ul {
-    list-style: none;
-}
-ul li a {
-    text-decoration: none;
-    color:black;
-    font-weight: 700;
-    font-size: 1.5em;
-}
+
 .title {
   text-align: center;
   padding: 0px 5px 5px ; 
