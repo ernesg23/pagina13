@@ -50,11 +50,11 @@
             <h3 class="titlePost">Título Artículo</h>
                 <p class="categoryPost">Categoría</p>
                 <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-        </div>   
-        <div class="edit">
+           
+    
                 <button id="editPost">Editar Artículo</button>
                 <button id="erasePost">Eliminar</button>
-            </div>
+            </>
         </div>    
 </div>            
         </section>
