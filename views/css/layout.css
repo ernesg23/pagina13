@@ -9,6 +9,15 @@
   color: #ffffff;
   padding-left: 0.5rem;
 }
+.lil{
+  display: none;
+}
+#menu{
+  justify-content: space-between;
+}
+#menu ul ul{
+  display: flex;
+}
 #smallArticlesContainer {
   display: flex;
   width: -webkit-fill-available;
@@ -86,6 +95,9 @@ body {
   background-color: #3e3e3e;
   color: #fff;
   border-right: 1px solid #000;
+  padding: 100%;
+  padding-top: 3px;
+  padding-bottom: 8px;
 }
 .article {
   background-color: #000000;
@@ -152,6 +164,7 @@ h3 {
   object-fit: cover;
 }
 .category-parent {
+  padding: 0;
   display: flex;
 }
 .img-foot {
@@ -206,42 +219,62 @@ ul li a {
   font-size: 1.5rem;
 }
 @media (max-width: 933px) {
+  #menu ul {
+    width: -webkit-fill-available;
+    list-style:none;
+    margin:0;
+    padding:0;
+   }
+   #menu ul li {
+    background-color:#2e518b;
+   }
+   #menu ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    width: 430px;
+    text-align: center;
+   }
+   #menu ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+   }
+   #menu ul li:hover {
+    background:#5b78a7;
+   }
+   #menu ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+   }
+   #menu ul ul li {
+    font-size: 20px;
+    float: none;
+   }
+   #menu ul ul li :hover {
+    background: #5b78a7;
+   }
+   #menu ul ul input {
+    line-height:120%;
+   }   
+   #menu ul li:hover > ul {
+    display:block;
+   }
   .searchBar {
-    width: 20rem;
+    width: 1rem;
   }
-  .category-parent {
-    display: flex;
-    overflow: hidden;
-  }
-  /* .navigationMenu {
-        display: block;
-    }
-    .navigationMenu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .navigationMenu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .navigationMenu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    .navmenu {
-        position: fixed;
-        left: -100%;
-        top: 110px;
-        gap: 0;
-        flex-direction: column;
-        background-color: #3f006b;
-        width: 100%;
-        text-align: center;
-        transition: .3s;
-    }
-    .navItem {
-        margin: 16px 0;
-    }
-    .navmenu.active {
-        left: 0;
-    } */
+
 }
 #content {
   display: flex;

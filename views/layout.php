@@ -29,17 +29,22 @@
                 <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
         </nav>
-        <div class="category-parent">
-            <input class="category-buttonnav" type="button" value="categoria 1" />
-            <input class="category-buttonnav" type="button" value="categoria 2" />
-            <input class="category-buttonnav" type="button" value="categoria 3" />
-            <input class="category-buttonnav" type="button" value="categoria 4" />
-            <input class="category-buttonnav" type="button" value="categoria 5" />
-            <input class="category-buttonnav" type="button" value="categoria 6" />
-            <input class="category-buttonnav" type="button" value="categoria 7" />
-            <input class="category-buttonnav" type="button" value="categoria 8" />
-            <input class="category-buttonnav" type="button" value="categoria 9" />
-            <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
+        <div id="menu">
+        <ul class="category-parent">
+            <li class="lil"><a  href="#">Categorias</a></li>
+            <ul>
+            <li><input class="category-buttonnav" type="button" value="categoria 1"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 2"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 3"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 4"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 5"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 6"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 7"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 8"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 9"/></li>
+            <li><input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10"/></li>
+            </ul>
+        </ul>
         </div>
         <ul class='actionsMenu'>
             <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
