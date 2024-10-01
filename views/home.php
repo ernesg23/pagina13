@@ -24,7 +24,7 @@
                         <img class="img" src="./views/img/advertisement.webp">
                     </div>
                     <template id="article-template">
-                        <div class="article">
+                        <div class="article" id="">
                             <img class="img" src="">
                             <div class="articlesDescriptions">
                                 <h2></h2>
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <template id="recent-article-template">
-                    <li class="recent-article">
+                    <li class="recent-article" id="">
                         <img class="img recent" src="">
                         <div class="recent-description">
                             <h3></h3>

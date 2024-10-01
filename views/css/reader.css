@@ -2,36 +2,39 @@
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #e3e3e3;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    background-color: #1e1f20;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    gap: 5px;
+#containerAllReaderRecent {
+    display: flex;
+    justify-content: center;
 }
-
+#containerAllReader {
+    display: flex;
+    justify-content: center;
+}
+.recent-post-list h4 {
+    margin-top: 1rem;
+}
 /* ARTICULO CENTRAL */
-main {
+.categoriesReader {
     grid-column-start: 7;
     grid-column-end: 16;
     display: flex;
     flex-direction: column;
-    width: center 80%;
+    width: 80%;
+    margin: 0 auto;
 }
 
 #categoriesReader {
     display: flex;
     flex-wrap: nowrap;
-    background-color: #1e1f20;
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 .category {
     margin-right: 10px;
-    box-sizing: border-box;
     padding: 5px;
     border-radius: 10px;
 }
@@ -45,7 +48,9 @@ main {
     border: 0.5px solid #1e1f20;
     padding: 10px;
     border-radius: 0.5em;
+    margin-bottom: 0;
 }
+
 #reader {
     background-color: #0e0e0e;
     padding: 0 10px 10px;
@@ -65,11 +70,10 @@ main {
 
 #author {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     max-height: 70px;
     padding-bottom: 10px;
-    margin-right: 70%;
+    margin-right: auto;
 }
 
 #author:hover {
@@ -80,8 +84,15 @@ main {
     max-height: 35px;
     padding-right: 10px;
 }
+
 hr {
-    border: 0.1px solid #1e1f20;
+    border: 0.1px solid #858585;
+}
+#category2 {
+    margin-bottom: 0;
+}
+#author p {
+    margin-bottom: 0;
 }
 
 #descriptionReader {
@@ -102,10 +113,9 @@ hr {
 
 .recent {
     display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
     margin-bottom: 20px;
     max-height: 80px;
-    align-items: center;
     background-color: #0e0e0e;
     border-radius: 0.5em;
 }
@@ -125,7 +135,7 @@ hr {
 }
 
 @media (max-width: 1820px) {
-    main {
+    .categoriesReader {
         grid-column-start: 2;
         grid-column-end: 14;
     }
@@ -137,7 +147,7 @@ hr {
 }
 
 @media (max-width: 1220px) {
-    main {
+    .categoriesReader {
         grid-column-start: 2;
         grid-column-end: 20;
     }

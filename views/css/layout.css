@@ -321,8 +321,8 @@ section {
 }
 .userName {
   font-size: 1rem;
-  align-self: center;
   margin-top: 1rem;
+  align-self: center;
   margin-right: 1rem;
   color: #fff;
   cursor: pointer;
@@ -358,6 +358,7 @@ section {
   padding: 5px;
   cursor: pointer;
   transition: .2s ease;
+  color: #000;
 }
 .actionsMenuItem:hover {
     background-color: #d1d1d1;
