@@ -60,7 +60,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
             url: "./modules/posts/reader.php",
             method: "post",
             data: { articleId: id },
-            dataType: "json",
+            dataType: "html",
             success: (postReaderData) => {
               console.log(postReaderData);
               $("#content").html(postReaderData);
@@ -88,7 +88,6 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
             dataType: "html",
             success: (postReaderData) => {
               console.log(postReaderData);
-              const dataToUse = postReaderData[0];
               $("#content").html(postReaderData);
               console.log(recentPosts);
               //   const recentPostsReader = document.querySelector(
