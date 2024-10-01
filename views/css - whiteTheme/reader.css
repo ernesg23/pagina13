@@ -6,11 +6,8 @@
     padding: 0px;
 }
 
-body {
-    background-color: #f0f4f9;
-}
-
 main {
+    background-color: #f0f4f9;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     gap: 5px;
