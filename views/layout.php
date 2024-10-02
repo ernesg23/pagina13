@@ -29,29 +29,29 @@
                 <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
         </nav>
-        <div id="menu">
-        <ul class="category-parent">
-            <li class="lil"><a  href="#">Categorias</a></li>
-            <ul>
-            <li><input class="category-buttonnav" type="button" value="categoria 1"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 2"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 3"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 4"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 5"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 6"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 7"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 8"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 9"/></li>
-            <li><input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10"/></li>
-            </ul>
-        </ul>
+        <div class="category-parent">
+            <p class="categoryOpen">Categorias</p>
+            <div class="categoryButtons">
+                <input class="category-buttonnav" type="button" value="Noticias" />
+                <input class="category-buttonnav" type="button" value="Base de datos" />
+                <input class="category-buttonnav" type="button" value="Matematicas" />
+                <input class="category-buttonnav" type="button" value="Organizacion Computacional" />
+                <input class="category-buttonnav" type="button" value="Logica Computacional" />
+                <input class="category-buttonnav" type="button" value="Lengua y Literatura" />
+                <input class="category-buttonnav" type="button" value="Ingles tecnico" />
+                <input class="category-buttonnav" type="button" value="Laboratorio de Algoritmos" />
+                <input class="category-buttonnav" type="button" value="Proyecto Informatico" />
+                <input class="category-buttonnav" type="button" value="Sistemas Operativos" id="buttonnav-10" />
+            </div>
         </div>
         <ul class='actionsMenu'>
             <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
             <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR' ></i></li>
             <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+            
         </ul>
     </header>
     <main>
