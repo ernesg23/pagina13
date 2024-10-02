@@ -221,7 +221,7 @@ ul li a {
 #search {
   display: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1388px) {
   .searchBar {
     width: 20rem;
   }
@@ -242,6 +242,9 @@ ul li a {
     display: flex;
     flex-direction: column;
     border: none;
+  }
+  .article.small {
+    width: -webkit-fill-available;
   }
   .category-buttonnav {
     border: 0;
