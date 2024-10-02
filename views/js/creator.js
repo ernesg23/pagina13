@@ -85,6 +85,7 @@ sendBtn.addEventListener("click", () => {
     processData: false,
     success: () => {
       alert("Articulo creado con exito");
+      location.reload()
     },
     error: (jqXHR, textStatus, errorThrown) => {
       console.error('Error:', textStatus, errorThrown);

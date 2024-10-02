@@ -89,6 +89,10 @@ hr {
 
 #descriptionReader {
   padding: 10px 0 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ARTICULOS LATERALES */
