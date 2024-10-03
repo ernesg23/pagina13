@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2024 at 02:14 AM
+-- Generation Time: Oct 03, 2024 at 04:19 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accountrecovery` (
-  `idRecovery` int(11) NOT NULL,
-  `token` int(11) NOT NULL,
+  `idRecovery` int(255) NOT NULL,
+  `token` int(255) NOT NULL,
   `developement_at` datetime NOT NULL,
-  `Users_idUsers` int(11) NOT NULL
+  `Users_idUsers` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE `accountrecovery` (
 --
 
 CREATE TABLE `categories` (
-  `idCategories` int(11) NOT NULL,
+  `idCategories` int(255) NOT NULL,
   `name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -55,7 +55,12 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 (3, 'testeito'),
 (4, 'testeazo'),
 (5, 'teasdwadaw'),
-(6, 'teasdsafaw');
+(6, 'teasdsafaw'),
+(7, 'testazp'),
+(8, 'tastead'),
+(9, 'Fix'),
+(10, 'EstoError'),
+(11, 'matoaErnesto');
 
 -- --------------------------------------------------------
 
@@ -64,8 +69,8 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 --
 
 CREATE TABLE `favorites` (
-  `Posts_idPosts` int(11) NOT NULL,
-  `Users_idUsers` int(11) NOT NULL
+  `Posts_idPosts` int(255) NOT NULL,
+  `Users_idUsers` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -75,15 +80,15 @@ CREATE TABLE `favorites` (
 --
 
 CREATE TABLE `posts` (
-  `idPosts` int(11) NOT NULL,
+  `idPosts` int(255) NOT NULL,
   `title` varchar(45) NOT NULL,
   `subtitle` tinytext NOT NULL,
-  `description` text NOT NULL,
+  `description` mediumtext NOT NULL,
   `portraitImg` mediumtext NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
-  `Users_idUsers` int(11) NOT NULL,
+  `Users_idUsers` int(255) NOT NULL,
   `isArchived` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -99,7 +104,14 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 (5, 'Testeootravez', 'trmenedotesteobro', 'ASJNOIDWAHDIUOWASJNDWASIHJNDMAWIODNAWIODHNAWOIDASHNDIOAWNIODSANDIOWAJMndIOSADIOWADIAWOSHNDIOSANHDIOWANDAWIOHDNNSAIODHNWAIODNJHSAIODJNIAOWNHDASIOUJHNSAHJDIOASJNDIOASNMDIOSAJDNMSAIODJMNSAIODJMSIAMNDIOSANDMSAIODNSAOIDNSAIODSMADIOSAMDIOSAMDIOSANMDSIOANDSAIONDISAONDIOSANDIOSADNASIODNSAION', '../../views/img/uploads/test.png', '2024-09-29 00:00:00', NULL, NULL, 13, 0),
 (6, 'Testeo2', 'Testeo testeo', 'Testeo', '../../views/img/uploads/Screenshot 2023-12-11 234603.png', '2024-09-29 00:00:00', NULL, NULL, 13, 0),
 (7, 'Test', 'Test', 'Testep', '../../views/img/uploads/Screenshot 2023-12-11 234603.png', '2024-09-29 00:00:00', NULL, NULL, 13, 0),
-(8, 'tgest', 'setfasdfaw', 'teasdwasdswadaw', '../../views/img/uploads/test.png', '2024-09-29 00:00:00', NULL, NULL, 13, 0);
+(8, 'tgest', 'setfasdfaw', 'teasdwasdswadaw', '../../views/img/uploads/test.png', '2024-09-29 00:00:00', NULL, NULL, 13, 0),
+(9, 'Test', 'Test', 'Test', '../../views/img/uploads/Screenshot 2023-12-24 181158.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(10, 'Test', 'Test', 'Test', '../../views/img/uploads/Screenshot 2023-12-24 181158.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(11, 'Testeado', 'testadi', 'tastadr', '../../views/img/uploads/Screenshot 2023-12-24 181158.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(12, 'Testeo desde el fix al error de inicializacio', 'Testeo desde el fix al error de inicializacion', 'Testeo desde el fix al error de inicializacion', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(13, 'Test', 'Test', 'Test', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(14, 'Test', 'Test', 'TEst', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(15, 'Si es esto mato a ernesto', 'Test', 'Test', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0);
 
 -- --------------------------------------------------------
 
@@ -108,8 +120,8 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 --
 
 CREATE TABLE `posts_has_categories` (
-  `Posts_idPosts` int(11) NOT NULL,
-  `Categories_idCategories` int(11) NOT NULL
+  `Posts_idPosts` int(255) NOT NULL,
+  `Categories_idCategories` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -122,7 +134,9 @@ INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) 
 (4, 3),
 (5, 4),
 (6, 5),
-(8, 6);
+(8, 6),
+(11, 8),
+(15, 11);
 
 -- --------------------------------------------------------
 
@@ -210,19 +224,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
-  MODIFY `idRecovery` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRecovery` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `idPosts` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
