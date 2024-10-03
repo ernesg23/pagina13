@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2024 at 04:19 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Generation Time: Oct 04, 2024 at 12:27 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,7 +60,10 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 (8, 'tastead'),
 (9, 'Fix'),
 (10, 'EstoError'),
-(11, 'matoaErnesto');
+(11, 'matoaErnesto'),
+(12, 'promo'),
+(13, 'promo'),
+(14, 'adshinawoldmaw');
 
 -- --------------------------------------------------------
 
@@ -111,7 +114,17 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 (12, 'Testeo desde el fix al error de inicializacio', 'Testeo desde el fix al error de inicializacion', 'Testeo desde el fix al error de inicializacion', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
 (13, 'Test', 'Test', 'Test', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
 (14, 'Test', 'Test', 'TEst', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
-(15, 'Si es esto mato a ernesto', 'Test', 'Test', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0);
+(15, 'Si es esto mato a ernesto', 'Test', 'Test', '../../views/img/uploads/Screenshot 2024-02-02 185711.png', '2024-10-02 00:00:00', NULL, NULL, 13, 0),
+(16, 'sape', 'ingreos a la cgt', 'promocion para la cgt', '../../views/img/uploads/download.jfif', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(17, 'sape', 'ingreos a la cgt', 'promocion para la cgt', '../../views/img/uploads/download.jfif', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(18, 'INGRESO LA CGT', 'PROMO PARA LA CGT EN ESTUDIANTES PERONISTAS', 'larreta requiere de sangre joven', '../../views/img/uploads/download.jfif', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(19, 'INGRESO LA CGT', 'PROMO PARA LA CGT EN ESTUDIANTES PERONISTAS', 'larreta requiere de sangre joven', '../../views/img/uploads/download.jfif', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(20, 'tesadasmdoaw', 'mdsaiodmwao', 'sadoiwamdopsa', '../../views/img/uploads/Untitled-2024-06-04-1415.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(21, 'tesadasmdoaw', 'mdsaiodmwao', 'sadoiwamdopsa', '../../views/img/uploads/Untitled-2024-06-04-1415.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(22, 'wqudhajoñaiednwalkdw', 'dijaslmdnaiomd awjdowandmoawnoas', 'asjdoawñdmwaoñd', '../../views/img/uploads/ej33.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(23, 'wqudhajoñaiednwalkdw', 'dijaslmdnaiomd awjdowandmoawnoas', 'asjdoawñdmwaoñd', '../../views/img/uploads/ej33.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(24, 'matoaErnesto', 'hdilidjhsilfhselidhwaid', 'jawidldjwalidjawd', '../../views/img/uploads/nextstep.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(25, 'matoaErnesto', 'hdilidjhsilfhselidhwaid', 'jawidldjwalidjawd', '../../views/img/uploads/nextstep.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0);
 
 -- --------------------------------------------------------
 
@@ -136,7 +149,9 @@ INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) 
 (6, 5),
 (8, 6),
 (11, 8),
-(15, 11);
+(15, 11),
+(22, 14),
+(24, 11);
 
 -- --------------------------------------------------------
 
@@ -230,13 +245,13 @@ ALTER TABLE `accountrecovery`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `users`
