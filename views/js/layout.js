@@ -23,30 +23,48 @@ $.ajax({
     if (data != false) {
       let profile = `<p class='userName userActionsClick'>${data} </p>
           <img src="./views/img/sin perfil.png" class='userImg userActionsClick' alt="${data} profile picture" loading="lazy">`;
-      const menu = document.querySelector(".navMenu");
-      $(menu).html(profile);
-      $(".userActionsClick").click(() => {
-        const menu = document.querySelector(".actionsMenu");
-        menu.classList.toggle("active");
+      const menuNav = document.querySelector(".navMenu");
+      $(menuNav).html(profile);
+      const menu = document.querySelector(".actionsMenu");
+      const toggleButton = document.querySelector(".userActionsClick");
 
-        document.addEventListener("click", (event) => {
-          const menuActions = document.querySelector(".actionsMenu");
-          if (
-            menuActions.classList.contains("active") &&
-            !menuActions.contains(event.target) &&
-            !event.target.classList.contains("userActionsClick")
-          ) {
-            menuActions.style.animation = "vanish 0.3s forwards";
-            setTimeout(() => {
-              menuActions.classList.remove("active");
-              menuActions.style.display = "none";
-            }, 300); // Duración de la animación
-          }
-        });
+      toggleButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleButton.style.pointerEvents = "none"; // Deshabilitar el botón
+        menu.classList.toggle("active");
 
         if (menu.classList.contains("active")) {
           menu.style.display = "flex";
           menu.style.animation = "appear 0.4s forwards";
+        } else {
+          menu.style.animation = "vanish 0.3s forwards";
+          menu.addEventListener(
+            "animationend",
+            () => {
+              menu.style.display = "none";
+              toggleButton.style.pointerEvents = "auto"; // Habilitar el botón después de la animación
+            },
+            { once: true }
+          );
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !event.target.closest(".userActionsClick")
+        ) {
+          menu.style.animation = "vanish 0.3s forwards";
+          menu.addEventListener(
+            "animationend",
+            () => {
+              menu.classList.remove("active");
+              menu.style.display = "none";
+              toggleButton.style.pointerEvents = "auto"; // Habilitar el botón cuando se hace clic fuera del menú
+            },
+            { once: true }
+          );
         }
       });
     }

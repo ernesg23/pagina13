@@ -1,33 +1,37 @@
 
-    $(".buttonnav").on("click", function () {
-        var parts = $(this).attr("data-page").split('-');
+let creatorAccessCount = 0;
 
-        var module = parts[0];
-        var action = parts[1];
+$(".buttonnav").on("click", function () {
+    var parts = $(this).attr("data-page").split('-');
 
-        $.ajax({
-            method: "GET",
-            url: "modules/" + module + "/" + action + ".php",
-            // data: {
-            //     module: module,
-            //     action: action
-            // }
-        })
-            .done(function (html) {
-                let url = "modules/" + module + "/" + action + ".php"
-                if (url == "modules/users/logOut.php") {
-                    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                    location.reload();
-                    
-                } else{
-                    $("#content").html(html);
-                    if(url == "modules/users/creator.php") {
-                        initializeCreator()
-                    }
+    var module = parts[0];
+    var action = parts[1];
+
+    $.ajax({
+        method: "GET",
+        url: "modules/" + module + "/" + action + ".php",
+        // data: {
+        //     module: module,
+        //     action: action
+        // }
+    })
+    .done(function (html) {
+        let url = "modules/" + module + "/" + action + ".php";
+        if (url == "modules/users/logOut.php") {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            location.reload();
+        } else {
+            $("#content").html(html);
+            if (url == "modules/users/creator.php") {
+                creatorAccessCount++;
+                if (creatorAccessCount >= 2) {
+                    initializeCreator();
                 }
-            });
-
+            }
+        }
     });
+});
+
 const initializeCreator = ()=> {
     let write = document.querySelector("#write");
 let writecontainer = document.querySelector("#writecontainer");

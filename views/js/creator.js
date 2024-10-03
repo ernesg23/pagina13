@@ -74,7 +74,7 @@ sendBtn.addEventListener("click", () => {
   formData.append('author', author);
   formData.append('images', imagesAndVideos);
   formData.append('email', authorEmail);
-  formData.append('publishedDate', actualDate);
+  formData.append('publishedDate', date);
   formData.append('isArchived', 0);
 
   $.ajax({
@@ -115,7 +115,7 @@ archiveBtn.addEventListener("click", () => {
   formData.append('author', author);
   formData.append('images', imagesAndVideos);
   formData.append('email', authorEmail);
-  formData.append('publishedDate', actualDate);
+  formData.append('publishedDate', date);
   formData.append('isArchived', 1);
 
   $.ajax({
