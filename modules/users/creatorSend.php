@@ -50,7 +50,7 @@ VALUES ('" . $_POST['title'] . "', '" . $_POST['subtitle'] . "', '" . $_POST['de
 $category = mysqli_real_escape_string($connection, $_POST['categories']);
 $queryCheckCategory = "SELECT * FROM CATEGORIES WHERE NAME = '$category'";
 
-if (mysqli_num_rows(mysqli_query($connection, $queryCheckCategory)) == 0) {
+if (mysqli_num_rows(mysqli_query($connection, $queryCheckCategory)) == NULL) {
     $queryInsertCategory = "INSERT INTO CATEGORIES(name) VALUES ('$category')";
     mysqli_query($connection, $queryInsertCategory);
 }

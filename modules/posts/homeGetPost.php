@@ -1,6 +1,7 @@
 <?php
 include '../users/connection.php';
-$query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, pc.Categories_idCategories, c.idCategories, c.name
+$query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, pc.Categories_idCategories, 
+c.idCategories, c.name
           FROM posts p
           INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
           INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
