@@ -116,6 +116,9 @@ body {
   width: 14.6rem;
 }
 .articlesDescriptions {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
   .category {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
@@ -447,7 +450,8 @@ section {
 }
 .actionsMenu {
   display: none;
-  transition: 0.2s ease-in;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
 .actionsMenu.active {
   display: flex;
@@ -461,8 +465,30 @@ section {
   border-radius: 1rem;
   list-style: none;
   padding: 1rem;
-  transition: 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  animation: appear 0.4s forwards;
 }
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0.2rem);
+  }
+}
+@keyframes vanish {
+  from {
+    opacity: 1;
+    transform: translateY(0.2rem);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}
+
 .actionsMenuItem {
   border-bottom: 1px solid #c9c9c9;
   display: flex;

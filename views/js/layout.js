@@ -1,8 +1,8 @@
 const resposiveCategory = document.querySelector(".categoryOpen");
 const categoryButtons = document.querySelector(".categoryButtons");
-$(".MainTitle").click(()=> {
-  location.reload()
-})
+$(".MainTitle").click(() => {
+  location.reload();
+});
 resposiveCategory.addEventListener("click", () => {
   categoryButtons.classList.add("active");
   document.addEventListener("click", (event) => {
@@ -28,6 +28,7 @@ $.ajax({
       $(".userActionsClick").click(() => {
         const menu = document.querySelector(".actionsMenu");
         menu.classList.toggle("active");
+
         document.addEventListener("click", (event) => {
           const menuActions = document.querySelector(".actionsMenu");
           if (
@@ -35,14 +36,23 @@ $.ajax({
             !menuActions.contains(event.target) &&
             !event.target.classList.contains("userActionsClick")
           ) {
-            menuActions.classList.remove("active");
+            menuActions.style.animation = "vanish 0.3s forwards";
+            setTimeout(() => {
+              menuActions.classList.remove("active");
+              menuActions.style.display = "none";
+            }, 300); // Duración de la animación
           }
         });
+
+        if (menu.classList.contains("active")) {
+          menu.style.display = "flex";
+          menu.style.animation = "appear 0.4s forwards";
+        }
       });
     }
   },
 });
 function expandSearchBar() {
-  const searchBar = document.getElementById('searchBar');
+  const searchBar = document.getElementById("searchBar");
   searchBar.focus();
 }
