@@ -42,3 +42,7 @@ $.ajax({
     }
   },
 });
+function expandSearchBar() {
+  const searchBar = document.getElementById('searchBar');
+  searchBar.focus();
+}

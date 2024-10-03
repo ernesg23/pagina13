@@ -222,8 +222,58 @@ ul li a {
   display: none;
 }
 @media (max-width: 1024px) {
+  .buttonnav {
+    height: none;
+    margin: 0;
+    width: 7rem;
+  }
+  .navMenu {
+    position: relative;
+}
+
+.navMenu .dropbtn {
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 2rem;
+    transition: .3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.navMenu:hover .dropdown-content {
+    display: block;
+    top: 2.5rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content input {
+    width: 100%;
+    border: none;
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #333;
+}
+
+.dropdown-content input:hover {
+    background-color: #ddd;
+}
   .searchBar {
-    width: 20rem;
+    display: flex!;
+    width: 12rem;
   }
   .categoryOpen {
     display: flex;

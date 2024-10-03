@@ -25,9 +25,12 @@
                 <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
             </search>
             <div class="navMenu">
+            <i class='bx bx-menu dropbtn'></i>
+            <div class="dropdown-content">
                 <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
                 <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
             </div>
+        </div>
         </nav>
         <div class="category-parent">
             <p class="categoryOpen">Categorias</p>
