@@ -100,18 +100,22 @@ hr {
   align-self: start;
   margin: 50px 0 0 45px;
   grid-column-start: 16;
-  grid-column-end: 20;
+  grid-column-end: 21;
   grid-row-start: 1;
 }
 
 #recentPosts h2 {
   padding-bottom: 15px;
 }
-
+.recent-description {
+  h3 {
+    font-size: 1.2rem;
+  }
+}
 .recent {
   display: flex;
   flex-wrap: nowrap;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
   max-height: 80px;
   min-width: 100%;
   align-items: center;
@@ -128,9 +132,9 @@ hr {
   margin-bottom: 0;
 }
 .recent img {
-  max-width: 5rem;
+  max-width: 8rem;
   border-radius: 0.5rem;
-  min-height: 75px;
+  max-height: 5rem;
   padding: 5px 10px 5px 5px;
 }
 .recentList {

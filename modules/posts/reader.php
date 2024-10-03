@@ -1,6 +1,7 @@
 <?php
 include '../users/connection.php';
 include './readerGet.php';
+include './readerGetPost.php'
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,6 +14,7 @@ include './readerGet.php';
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/reader.css">
     <script type="module" src="./views/js/profile.js"></script>
+    <script type="module" src="./views/js/reader.js"></script>
 </head>
 
 <body>
@@ -37,7 +39,18 @@ include './readerGet.php';
             </div>
             <div id="recentPosts">
                 <h2>Artículos Recientes</h2>
-                <ul class="recentList"></ul>
+                <!-- <ul class="recentList"></ul> -->
+                <ul id="recentArticlesListContainer" class="recent-post-list recentListReader">
+                    <?php foreach ($rows2 as $post): ?>
+                        <li class="recent" id="<?php echo $post['idPosts']; ?>">
+                            <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="img" alt="Imagen del artículo">
+                            <div class="recent-description">
+                                <h3><?php echo $post['title']; ?></h3>
+                                <p><?php echo $post['subtitle']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
                 <template id="recent-article-template">
                     <li class="recent" id="">
                         <img src="" class="img">

@@ -1,6 +1,5 @@
 const template = document.querySelector("#article-template");
 const recentTemplate = document.querySelector("#recent-article-template");
-
 if (template && template.content && recentTemplate && recentTemplate.content) {
   let posts = [];
   let recentPosts = [];
@@ -62,13 +61,6 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
             dataType: "html",
             success: (postReaderData) => {
               $("#content").html(postReaderData);
-                const recentPostsReader = postReaderData.querySelector(
-                  "#recentArticlesListContainerReader .recent-post-list"
-                );
-
-                recentPosts.forEach((post) => {
-                  recentPostsReader.appendChild(post);
-                });
             },
           });
         });

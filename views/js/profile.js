@@ -31,23 +31,12 @@ $.ajax({
                     dataType: "html",
                     success: (postReaderData) => {
                         $("#content").html(postReaderData);
-                        const recentPostsReader = $(".recentList");
-                        recentPosts.forEach((post) => {
-                            recentPostsReader.append(post);
-                            console.log(recentPostsReader);
-                            $(recentPostsReader).html()
-                        });
+                        
                     },
                 });
             });
-
             recentPosts.push(clonedRecentTemplate);
 
-        });
-
-        const recentArticlesListContainer = document.querySelector(".recentList");
-        recentPosts.forEach((post) => {
-            recentArticlesListContainer.appendChild(post);
         });
     },
 });
