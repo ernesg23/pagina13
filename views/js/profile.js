@@ -1,42 +1,36 @@
-const recentTemplate = document.querySelector("#recent-article-template");
-let recentPosts = [];
-
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+const edit = document.querySelector(".editArticle")
+const author = getCookie("username");
+$(edit).click (()=> {
+    let id = this.id
+    $.ajax({
+        url: "./modules/posts/articleEdit.php",
+        data: {articleId: id},
+        method: "POST",
+        success: (data) => {
+            console.log("anda")
+        }
+    })
+})
 $.ajax({
-    url: "./modules/posts/homeGetPost.php",
+    url: "./modules/posts/articleWrittenGet.php",
+    data: {authorName: author},
     method: "POST",
-    dataType: "json",
-    success: (dato) => {
-        $.each(dato, (index, data) => {
-            const clonedRecentTemplate = recentTemplate.content.cloneNode(true);
-            const recentImg = clonedRecentTemplate.querySelector(".img");
-            const recentDescription = clonedRecentTemplate.querySelector(".recent-description");
-            const recentId = data["idPosts"];
-            const recentTitle = recentDescription.querySelector("h3");
-            const recentDesc = recentDescription.querySelector("p");
-
-            const recentArticle = clonedRecentTemplate.querySelector(".recent");
-            recentArticle.id = recentId;
-            recentTitle.textContent = data["title"];
-            recentDesc.textContent = data["subtitle"];
-            recentImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
-
-            recentArticle.addEventListener("click", function () {
-                const id = this.id;
-                console.log(id);
-
-                $.ajax({
-                    url: "./modules/posts/reader.php",
-                    method: "POST",
-                    data: { articleId: id },
-                    dataType: "html",
-                    success: (postReaderData) => {
-                        $("#content").html(postReaderData);
-                        
-                    },
-                });
-            });
-            recentPosts.push(clonedRecentTemplate);
-
-        });
-    },
-});
+    success: (data)=>{
+        console.log(data)
+    }
+})

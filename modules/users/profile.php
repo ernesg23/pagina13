@@ -1,3 +1,6 @@
+<?php
+include "../posts/articleWrittenGet.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="../../views/js/profile.js"></script>
+    <script type="module" src="./views/js/profile.js"></script>
 </head>
 
 <body id="content">
@@ -28,17 +31,20 @@
     <section>
         <div class="writtenPostContainer">
             <h2>Artículos Escritos</h2>
+            <?php foreach ($rows as $post): ?>
+                        <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
+                            <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
+                            <h3 class="titlePost"><?php echo $post['title']; ?></h>
+                            <i class='bx bx-edit editArticle' id="<?php echo $post['idPosts']; ?>"></i>
+                            <div class="postDescription">
+                                <p class="categoryPost"><?php echo $post['name']; ?></p>
+                                <p class="subtitlePost"><?php echo $post['subtitle']; ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+            
             <div class="writtenPosts">
-                <img class="imgPost" src="./views/img/descarga1.png">
-                <h3 class="titlePost">Título Artículo</h>
-                    <i class='bx bx-edit editArticle'></i>
-                    <div class="postDescription">
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </div>
-            </div>
-            <div class="writtenPosts">
-                <img class="imgPost" src="./views/img/descarga1.png">
+                <img class="imgPost" src="../../views/img/uploads/download.jfif">
                 <h3 class="titlePost">Título Artículo</h>
                     <i class='bx bx-edit editArticle'></i>
                     <div class="postDescription">
