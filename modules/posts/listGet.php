@@ -10,13 +10,12 @@ $query = $connection->prepare("
     INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
     WHERE (p.isArchived = 0 AND p.title LIKE ?) 
        OR (p.isArchived = 0 AND c.name LIKE ?)
-    ORDER BY p.idPosts DESC
-    LIMIT 10
+    ORDER BY p.idPosts DESC;
 ");
+
 // add searchTerm
 $searchTerm = '%' . $_POST['content'] . '%';
 $query->bind_param('ss', $searchTerm, $searchTerm);
-
 // query
 $query->execute();
 $result = $query->get_result();
@@ -26,7 +25,6 @@ $rows = [];
 while ($response = $result->fetch_assoc()) {
     $rows[] = $response;
 }
-
 
 // close connection and query
 $query->close();

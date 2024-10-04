@@ -11,6 +11,7 @@ $query = $connection->prepare("
     WHERE (p.isArchived = 0 AND p.title LIKE ?) 
        OR (p.isArchived = 0 AND c.name LIKE ?)
     ORDER BY p.idPosts DESC
+    LIMIT 6
 ");
 // add searchTerm
 $searchTerm = '%' . $_POST['content'] . '%';

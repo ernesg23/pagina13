@@ -88,9 +88,34 @@ searchForm.addEventListener("submit", (event) => {
     data: { content: content },
     success: (data) => {
       $("#content").html(data);
+      initializeSearchList();
     },
   });
 });
+const initializeSearchList = () => {
+  function articleClick() {
+    const id = this.id;
+    $.ajax({
+      url: "./modules/posts/reader.php",
+      method: "post",
+      data: { articleId: id },
+      dataType: "html",
+      success: (postReaderData) => {
+        $("#content").html(postReaderData);
+      },
+    });
+  }
+  const clickedRecentArticle = document.querySelectorAll(
+    ".recent-article-search"
+  );
+  const clickedArticles = document.querySelectorAll(".articleSearch");
+  $.each(clickedArticles, (index, article) => {
+    article.addEventListener("click", articleClick);
+  });
+  $.each(clickedRecentArticle, (index, article) => {
+    article.addEventListener("click", articleClick);
+  });
+};
 searchForm.addEventListener("input", (event) => {
   event.preventDefault();
   let searchResult = [];
@@ -176,4 +201,30 @@ document.addEventListener("click", (event) => {
       { once: true }
     );
   }
+});
+$(".category-buttonnav").click((event) => {
+  const cat = event.target.value;
+  $.ajax({
+    url: "./modules/posts/list.php",
+    method: "post",
+    dataType: "html",
+    data: { content: cat },
+    success: (data) => {
+      $("#content").html(data);
+      initializeSearchList();
+    },
+  });
+});
+$(".categorySearch").click((event) => {
+  const cat = event.target.value;
+  $.ajax({
+    url: "./modules/posts/list.php",
+    method: "post",
+    dataType: "html",
+    data: { content: cat },
+    success: (data) => {
+      $("#content").html(data);
+      initializeSearchList();
+    },
+  });
 });

@@ -1,7 +1,7 @@
 <?php
 include '../users/connection.php';
 include './listGet.php';
-include './readerGetPost.php'
+include './listGetPost.php'
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,6 +14,7 @@ include './readerGetPost.php'
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/list.css">
     <script type="module" src="./views/js/list.js"></script>
+    <link rel="stylesheet" href="./views/css/layout.css">
 </head>
 
 <body>
@@ -32,7 +33,7 @@ include './readerGetPost.php'
                         </li>
                     </template>
                     <?php foreach ($rows as $row): ?>
-                        <li class="articleSearch" id="<?php echo $row['idPosts']?>">
+                        <li class="articleSearch" id="<?php echo $row['idPosts'] ?>">
                             <img class="imgPost" src="<?php echo str_replace('../', '', $row['portraitImg']); ?>">
                             <div class="postDesc">
                                 <h3 class="titlePost"><?php echo $row['title']; ?></h3>
@@ -71,23 +72,7 @@ include './readerGetPost.php'
             </template>
         </div>
 
-        <section>
-            <ul class="pagination">
-                <li class="paginationItem disabled arrowBackwards">
-                    <p>&laquo;</p>
-                </li>
-                <li class="paginationItem number active">
-                    <p>1</p>
-                </li>
-                <li class="paginationItem number">
-                    <p>2</p>
-                </li>
-                <!-- Esto se va a generar automaticamente con  -->
-                <li class='paginationItem arrowForward'>
-                    <p>&raquo;</p>
-                </li>
-            </ul>
-
+            
     </main>
 </body>
 

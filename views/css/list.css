@@ -19,6 +19,7 @@
   border-radius: 0.5rem;
   margin-bottom: 5px;
   transition: .3s ease;
+  break-inside: avoid-column;
 }
 .articleSearch:hover {
     background-color: #3a3a3a;
@@ -59,12 +60,11 @@
   list-style: none;
   padding: 0;
 }
-.listPosts li {
-  break-inside: avoid;
-}
 .containerSearchAll {
   display: flex;
   justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 .recent-articles {
   margin-left: 5rem;
@@ -90,6 +90,10 @@
   cursor: pointer;
   box-shadow: 0 0 10px #666666;
 }
+a {
+    color: #fff;
+    text-decoration: none;
+}
 .recent-description {
   display: flex;
   width: -webkit-fill-available;
@@ -111,6 +115,7 @@
 }
 .pagination {
   height: 5rem;
+  margin-bottom: 0;
   display: flex;
   list-style: none;
   flex-direction: row;

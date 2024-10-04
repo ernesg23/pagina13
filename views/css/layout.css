@@ -83,13 +83,14 @@ body {
   display: flex;
 }
 .category-buttonnav {
-  height: 2rem;
+  height: auto;
   width: -webkit-fill-available;
   border: none;
   background-color: #3e3e3e;
   color: #fff;
   border-right: 1px solid #000;
   transition: 0.5s ease;
+  text-wrap: balance;
 }
 .category-buttonnav:hover {
   background-color: #686868;
@@ -278,7 +279,11 @@ ul li a {
   .searchBar {
     display: flex!;
   }
+  .iconActionMenu {
+    color: #000;
+  }
   .categoryOpen {
+    cursor: pointer;
     display: flex;
     color: #fff;
     background-color: #1a1a1a;
