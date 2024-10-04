@@ -1,3 +1,8 @@
+<?php
+include '../users/connection.php';
+include './readerGet.php';
+include './readerGetPost.php'
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,9 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página13 - Artículo</title>
-    <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../../views/css/reader.css">
+    <link rel="stylesheet" href="./views/css/reader.css">
+    <script type="module" src="./views/js/profile.js"></script>
+    <script type="module" src="./views/js/reader.js"></script>
 </head>
 
 <body>
@@ -15,44 +22,44 @@
         <section>
             <div id="main-post">
                 <div id="categoriesReader">
-                    <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p>
-                    <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">Categoría</p>
+                    <p id="category1" class="category" style="background-color: rgb(244, 164, 49);"><?php echo $rows[0]['name'] ?></p>
+                    <p id="category2" class="category" style="background-color: rgb(14, 46, 89);"><?php echo $rows[0]['name'] ?></p>
                 </div>
-                <h2 id="readerTitle">Título Artículo</h2>
+                <h2 id="readerTitle"><?php echo $rows[0]['title'] ?></h2>
                 <div id="reader">
-                    <p id="readerSubtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    <img id="readerPortrait" src="../../views/img/society.jfif">
+                    <p id="readerSubtitle"><?php echo $rows[0]['subtitle'] ?></p>
+                    <img id="readerPortrait" src="<?php echo $rows[0]['portraitImg'] = str_replace('../', '', $rows[0]['portraitImg']); ?>">
                     <div id="author">
-                        <img src="../../views/img/sin perfil.png">
-                        <p>Nombre Autor</p>
+                        <img src="./views/img/sin perfil.png">
+                        <p><?php echo $rows[0]['authorName'] ?></p>
                     </div>
                     <hr>
-                    <p id="descriptionReader">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia sit qui, harum nobis laudantium, reprehenderit animi temporibus sequi, laborum quos incidunt optio veritatis! Perspiciatis dolorem aspernatur iure similique harum!</p>
+                    <p id="descriptionReader"><?php echo $rows[0]['description'] ?></p>
                 </div>
             </div>
             <div id="recentPosts">
                 <h2>Artículos Recientes</h2>
-                <div class="recent">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
-                    <div>
-                        <h3>Título del Artículo 1</h3>
-                        <p>Descripción breve del artículo 1</p>
-                    </div>
-                </div>
-                <div class="recent">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 2">
-                    <div>
-                        <h3>Título del Artículo 2</h3>
-                        <p>Descripción breve del artículo 2 hhoiijofioj kshifihosiof</p>
-                    </div>
-                </div>
-                <div class="recent">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 3">
-                    <div>
-                        <h3>Título del Artículo 3</h3>
-                        <p>Descripción breve del artículo 3</p>
-                    </div>
-                </div>
+                <!-- <ul class="recentList"></ul> -->
+                <ul id="recentArticlesListContainer" class="recent-post-list recentListReader">
+                    <?php foreach ($rows2 as $post): ?>
+                        <li class="recent" id="<?php echo $post['idPosts']; ?>">
+                            <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="img" alt="Imagen del artículo">
+                            <div class="recent-description">
+                                <h3><?php echo $post['title']; ?></h3>
+                                <p><?php echo $post['subtitle']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <template id="recent-article-template">
+                    <li class="recent" id="">
+                        <img src="" class="img">
+                        <div class="recent-description">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </li>
+                </template>
             </div>
         </section>
     </main>

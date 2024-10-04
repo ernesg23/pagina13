@@ -2,11 +2,11 @@ body {
     background-color: #212121;
 }
 .user-name {
-    display: flex;
-    margin: 0px;
-    justify-content: space-between;
-    width: -webkit-fill-available;
-    padding: 0rem 0rem;
+  display: flex;
+  margin: 1rem;
+  justify-content: space-between;
+  width: -webkit-fill-available;
+  padding: 0rem 0rem;
 }
 .container {
   display: flex;
@@ -91,6 +91,7 @@ line-height: 2;
 .username {
   width: 10rem;
   margin: 0;
+  cursor: auto;
 }
 .container {
   min-height: 100dvh;

@@ -14,39 +14,59 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
-    
+
 </head>
 
 <body>
     <header>
         <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
-            <search>
-                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
+            <search class="searchBarContainer">
+                <form class="searchBarForm">
+                    <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
+                </form>
+                <ul class="searchResults">
+                    <template id="search-result-template">
+                        <li class="search-post" id="">
+                            <img class="img search-post-img" src="">
+                            <div class="search-description">
+                                <h3></h3>
+                                <p></p>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
             </search>
             <div class="navMenu">
-                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
-                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                <i class='bx bx-menu dropbtn'></i>
+                <div class="dropdown-content">
+                    <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                    <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                </div>
             </div>
         </nav>
         <div class="category-parent">
-            <input class="category-buttonnav" type="button" value="categoria 1" />
-            <input class="category-buttonnav" type="button" value="categoria 2" />
-            <input class="category-buttonnav" type="button" value="categoria 3" />
-            <input class="category-buttonnav" type="button" value="categoria 4" />
-            <input class="category-buttonnav" type="button" value="categoria 5" />
-            <input class="category-buttonnav" type="button" value="categoria 6" />
-            <input class="category-buttonnav" type="button" value="categoria 7" />
-            <input class="category-buttonnav" type="button" value="categoria 8" />
-            <input class="category-buttonnav" type="button" value="categoria 9" />
-            <input class="category-buttonnav" type="button" value="categoria 10" id="buttonnav-10" />
+            <p class="categoryOpen">Categorias</p>
+            <div class="categoryButtons">
+                <input class="category-buttonnav" type="button" value="Base de datos" />
+                <input class="category-buttonnav" type="button" value="Matematicas" />
+                <input class="category-buttonnav" type="button" value="Organizacion Computacional" />
+                <input class="category-buttonnav" type="button" value="Logica Computacional" />
+                <input class="category-buttonnav" type="button" value="Lengua y Literatura" />
+                <input class="category-buttonnav" type="button" value="Ingles tecnico" />
+                <input class="category-buttonnav" type="button" value="Laboratorio de Algoritmos" />
+                <input class="category-buttonnav" type="button" value="Proyecto Informatico" />
+                <input class="category-buttonnav" type="button" value="Sistemas Operativos" id="buttonnav-10" />
+            </div>
         </div>
         <ul class='actionsMenu'>
             <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil iconActionMenu'></i></li>
+            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+
         </ul>
     </header>
     <main>

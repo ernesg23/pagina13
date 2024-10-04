@@ -62,9 +62,6 @@ sendBtn.addEventListener("click", () => {
   const category = $(".categoryCreator").val();
   const author = getCookie("username");
   const authorEmail = getCookie("email");
-  const date = new Date();
-  let actualDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-
   formData.append('file', file);
   formData.append('title', title);
   formData.append('subtitle', subtitle);
@@ -74,7 +71,6 @@ sendBtn.addEventListener("click", () => {
   formData.append('author', author);
   formData.append('images', imagesAndVideos);
   formData.append('email', authorEmail);
-  formData.append('publishedDate', actualDate);
   formData.append('isArchived', 0);
 
   $.ajax({
@@ -85,6 +81,7 @@ sendBtn.addEventListener("click", () => {
     processData: false,
     success: () => {
       alert("Articulo creado con exito");
+      location.reload()
     },
     error: (jqXHR, textStatus, errorThrown) => {
       console.error('Error:', textStatus, errorThrown);
@@ -102,9 +99,6 @@ archiveBtn.addEventListener("click", () => {
   const category = $(".categoryCreator").val();
   const author = getCookie("username");
   const authorEmail = getCookie("email");
-  const date = new Date();
-  let actualDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-
   formData.append('file', file);
   formData.append('title', title);
   formData.append('subtitle', subtitle);
@@ -114,7 +108,6 @@ archiveBtn.addEventListener("click", () => {
   formData.append('author', author);
   formData.append('images', imagesAndVideos);
   formData.append('email', authorEmail);
-  formData.append('publishedDate', actualDate);
   formData.append('isArchived', 1);
 
   $.ajax({

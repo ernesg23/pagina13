@@ -1,3 +1,8 @@
+<?php
+include '../users/connection.php';
+include './listGet.php';
+include './listGetPost.php'
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +12,9 @@
     <title>Página13 - Búsqueda</title>
     <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../../views/css/list.css">
+    <link rel="stylesheet" href="./views/css/list.css">
+    <script type="module" src="./views/js/list.js"></script>
+    <link rel="stylesheet" href="./views/css/layout.css">
 </head>
 
 <body>
@@ -15,141 +22,57 @@
     <main>
         <div class="containerSearchAll">
             <div class="articles-containers">
-                <h2 id="searchResult"> Artículos encontrados para la búsqueda "hola"</h2>
+                <h2 id="searchResult"> Artículos encontrados para la búsqueda "<?php echo $_POST['content'] ?>"</h2>
                 <ul class="listPosts">
-
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <div class="postDesc">
-                            <h3 class="titlePost">Título Artículo</h>
-                                <p class="categoryPost">Categoría</p>
-                                <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                        </div>
-                    </li>
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </li>
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </li>
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </li>
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </li>
-                    <li class="article">
-                        <img class="imgPost" src="../../views/img/society.jfif">
-                        <h3 class="titlePost">Título Artículo</h>
-                            <p class="categoryPost">Categoría</p>
-                            <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </li>
+                    <template id="article-template">
+                        <li class="article">
+                            <img class="imgPost" src="">
+                            <h3 class="titlePost"></h3>
+                            <p class="categoryPost"></p>
+                            <p class="subtitlePost"></p>
+                        </li>
+                    </template>
+                    <?php foreach ($rows as $row): ?>
+                        <li class="articleSearch" id="<?php echo $row['idPosts'] ?>">
+                            <img class="imgPost" src="<?php echo str_replace('../', '', $row['portraitImg']); ?>">
+                            <div class="postDesc">
+                                <h3 class="titlePost"><?php echo $row['title']; ?></h3>
+                                <p class="categoryPost"><?php echo $row['name']; ?></p>
+                                <p class="subtitlePost"><?php echo $row['subtitle']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
 
                 </ul>
             </div>
-            <template id="article-template">
-                <li class="article">
-                    <img class="imgPost" src="">
-                    <h3 class="titlePost"></h3>
-                    <p class="categoryPost"></p>
-                    <p class="subtitlePost"></p>
-                </li>
-            </template>
+
 
             <div class="recent-articles">
                 <h2>Artículos Recientes</h2>
                 <ul class="recent-post-list">
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
-                    <li class="recent-article">
-                        <img src="../../views/img/society.jfif" alt="Imagen del artículo 1" class="recent-image">
-                        <div class="recent-description">
-                            <h3 class="backgorund-color">Título del Artículo 1</h3>
-                            <p class="backgorund-color">Descripción breve del artículo 1</p>
-                        </div>
-                    </li>
+                    <?php foreach ($rows2 as $post): ?>
+                        <li class="recent-article-search" id="<?php echo $post['idPosts']; ?>">
+                            <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="img" alt="Imagen del artículo">
+                            <div class="recent-description">
+                                <h3><?php echo $post['title']; ?></h3>
+                                <p><?php echo $post['subtitle']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <template id="recent-article-template">
                 <li class="recent-article">
                     <img class="recent-image" src="">
                     <div class="recent-description">
-                        <h3 class="backgorund-color"></h3>
-                        <p class="backgorund-color"></p>
+                        <h3></h3>
+                        <p></p>
                     </div>
                 </li>
             </template>
         </div>
 
-        <section>
-            <ul class="pagination">
-                <li class="paginationItem disabled arrowBackwards">
-                    <p>&laquo;</p>
-                </li>
-                <li class="paginationItem number active">
-                    <p>1</p>
-                </li>
-                <li class="paginationItem number">
-                    <p>2</p>
-                </li>
-                <!-- Esto se va a generar automaticamente con  -->
-                <li class='paginationItem arrowForward'>
-                    <p>&raquo;</p>
-                </li>
-            </ul>
-
+            
     </main>
 </body>
 

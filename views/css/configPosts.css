@@ -14,7 +14,7 @@ html {
     width: 1070px;
     height: 879px;
     background-color: rgb(12 , 40, 78);
-    margin: 50px 40px 35px 150px;
+    margin: 90px 408px -377px 408px;
     border: 55px;
     border: 55px;
     border-radius: 35px;
@@ -73,7 +73,33 @@ html {
     font-size: large;
     line-height: 25px;
     border-color: #212121;
-    border-end-end-radius: 1em;
-    border-top-right-radius: 1em ;
-    border: solid #212121;
+}
+#editPost {
+    font-size: 20px;
+    margin: 3em 0em 0em; 
+    color: black;
+    cursor: pointer;
+    transition: ease .2s;
+    border-bottom: #212121;
+    border: solid rgb(0, 163, 255);
+    background-color: rgb(77, 127, 186);
+
+}
+#erasePost {
+    font-size: 20px;
+    margin: 12px 6px; 
+    color: black;
+    cursor: pointer;
+    transition: ease .2s;
+   border: solid rgb(192, 15, 12);
+    background-color: rgb(74, 75, 77);
+}
+.body {
+    border-right: solid black;
+}
+.articles-container {
+    margin: 10px 560px 18px 1147px;
+    border: solid black;
+    background-color: aliceblue;
+    border-radius: 1em;
 }

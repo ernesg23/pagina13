@@ -1,6 +1,5 @@
 const template = document.querySelector("#article-template");
 const recentTemplate = document.querySelector("#recent-article-template");
-
 if (template && template.content && recentTemplate && recentTemplate.content) {
   let posts = [];
   let recentPosts = [];
@@ -55,71 +54,13 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
           clonedRecentTemplate.querySelector(".recent-article");
         clickedRecentArticle.addEventListener("click", function () {
           const id = this.id;
-          console.log(id);
           $.ajax({
-            url: "./modules/posts/readerGet.php",
+            url: "./modules/posts/reader.php",
             method: "post",
             data: { articleId: id },
-            dataType: "json",
+            dataType: "html",
             success: (postReaderData) => {
-              console.log(postReaderData);
-              const dataToUse = postReaderData[0];
-              let ui = `
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página13 - Artículo</title>
-    <link rel="shortcut icon" href="./views/img/enterprise_logo.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./views/css/reader.css">
-</head>
-<body>
-    <main>
-        <section>
-            <div id="main-post">
-              <div id="categoriesReader">
-                  <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
-                  <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${dataToUse["name"]
-                }</p>
-              </div>
-              <h2 id="readerTitle">${dataToUse["title"]}</h2>
-              <div id="reader">
-                  <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
-                  <img id="readerPortrait" src="${dataToUse[
-                  "portraitImg"
-                ].replace(/^(\.\.\/)+/, "")}">
-                  <div id="author">
-                      <img src="./views/img/sin perfil.png" alt="Author Image">
-                      <p>${dataToUse["authorName"]}</p>
-                  </div>
-                  <hr>
-                  <p id="descriptionReader">${dataToUse["description"]}</p>
-              </div>
-            </div>
-            <div id="recentPosts">
-                <h2>Artículos Recientes</h2>
-                <div class="recent">
-                    <img src="../../views/img/society.jfif" alt="Imagen del artículo 1">
-                    <div>
-                        <h3>Título del Artículo 1</h3>
-                        <p>Descripción breve del artículo 1</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-`;
-              $("#content").html(ui);
-              console.log(recentPosts);
-              //   const recentPostsReader = document.querySelector(
-              //     "#recentArticlesListContainerReader .recent-post-list"
-              //   );
-
-              //   recentPosts.forEach((post) => {
-              //     recentPostsReader.appendChild(post);
-              //     console.log(post);
-              //   });
+              $("#content").html(postReaderData);
             },
           });
         });
@@ -127,73 +68,14 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         const clickedArticle = clonedTemplate.querySelector(".article");
         clickedArticle.addEventListener("click", function () {
           const id = this.id;
-          console.log(id);
           $.ajax({
-            url: "./modules/posts/readerGet.php",
+            url: "./modules/posts/reader.php",
             method: "post",
             data: { articleId: id },
-            dataType: "json",
+            dataType: "html",
             success: (postReaderData) => {
-              console.log(postReaderData);
-              const dataToUse = postReaderData[0];
-              let ui = `
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página13 - Artículo</title>
-    <link rel="shortcut icon" href="./views/img/enterprise_logo.png" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./views/css/reader.css">
-</head>
-<body>
-    <main>
-        <section>
-            <div id="main-post">
-              <div id="categoriesReader">
-                  <!-- <p id="category1" class="category" style="background-color: rgb(244, 164, 49);">Categoría</p> -->
-                  <p id="category2" class="category" style="background-color: rgb(14, 46, 89);">${dataToUse["name"]
-                }</p>
-              </div>
-              <h2 id="readerTitle">${dataToUse["title"]}</h2>
-              <div id="reader">
-                  <p id="readerSubtitle">${dataToUse["subtitle"]}</p>
-                  <img id="readerPortrait" src="${dataToUse[
-                  "portraitImg"
-                ].replace(/^(\.\.\/)+/, "")}">
-                  <div id="author">
-                      <img src="./views/img/sin perfil.png" alt="Author Image">
-                      <p>${dataToUse["authorName"]}</p>
-                  </div>
-                  <hr>
-                  <p id="descriptionReader">${dataToUse["description"]}</p>
-              </div>
-            </div>
-            <div id="recentPosts">
-                <h2>Artículos Recientes</h2>
-                <div class="recent">
-                    <img src="${dataToUse[
-                      "portraitImg"
-                    ].replace(/^(\.\.\/)+/, "")}" alt="Imagen del artículo 1">
-                    <div>
-                        <h3>${dataToUse["title"]}</h3>
-                        <p>${dataToUse["subtitle"]}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-`;
-              $("#content").html(ui);
-              console.log(recentPosts);
-              //   const recentPostsReader = document.querySelector(
-              //     "#recentArticlesListContainerReader .recent-post-list"
-              //   );
-
-              //   recentPosts.forEach((post) => {
-              //     recentPostsReader.appendChild(post);
-              //     console.log(post);
-              //   });
+              $("#content").html(postReaderData);
+              
             },
           });
         });
