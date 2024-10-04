@@ -14,23 +14,36 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
-    
+
 </head>
 
 <body>
     <header>
         <nav class="navigation">
             <h1 class="MainTitle">Pagina 13</h1>
-            <search>
-                <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
+            <search class="searchBarContainer">
+                <form class="searchBarForm">
+                    <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
+                </form>
+                <ul class="searchResults">
+                    <template id="search-result-template">
+                        <li class="search-post" id="">
+                            <img class="img search-post-img" src="">
+                            <div class="search-description">
+                                <h3></h3>
+                                <p></p>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
             </search>
             <div class="navMenu">
-            <i class='bx bx-menu dropbtn'></i>
-            <div class="dropdown-content">
-                <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
-                <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                <i class='bx bx-menu dropbtn'></i>
+                <div class="dropdown-content">
+                    <input class="registrer buttonnav" type="button" value="Registrarse" data-page="users-register" />
+                    <input class="login buttonnav" type="button" value="Iniciar sesión" data-page="users-login" />
+                </div>
             </div>
-        </div>
         </nav>
         <div class="category-parent">
             <p class="categoryOpen">Categorias</p>
@@ -52,9 +65,9 @@
             <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil'></i></li>
-            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR' ></i></li>
+            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR'></i></li>
             <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
-            
+
         </ul>
     </header>
     <main>
