@@ -21,6 +21,8 @@
                     <h1><strong>Página13</strong></h1>
                 </div>
                 <p class="form-user">Formulario de registro de usuario</p>
+                <div id="alertAll"></div>
+                <div id="alertAllGood"></div>
                 <div class="user-name">
                     <div class="name">
                         <p>Nombre</p>
@@ -31,12 +33,13 @@
                         <input type="text" placeholder="Apellido" class="textArea username" id="lastname" required>
 
                     </div>
-
                 </div>
+                <div id="emailAlert"></div>
                 <div class="textreg">
                     <p>Correo Electronico</p>
                 </div>
                 <input type="email" placeholder="Ejemplo@gmail.com" class="textArea" id="userEmail" required>
+                <div id="passwordAlert"></div>
                 <div class="textreg">
                     <p>Contraseña</p>
                 </div>

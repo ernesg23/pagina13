@@ -44,6 +44,38 @@ body {
   transition: 0.2s ease;
   color: white;
 }
+#alertAll {
+  background-color: #f8d7da;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+#alertAllGood {
+  background-color: #d4edda;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+#emailAlert {
+  background-color: #f8d7da;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+#passwordAlert {
+  background-color: #f8d7da;
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+}
 .login:hover {
   background-color: #014579;
 }
@@ -279,6 +311,7 @@ ul li a {
   .searchBar {
     display: flex!;
   }
+  
   .iconActionMenu {
     color: #000;
   }

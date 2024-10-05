@@ -16,11 +16,14 @@ $(sendBtn).click(() => {
   const userEmail = $("#userEmail").val();
   const userPassword = $("#userPassword").val();
   if (name == "" || lastname == "" || userEmail == "") {
-    alert("Complete todos los campos para poder registrarse");
+    let alert= `Complete todos los campos para poder registrarse`
+    $("#alertAll").html(alert)
   } else if (!verifyEmail(userEmail)) {
-    alert("Ingrese una direccion de correo electronico correcta");
+    let alert = `Ingrese una direccion de correo electronico valida`
+    $("#emailAlert").html(alert)
   } else if (!verifyPass(userPassword)) {
-    alert("Su contraseña no cumple con los requisitos explicados en el formulario");
+    let alert = `Su contraseña no cumple con los requisitos explicados en el formulario`
+    $("#passwordAlert").html(alert)
   } else {
     const date = new Date()
     let actualDate = date.getFullYear() + "-" + (date.getMonth()+ 1) + "-" + date.getDate();
@@ -36,8 +39,11 @@ $(sendBtn).click(() => {
       method: "POST",
       dataType: "json",
       success: () => {
-        alert("Registro realizado con exito")
-        location.reload();
+        let alert = `Registro realizado con exito`
+        $("#alertAllGood").html(alert)
+        setTimeout(()=> {
+          location.reload();
+        }, 900)
       },
     });
   }

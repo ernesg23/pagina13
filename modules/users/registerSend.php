@@ -14,10 +14,22 @@ if (mysqli_num_rows($verifyEmail) > 0) {
                 alert("Este correo ya esta registrado, intenta con otro");
             </script>
         ';
-    mysqli_close($conexion);
+    mysqli_close($connection);
     exit();
 }
+
 $r = mysqli_query($connection, $query);
+if ($r === TRUE) {
+    $id = mysqli_insert_id($connection);
+
+    $_SESSION['userId'] = $id;
+    setcookie('userId', $id, time() + (86400 * 30), "/");
+
+    // echo "Nuevo registro creado con éxito. ID: " . $id;
+} else {
+    // echo "Error: " . $query . "<br>" . mysqli_error($connection);
+}
+
 $cookie_name = "username";
 $cookie_value = $name;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
@@ -26,4 +38,7 @@ $cookie_nameEmail = "email";
 $cookie_valueEmail = $email;
 setcookie($cookie_nameEmail, $cookie_valueEmail, time() + (86400 * 30), "/");
 $_SESSION['email'] = $cookie_valueEmail;
-echo "true";
+echo true;
+
+mysqli_close($connection);
+?>

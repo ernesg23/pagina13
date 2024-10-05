@@ -21,8 +21,11 @@
                 <h1 class="title">Página13</h1>
                 <h3 class="title-login">Formulario de inicio de sesion</h3>
                 <form>
+                    <div id="emailAlert"></div>
+                    <div id="alertAllGood"></div>
                     <h2 class="title-email">Correo electronico</h2>
                     <input name="email" id="email" class="search-email" placeholder="ejemplo@example.com" type="email" required>
+                    <div id="passwordAlert"></div>
                     <h2 class="password">Contraseña</h2>
                     <input name="password" id="password" class="search" placeholder="Introduce tu contraseña" type="password" required>
                 </form>
