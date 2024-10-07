@@ -10,14 +10,14 @@
 section {
   background-color: #1e1f20;
   display: grid;
-  grid-template-columns: repeat(23, 1fr);
+  grid-template-columns: repeat(20, 1fr);
   gap: 5px;
 }
 
 /* ARTICULO CENTRAL */
 #main-post {
-  grid-column-start: 7;
-  grid-column-end: 16;
+  grid-column-start: 5;
+  grid-column-end: 15;
   display: flex;
   flex-direction: column;
   width: center 80%;
@@ -99,19 +99,21 @@ hr {
 #recentPosts {
   align-self: start;
   margin: 50px 0 0 45px;
-  grid-column-start: 16;
-  grid-column-end: 21;
+  grid-column-start: 15;
+  grid-column-end: 20;
   grid-row-start: 1;
 }
 
 #recentPosts h2 {
   padding-bottom: 15px;
 }
+
 .recent-description {
   h3 {
     font-size: 1.2rem;
   }
 }
+
 .recent {
   display: flex;
   flex-wrap: nowrap;
@@ -124,24 +126,27 @@ hr {
 }
 
 .recent:hover {
-  background-color: #3a3a3a;
   cursor: pointer;
-  box-shadow: 0 0 10px #666666;
+  box-shadow: 0 0 10px #e3e3e3;
 }
+
 #author p {
   margin-bottom: 0;
 }
+
 .recent img {
   max-width: 8rem;
   border-radius: 0.5rem;
   max-height: 5rem;
   padding: 5px 10px 5px 5px;
 }
+
 .recentList {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
 }
+
 .recent div {
   padding: 5px 5px 5px 0;
 }
@@ -149,12 +154,12 @@ hr {
 @media (max-width: 1820px) {
   #main-post {
     grid-column-start: 2;
-    grid-column-end: 14;
+    grid-column-end: 13;
   }
-  
+
 
   #recentPosts {
-    grid-column-start: 14;
+    grid-column-start: 13;
     grid-column-end: 20;
   }
 }
@@ -166,26 +171,16 @@ hr {
   }
 
   #recentPosts {
-    grid-column-start: 5;
-    grid-column-end: 15;
+    grid-column-start: 4;
+    grid-column-end: 18;
     grid-row-start: 2;
     margin: 15px 0 0;
   }
 }
 
-@media (max-width: 1024px) {
-  #recentPosts {
-    grid-column-start: 3;
-    grid-column-end: 19;
-  }
-  section {
-    grid-template-columns: repeat(20, 1fr);
-  }
-}
-
 @media (max-width: 767px) {
   #recentPosts {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-column-end: 20;
   }
 }

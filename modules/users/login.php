@@ -16,18 +16,18 @@
 <body>
     <section>
 
-        <div class="container">
-            <div class="form">
-                <h1 class="title">Página13</h1>
-                <h3 class="title-login">Formulario de inicio de sesion</h3>
+        <div id="container">
+            <div id="form">
+                <h1>Página13</h1>
+                <h2>Ingresá a tu Cuenta</h2>
                 <form>
                     <div id="emailAlert"></div>
                     <div id="alertAllGood"></div>
-                    <h2 class="title-email">Correo electronico</h2>
-                    <input name="email" id="email" class="search-email" placeholder="ejemplo@example.com" type="email" required>
+                    <h2>Correo electronico</h2>
+                    <input name="email" id="email" placeholder="ejemplo@example.com" type="email" required>
                     <div id="passwordAlert"></div>
-                    <h2 class="password">Contraseña</h2>
-                    <input name="password" id="password" class="search" placeholder="Introduce tu contraseña" type="password" required>
+                    <h2>Contraseña</h2>
+                    <input name="password" id="password" placeholder="Introduce tu contraseña" type="password" required>
                 </form>
                 <h2 class="forgotten-password">¿Olvidaste tu contraseña?</h2>
                 <div class="remember-password">
