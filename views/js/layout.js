@@ -228,3 +228,22 @@ $(".categorySearch").click((event) => {
     },
   });
 });
+const searchDrop = document.querySelector(".searchDrop")
+$(document).ready(function() {
+  $(".searchDrop").click(() => {
+    const searchBar = $(".searchBar");
+    searchBar.css("display", "block").animate({ opacity: 1, right: "5" }, 300);
+    //searchBar.classList.add("active");
+  });
+
+  $(document).click((event) => {
+    if (!$(event.target).closest('.searchDrop, .searchBar').length) {
+      const searchBar = $(".searchBar");
+      searchBar.animate({ opacity: 0, right: "-5px" }, 300, () => {
+        searchBar.css("display", "none");
+      });
+      //searchBar.classList.remove("active");
+    }
+  });
+});
+
