@@ -42,7 +42,8 @@ html {
     margin: 5px;
 }
 #users-configSettings {
-    margin: 5px;
+    margin-top: 0;
+    padding-top: 0;
 }
 .buttons {
     font-size: 20px;
