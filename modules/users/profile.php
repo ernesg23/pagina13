@@ -14,10 +14,11 @@ include "../posts/articleWrittenGet.php";
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/profile.js"></script>
+
 </head>
 
 <body id="content">
-    
+
     <section>
         <div>
             <img src="./img/descarga1.png" loading="lazy" />
@@ -32,45 +33,31 @@ include "../posts/articleWrittenGet.php";
         <div class="writtenPostContainer">
             <h2>Artículos Escritos</h2>
             <?php foreach ($rows as $post): ?>
-                        <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
-                            <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
-                            <h3 class="titlePost"><?php echo $post['title']; ?></h>
-                            <i class='bx bx-edit editArticle' id="<?php echo $post['idPosts']; ?>"></i>
-                            <div class="postDescription">
-                                <p class="categoryPost"><?php echo $post['name']; ?></p>
-                                <p class="subtitlePost"><?php echo $post['subtitle']; ?></p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-            
-            <div class="writtenPosts">
-                <img class="imgPost" src="../../views/img/uploads/download.jfif">
-                <h3 class="titlePost">Título Artículo</h>
-                    <i class='bx bx-edit editArticle'></i>
+                <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
+                    <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
+                    <h3 class="titlePost"><?php echo $post['title']; ?></h3>
+                    <i class='bx bx-edit editArticle' id="<?php echo $post['idPosts']; ?>"></i>
                     <div class="postDescription">
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                        <p class="categoryPost"><?php echo $post['name']; ?></p>
+                        <p class="subtitlePost"><?php echo $post['subtitle']; ?></p>
                     </div>
-            </div>
-        </div>  
+                </div>
+            <?php endforeach; ?>
+
+        </div>
         <div class="favoritePostContainer">
             <h2>Artículos Favoritos</h2>
-            <div class="favoritePosts">
-                <img class="imgPost" src="./img/descarga1.png">
-                <h3 class="titlePost">Título Artículo</h>
+            <?php foreach ($rows as $post): ?>
+                <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
+                    <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
+                    <h3 class="titlePost"><?php echo $post['title']; ?></h3>
+                    <i class='bx bx-edit editArticle' id="<?php echo $post['idPosts']; ?>"></i>
                     <div class="postDescription">
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+                        <p class="categoryPost"><?php echo $post['name']; ?></p>
+                        <p class="subtitlePost"><?php echo $post['subtitle']; ?></p>
                     </div>
-            </div>
-            <div class="favoritePosts">
-                <img class="imgPost" src="./img/descarga1.png">
-                <h3 class="titlePost">Título Artículo</h>
-                    <div class="postDescription">
-                        <p class="categoryPost">Categoría</p>
-                        <p class="subtitlePost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
-                    </div>
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </section>
 </body>

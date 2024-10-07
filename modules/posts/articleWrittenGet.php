@@ -1,12 +1,14 @@
 <?php
 include "../users/connection.php";
+session_start();
+$authorName = $_SESSION["username"];
 $query = "SELECT p.idPosts, p.Users_idUsers, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, 
 pc.Categories_idCategories, c.idCategories, c.name, u.name AS authorName
 FROM posts p
 INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
 INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
 INNER JOIN users u ON p.Users_idUsers = u.idUsers
-WHERE u.name = '". $_POST['authorName']."'
+WHERE u.name = '$authorName'
 ORDER BY p.idPosts DESC
 LIMIT 2";
 // $query = "SELECT * from posts where idPosts = '". $_POST['articleId']."';";
