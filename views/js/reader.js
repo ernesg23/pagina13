@@ -40,3 +40,27 @@ recentArticles.forEach((article) => {
     });
   });
 });
+$(".category").click((event) => {
+  const cat = $(event.target).data("content");
+  $.ajax({
+    url: "./modules/posts/list.php",
+    method: "post",
+    dataType: "html",
+    data: { content: cat },
+    success: (data) => {
+      $("#content").html(data);
+    },
+  });
+});
+$(".bx-star").click(() => {
+  const id = $("#main-post").data("postId");
+  
+  $.ajax({
+    url: "./modules/posts/favoriteAdd.php",
+    method: "post",
+    data: { postId: id },
+    success: (data) => {
+      $(".bx-star").addClass("active");
+    },
+  });
+});

@@ -1,7 +1,8 @@
 <?php
 include '../users/connection.php';
 include './readerGet.php';
-include './readerGetPost.php'
+include './readerGetPost.php';
+include './favGet.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,18 +21,22 @@ include './readerGetPost.php'
 <body>
     <main>
         <section>
-            <div id="main-post">
+            <div id="main-post" data-post-id="<?php echo $rows[0]['idPosts']; ?>">
                 <div id="categoriesReader">
-                    <p id="category1" class="category" style="background-color: rgb(244, 164, 49);"><?php echo $rows[0]['name'] ?></p>
-                    <p id="category2" class="category" style="background-color: rgb(14, 46, 89);"><?php echo $rows[0]['name'] ?></p>
+                    <p id="category1" class="category" style="background-color: rgb(244, 164, 49);" data-content="<?php echo $rows[0]['name']; ?>"><?php echo $rows[0]['name']; ?></p>
+                    <p id="category2" class="category" style="background-color: rgb(14, 46, 89);" data-content="<?php echo $rows[0]['name']; ?>"><?php echo $rows[0]['name']; ?></p>
+
                 </div>
                 <h2 id="readerTitle"><?php echo $rows[0]['title'] ?></h2>
                 <div id="reader">
                     <p id="readerSubtitle"><?php echo $rows[0]['subtitle'] ?></p>
                     <img id="readerPortrait" src="<?php echo $rows[0]['portraitImg'] = str_replace('../', '', $rows[0]['portraitImg']); ?>">
-                    <div id="author">
-                        <img src="./views/img/sin perfil.png">
-                        <p><?php echo $rows[0]['authorName'] ?></p>
+                    <div id="writFavCont">
+                        <div id="author">
+                            <img src="./views/img/sin perfil.png">
+                            <p><?php echo $rows[0]['authorName'] ?></p>
+                        </div>
+                        <i class="bx bx-star <?php echo $activeClass; ?>"></i>
                     </div>
                     <hr>
                     <p id="descriptionReader"><?php echo $rows[0]['description'] ?></p>

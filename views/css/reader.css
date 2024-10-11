@@ -35,6 +35,7 @@ section {
   box-sizing: border-box;
   padding: 5px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .category:hover {
@@ -70,8 +71,13 @@ section {
   flex-wrap: nowrap;
   align-items: center;
   max-height: 70px;
-  padding-bottom: 10px;
-  margin-right: 70%;
+  margin-left: 0.5rem;
+}
+.bx-star.active {
+  color: gold;
+}
+.bx-star.active::before {
+  content: '\eeb8';
 }
 
 #author:hover {
@@ -95,6 +101,14 @@ hr {
   box-sizing: border-box;
 }
 
+#writFavCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .bx {
+    margin-right: 0.5rem;
+  }
+}
 /* ARTICULOS LATERALES */
 #recentPosts {
   align-self: start;
@@ -113,7 +127,6 @@ hr {
     font-size: 1.2rem;
   }
 }
-
 .recent {
   display: flex;
   flex-wrap: nowrap;
