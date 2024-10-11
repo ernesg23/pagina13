@@ -5,15 +5,15 @@
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="views/img/enterprise_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./views/css/layout.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
-    integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
-    <link rel="stylesheet" href="./views/css/layout.css">
 
 </head>
 
@@ -23,8 +23,7 @@
             <h1 class="MainTitle">Pagina 13</h1>
             <search class="searchBarContainer">
                 <form class="searchBarForm">
-                    <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i
-                        class='bx bx-search searchBtn'></i>
+                    <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
                 </form>
                 <ul class="searchResults">
                     <template id="search-result-template">
@@ -38,7 +37,6 @@
                     </template>
                 </ul>
             </search>
-            <i class='bx bx-search searchDrop'></i>
             <div class="navMenu">
                 <i class='bx bx-menu dropbtn'></i>
                 <div class="dropdown-content">
@@ -62,19 +60,12 @@
             </div>
         </div>
         <ul class='actionsMenu'>
-            <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme"
-                    id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i
-                        class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i
-                    class='bx bx-user iconActionMenu'></i></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i
-                    class='bx bx-cog iconActionMenu'></i></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i
-                    class='bx bx-pencil iconActionMenu'></i></li>
-            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar"
-                    placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
-            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i
-                    class='bx bx-power-off'></i></li>
+            <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil iconActionMenu'></i></li>
+            <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
 
         </ul>
     </header>
