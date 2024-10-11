@@ -1,17 +1,19 @@
-$("#users-configPosts").click (()=>{
+$("#users-configPosts").click(() => {
     $.ajax({
         method: "POST",
         url: "./modules/users/configPostsContent.php",
-        }).done(function(html){
+        success: (html) => {
             $(".contentPage").html(html);
+        }
     })
 })
-$("#users-configSettings").click (()=>{
+$("#users-configSettings").click(() => {
     $.ajax({
         method: "POST",
         url: "./modules/users/configSettingsContent.php",
-    }).done(function(html){
-        $(".contentPage").html(html);
+        success: (html) => {
+            $(".contentPage").html(html);
+        }
     })
 })
 $(document).ready(function () {
@@ -20,10 +22,11 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: "./modules/users/configPostsChanges.php",
-            data: $("#data").serialize()
-            })
-                .done(function (html) {
+            data: $("#data").serialize(),
+            success: (data) => {
+                location.reload();
 
-                });
-        });
-   });
+            }
+        })
+    });
+});

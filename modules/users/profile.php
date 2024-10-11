@@ -1,6 +1,7 @@
 <?php
-include "../posts/articleWrittenGet.php";
+include "../posts/profileGetPosts.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,8 +23,8 @@ include "../posts/articleWrittenGet.php";
     <section>
         <div>
             <img src="./img/descarga1.png" loading="lazy" />
-            <h1 class="userName">Nombre de usuario</h1>
-            <p class="userEmail">ejemplo@ejemplo.com.ar</p>
+            <h1 class="userName"><?php echo $_SESSION['username']; ?></h1>
+            <p class="userEmail"><?php echo $_SESSION['email']; ?></p>
             <p class="userRol">Rol de Usuario</p>
             <p>Descripción</p>
             <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
