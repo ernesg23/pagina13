@@ -1,4 +1,6 @@
-
+<?php
+include "../posts/profileGetPosts.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,9 +24,9 @@
                 width="200"
                 height="200" />
                 <div class="text">
-            <h1 class="userName">Miguel Merentiel</h1>
-            <u><p class="userEmail">MiguelMerentiel16@labestia.com.ar</p></u>
-            <p class="userRol">Rol de Usuario: La bestia</p>
+                <h1 class="userName"><?php echo $_SESSION['username']; ?></h1>
+                <p class="userEmail"><?php echo $_SESSION['email']; ?></p>
+            <p class="userRol">Rol de Usuario: Usuario</p>
             <div class="userDescription">
             <p>Descripción:</p>
             <p>El mejor goleador de fútbol Argentino.</p>
@@ -44,7 +46,7 @@
         <div id="text-two" class="containerSettings">
             <div id="settings">
                 <h1 class="adjust">Ajustes</h1>
-                <form>
+                <form id="data">
                     <h2 class="name">Modificar Nombre de Usuario</h2>
                     <input name="searchBar" id="searchBar_Name" placeholder="Ingrese un nuevo nombre">
                     <h2 class="email">Modificar Email</h2>
