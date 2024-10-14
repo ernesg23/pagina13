@@ -228,3 +228,78 @@ $(".categorySearch").click((event) => {
     },
   });
 });
+
+$(document).ready(function () {
+  $.ajax({
+    url: "./modules/users/layoutRecent.php",
+    dataType: "json",
+    success: function (data) {
+      const articulos = data.articulos || [];
+      const articuloTemplate = document.getElementById("articulo-template");
+      const articulosContainer = document.getElementById("articulos-container");
+      for (let i = 0; i < 3; i++) {
+        const articulo =
+          articulos[i] || {
+            idPosts: "#",
+            title: "Título faltante",
+            categoria_nombre: "Categoría faltante",
+          };
+        const articuloClone = articuloTemplate.content.cloneNode(true);
+        const tituloElemento = articuloClone.querySelector(".articulo-titulo");
+        tituloElemento.textContent = articulo.title;
+        tituloElemento.setAttribute("data-id", articulo.idPosts);
+        articulosContainer.appendChild(articuloClone);
+        tituloElemento.addEventListener("click", function () {
+          const id = this.getAttribute("data-id");
+          $.ajax({
+            url: "./modules/posts/reader.php",
+            method: "post",
+            data: { articleId: id },
+            dataType: "html",
+            success: function (postReaderData) {
+              $("#content").html(postReaderData);
+            },
+            error: function () {
+              console.log("Error al cargar la publicación.");
+            },
+          });
+        });
+      }
+      const categoriasContador = {};
+      articulos.forEach(function (articulo) {
+        const categoria = articulo.categoria_nombre;
+        if (categoriasContador[categoria]) {
+          categoriasContador[categoria]++;
+        } else {
+          categoriasContador[categoria] = 1;
+        }
+      });
+      const categoriasOrdenadas = Object.keys(categoriasContador).sort(function (a,b) {
+        return categoriasContador[b] - categoriasContador[a];
+      });
+      const categoriaTemplate = document.getElementById("categoria-template");
+      const categoriasContainer = document.getElementById("categorias-container");
+      for (let i = 0; i < 3; i++) {
+        const categoria = categoriasOrdenadas[i] || "Categoría faltante";
+        const categoriaClone = categoriaTemplate.content.cloneNode(true);
+        const categoriaTitulo = categoriaClone.querySelector(".categoria-titulo");
+        categoriaTitulo.textContent = categoria;
+        categoriaTitulo.setAttribute("data-name", categoria);
+        categoriasContainer.appendChild(categoriaClone);
+        $(".categoria-titulo").click((event) => {
+          const cat = event.target.getAttribute("data-name");
+          $.ajax({
+            url: "./modules/posts/list.php",
+            method: "post",
+            dataType: "html",
+            data: { content: cat },
+            success: (data) => {
+              $("#content").html(data);
+              initializeSearchList();
+            },
+          });
+        });
+      }
+    },
+  });
+});

@@ -89,17 +89,24 @@
             </ul>
         </div>
         <div class="article-today">
-            <h4>Articulos publicados hoy</h4>
-            <h5>Titulo Articulo</h5>
-            <h5>Titulo Articulo</h5>
-            <h5>Titulo Articulo</h5>
+        <h4>Artículos publicados hoy</h4>
+        <template id="articulo-template">
+        <div class="articulo">
+            <h5 class="articulo-titulo" data-id="">Título Articulo</h5>
+        </div>
+        </template>
+        <div id="articulos-container"></div>
         </div>
         <div class="public-today">
-            <h4>Temas mas visitados hoy</h4>
-            <h5>Tema 1</h5>
-            <h5>Tema 2</h5>
-            <h5>Tema 3</h5>
+        <h4>Categorías con más publicaciones hoy</h4>
+        <template id="categoria-template">
+        <div class="categoria">
+            <h5 class="categoria-titulo" data-name="">Tema</h5>
         </div>
+        </template>
+        <div id="categorias-container"></div>
+        </div>
+        <div id="content"></div>
     </footer>
 </body>
 
