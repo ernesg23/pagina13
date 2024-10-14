@@ -253,7 +253,7 @@ footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: auto;
-  height: 200px;
+  height: auto;
 }
 .socialMedia {
   font-size: 1rem;
@@ -279,7 +279,7 @@ ul li a {
   flex-direction: column;
   min-height: 100vh;
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 800px) {
   .footer {
     flex-direction: column;
   }
@@ -353,7 +353,6 @@ ul li a {
   }
   .recent-post-list {
     position: relative;
-    left: -1rem;
   }
 }
 section {
@@ -784,7 +783,7 @@ h3 {
   height: 10rem;
   background-color: #0e2e59;
 }
-@media (max-width: 950px) {
+@media (max-width: 1388px) {
   .buttonnav {
     height: none;
     margin: 0;
@@ -882,7 +881,7 @@ h3 {
   flex-direction: column;
   min-height: 100vh;
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 800px) {
   .footer {
     flex-direction: column;
   }
@@ -956,7 +955,6 @@ h3 {
   }
   .recent-post-list {
     position: relative;
-    left: -1rem;
   }
 }
 section {
