@@ -17,7 +17,6 @@
     border-radius: 1rem;
     font-size: 1em;
     line-height: 3;
-    text-align: left;
 }
 
 h1 {
@@ -50,13 +49,13 @@ h2 {
     margin: 2px 13px 2px;
 }
 
-.forgotten-password {
+#forgotten-password {
     font-size: 0.9em;
     margin: 2px 15px 2px;
     cursor: pointer;
 }
 
-.forgotten-password:hover {
+#forgotten-password:hover {
     text-decoration: underline;
 }
 
@@ -73,7 +72,7 @@ h2 {
     min-width: -webkit-fill-available;
 }
 
-.loginbtn {
+#sendBtn {
     margin: 18px 15px 18px 15px;
     text-align: center;
     font-size: 1em;
@@ -88,17 +87,10 @@ h2 {
     transition: ease .2s;
 }
 
-.loginbtn:hover {
+#sendBtn:hover {
     background-color: #7cadf8;
 }
 
-.loginbtn:active {
+#sendBtn:active {
     background-color: #458DFA;
 }
-
-.registrer {
-    text-align: center;
-}
-
-
-

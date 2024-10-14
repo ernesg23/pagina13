@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="./views/css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="module" src="./views/js/login.js"></script>
-    
+
 </head>
 
 <body>
     <section>
-
         <div id="container">
             <div id="form">
                 <h1>Página13</h1>
@@ -24,21 +23,19 @@
                     <div id="emailAlert"></div>
                     <div id="alertAllGood"></div>
                     <h2>Correo electronico</h2>
-                    <input name="email" id="email" placeholder="ejemplo@example.com" type="email" required>
+                    <input name="email" id="email" placeholder="example@example.com" type="email" required>
                     <div id="passwordAlert"></div>
                     <h2>Contraseña</h2>
                     <input name="password" id="password" placeholder="Introduce tu contraseña" type="password" required>
                 </form>
-                <h2 class="forgotten-password">¿Olvidaste tu contraseña?</h2>
-                <div class="remember-password">
+                <h2 id="forgotten-password">¿Olvidaste tu contraseña?</h2>
+                <div>
                     <b>
-                        <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Recordar contraseña</label><br>
+                        <label><input type="checkbox" id="cbox1" value="first_checkbox" />Recordar contraseña</label><br>
                     </b>
                 </div>
-                <input type="button" class="loginbtn" value="iniciar sesion" id="sendBtn" />
-
+                <input type="button" value="Abrir Prepucio" id="sendBtn" />
             </div>
-
         </div>
     </section>
 </body>
