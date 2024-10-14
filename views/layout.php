@@ -84,12 +84,12 @@
                 </li>
                 <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i
                             class='bx bxl-instagram bx-flip-horizontal'></i>Pagina13</a></li>
-                <li><a href="https://github.com/ho-axed" class="socialMedia" target="_blank"><i
+                <li><a href="https://github.com" class="socialMedia" target="_blank"><i
                             class='bx bxl-github'></i>Pagina13</a></li>
             </ul>
         </div>
         <div class="article-today">
-        <h4>Artículos publicados hoy</h4>
+        <h4>Artículos publicados recientemente</h4>
         <template id="articulo-template">
         <div class="articulo">
             <h5 class="articulo-titulo" data-id="">Título Articulo</h5>
@@ -98,7 +98,7 @@
         <div id="articulos-container"></div>
         </div>
         <div class="public-today">
-        <h4>Categorías con más publicaciones hoy</h4>
+        <h4>Categorías con más publicaciones</h4>
         <template id="categoria-template">
         <div class="categoria">
             <h5 class="categoria-titulo" data-name="">Tema</h5>
