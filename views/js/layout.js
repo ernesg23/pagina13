@@ -92,6 +92,22 @@ searchForm.addEventListener("submit", (event) => {
     },
   });
 });
+const searchIcon = document.querySelector(".searchIconR");
+searchIcon.addEventListener("click", (event) => {
+  const responsiveSearch = document.querySelector(".responsiveSearch");
+  const content = $(responsiveSearch).val();
+  event.preventDefault();
+  $.ajax({
+    url: "./modules/posts/list.php",
+    method: "post",
+    dataType: "html",
+    data: { content: content },
+    success: (data) => {
+      $("#content").html(data);
+      initializeSearchList();
+    },
+  });
+});
 const initializeSearchList = () => {
   function articleClick() {
     const id = this.id;
@@ -229,77 +245,63 @@ $(".categorySearch").click((event) => {
   });
 });
 
-$(document).ready(function () {
-  $.ajax({
-    url: "./modules/users/layoutRecent.php",
-    dataType: "json",
-    success: function (data) {
-      const articulos = data.articulos || [];
-      const articuloTemplate = document.getElementById("articulo-template");
-      const articulosContainer = document.getElementById("articulos-container");
-      for (let i = 0; i < 3; i++) {
-        const articulo =
-          articulos[i] || {
-            idPosts: "#",
-            title: "Título faltante",
-            categoria_nombre: "Categoría faltante",
-          };
-        const articuloClone = articuloTemplate.content.cloneNode(true);
-        const tituloElemento = articuloClone.querySelector(".articulo-titulo");
-        tituloElemento.textContent = articulo.title;
-        tituloElemento.setAttribute("data-id", articulo.idPosts);
-        articulosContainer.appendChild(articuloClone);
-        tituloElemento.addEventListener("click", function () {
-          const id = this.getAttribute("data-id");
-          $.ajax({
-            url: "./modules/posts/reader.php",
-            method: "post",
-            data: { articleId: id },
-            dataType: "html",
-            success: function (postReaderData) {
-              $("#content").html(postReaderData);
-            },
-            error: function () {
-              console.log("Error al cargar la publicación.");
-            },
-          });
+$.ajax({
+  url: "./modules/users/layoutRecent.php",
+  dataType: "json",
+  success: function (data) {
+    const articulos = data.articulos || [];
+    const articuloTemplate = document.getElementById("articulo-template");
+    const articulosContainer = document.getElementById("articulos-container");
+    articulos.slice(0, 3).forEach(articulo => {
+      const { idPosts = "#", title = "Título faltante", categoria_nombre = "Categoría faltante" } = articulo;
+      const articuloClone = articuloTemplate.content.cloneNode(true);
+      const tituloElemento = articuloClone.querySelector(".articulo-titulo");
+      
+      tituloElemento.textContent = title;
+      tituloElemento.setAttribute("data-id", idPosts);
+      articulosContainer.appendChild(articuloClone);
+
+      tituloElemento.addEventListener("click", function () {
+        $.ajax({
+          url: "./modules/posts/reader.php",
+          method: "post",
+          data: { articleId: idPosts },
+          dataType: "html",
+          success: function (postReaderData) {
+            $("#content").html(postReaderData);
+          },
+          error: function () {
+            console.log("Error al cargar la publicación.");
+          }
         });
-      }
-      const categoriasContador = {};
-      articulos.forEach(function (articulo) {
-        const categoria = articulo.categoria_nombre;
-        if (categoriasContador[categoria]) {
-          categoriasContador[categoria]++;
-        } else {
-          categoriasContador[categoria] = 1;
-        }
       });
-      const categoriasOrdenadas = Object.keys(categoriasContador).sort(function (a,b) {
-        return categoriasContador[b] - categoriasContador[a];
-      });
-      const categoriaTemplate = document.getElementById("categoria-template");
-      const categoriasContainer = document.getElementById("categorias-container");
-      for (let i = 0; i < 3; i++) {
-        const categoria = categoriasOrdenadas[i] || "Categoría faltante";
-        const categoriaClone = categoriaTemplate.content.cloneNode(true);
-        const categoriaTitulo = categoriaClone.querySelector(".categoria-titulo");
-        categoriaTitulo.textContent = categoria;
-        categoriaTitulo.setAttribute("data-name", categoria);
-        categoriasContainer.appendChild(categoriaClone);
-        $(".categoria-titulo").click((event) => {
-          const cat = event.target.getAttribute("data-name");
-          $.ajax({
-            url: "./modules/posts/list.php",
-            method: "post",
-            dataType: "html",
-            data: { content: cat },
-            success: (data) => {
-              $("#content").html(data);
-              initializeSearchList();
-            },
-          });
+    });
+    const categoriasContador = articulos.reduce((acc, { categoria_nombre }) => {
+      acc[categoria_nombre] = (acc[categoria_nombre] || 0) + 1;
+      return acc;
+    }, {});
+    const categoriasOrdenadas = Object.keys(categoriasContador).sort((a, b) => categoriasContador[b] - categoriasContador[a]);
+    const categoriaTemplate = document.getElementById("categoria-template");
+    const categoriasContainer = document.getElementById("categorias-container");
+    categoriasOrdenadas.slice(0, 3).forEach(categoria => {
+      const categoriaClone = categoriaTemplate.content.cloneNode(true);
+      const categoriaTitulo = categoriaClone.querySelector(".categoria-titulo");
+      categoriaTitulo.textContent = categoria || "Categoría faltante";
+      categoriaTitulo.setAttribute("data-name", categoria);
+      categoriasContainer.appendChild(categoriaClone);
+      $(".categoria-titulo").click((event) => {
+        const cat = event.target.getAttribute("data-name");
+        $.ajax({
+          url: "./modules/posts/list.php",
+          method: "post",
+          dataType: "html",
+          data: { content: cat },
+          success: (data) => {
+            $("#content").html(data);
+            initializeSearchList();
+          }
         });
-      }
-    },
-  });
+      });
+    });
+  }
 });

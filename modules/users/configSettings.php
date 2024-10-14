@@ -1,6 +1,4 @@
-<?php
-include "../posts/profileGetPosts.php";
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -24,8 +22,8 @@ include "../posts/profileGetPosts.php";
                 width="200"
                 height="200" />
                 <div class="text">
-                <h1 class="userName"><?php echo $_SESSION['username']; ?></h1>
-                <p class="userEmail"><?php echo $_SESSION['email']; ?></p>
+                <h1 class="userName"> Miguel Merentiel</h1>
+                <p class="userEmail">MiguelMerentiel16@gmail.com.com</p>
             <p class="userRol">Rol de Usuario: Usuario</p>
             <div class="userDescription">
             <p>Descripción:</p>

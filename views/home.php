@@ -54,10 +54,10 @@
             <h3>Categorias mas visitadas</h3>
             <div class="categoriesSearchContainer">
                 <input class="categorySearch" type="button" value="Matematicas" />
-                <input class="categorySearch" type="button" value="Fisica" />
-                <input class="categorySearch" type="button" value="Quimica" />
-                <input class="categorySearch" type="button" value="STEM" />
-                <input class="categorySearch" type="button" value="Pensamiento computacional" />
+                <input class="categorySearch" type="button" value="Base de datos" />
+                <input class="categorySearch" type="button" value="Ingles tecnico" />
+                <input class="categorySearch" type="button" value="Sistemas Operativos" />
+                <input class="categorySearch" type="button" value="Logica Computacional" />
             </div>
         </div>
     </section>
