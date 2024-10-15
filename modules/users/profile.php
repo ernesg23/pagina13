@@ -50,7 +50,7 @@ include "../posts/profileGetPosts.php";
                 </div>
             </div>
             <div id="favoritesCont">
-                <h3>Artículos Favoritos</h3>
+<!--                 <h3>Artículos Favoritos</h3>
                 <div class="favoritePostContainer">
                     <?php foreach ($rows as $post): ?>
                         <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
@@ -64,10 +64,9 @@ include "../posts/profileGetPosts.php";
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 </body>
-
 </html>
