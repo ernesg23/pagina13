@@ -61,25 +61,25 @@ const initializeCreator = () => {
     writecontainer.classList.add("active");
     imagesVideos.classList.remove("active");
     mediaContainer.classList.remove("active");
-    sourcesContainer.classList.remove("active");
-    source.classList.remove("active");
+    // sourcesContainer.classList.remove("active");
+    // source.classList.remove("active");
   });
   imagesVideos.addEventListener("click", function () {
     imagesVideos.classList.add("active");
     mediaContainer.classList.add("active");
     write.classList.remove("active");
     writecontainer.classList.remove("active");
-    sourcesContainer.classList.remove("active");
-    source.classList.remove("active");
+    // sourcesContainer.classList.remove("active");
+    // source.classList.remove("active");
   });
-  sources.addEventListener("click", function () {
-    sourcesContainer.classList.add("active");
-    source.classList.add("active");
-    write.classList.remove("active");
-    writecontainer.classList.remove("active");
-    imagesVideos.classList.remove("active");
-    mediaContainer.classList.remove("active");
-  });
+  // sources.addEventListener("click", function () {
+  //   sourcesContainer.classList.add("active");
+  //   source.classList.add("active");
+  //   write.classList.remove("active");
+  //   writecontainer.classList.remove("active");
+  //   imagesVideos.classList.remove("active");
+  //   mediaContainer.classList.remove("active");
+  // });
   document.querySelector("#files").onchange = function () {
     const fileName = this.files[0]?.name;
     const label = document.querySelector("label[for=files]");

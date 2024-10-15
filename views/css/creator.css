@@ -72,10 +72,33 @@
   color: #fff;
   font-size: 2em;
 }
+#alertError{
+  background-color: #f8d7da;
+  width: -webkit-fill-available;
+  border-radius: 0.5rem;
+  color: #000;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+#alertGood {
+  background-color: #d4edda;
+  width: -webkit-fill-available;
+  border-radius: 0.5rem;
+  color: #000;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
 .optionsContainer {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  p {
+    margin: 0;
+  }
 }
 
 .creatorContainer {

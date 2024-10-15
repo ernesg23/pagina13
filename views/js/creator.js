@@ -27,25 +27,25 @@ write.addEventListener("click", function () {
   writecontainer.classList.add("active");
   imagesVideos.classList.remove("active");
   mediaContainer.classList.remove("active");
-  sourcesContainer.classList.remove("active");
-  source.classList.remove("active");
+  // sourcesContainer.classList.remove("active");
+  // source.classList.remove("active");
 });
 imagesVideos.addEventListener("click", function () {
   imagesVideos.classList.add("active");
   mediaContainer.classList.add("active");
   write.classList.remove("active");
   writecontainer.classList.remove("active");
-  sourcesContainer.classList.remove("active");
-  source.classList.remove("active");
+  // sourcesContainer.classList.remove("active");
+  // source.classList.remove("active");
 });
-sources.addEventListener("click", function () {
-  sourcesContainer.classList.add("active");
-  source.classList.add("active");
-  write.classList.remove("active");
-  writecontainer.classList.remove("active");
-  imagesVideos.classList.remove("active");
-  mediaContainer.classList.remove("active");
-});
+// sources.addEventListener("click", function () {
+//   sourcesContainer.classList.add("active");
+//   source.classList.add("active");
+//   write.classList.remove("active");
+//   writecontainer.classList.remove("active");
+//   imagesVideos.classList.remove("active");
+//   mediaContainer.classList.remove("active");
+// });
 document.querySelector("#files").onchange = function () {
   const fileName = this.files[0]?.name;
   const label = document.querySelector("label[for=files]");
@@ -58,35 +58,52 @@ sendBtn.addEventListener("click", () => {
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
-  const sources = $("#sources").val();
+  // const sources = $("#sources").val();
   const category = $(".categoryCreator").val();
-  const author = getCookie("username");
-  const authorEmail = getCookie("email");
-  formData.append('file', file);
-  formData.append('title', title);
-  formData.append('subtitle', subtitle);
-  formData.append('description', description);
-  formData.append('sources', sources);
-  formData.append('categories', category);
-  formData.append('author', author);
-  formData.append('images', imagesAndVideos);
-  formData.append('email', authorEmail);
-  formData.append('isArchived', 0);
+  if (
+    !file ||
+    !imagesAndVideos ||
+    !title ||
+    !subtitle ||
+    !description ||
+    !category
+  ) {
+    let alert = `Complete todos los campos para poder subir un articulo`;
+    $("#alertError").html(alert);
+  } else {
+    const author = getCookie("username");
+    const authorEmail = getCookie("email");
+    formData.append("file", file);
+    formData.append("title", title);
+    formData.append("subtitle", subtitle);
+    formData.append("description", description);
+    // formData.append('sources', sources);
+    formData.append("categories", category);
+    formData.append("author", author);
+    formData.append("images", imagesAndVideos);
+    formData.append("email", authorEmail);
+    formData.append("isArchived", 0);
 
-  $.ajax({
-    url: "./modules/users/creatorSend.php",
-    data: formData,
-    method: "POST",
-    contentType: false,
-    processData: false,
-    success: () => {
-      alert("Articulo creado con exito");
-      location.reload()
-    },
-    error: (jqXHR, textStatus, errorThrown) => {
-      console.error('Error:', textStatus, errorThrown);
-    }
-  });
+    $.ajax({
+      url: "./modules/users/creatorSend.php",
+      data: formData,
+      method: "POST",
+      contentType: false,
+      processData: false,
+      success: () => {
+        let alert = `Articulo creado con éxito`;
+        $("#alertGood").html(alert);
+        alert = ``;
+        $("#alertError").html(alert);
+        setTimeout(() => {
+          location.reload();
+        }, 500);
+      },
+      error: (jqXHR, textStatus, errorThrown) => {
+        console.error("Error:", textStatus, errorThrown);
+      },
+    });
+  }
 });
 archiveBtn.addEventListener("click", () => {
   let formData = new FormData();
@@ -97,30 +114,47 @@ archiveBtn.addEventListener("click", () => {
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
   const category = $(".categoryCreator").val();
-  const author = getCookie("username");
-  const authorEmail = getCookie("email");
-  formData.append('file', file);
-  formData.append('title', title);
-  formData.append('subtitle', subtitle);
-  formData.append('description', description);
-  formData.append('sources', sources);
-  formData.append('categories', category);
-  formData.append('author', author);
-  formData.append('images', imagesAndVideos);
-  formData.append('email', authorEmail);
-  formData.append('isArchived', 1);
-
-  $.ajax({
-    url: "./modules/users/creatorSend.php",
-    data: formData,
-    method: "POST",
-    contentType: false,
-    processData: false,
-    success: () => {
-      alert("Articulo creado y archivado con exito");
-    },
-    error: (jqXHR, textStatus, errorThrown) => {
-      console.error('Error:', textStatus, errorThrown);
-    }
-  });
+  if (
+    !file ||
+    !imagesAndVideos ||
+    !title ||
+    !subtitle ||
+    !description ||
+    !category
+  ) {
+    let alert = `Complete todos los campos para poder subir un articulo`;
+    $("#alertError").html(alert);
+  }else {
+    const author = getCookie("username");
+    const authorEmail = getCookie("email");
+    formData.append("file", file);
+    formData.append("title", title);
+    formData.append("subtitle", subtitle);
+    formData.append("description", description);
+    formData.append("sources", sources);
+    formData.append("categories", category);
+    formData.append("author", author);
+    formData.append("images", imagesAndVideos);
+    formData.append("email", authorEmail);
+    formData.append("isArchived", 1);
+    $.ajax({
+      url: "./modules/users/creatorSend.php",
+      data: formData,
+      method: "POST",
+      contentType: false,
+      processData: false,
+      success: () => {
+        let alert = `Articulo creado con éxito`;
+        $("#alertGood").html(alert);
+        alert = ``;
+        $("#alertError").html(alert);
+        setTimeout(() => {
+          location.reload();
+        }, 500);
+      },
+      error: (jqXHR, textStatus, errorThrown) => {
+        console.error("Error:", textStatus, errorThrown);
+      },
+    });
+  }
 });

@@ -136,6 +136,7 @@ hr {
   align-items: center;
   background-color: #0e0e0e;
   border-radius: 0.5em;
+  transition: .4s ease;
 }
 
 .recent:hover {
