@@ -33,7 +33,7 @@ WHERE
     u.name = '$authorName'
 ORDER BY 
     p.idPosts DESC
-LIMIT 2
+LIMIT 4
 ";
 
 $r = mysqli_query($connection, $query);

@@ -94,6 +94,7 @@ body {
 .writtenPostContainer, .favoritePostContainer, #posts {
     display: flex;
     justify-content: space-evenly;
+    max-width: 100rem;
 }
 #posts h3 {
     padding-left: 1rem;
@@ -109,6 +110,18 @@ body {
 @media (max-width:1200px) and (min-width:900px) {
     #userDesc, .userDescription {
         font-size: 1rem;
+    }
+    .writtenPostContainer, .favoritePostContainer, #posts {
+        display: block;
+        justify-content: space-evenly;
+        column-count: 2;
+        max-width: 100rem;
+    }
+    #written, #favoritesCont {
+        margin-bottom: 2rem;
+    }
+    .writtenPosts {
+        break-inside: avoid-column;
     }
     .userRol {
         font-size: 1rem;
@@ -149,5 +162,22 @@ body {
     .writtenPosts{
         margin: 0;
         margin-bottom: 5px;
+    }
+}
+@media(max-width:2560px){
+    .favoritePostContainer{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
+    }
+    .writtenPostContainer{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
+    }
+    #posts{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
     }
 }

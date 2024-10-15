@@ -1,6 +1,3 @@
-<?php
-include "./articleWrittenGet.php";
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,25 +16,28 @@ include "./articleWrittenGet.php";
     <main>
         <section>
             <div class="allContainer">
-                <h2 id="creatorTitle">Creador de articulos</h2>
+
+                <h2 id="creatorTitle">editor de articulos</h2>
                 <div class="creatorContainer">
+                    <div id="alertError"></div>
+                    <div id="alertGood"></div>
                     <div class="optionsContainer">
                         <h3 id="write" class="options">
                             <p>Escribir</p><i class="bx bx-pencil optionsResponsive"></i>
                             <h3 id="imagesVideos" class="options">
                                 <p>Imagenes y videos</p><i class="bx bxs-image-add optionsResponsive"></i>
                             </h3>
-                            <h3 id="source" class="options">
+                            <!-- <h3 id="source" class="options">
                                 <p>Fuentes</p><i class="bx bx-book-content optionsResponsive"></i>
-                            </h3>
+                            </h3> -->
                     </div>
                     <div id="containerPost">
                         <div id="writecontainer" class="active">
-                            <textarea type="text" placeholder="Ingrese el titulo del articulo"
+                            <textarea type="text" placeholder="Ingrese el nuevo titulo del articulo"
                                 class="textArea titletextArea"></textarea>
-                            <textarea type="text" placeholder="Ingrese el subtitulo del articulo" id="subtitleTextArea"
+                            <textarea type="text" placeholder="Ingrese el nuevo subtitulo del articulo" id="subtitleTextArea"
                                 class="textArea subtitletextArea"></textarea>
-                            <textarea type="text" placeholder="Ingrese la descripcion del articulo" id="descTextArea"
+                            <textarea type="text" placeholder="Ingrese la nueva descripcion del articulo" id="descTextArea"
                                 class="textArea descriptiontextArea"></textarea>
                         </div>
                         <div class="mediaContainer">
@@ -49,10 +49,10 @@ include "./articleWrittenGet.php";
                                 </div>
                             </form>
                         </div>
-                        <div class="sourcesContainer">
+                        <!-- <div class="sourcesContainer">
                             <textarea type="text" placeholder="Ingrese las fuentes de su articulo"
                                 class="textArea" id="sources"></textarea>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="categories">
                         <input class="categoryCreator" placeholder="Categoria">
@@ -60,7 +60,7 @@ include "./articleWrittenGet.php";
                     </div>
                     <div class="buttonsContainer">
                         <button id="archiveButton" class="buttonsCreator">Archivar</button>
-                        <button id="sendButton" class="buttonsCreator">Enviar</button>
+                        <button id="sendButton" class="buttonsCreator">Guardar</button>
                     </div>
                 </div>
             </div>

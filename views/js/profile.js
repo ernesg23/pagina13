@@ -21,12 +21,15 @@ edits.forEach(edit => {
         e.stopPropagation(); // Makes the click function on clickedArticles not work, so this works and does not break everything
         let id = this.id;
         $.ajax({
-            url: "./modules/posts/articleEdit.php",
+            url: "./modules/posts/editArticle.php",
             data: { articleId: id },
+            dataType: "html",
             method: "POST",
             success: (data) => {
                 console.log("anda");
+                $("#content").html(data);
             },
+            
         });
     });
 });
