@@ -76,6 +76,14 @@ body {
         align-items: center;
     }
 }
+.writtenPosts:hover {
+    background-color: #3a3a3a;
+    cursor: pointer;
+    box-shadow: 0 0 10px #666666;
+}
+.categoryPost {
+    color: #929292;
+}
 .editArticle {
     height: 2rem;
     width: 2rem;
@@ -83,16 +91,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-.categoryPost {
-    color: #929292;
-}
-.writtenPosts:hover {
-    background-color: #3a3a3a;
-    cursor: pointer;
-    box-shadow: 0 0 10px #666666;
-}
 .writtenPostContainer, .favoritePostContainer, #posts {
     display: flex;
+    justify-content: space-evenly;
 }
 #posts h3 {
     padding-left: 1rem;

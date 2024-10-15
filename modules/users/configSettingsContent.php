@@ -1,14 +1,23 @@
-
-<h1>Ajustes</h1>
-            <form>
-                <h2>Modificar Nombre de Usuario</h2>
-                <input name="searchBar" id="searchBar_Name" placeholder="Ingrese un nuevo nombre">
-                <h2>Modificar Email</h2>
-                <input name="searchBar" id="searchBar_Email" placeholder="Ingrese un nuevo email">
-                <h2>Cambiar contraseña</h2>
-                <input name="searchBar" id="searchBar_Password" placeholder="Ingrese una nueva contraseña">
+<div class="buttonsCont">
+    <button id="users-configSettings" class="buttons">Ajustes</button>
+    <button id="users-configPosts" class="buttons">Mis Artículos</button>
+</div>
+<div id="principalCont">
+    <h4 class="settings">Ajustes</h4>
+    <div id="entireSettCont">
+        <div id="settings">
+            <form id="data">
+                <h4 class="name">Modificar Nombre de Usuario</h4>
+                <input name="inputName" id="newName" class="newInput" placeholder="Ingrese un nuevo nombre">
+                <h4 class="email">Modificar Email</h4>
+                <input name="inputEmail" id="newEmail" class="newInput" placeholder="Ingrese un nuevo email">
+                <h4 class="password">Cambiar contraseña</h4>
+                <input name="inputPass" id="newPass" class="newInput" placeholder="Ingrese una nueva contraseña">
             </form>
-            <div id="changeImg">
-                <img class="img" src="./views/img/descarga1.png">
-                <button>Guardar</button>
-            </div>
+        </div>
+        <div id="changeImg">
+            <img class="imgChange" src="./views/img/sin perfil.png" />
+            <input type="button" class="saveBtn" value="Guardar" id="sendBtn" />
+        </div>
+    </div>
+</div>

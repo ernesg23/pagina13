@@ -1,31 +1,49 @@
+<?php
+include "../posts/profileGetPosts.php";
+include '../posts/readerGetPost.php';
+?>
 
-        <div id="myPosts">
-            <h2>Mis Artículos</h2>
-            <div class="article">
-                <img class="imgPost" src="../../views/img/descarga1.png">
-                <h3 class="titlePost">Título Artículo</h>
-                    <p class="categoryPost">Categoría</p>
-                    <p class="descriptionPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nisi accusantium nemo hic impedit molestias soluta quaerat eveniet a perferendis! Itaque porro laborum, mollitia minima officiis nihil incidunt eum explicabo!</p>
+<head>
+    <link rel="stylesheet" href="./views/css/configPosts.css">
+    <title>Pagina13 - Mis articulos</title>
+</head>
+<div class="buttonsCont">
+    <button id="users-configSettings" class="buttons">Ajustes</button>
+    <button id="users-configPosts" class="buttons">Mis Artículos</button>
+</div>
+<div id="contAllConfigPosts">
+    <div id="title">
+        <h4>Mis Artículos</h4>
+    </div>
+    <h5 id="previewPost">Vista Previa</h5>
+    <div id="contPosts">
+        <div id="previewPostsCont">
+            <div class="writtenPosts" id="<?php echo $rows[0]['idPosts']; ?>">
+                <img src="<?php echo str_replace('../../', '', $rows[0]['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
+                <div id="titleEdit">
+                    <h4 class="titlePost"><?php echo $rows[0]['title']; ?></h4>
+                </div>
+                <div class="postDescription">
+                    <p class="categoryPost"><?php echo $rows[0]['name']; ?></p>
+                    <p class="subtitlePost"><?php echo $rows[0]['subtitle']; ?></p>
+                </div>
+            </div>
+            <div id="postButtons">
+                <button id="editPostBtn" class="postBtn">Editar</button>
+                <button id="deletePostBtn" class="postBtn">Eliminar</button>
             </div>
         </div>
-        <div class="articles-container">
-            <div class="article">
-                <img src="ruta/a/tu/imagen1.jpg" alt="Imagen del artículo 1">
-                <h3 class="titlePost">Título del Artículo 1</h3>
-                <p class="categoryPost">Categoría</p>
-                <p class="descriptionPost">Descripción breve del artículo 1</p>
-            </div>
-            <div class="article">
-                <img src="ruta/a/tu/imagen2.jpg" alt="Imagen del artículo 2">
-                <h3 class="titlePost">Título del Artículo 2</h3>
-                <p class="categoryPost">Categoría</p>
-                <p class="descriptionPost">Descripción breve del artículo 2</p>
-            </div>
-            <div class="article">
-                <img src="ruta/a/tu/imagen3.jpg" alt="Imagen del artículo 3">
-                <h3 class="titlePost">Título del Artículo 3</h3>
-                <p class="categoryPost">Categoría</p>
-                <p class="descriptionPost">Descripción breve del artículo 3</p>
-            </div>
-        </div>
-    
+        <ul id="writtenPostsList">
+            <?php foreach ($rows2 as $post): ?>
+                <li class="written" id="<?php echo $post['idPosts']; ?>">
+                    <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgWritten" alt="Imagen del artículo">
+                    <div class="written-description">
+                        <h3><?php echo $post['title']; ?></h3>
+                        <p><?php echo $post['subtitle']; ?></p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+</div>

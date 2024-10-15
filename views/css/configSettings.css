@@ -1,205 +1,171 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   
-  }
-html {
-    background-color: #212121;
+body {
+    color: #fff;
 }
-.icon {
-    margin: 35px 0 15px 45px ;
-}
-.container {
-    width: 1280px;
-    height: 840px;
-    background-color: rgb(12 , 40, 78);
-    margin: 90px 408px 0px 408px;
-    border: 55px;
-    border: 55px;
-    border-radius: 35px;
-    color: azure;
-       
-}
-.text {
+#userInfCont {
+    display: flex;
     justify-content: center;
-    margin: 50px 14px 0px 43px ;
-    font-size: large;
-    line-height: 25px;
-    
+    padding: 1rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#userInfCont img {
+    max-width: 20rem;
+    max-height: 20rem;
+}
+
+#userInfCont p {
+    margin-bottom: 0;
+}
+
+#userInfCont h5 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+#userSettCont {
+    background: linear-gradient(180deg, #0E2E59, #000000);
+    margin: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+#infoDescCont {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
 }
 
 .userEmail {
-    margin: 6px 2px 4px 2px;
+    font-size: 1.5rem;
+    text-decoration: underline;
 }
-
-.userName {
-    margin: 0px 0px 6px 0px;
+.newInput {
+    width: 25rem;
+    border: none;
+    background-color: #11111129;
+    border-radius: 0.9rem;
+    height: 3rem;
+    padding-left: 1rem;
+    border-bottom: 2px solid #000;
+    color: #fff;
 }
-
-.userRol {
-    color: silver;
-    margin: 3px 0px 0px 0px;
-}
-
-.userDescription {
-    color: silver;
-}
-
-#head {
-   display: flex;
-   flex-wrap: nowrap;
-   margin: 50px 50px 50px 50px;
-  
-}
-
-#users-configPosts {
-    width: 6em;
-    margin: 5px;
-}
-.buttons {
-    font-size: 50px;
-    border-bottom: #212121;
-    margin: 0px 6px 12px;
-    color: black;
-    min-width: -webkit-fill-available;
-    height: 4em;
-    cursor: pointer;
-    transition: ease .2s;
-    display: grid;
-    border-bottom: #212121;
-    justify-content: space-between;
+#sendBtn {
+    border: none;
+    margin-top: 1rem;
+    background-color: #0037f973;
+    border: 2px solid #2844D7;
+    color: #fff;
+    border-radius: 0.5rem;
+    height: 4rem;
     width: -webkit-fill-available;
 }
-.color-body {
-    width: 970px;
-    height: 530px;
-    background: rgb(94, 93, 93);
-    border: none;
-    border-radius: 1em;
-    border: solid #212121;
-    margin: 50px;
-    display: flex;
-   flex-wrap: nowrap;
-   font-size: xx-large;
-}
-#text-two {
-    margin: -550px 100px 11em 660px;
-    font-size: large;
-    line-height: 25px;
-    border-color: #212121;
-}
-.body {
-    border-right: solid black;
-}
-
-.img {
-    margin-top: 42px;
-}
-
-#users-configSettings {
+.userRol {
+    color: rgb(99, 99, 99);
     font-size: 1.5rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 4px solid;
-    padding: 0.5em;
-    
 }
-
-#users-configPosts {
-    font-size: 1.5rem;
-    background-color: transparent;
-    border: none;
-}
-
-.adjust {
-    margin-bottom: 1.5em;
-}
-
-.name {
-    margin-bottom: 1.5rem;
-}
-
-.email {
-    margin-bottom: 1.5rem;
-}
-
-.password {
-    margin-bottom: 1.5rem;
-}
-
-#searchBar_Name {
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-radius: 0.5rem;
-    height: 3em;
-    padding: 20px;
-    width: 20rem;
-    margin: 2px 13px 2px;
-    color: white;
-}
-
-#searchBar_Email {
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-radius: 0.5rem;
-    height: 3em;
-    width: 20rem;
-    padding: 20px;
-    margin: 2px 13px 2px;
-    color: white;
-}
-
-#searchBar_Password {
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #000;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-radius: 0.5rem;
-    height: 3em;
-    width: 20rem;
-    padding: 20px;
-    margin: 2px 20px 2px 15px;
-    
-    
-}
-.containerSettings {
+.buttonsCont {
+    background-color: #00000052;
     display: flex;
+    flex-direction: column;
+}
+.buttons {
+    border: none;
+    width: 10rem;
+    height: 3rem;
+    background: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: .4s ease;
+}
+.buttons:hover {
+    background-color: #00000063;
+}
+#principalCont {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+}
+.settings {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+h4 {
+    margin-bottom: 2rem;
+}
+#data h4 {
+    margin-bottom: 0.5rem;
+}
+#data input {
+    margin-bottom: 2rem;
+}
+#entireSettCont {
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    padding: 1rem;
 }
 #changeImg {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
 }
-
-.Guardarbtn {
-    margin: 18px 15px 18px 15px;
-    text-align: center;
-    font-size: 1em;
-    padding: 2px 20px;
-    min-width: -webkit-fill-available;
-    height: 2rem;
-    background-color: #458DFA;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: ease .2s;
+.imgChange {
+    width: 20rem;
 }
-
-@media (max-width: 846px) {
-    *{
-        background-color: aquamarine;
+.contSett {
+    width: -webkit-fill-available;
+    max-height: 40rem;
+    background-color: #c2c2c23b;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+}
+#userDesc, .userDescription {
+    font-size: 1.5rem;
+}
+@media (max-width:1200px) and (min-width:900px) {
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
+    }
+}
+@media (max-width:899px) {
+    #userInfCont {
+        flex-direction: column;
+    }
+    #userInfCont img {
+        max-width: 14rem;
+        max-height: 14rem;
+    }
+    #userProfCont {
+        margin: 2rem;
+    } 
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
     }
 }
