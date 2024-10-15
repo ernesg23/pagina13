@@ -1,0 +1,105 @@
+body {
+    color: white;
+}
+
+#userInfCont {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+#userInfCont img {
+    max-width: 20rem;
+}
+
+#userInfCont p {
+    margin-bottom: 0;
+}
+
+#userInfCont h5 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+#userProfCont {
+    background: linear-gradient(180deg, #0E2E59, #000000);
+    margin: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+#infoDescCont {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.userEmail {
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.userRol {
+    color: rgb(99, 99, 99);
+    font-size: 1.5rem;
+}
+
+#userDesc, .userDescription {
+    font-size: 1.5rem;
+}
+.writtenPosts {
+    background-color: #000000;
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    color: #fff;
+    padding: 0.5rem;
+    transition: 0.2s ease;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        padding-bottom: 1rem;
+    }
+    #titleEdit {
+        display: flex;
+        justify-content: space-between;   
+        align-items: center;
+    }
+}
+.editArticle {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categoryPost {
+    color: #929292;
+}
+.writtenPosts:hover {
+    background-color: #3a3a3a;
+    cursor: pointer;
+    box-shadow: 0 0 10px #666666;
+}
+.writtenPostContainer, .favoritePostContainer, #posts {
+    display: flex;
+}
+#posts h3 {
+    padding-left: 1rem;
+}
+#written, #favoritesCont {
+    display: flex;
+    flex-direction: column;
+}
+.postDescription {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}

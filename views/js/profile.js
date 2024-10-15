@@ -13,23 +13,42 @@ function getCookie(cname) {
   }
   return "";
 }
-const edit = document.querySelector(".editArticle")
+const edits = document.querySelectorAll(".editArticle");
 const author = getCookie("username");
-$(edit).click(() => {
-  let id = this.id
-  $.ajax({
-    url: "./modules/posts/articleEdit.php",
-    data: { articleId: id },
-    method: "POST",
-    success: (data) => {
-      console.log("anda")
-    }
-  })
-})
+
+edits.forEach(edit => {
+    edit.addEventListener("click", function (e) {
+        e.stopPropagation(); // Makes the click function on clickedArticles not work, so this works and does not break everything
+        let id = this.id;
+        $.ajax({
+            url: "./modules/posts/articleEdit.php",
+            data: { articleId: id },
+            method: "POST",
+            success: (data) => {
+                console.log("anda");
+            },
+        });
+    });
+});
 $.ajax({
-  url: "./modules/posts/articleWrittenGet.php",
-  data: { authorName: author },
-  method: "POST",
-  success: (data) => {
-  }
-})
+    url: "./modules/posts/articleWrittenGet.php",
+    data: { authorName: author },
+    method: "POST",
+    success: (data) => {},
+});
+const clickedArticles = document.querySelectorAll(".writtenPosts");
+clickedArticles.forEach(article => {
+    article.addEventListener("click", function () {
+        const id = this.id;
+        $.ajax({
+            url: "./modules/posts/reader.php",
+            method: "post",
+            data: { articleId: id },
+            dataType: "html",
+            success: (postReaderData) => {
+                $("#content").html(postReaderData);
+            },
+        });
+    });
+});
+
