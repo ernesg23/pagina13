@@ -1,8 +1,8 @@
 # Descripcion
-Pagina13 es un sitio web el cual proporciona artículos educativos de los colegios secundarios en Argentina de una forma facilmente entendible y garantizando la facilidad del usuario para acceder a los mismos.
+Página13 es un sitio web el cual se proporcionan artículos educativos de los colegios secundarios en Argentina de una manera entendible y garantizando la facilidad del usuario para acceder a los mismos.
 ## Publico dirigido
 Estudiantes pertenecientes a la escuela secundaria, educadores y cualquier persona interesada en recursos educativos.
-## ¿Que se puede hacer en Pagina13?
+## ¿Qué se puede hacer en Pagina13?
 Los usuarios pueden: 
 * Marcar sus artículos favoritos.
 * Acceder a su muro personal.
