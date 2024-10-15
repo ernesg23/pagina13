@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2024 at 12:27 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Oct 15, 2024 at 04:37 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,7 +63,9 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 (11, 'matoaErnesto'),
 (12, 'promo'),
 (13, 'promo'),
-(14, 'adshinawoldmaw');
+(14, 'adshinawoldmaw'),
+(15, 'prueba'),
+(16, 'testeo');
 
 -- --------------------------------------------------------
 
@@ -75,6 +77,21 @@ CREATE TABLE `favorites` (
   `Posts_idPosts` int(255) NOT NULL,
   `Users_idUsers` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `favorites`
+--
+
+INSERT INTO `favorites` (`Posts_idPosts`, `Users_idUsers`) VALUES
+(1, 13),
+(5, 13),
+(15, 13),
+(22, 13),
+(24, 13),
+(26, 13),
+(27, 13),
+(28, 13),
+(29, 13);
 
 -- --------------------------------------------------------
 
@@ -124,7 +141,15 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 (22, 'wqudhajoñaiednwalkdw', 'dijaslmdnaiomd awjdowandmoawnoas', 'asjdoawñdmwaoñd', '../../views/img/uploads/ej33.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
 (23, 'wqudhajoñaiednwalkdw', 'dijaslmdnaiomd awjdowandmoawnoas', 'asjdoawñdmwaoñd', '../../views/img/uploads/ej33.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
 (24, 'matoaErnesto', 'hdilidjhsilfhselidhwaid', 'jawidldjwalidjawd', '../../views/img/uploads/nextstep.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
-(25, 'matoaErnesto', 'hdilidjhsilfhselidhwaid', 'jawidldjwalidjawd', '../../views/img/uploads/nextstep.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0);
+(25, 'matoaErnesto', 'hdilidjhsilfhselidhwaid', 'jawidldjwalidjawd', '../../views/img/uploads/nextstep.png', '2024-10-03 00:00:00', NULL, NULL, 13, 0),
+(26, 'test', 'test', 'test', '../../views/img/uploads/kamikaze.png', '2024-10-04 21:40:51', NULL, NULL, 13, 0),
+(27, 'test', 'test', 'test', '../../views/img/uploads/kamikaze.png', '2024-10-04 21:41:49', NULL, NULL, 14, 0),
+(28, 'test', 'test', 'test', '../../views/img/uploads/Screenshot 2024-05-28 132815.png', '2024-10-04 23:34:29', NULL, NULL, 13, 0),
+(29, 'test', 'test', 'test', '../../views/img/uploads/cinturon-de-orion-constelacion.png', '2024-10-14 16:03:09', NULL, NULL, 13, 0),
+(30, 'sajdioawm', 'sadjioawmd', 'sadjkawiodm,sa', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:11:11', NULL, NULL, 13, 0),
+(31, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:37:56', NULL, NULL, 13, 0),
+(32, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:38:40', NULL, NULL, 13, 0),
+(33, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:39:54', NULL, NULL, 13, 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +176,15 @@ INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) 
 (11, 8),
 (15, 11),
 (22, 14),
-(24, 11);
+(24, 11),
+(26, 1),
+(27, 1),
+(28, 15),
+(29, 1),
+(30, 16),
+(31, 1),
+(32, 1),
+(33, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +216,11 @@ INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `desc
 (10, 'Tst Tst', 'Tst@tst.com', '292d118c70695191f4872fb32b6da252c36dfe43b680722f4c95be64c32b73f67a95bb533a00b68c44f55789cf93a8365e14f9e81c43794bee3ed9c8926a900a', NULL, NULL, '2024-09-28', NULL, 0x3000),
 (11, 'Thiago Martinez', 'thiagomartinez963@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-09-28', NULL, 0x3000),
 (12, 'Thiago Martinez', 'thiagomartinez967@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-09-28', NULL, 0x3000),
-(13, 'Thiago Martinez', 'thiagomartinez968@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-09-28', NULL, 0x3000);
+(13, 'Thiago Martinez', 'thiagomartinez968@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-09-28', NULL, 0x3000),
+(14, 'Juanito Alcachofa', 'Ja@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
+(15, 'Thiago Martinez', 'thiagomartinez969@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
+(16, 'Thiago Martinez', 'thiagomartinez930@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
+(17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000);
 
 --
 -- Indexes for dumped tables
@@ -245,19 +282,19 @@ ALTER TABLE `accountrecovery`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
