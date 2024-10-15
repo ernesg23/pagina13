@@ -8,10 +8,12 @@ body {
     padding: 1rem;
     border-bottom: 2px solid black;
     margin-bottom: 1rem;
+    align-items: center;
 }
 
 #userInfCont img {
     max-width: 20rem;
+    max-height: 20rem;
 }
 
 #userInfCont p {
@@ -102,4 +104,49 @@ body {
 .postDescription {
     overflow-wrap: break-word;
     word-wrap: break-word;
+}
+@media (max-width:1200px) and (min-width:900px) {
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
+    }
+}
+@media (max-width:899px) {
+    #userInfCont {
+        flex-direction: column;
+    }
+    #userInfCont img {
+        max-width: 14rem;
+        max-height: 14rem;
+    }
+    .writtenPostContainer, .favoritePostContainer, #posts {
+        flex-direction: column;
+    }   
+    #userProfCont {
+        margin: 2rem;
+    } 
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
+    }
+    .writtenPosts{
+        margin: 0;
+        margin-bottom: 5px;
+    }
 }
