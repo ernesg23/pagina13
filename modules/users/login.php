@@ -34,7 +34,7 @@
                         <label><input type="checkbox" id="cbox1" value="first_checkbox" />Recordar contraseña</label><br>
                     </b>
                 </div>
-                <input type="button" value="Abrir Prepucio" id="sendBtn" />
+                <input type="button" value="Iniciar sesión" id="sendBtn" />
             </div>
         </div>
     </section>
