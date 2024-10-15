@@ -122,7 +122,6 @@ h4 {
 }
 .contSett {
     width: -webkit-fill-available;
-    max-height: 40rem;
     background-color: #c2c2c23b;
     border-radius: 1rem;
     overflow: hidden;
@@ -131,7 +130,22 @@ h4 {
 #userDesc, .userDescription {
     font-size: 1.5rem;
 }
-@media (max-width:1200px) and (min-width:900px) {
+@media (max-width:1200px)  {
+    .newInput {
+        width: -webkit-fill-available;
+    }
+    #data h4 {
+        font-size: 1.5rem;
+    }
+    #changeImg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .imgChange {
+        width: 15rem;
+    }
     #userDesc, .userDescription {
         font-size: 1rem;
     }
