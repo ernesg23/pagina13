@@ -69,5 +69,4 @@ include "../posts/profileGetPosts.php";
         </div>
     </div>
 </body>
-
 </html>
