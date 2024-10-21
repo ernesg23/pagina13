@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./views/css/configPosts.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script type="module" src="./views/js/configSettings.js"></script>
-    <script type="module" src="./views/js/configSettingsViews.js"></script>
 </head>
 
 <body>

@@ -1,16 +1,16 @@
 <?php
-include 'connection.php';
-$publishedDate = date("Y-m-d H:i:s");
-$query = "UPDATE deleted_at = " ; 
+include '../users/connection.php';
 
+// Get datetime
+$date = date('Y-m-d H:i:s');
+
+// Evade sql injections
+$id = mysqli_real_escape_string($connection, $_POST['id']);
+
+$query = "UPDATE posts SET deleted_at = '$date' WHERE idPosts = '$id'";
 $r = mysqli_query($connection, $query);
+
 if (!$r) {
     die('Error en la consulta: ' . mysqli_error($connection));
 }
-
-$rows = [];
-while ($response = mysqli_fetch_assoc($r)) {
-    $rows[] = $response;
-}
-
-echo json_encode($rows);
+// echo json_encode(['status' => 'success']);

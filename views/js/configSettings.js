@@ -44,20 +44,20 @@ function addEventListeners() {
     });
   });
   $("#deletePostBtn").on("click", function () {
+    const id = $(".writtenPosts").attr("id");
     $.ajax({
-      method: "POST",
-      url: "./modules/posts/editArticle.php",
-      dataType: "html",
-      success: (data) => {
-        console.log('Success:', data);
-        $("#content").html(data);
-      },
+        method: "POST",
+        url: "./modules/posts/deleteArticle.php",
+        data: { id: id },
+        success: (data) => {
+            console.log('Success:', data, "hola");
+        },
     });
-  });
+});
   $("#sendBtn").on("click", function () {
     $.ajax({
       method: "POST",
-      url: "./modules/users/configPostsChanges.php",
+      url: "./modules/users/deleteArticle.php",
       data: $("#data").serialize(),
       success: (data) => {
         location.reload();
