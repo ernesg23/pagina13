@@ -794,6 +794,7 @@ h3 {
   }
 
   .navMenu .dropbtn {
+    
     color: white;
     border: none;
     cursor: pointer;
@@ -804,9 +805,11 @@ h3 {
     transition: 0.3s ease;
     margin-bottom: 0.5rem;
     display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
-  .navMenu:hover .dropdown-content {
+  .navMenu .dropdown-content.active {
     display: block;
     top: 2.5rem;
   }
