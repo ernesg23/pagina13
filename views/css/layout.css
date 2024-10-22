@@ -1150,6 +1150,7 @@ section {
   list-style: none;
   padding-left: 1rem;
   top: 3.32rem;
+  z-index: 1;
   width: 30rem;
   border-radius: 1rem;
   height: auto;
