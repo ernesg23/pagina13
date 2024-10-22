@@ -1,12 +1,12 @@
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "pagina13");
-$query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, 
-                 pc.Categories_idCategories, c.idCategories, c.name as categoria_nombre
-          FROM posts p
-          INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
-          INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
-          WHERE p.isArchived = 0
-          ORDER BY p.idPosts DESC
+$query = "SELECT p.idPos, p.title, p.subtitle, p.desc, p.img, p.isArc, p.created_at, 
+                 pc.cat_idCat, c.idCat, c.name as categoria_nombre
+          FROM pos p
+          INNER JOIN pos_cat pc ON p.idPos = pc.pos_idPos
+          INNER JOIN cat c ON pc.cat_idCat = c.idCat
+          WHERE p.isArc = 0
+          ORDER BY p.idPos DESC
           LIMIT 5;";
 $result = mysqli_query($mysqli, $query);
 $articulos = [];

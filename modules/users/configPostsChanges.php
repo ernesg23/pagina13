@@ -12,7 +12,7 @@ $NewEmail = $_POST['inputEmail'];
 if (empty($NewEmail)) {
     $NewEmail = $ActualEmail;
 }
-$ActualPassword = mysqli_query($connection, "SELECT password FROM USERS WHERE idUsers='" . $_SESSION["userId"] . "'");
+$ActualPassword = mysqli_query($connection, "SELECT password FROM users WHERE idUsers='" . $_SESSION["userId"] . "'");
 $Newpassword = mysqli_real_escape_string($connection, $_POST['inputPass']);
 $Newpassword = hash('sha512', $Newpassword);
 if (empty($Newpassword)) {

@@ -16,13 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "El archivo no es una imagen.";
         $uploadOk = 0;
     }
-
     // Verify if the file does exist
     // if (file_exists($target_file)) {
     //     echo "Lo siento, el archivo ya existe.";
     //     $uploadOk = 0;
     // }
-
     // Verify file size
     if ($_FILES["file"]["size"] > 17000000) {
         echo "Archivo muy pesado";
@@ -47,9 +45,8 @@ if ($connection->connect_error) {
 }
 // get actual date in format Y-m-d H:i:s
 $publishedDate = date("Y-m-d H:i:s");
-
 // Insert post evading SQL injections with prepare
-$queryCreatePost = $connection->prepare("INSERT INTO `posts`(`title`, `subtitle`, `description`, `portraitImg`, `created_at`, `Users_idUsers`, `isArchived`) 
+$queryCreatePost = $connection->prepare("INSERT INTO `post`(`title`, `subtitle`, `desc`, `img`, `created_at`, `users_idUsers`, `isArc`) 
 VALUES (?, ?, ?, ?, ?, (SELECT idUsers FROM `users` WHERE email = ?), ?)");
 if ($queryCreatePost === false) {
     die("Error preparing queryCreatePost: " . $connection->error);
@@ -63,7 +60,7 @@ $postId = $connection->insert_id;
 // Evade SQL injections
 $category = mysqli_real_escape_string($connection, $_POST['categories']);
 // Verify the existence of the category
-$queryCheckCategory = $connection->prepare("SELECT idCategories FROM categories WHERE name = ?");
+$queryCheckCategory = $connection->prepare("SELECT idCat FROM cat WHERE name = ?");
 if ($queryCheckCategory === false) {
     die("Error preparing queryCheckCategory: " . $connection->error);
 }
@@ -75,7 +72,7 @@ $resultCheckCategory = $queryCheckCategory->get_result();
 $categoryId = null;
 if ($resultCheckCategory->num_rows == 0) {
     // Insert a new cat if it does not exist
-    $queryInsertCategory = $connection->prepare("INSERT INTO categories(name) VALUES (?)");
+    $queryInsertCategory = $connection->prepare("INSERT INTO cat(name) VALUES (?)");
     if ($queryInsertCategory === false) {
         die("Error preparing queryInsertCategory: " . $connection->error);
     }
@@ -88,11 +85,10 @@ if ($resultCheckCategory->num_rows == 0) {
 } else {
     // get id if cat exist
     $row = $resultCheckCategory->fetch_assoc();
-    $categoryId = $row['idCategories'];
+    $categoryId = $row['idCat'];
 }
-
 // Make a relation between posts and cat
-$queryPostCategory = $connection->prepare("INSERT INTO `posts_has_categories`(`Posts_idPosts`, `Categories_idCategories`) VALUES (?, ?)");
+$queryPostCategory = $connection->prepare("INSERT INTO `pos_cat`(`pos_idPos`, `cat_idCat`) VALUES (?, ?)");
 if ($queryPostCategory === false) {
     die("Error preparing queryPostCategory: " . $connection->error);
 }
@@ -105,6 +101,5 @@ $queryCreatePost->close();
 $queryCheckCategory->close();
 $queryInsertCategory->close();
 $queryPostCategory->close();
-
 // Close connection
 $connection->close();
