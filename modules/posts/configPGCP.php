@@ -2,12 +2,12 @@
 include '../users/connection.php';
 $authorId = $_COOKIE["userId"];
 $postId = $_POST["id"];
-$query = "SELECT p.idPosts, p.Users_idUsers, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, pc.Categories_idCategories, c.idCategories, c.name, u.idUsers AS authorId
-          FROM posts p
-          INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
-          INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
-          INNER JOIN users u ON p.Users_idUsers = u.idUsers
-          WHERE p.idPosts = '$postId'
+$query = "SELECT p.idpos, p.users_idUsers, p.title, p.subtitle, p.desc, p.img, p.isArc, p.created_at, pc.cat_idcat, c.idCat, c.name, u.idUsers AS authorId
+          FROM pos p
+          INNER JOIN pos_cat pc ON p.idpos = pc.pos_idpos
+          INNER JOIN cat c ON pc.cat_idcat = c.idcat
+          INNER JOIN users u ON p.users_idUsers = u.idUsers
+          WHERE p.idpos = '$postId'
           LIMIT 1;";
 
 $r = mysqli_query($connection, $query);

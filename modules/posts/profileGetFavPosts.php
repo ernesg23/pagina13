@@ -1,50 +1,44 @@
 <?php
 include "../users/connection.php";
-
 $userId = mysqli_real_escape_string($connection, $_COOKIE["userId"]);
-
 $query = "SELECT
-    p.idPosts,
-    p.Users_idUsers,
+    p.idPos,
+    p.users_idUsers,
     p.title,
     p.subtitle,
-    p.description,
-    p.portraitImg,
-    p.isArchived,
+    p.desc,
+    p.img,
+    p.isArc,
     p.created_at,
-    pc.Categories_idCategories,
-    c.idCategories,
+    pc.cat_idCat,
+    c.idCat,
     c.name,
     u.name AS authorName,
-    f.Posts_idPosts
+    f.pos_idPos
 FROM
-    posts p
+    pos p
 INNER JOIN
-    posts_has_categories pc
-      ON p.idPosts = pc.Posts_idPosts
+    pos_cat pc
+      ON p.idPos = pc.pos_idPos
 INNER JOIN
     categories c
-      ON pc.Categories_idCategories = c.idCategories
+      ON pc.cat_idCat = c.idCat
 INNER JOIN
     users u
-      ON p.Users_idUsers = u.idUsers
+      ON p.users_idUsers = u.idUsers
 INNER JOIN
     favorites f
-      ON p.idPosts = f.Posts_idPosts
+      ON p.idPos = f.pos_idPos
 WHERE
-    f.Users_idUsers = $userId
+    f.users_idUsers = $userId
 ORDER BY
-    f.Posts_idPosts
+    f.pos_idPos
 LIMIT 4;
 ";
-
-
 $r = mysqli_query($connection, $query);
-
 if (!$r) {
     die('Error en la consulta: ' . mysqli_error($connection));
 }
-
 $rows2 = [];
 while ($response = mysqli_fetch_assoc($r)) {
     $rows2[] = $response;

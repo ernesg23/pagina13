@@ -7,7 +7,7 @@ $date = date('Y-m-d H:i:s');
 // Evade sql injections
 $id = mysqli_real_escape_string($connection, $_POST['id']);
 
-$query = "UPDATE posts SET deleted_at = '$date' WHERE idPosts = '$id'";
+$query = "UPDATE pos SET deleted_at = '$date' WHERE idPos = '$id'";
 $r = mysqli_query($connection, $query);
 
 if (!$r) {

@@ -1,17 +1,15 @@
 <?php
 include '../users/connection.php';
-$query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, pc.Categories_idCategories, c.idCategories, c.name
-          FROM posts p
-          INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
-          INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
-          WHERE p.isArchived = 0
-          ORDER BY p.idPosts DESC;";
-
+$query = "SELECT p.idPos, p.title, p.subtitle, p.desc, p.img, p.isArc, p.created_at, pc.cat_idCat, c.idCat, c.name
+          FROM pos p
+          INNER JOIN pos_cat pc ON p.idPos = pc.pos_idPos
+          INNER JOIN cat c ON pc.cat_idCat = c.idCat
+          WHERE p.isArc = 0
+          ORDER BY p.idPos DESC;";
 $r = mysqli_query($connection, $query);
 if (!$r) {
     die('Error en la consulta: ' . mysqli_error($connection));
 }
-
 $rows2 = [];
 while ($response = mysqli_fetch_assoc($r)) {
     $rows2[] = $response;

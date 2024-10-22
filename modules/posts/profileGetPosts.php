@@ -1,47 +1,42 @@
 <?php
 include "../users/connection.php";
 session_start();
-
 $authorName = mysqli_real_escape_string($connection, $_COOKIE["username"]);
-
 $query = "
 SELECT 
-    p.idPosts, 
-    p.Users_idUsers, 
+    p.idPos, 
+    p.users_idUsers, 
     p.title, 
     p.subtitle, 
-    p.description, 
-    p.portraitImg, 
-    p.isArchived, 
+    p.desc, 
+    p.img, 
+    p.isArc, 
     p.created_at, 
-    pc.Categories_idCategories, 
-    c.idCategories, 
+    pc.cat_idCat, 
+    c.idCat, 
     c.name, 
     u.name AS authorName
 FROM 
-    posts p
+    pos p
 INNER JOIN 
-    posts_has_categories pc 
-    ON p.idPosts = pc.Posts_idPosts
+    pos_cat pc 
+    ON p.idPos = pc.pos_idPos
 INNER JOIN 
     categories c 
-    ON pc.Categories_idCategories = c.idCategories
+    ON pc.cat_idCat = c.idCat
 INNER JOIN 
     users u 
-    ON p.Users_idUsers = u.idUsers
+    ON p.users_idUsers = u.idUsers
 WHERE 
     u.name = '$authorName'
 ORDER BY 
-    p.idPosts DESC
+    p.idPos DESC
 LIMIT 4
 ";
-
 $r = mysqli_query($connection, $query);
-
 if (!$r) {
     die('Error en la consulta: ' . mysqli_error($connection));
 }
-
 $rows = [];
 while ($response = mysqli_fetch_assoc($r)) {
     $rows[] = $response;
