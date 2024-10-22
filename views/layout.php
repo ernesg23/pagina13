@@ -79,12 +79,12 @@
         <div class="social">
             <ul>
                 <h4 class="text-title">Seguinos en las redes</h4>
-                <li><a href="https://twitter.com" class="socialMedia" target="_blank"><i
+                <li><a href="https://x.com/Pagina194149" class="socialMedia" target="_blank"><i
                             class='bx bxl-twitter'></i>Pagina13</a>
                 </li>
-                <li><a href="https://instagram.com" class="socialMedia" target="_blank"><i
+                <li><a href="https://www.instagram.com/pag13.oficial/" class="socialMedia" target="_blank"><i
                             class='bx bxl-instagram bx-flip-horizontal'></i>Pagina13</a></li>
-                <li><a href="https://github.com" class="socialMedia" target="_blank"><i
+                <li><a href="https://github.com/et26alumnos/24-4.10-pagina13" class="socialMedia" target="_blank"><i
                             class='bx bxl-github'></i>Pagina13</a></li>
             </ul>
         </div>

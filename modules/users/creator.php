@@ -17,7 +17,7 @@
         <section>
             <div class="allContainer">
 
-                <h2 id="creatorTitle">Creador de articulos</h2>
+                <h2 id="creatorTitle">Creador de Artículos</h2>
                 <div class="creatorContainer">
                     <div id="alertError"></div>
                     <div id="alertGood"></div>
@@ -25,7 +25,7 @@
                         <h3 id="write" class="options">
                             <p>Escribir</p><i class="bx bx-pencil optionsResponsive"></i>
                             <h3 id="imagesVideos" class="options">
-                                <p>Imagenes y videos</p><i class="bx bxs-image-add optionsResponsive"></i>
+                                <p>Imágenes y videos</p><i class="bx bxs-image-add optionsResponsive"></i>
                             </h3>
                             <!-- <h3 id="source" class="options">
                                 <p>Fuentes</p><i class="bx bx-book-content optionsResponsive"></i>
@@ -33,11 +33,11 @@
                     </div>
                     <div id="containerPost">
                         <div id="writecontainer" class="active">
-                            <textarea type="text" placeholder="Ingrese el titulo del articulo"
+                            <textarea type="text" placeholder="Ingrese el título del artículo"
                                 class="textArea titletextArea"></textarea>
-                            <textarea type="text" placeholder="Ingrese el subtitulo del articulo" id="subtitleTextArea"
+                            <textarea type="text" placeholder="Ingrese el subtitulo del artículo" id="subtitleTextArea"
                                 class="textArea subtitletextArea"></textarea>
-                            <textarea type="text" placeholder="Ingrese la descripcion del articulo" id="descTextArea"
+                            <textarea type="text" placeholder="Ingrese la descripción del artículo" id="descTextArea"
                                 class="textArea descriptiontextArea"></textarea>
                         </div>
                         <div class="mediaContainer">
@@ -55,7 +55,7 @@
                         </div> -->
                     </div>
                     <div class="categories">
-                        <input class="categoryCreator" placeholder="Categoria">
+                        <input class="categoryCreator" placeholder="Categoría">
                         <!-- <i class='bx bx-plus-medical categoryAdd'></i> -->
                     </div>
                     <div class="buttonsContainer">

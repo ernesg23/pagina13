@@ -22,7 +22,7 @@
                 <form>
                     <div id="emailAlert"></div>
                     <div id="alertAllGood"></div>
-                    <h2>Correo electronico</h2>
+                    <h2>Correo Electrónico</h2>
                     <input name="email" id="email" placeholder="example@example.com" type="email" required>
                     <div id="passwordAlert"></div>
                     <h2>Contraseña</h2>

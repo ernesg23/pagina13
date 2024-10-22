@@ -36,7 +36,7 @@
                 </div>
                 <div id="emailAlert"></div>
                 <div class="textreg">
-                    <p>Correo Electronico</p>
+                    <p>Correo Electrónico</p>
                 </div>
                 <input type="email" placeholder="Ejemplo@gmail.com" class="textArea" id="userEmail" required>
                 <div id="passwordAlert"></div>
