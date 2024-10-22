@@ -49,8 +49,30 @@ include './favGet.php';
                         <li class="recent" id="<?php echo $post['idPosts']; ?>">
                             <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="img" alt="Imagen del artículo">
                             <div class="recent-description">
-                                <h3><?php echo $post['title']; ?></h3>
-                                <p><?php echo $post['subtitle']; ?></p>
+                                <h3><?php
+                                    if (strlen($post['title']) > 25) {
+                                        $post['title'] = substr($post['title'], 0, 25);
+                                        $lastSpace = strrpos($post['title'], ' ');
+                                        if ($lastSpace !== false) {
+                                            $post['title'] = substr($post['title'], 0, $lastSpace);
+                                        }
+                                        echo $post['title'] . '...';
+                                    } else {
+                                        echo $post['title'];
+                                    }
+                                    ?></h3>
+                                <p><?php
+                                    if (strlen($post['subtitle']) > 30) {
+                                        $post['subtitle'] = substr($post['subtitle'], 0, 30);
+                                        $lastSpace = strrpos($post['subtitle'], ' ');
+                                        if ($lastSpace !== false) {
+                                            $post['subtitle'] = substr($post['subtitle'], 0, $lastSpace);
+                                        }
+                                        echo $post['subtitle'] . '...';
+                                    } else {
+                                        echo $post['subtitle'];
+                                    }
+                                    ?></p>
                             </div>
                         </li>
                     <?php endforeach; ?>
