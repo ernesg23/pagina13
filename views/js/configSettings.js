@@ -57,7 +57,7 @@ function addEventListeners() {
   $("#sendBtn").on("click", function () {
     $.ajax({
       method: "POST",
-      url: "./modules/users/deleteArticle.php",
+      url: "./modules/users/configPostsChanges.php",
       data: $("#data").serialize(),
       success: (data) => {
         location.reload();
