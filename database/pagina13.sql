@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 15, 2024 at 04:37 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-10-2024 a las 15:58:55
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pagina13`
+-- Base de datos: `pagina13`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accountrecovery`
+-- Estructura de tabla para la tabla `accountrecovery`
 --
 
 CREATE TABLE `accountrecovery` (
@@ -37,7 +37,7 @@ CREATE TABLE `accountrecovery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
@@ -46,7 +46,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Volcado de datos para la tabla `categories`
 --
 
 INSERT INTO `categories` (`idCategories`, `name`) VALUES
@@ -65,12 +65,13 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 (13, 'promo'),
 (14, 'adshinawoldmaw'),
 (15, 'prueba'),
-(16, 'testeo');
+(16, 'testeo'),
+(17, 'violencia');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorites`
+-- Estructura de tabla para la tabla `favorites`
 --
 
 CREATE TABLE `favorites` (
@@ -79,7 +80,7 @@ CREATE TABLE `favorites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `favorites`
+-- Volcado de datos para la tabla `favorites`
 --
 
 INSERT INTO `favorites` (`Posts_idPosts`, `Users_idUsers`) VALUES
@@ -96,7 +97,7 @@ INSERT INTO `favorites` (`Posts_idPosts`, `Users_idUsers`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Estructura de tabla para la tabla `posts`
 --
 
 CREATE TABLE `posts` (
@@ -113,7 +114,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `posts`
+-- Volcado de datos para la tabla `posts`
 --
 
 INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg`, `created_at`, `updated_at`, `deleted_at`, `Users_idUsers`, `isArchived`) VALUES
@@ -149,12 +150,13 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 (30, 'sajdioawm', 'sadjioawmd', 'sadjkawiodm,sa', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:11:11', NULL, NULL, 13, 0),
 (31, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:37:56', NULL, NULL, 13, 0),
 (32, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:38:40', NULL, NULL, 13, 0),
-(33, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:39:54', NULL, NULL, 13, 1);
+(33, 'test', 'test', 'test', '../../views/img/uploads/NASA-logo-9411797223-seeklogo.com.png', '2024-10-15 02:39:54', NULL, NULL, 13, 1),
+(34, 'TRABAJADORES DE NEXSHOP SE SUICIDAM', 'nexshop es acusado de sobre explotar a sus trabajadores y provocar sus suicidios', 'En un impactante giro de los acontecimientos, NexShop, una reconocida empresa de comercio electrónico, se enfrenta a una creciente ola de denuncias por condiciones laborales inhumanas. Según informes de empleados actuales y anteriores, la presión extrema y la falta de apoyo emocional han llevado a varios trabajadores al borde de la desesperación, culminando en trágicos suicidios.\r\n\r\nLa situación se ha vuelto insostenible en los últimos meses. Empleados han descrito un ambiente de trabajo tóxico, caracterizado por largas jornadas sin descanso, metas inalcanzables y una cultura de miedo que penaliza cualquier intento de expresar malestar. \"Siento que somos piezas desechables\", comentó un empleado que pidió permanecer en el anonimato. \"La empresa solo se preocupa por los números, no por nosotros\".\r\n\r\nLas redes sociales se han inundado de testimonios desgarradores de trabajadores que luchan con ansiedad y depresión debido a la carga laboral. Organizaciones de derechos laborales han comenzado a investigar las prácticas de NexShop y exigen cambios inmediatos para proteger a los empleados.\r\n\r\nEn respuesta a las crecientes críticas, la dirección de NexShop ha emitido un comunicado, alegando que están comprometidos con el bienestar de sus empleados y que están implementando \"nuevas políticas de salud mental\". Sin embargo, muchos trabajadores consideran estas medidas insuficientes y meramente un intento de desviar la atención de la crisis.\r\n\r\nMientras la comunidad clama por justicia y mayor transparencia, el futuro de NexShop pende de un hilo. Activistas han convocado protestas para exigir la renuncia de los directivos responsables y la implementación de estándares laborales más humanos. La historia de NexShop es un sombrío recordatorio de los peligros de la explotación laboral en el mundo corporativo actual.', '../../views/img/uploads/@pai.png', '2024-10-22 15:55:32', NULL, NULL, 18, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts_has_categories`
+-- Estructura de tabla para la tabla `posts_has_categories`
 --
 
 CREATE TABLE `posts_has_categories` (
@@ -163,7 +165,7 @@ CREATE TABLE `posts_has_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `posts_has_categories`
+-- Volcado de datos para la tabla `posts_has_categories`
 --
 
 INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) VALUES
@@ -184,12 +186,13 @@ INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) 
 (30, 16),
 (31, 1),
 (32, 1),
-(33, 1);
+(33, 1),
+(34, 17);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -205,7 +208,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `description`, `create_at`, `deleted_at`, `blackTheme`) VALUES
@@ -220,27 +223,28 @@ INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `desc
 (14, 'Juanito Alcachofa', 'Ja@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (15, 'Thiago Martinez', 'thiagomartinez969@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (16, 'Thiago Martinez', 'thiagomartinez930@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
-(17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000);
+(17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
+(18, 'oal chavo', 'lol@gmail.com', '9387b8bf99bf5a35c0c20d838186f54f621acb743a4d2c8eb355b3d8d4d44168db013782a342e571e46be9f125a8d067cd187438a4483d1d8f3f62bdc9fe6444', NULL, NULL, '2024-10-22', NULL, 0x3000);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `accountrecovery`
+-- Indices de la tabla `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
   ADD PRIMARY KEY (`idRecovery`,`Users_idUsers`),
   ADD KEY `fk_accountRecovery_Users1_idx` (`Users_idUsers`);
 
 --
--- Indexes for table `categories`
+-- Indices de la tabla `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`idCategories`);
 
 --
--- Indexes for table `favorites`
+-- Indices de la tabla `favorites`
 --
 ALTER TABLE `favorites`
   ADD PRIMARY KEY (`Posts_idPosts`,`Users_idUsers`),
@@ -248,14 +252,14 @@ ALTER TABLE `favorites`
   ADD KEY `fk_Posts_has_Users_Posts1_idx` (`Posts_idPosts`);
 
 --
--- Indexes for table `posts`
+-- Indices de la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`idPosts`,`Users_idUsers`),
   ADD KEY `fk_Posts_Users1_idx` (`Users_idUsers`);
 
 --
--- Indexes for table `posts_has_categories`
+-- Indices de la tabla `posts_has_categories`
 --
 ALTER TABLE `posts_has_categories`
   ADD PRIMARY KEY (`Posts_idPosts`,`Categories_idCategories`),
@@ -263,64 +267,64 @@ ALTER TABLE `posts_has_categories`
   ADD KEY `fk_Posts_has_Categories_Posts1_idx` (`Posts_idPosts`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`idUsers`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `accountrecovery`
+-- AUTO_INCREMENT de la tabla `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
   MODIFY `idRecovery` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT de la tabla `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `accountrecovery`
+-- Filtros para la tabla `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
   ADD CONSTRAINT `fk_accountRecovery_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `favorites`
+-- Filtros para la tabla `favorites`
 --
 ALTER TABLE `favorites`
   ADD CONSTRAINT `fk_Posts_has_Users_Posts1` FOREIGN KEY (`Posts_idPosts`) REFERENCES `posts` (`idPosts`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Posts_has_Users_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `posts`
+-- Filtros para la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `fk_Posts_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `posts_has_categories`
+-- Filtros para la tabla `posts_has_categories`
 --
 ALTER TABLE `posts_has_categories`
   ADD CONSTRAINT `fk_Posts_has_Categories_Categories1` FOREIGN KEY (`Categories_idCategories`) REFERENCES `categories` (`idCategories`) ON DELETE NO ACTION ON UPDATE NO ACTION,
