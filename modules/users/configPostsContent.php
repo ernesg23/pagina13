@@ -5,8 +5,7 @@ include '../posts/configPostGetPost.php';
 
 <head>
     <link rel="stylesheet" href="./views/css/configPosts.css">
-    <title>Pagina13 - Mis articulos</title>
-
+    <title>Página13 - Mis artículos</title>
 </head>
 <div class="buttonsCont">
     <button id="users-configSettings" class="buttons">Ajustes</button>
