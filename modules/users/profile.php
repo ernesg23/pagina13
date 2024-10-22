@@ -1,5 +1,6 @@
 <?php
 include "../posts/profileGetPosts.php";
+include "../posts/profileGetFavPosts.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -50,9 +51,9 @@ include "../posts/profileGetPosts.php";
                 </div>
             </div>
             <div id="favoritesCont">
-<!--                 <h3>Artículos Favoritos</h3>
+              <h3>Artículos Favoritos</h3>
                 <div class="favoritePostContainer">
-                    <?php foreach ($rows as $post): ?>
+                    <?php foreach ($rows2 as $post): ?>
                         <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">
                             <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
                             <div id="titleEdit">
@@ -64,9 +65,10 @@ include "../posts/profileGetPosts.php";
                             </div>
                         </div>
                     <?php endforeach; ?>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

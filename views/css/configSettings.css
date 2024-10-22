@@ -95,8 +95,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(181deg, #3d3b3b, #dddddd00);
     text-align: center;
-    margin-top: 1rem;
+    padding: 1rem;
 }
 h4 {
     margin-bottom: 2rem;
@@ -109,7 +110,7 @@ h4 {
 }
 #entireSettCont {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: -webkit-fill-available;
     padding: 1rem;
 }
@@ -158,6 +159,9 @@ h4 {
     #userInfCont h5 {
         font-size: 2rem;
     }
+    .buttons{
+        width: 10rem;
+    }
 }
 @media (max-width:899px) {
     #userInfCont {
@@ -181,5 +185,8 @@ h4 {
     }
     #userInfCont h5 {
         font-size: 2rem;
+    }
+    .buttons{
+        width: 10rem;
     }
 }

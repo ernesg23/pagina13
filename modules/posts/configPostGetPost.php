@@ -1,9 +1,6 @@
 <?php
-include "../users/connection.php";
-session_start();
-
-$authorName = mysqli_real_escape_string($connection, $_COOKIE["username"]);
-
+include '../users/connection.php';
+$authorId = $_COOKIE["username"];
 $query = "
 SELECT 
     p.idPosts, 
@@ -30,19 +27,17 @@ INNER JOIN
     users u 
     ON p.Users_idUsers = u.idUsers
 WHERE 
-    u.name = '$authorName'
+    u.name = '$authorId'
 ORDER BY 
     p.idPosts DESC
-LIMIT 4
 ";
 
 $r = mysqli_query($connection, $query);
-
 if (!$r) {
     die('Error en la consulta: ' . mysqli_error($connection));
 }
 
-$rows = [];
+$rows2 = [];
 while ($response = mysqli_fetch_assoc($r)) {
-    $rows[] = $response;
+    $rows2[] = $response;
 }

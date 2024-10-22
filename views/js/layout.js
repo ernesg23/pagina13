@@ -4,6 +4,8 @@ const resultsTemplate = document.querySelector("#search-result-template");
 const resultsContainer = document.querySelector(".searchResults");
 const searchBar = document.querySelector(".searchBar");
 const searchForm = document.querySelector(".searchBarForm");
+const dropContent = document.querySelector(".dropdown-content");
+const navMen = document.querySelector(".navMenu")
 $(".MainTitle").click(() => {
   location.reload();
 });
@@ -18,6 +20,32 @@ resposiveCategory.addEventListener("click", () => {
       categoryButtons.classList.remove("active");
     }
   });
+});
+
+navMen.addEventListener("click", (event) => { 
+  event.stopPropagation();
+  if (!dropContent.classList.contains("active")) {
+    dropContent.classList.add("active");
+    dropContent.style.display = "block";
+    dropContent.style.pointerEvents = "auto";
+    dropContent.style.animation = "appear 0.4s forwards";
+  }
+});
+document.addEventListener("click", (event) => {
+  if (dropContent.classList.contains("active") && 
+  !dropContent.contains(event.target) && 
+  !navMen.contains(event.target)) {
+    dropContent.style.animation = "vanish 0.3s forwards";
+    dropContent.addEventListener(
+      "animationend",
+      () => {
+        dropContent.style.display = "none";
+        dropContent.style.pointerEvents = "none";
+        dropContent.classList.remove("active");
+      },
+      { once: true }
+    );
+  }
 });
 
 $.ajax({

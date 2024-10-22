@@ -1,6 +1,6 @@
 <?php
 include "../posts/profileGetPosts.php";
-include '../posts/readerGetPost.php';
+include '../posts/configPostGetPost.php';
 ?>
 
 <head>
@@ -18,14 +18,16 @@ include '../posts/readerGetPost.php';
     <h5 id="previewPost">Vista Previa</h5>
     <div id="contPosts">
         <div id="previewPostsCont">
-            <div class="writtenPosts" id="<?php echo $rows[0]['idPosts']; ?>">
-                <img src="<?php echo str_replace('../../', '', $rows[0]['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
-                <div id="titleEdit">
-                    <h4 class="titlePost"><?php echo $rows[0]['title']; ?></h4>
-                </div>
-                <div class="postDescription">
-                    <p class="categoryPost"><?php echo $rows[0]['name']; ?></p>
-                    <p class="subtitlePost"><?php echo $rows[0]['subtitle']; ?></p>
+            <div id="contPostW">
+                <div class="writtenPosts" id="<?php echo $rows[0]['idPosts']; ?>">
+                    <img src="<?php echo str_replace('../../', '', $rows[0]['portraitImg']); ?>" class="imgPost" alt="Imagen del artículo">
+                    <div id="titleEdit">
+                        <h4 class="titlePost"><?php echo $rows[0]['title']; ?></h4>
+                    </div>
+                    <div class="postDescription">
+                        <p class="categoryPost"><?php echo $rows[0]['name']; ?></p>
+                        <p class="subtitlePost"><?php echo $rows[0]['subtitle']; ?></p>
+                    </div>
                 </div>
             </div>
             <div id="postButtons">
@@ -47,3 +49,113 @@ include '../posts/readerGetPost.php';
     </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    $(".written").click(function() {
+    const postView = document.querySelector("#contPostW");
+        $.ajax({
+        method: "post",
+        url: "./modules/posts/configPGCP.php",        
+        dataType: "json",
+        data: {id:$(this).attr("id")},
+        success: (data) => {
+          console.log(data);
+          let written = `<div class="writtenPosts" id="` + data[0]["idPosts"] + `">
+            <img src="` + data[0]['portraitImg'].replace('../../', './').replace('%20', ' ') + `" class="imgPost" alt="Imagen del artículo">
+            <div id="titleEdit">
+              <h4 class="titlePost">` + data[0]["title"] + `</h4>
+            </div>
+            <div class="postDescription">
+              <p class="categoryPost">` + data[0]["name"] + `</p>
+              <p class="subtitlePost">` + data[0]["description"] + `</p>
+            </div>
+          </div>`;
+          $(postView).html(written);
+        }
+      });
+    });
+
+</script>

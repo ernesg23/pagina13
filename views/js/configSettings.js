@@ -1,10 +1,15 @@
 const configSettings = document.querySelector("#users-configSettings");
 const configPosts = document.querySelector("#users-configPosts");
+const postView = document.querySelector("#contPostW");
+const postsClick = document.querySelector(".written");
+
+
 
 function addEventListeners() {
+
   const configSettings = document.querySelector("#users-configSettings");
   const configPosts = document.querySelector("#users-configPosts");
-  if (configPosts) {
+    if (configPosts) {
     configPosts.addEventListener("click", function () {
       $.ajax({
         method: "POST",
@@ -15,6 +20,7 @@ function addEventListeners() {
       });
     });
   }
+
   if (configSettings) {
     configSettings.addEventListener("click", function () {
       $.ajax({
@@ -26,8 +32,42 @@ function addEventListeners() {
       });
     });
   }
+  $("#editPostBtn").on("click", function () {
+    $.ajax({
+      method: "POST",
+      url: "./modules/posts/editArticle.php",
+      dataType: "html",
+      success: (data) => {
+        console.log('Success:', data);
+        $("#content").html(data);
+      },
+    });
+  });
+  $("#deletePostBtn").on("click", function () {
+    const id = $(".writtenPosts").attr("id");
+    $.ajax({
+        method: "POST",
+        url: "./modules/posts/deleteArticle.php",
+        data: { id: id },
+        success: (data) => {
+            console.log('Success:', data, "hola");
+        },
+    });
+});
+  $("#sendBtn").on("click", function () {
+    $.ajax({
+      method: "POST",
+      url: "./modules/users/configPostsChanges.php",
+      data: $("#data").serialize(),
+      success: (data) => {
+        location.reload();
+      },
+    });
+  });
 }
+
 addEventListeners();
+
 // Create mutation observer
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
@@ -37,17 +77,5 @@ const observer = new MutationObserver((mutations) => {
   });
 });
 
-// Setup mutation observer 
+// Setup mutation observer
 observer.observe(document.body, { childList: true, subtree: true });
-
-$("#save").off("click");
-$("#save").on("click", function () {
-  $.ajax({
-    method: "POST",
-    url: "./modules/users/configPostsChanges.php",
-    data: $("#data").serialize(),
-    success: (data) => {
-      location.reload();
-    },
-  });
-});
