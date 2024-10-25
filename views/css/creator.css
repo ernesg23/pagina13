@@ -48,7 +48,13 @@
 #sendButton {
   background-color: #005db0;
 }
+#sendButtonEdit {
+  background-color: #005db0;
+}
 #archiveButton {
+  background-color: #004d93;
+}
+#archiveButtonEdit {
   background-color: #004d93;
 }
 #writecontainer {
