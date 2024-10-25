@@ -16,12 +16,15 @@ $(sendBtn).click(() => {
   if (email == "" || password == "") {
     let alert = `Complete los campos para poder iniciar sesion`
     $("#emailAlert").html(alert)
+    alert = ``
   } else if (!verifyEmail(email)) {
-    let alert = `Ingrese una direccion de correo electronico valida`
+    let alert = `Datos invalidos, verifiquelos e intente nuevamente`
     $("#emailAlert").html(alert)
+    alert = ``
   } else if (!verifyPass(password)) {
-    let alert = `Contraseña invalida, no cumple con los requisitos especificados al registrarse`
-    $("#passwordAlert").html(alert)
+    let alert = `Datos invalidos, verifiquelos e intente nuevamente`
+    $("#emailAlert").html(alert)
+    alert = ``
   } else {
     $.ajax({
       url: "./modules/users/loginSend.php",
@@ -32,6 +35,7 @@ $(sendBtn).click(() => {
       method: "POST",
       dataType: "json",
       success: () => {
+        $("#emailAlert").html("")
         let alert= `Sesion iniciada con exito`
         $("#alertAllGood").html(alert)
         setTimeout(()=> {

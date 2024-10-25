@@ -24,7 +24,6 @@
                     <div id="alertAllGood"></div>
                     <h2>Correo Electrónico</h2>
                     <input name="email" id="email" placeholder="example@example.com" type="email" required>
-                    <div id="passwordAlert"></div>
                     <h2>Contraseña</h2>
                     <input name="password" id="password" placeholder="Introduce tu contraseña" type="password" required>
                 </form>

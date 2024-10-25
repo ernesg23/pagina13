@@ -37,6 +37,7 @@ include './favGet.php';
                         </div>
                         <i class="bx bx-star <?php echo $activeClass; ?>"></i>
                     </div>
+                    <div id="alertError"></div>
                     <hr>
                     <p id="descriptionReader"><?php echo $rows[0]['description'] ?></p>
                 </div>

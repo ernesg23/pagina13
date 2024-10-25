@@ -127,6 +127,16 @@ hr {
     font-size: 1.2rem;
   }
 }
+#alertError {
+  background-color: #f8d7da;
+  width: -webkit-fill-available;
+  border-radius: 0.5rem;
+  color: #000;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
 .recent {
   display: flex;
   flex-wrap: nowrap;

@@ -37,17 +37,43 @@ function attachEventListeners() {
     });
   });
 
-  $(".bx-star").off("click").on("click", () => {
+  $(".bx-star").off("click").on("click", function () {
     const id = $("#main-post").data("postId");
-    $.ajax({
-      url: "./modules/posts/favoriteAdd.php",
-      method: "POST",
-      data: { postId: id },
-      success: (data) => {
-        $(".bx-star").addClass("active");
-      },
-    });
+    const $star = $(this);
+    
+    if ($star.hasClass("active")) {
+      $.ajax({
+        url: "./modules/posts/favoriteDelete.php",
+        method: "POST",
+        data: { postId: id },
+        success: (data) => {
+          console.log(data);
+          if (data == "true") {
+            $star.removeClass("active");
+          } else {
+            const alert = "Hubo un error al intentar quitar de favoritos este post";
+            $("#alertError").html(alert);
+          }
+        },
+      });
+    } else {
+      $.ajax({
+        url: "./modules/posts/favoriteAdd.php",
+        method: "POST",
+        data: { postId: id },
+        success: (data) => {
+          console.log(data);
+          if (data == "true") {
+            $star.addClass("active");
+          } else {
+            const alert = "Inicie sesión o regístrese para poder marcar este post como favorito";
+            $("#alertError").html(alert);
+          }
+        },
+      });
+    }
   });
+  
 }
 
 // Observe changes of #content
