@@ -1,3 +1,6 @@
+<?php
+include "./getEditPost.php"
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,7 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/layout.css">
     <link rel="stylesheet" href="./views/css/creator.css">
-    <script type="module" src="./views/js/creator.js"></script>
+    <script type="module" src="./views/js/editor.js"></script>
 </head>
 
 <body>
@@ -17,7 +20,7 @@
         <section>
             <div class="allContainer">
 
-                <h2 id="creatorTitle">editor de articulos</h2>
+                <h2 id="creatorTitle">Editor de articulos</h2>
                 <div class="creatorContainer">
                     <div id="alertError"></div>
                     <div id="alertGood"></div>
@@ -27,40 +30,33 @@
                             <h3 id="imagesVideos" class="options">
                                 <p>Imagenes y videos</p><i class="bx bxs-image-add optionsResponsive"></i>
                             </h3>
-                            <!-- <h3 id="source" class="options">
-                                <p>Fuentes</p><i class="bx bx-book-content optionsResponsive"></i>
-                            </h3> -->
                     </div>
                     <div id="containerPost">
                         <div id="writecontainer" class="active">
                             <textarea type="text" placeholder="Ingrese el nuevo titulo del articulo"
-                                class="textArea titletextArea"></textarea>
+                                class="textArea titletextArea"><?= $rows['title'] ?></textarea>
                             <textarea type="text" placeholder="Ingrese el nuevo subtitulo del articulo" id="subtitleTextArea"
-                                class="textArea subtitletextArea"></textarea>
+                                class="textArea subtitletextArea"><?= $rows['subtitle'] ?></textarea>
                             <textarea type="text" placeholder="Ingrese la nueva descripcion del articulo" id="descTextArea"
-                                class="textArea descriptiontextArea"></textarea>
+                                class="textArea descriptiontextArea"><?= $rows['description'] ?></textarea>
                         </div>
                         <div class="mediaContainer">
                             <img src="" alt="" loading="lazy" class="imagePostCreator">
                             <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
                                 <div class="input_container">
-                                    <label for="files" class="btnLabel"><i class='bx bx-plus'></i></label>
+                                    <label for="files" class="btnLabel"><?php echo $rows['portraitImg'] = str_replace('../..', '', $rows['portraitImg']); ?></label>
                                     <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4">
                                 </div>
                             </form>
                         </div>
-                        <!-- <div class="sourcesContainer">
-                            <textarea type="text" placeholder="Ingrese las fuentes de su articulo"
-                                class="textArea" id="sources"></textarea>
-                        </div> -->
                     </div>
                     <div class="categories">
-                        <input class="categoryCreator" placeholder="Categoria">
-                        <!-- <i class='bx bx-plus-medical categoryAdd'></i> -->
+                        <input class="categoryCreator" placeholder="Categoria" value="<?php echo $rows['name'] ?>">
+
                     </div>
-                    <div class="buttonsContainer">
-                        <button id="archiveButton" class="buttonsCreator">Archivar</button>
-                        <button id="sendButton" class="buttonsCreator">Guardar</button>
+                    <div class="buttonsContainer" id="<?php echo $rows['idPosts']?>">
+                        <button id="archiveButtonEdit" class="buttonsCreator">Archivar</button>
+                        <button id="sendButtonEdit" class="buttonsCreator">Guardar</button>
                     </div>
                 </div>
             </div>

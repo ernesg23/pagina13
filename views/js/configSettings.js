@@ -33,9 +33,12 @@ function addEventListeners() {
     });
   }
   $("#editPostBtn").on("click", function () {
+    const id = this.id;
+    console.log(id)
     $.ajax({
       method: "POST",
       url: "./modules/posts/editArticle.php",
+      data: {postId: id},
       dataType: "html",
       success: (data) => {
         console.log('Success:', data);

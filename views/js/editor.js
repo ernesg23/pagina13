@@ -53,8 +53,9 @@ document.querySelector("#files").onchange = function () {
   const label = document.querySelector("label[for=files]");
   label.innerText = fileName ?? "Browse Files";
 };
-sendBtn.addEventListener("click", () => {
-  let formData = new FormData();
+sendBtnEd.addEventListener("click", () => {
+    let formData = new FormData();
+    const id = $(".buttonsContainer").attr("id");
   let file = $("#files")[0].files[0];
   const imagesAndVideos = $(".newImage").val();
   const title = $(".titletextArea").val();
@@ -84,16 +85,17 @@ sendBtn.addEventListener("click", () => {
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
+    formData.append("id", id);
     formData.append("isArchived", 0);
 
     $.ajax({
-      url: "./modules/users/creatorSend.php",
+      url: "./modules/users/editorSend.php",
       data: formData,
       method: "POST",
       contentType: false,
       processData: false,
       success: () => {
-        let alert = `Articulo creado con éxito`;
+        let alert = `Articulo editado y creado con éxito`;
         $("#alertGood").html(alert);
         alert = ``;
         $("#alertError").html(alert);
@@ -107,9 +109,10 @@ sendBtn.addEventListener("click", () => {
     });
   }
 });
-archiveBtn.addEventListener("click", () => {
+archiveBtnEd.addEventListener("click", () => {
   let formData = new FormData();
   let file = $("#files")[0].files[0];
+  const id = $(".buttonsContainer").attr("id");
   const imagesAndVideos = $(".newImage").val();
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
@@ -135,18 +138,19 @@ archiveBtn.addEventListener("click", () => {
     formData.append("description", description);
     formData.append("sources", sources);
     formData.append("categories", category);
+    formData.append("id", id);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
     $.ajax({
-      url: "./modules/users/creatorSend.php",
+      url: "./modules/users/editorSend.php",
       data: formData,
       method: "POST",
       contentType: false,
       processData: false,
       success: () => {
-        let alert = `Articulo creado con éxito`;
+        let alert = `Articulo editado y creado con éxito`;
         $("#alertGood").html(alert);
         alert = ``;
         $("#alertError").html(alert);
