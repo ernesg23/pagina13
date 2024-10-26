@@ -27,7 +27,7 @@
                     <h2>Contraseña</h2>
                     <input name="password" id="password" placeholder="Introduce tu contraseña" type="password" required>
                 </form>
-                <h2 id="forgotten-password">¿Olvidaste tu contraseña?</h2>
+                <a href="./modules/users/forgotten.php" id="forgotten-password">¿Olvidaste tu contraseña?</a>
                 <div>
                     <b>
                         <label><input type="checkbox" id="cbox1" value="first_checkbox" />Recordar contraseña</label><br>

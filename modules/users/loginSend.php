@@ -22,9 +22,5 @@ if (mysqli_num_rows($verifyLogin) > 0) {
     $_SESSION['email'] = $cookie_valueEmail;
     echo "true";
 } else {
-    echo '
-         <script>
-             alert("Usuario no existente, verifique los datos introducidos");
-         </script>
-     ';
+    echo 'false';
 }
