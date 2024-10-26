@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2024 at 04:06 PM
+-- Generation Time: Oct 27, 2024 at 12:46 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accountrecovery` (
-  `idRecovery` int(255) NOT NULL,
-  `token` int(255) NOT NULL,
-  `developement_at` datetime NOT NULL,
-  `Users_idUsers` int(255) NOT NULL
+  `idRecovery` mediumint(9) NOT NULL,
+  `resetEmail` text NOT NULL,
+  `resetSelector` text NOT NULL,
+  `token` longtext NOT NULL,
+  `resetExprires` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -243,7 +244,8 @@ INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `desc
 (14, 'Juanito Alcachofa', 'Ja@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (15, 'Thiago Martinez', 'thiagomartinez969@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (16, 'Thiago Martinez', 'thiagomartinez930@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
-(17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000);
+(17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
+(18, 'Pagina 13', 'pagina13oficial@gmail.com', 'caadfb23b8da956e47857f15f00bf4f86349b5852961ffb70e6e8b8fc73d241c73dd6f4c3bfccbe6ec4c50be927a1c9a423a805fe1d34d2bd97f2ca1c4eb216b', NULL, NULL, '2024-10-26', NULL, 0x3000);
 
 --
 -- Indexes for dumped tables
@@ -253,8 +255,7 @@ INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `desc
 -- Indexes for table `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
-  ADD PRIMARY KEY (`idRecovery`,`Users_idUsers`),
-  ADD KEY `fk_accountRecovery_Users1_idx` (`Users_idUsers`);
+  ADD PRIMARY KEY (`idRecovery`);
 
 --
 -- Indexes for table `categories`
@@ -299,7 +300,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
-  MODIFY `idRecovery` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRecovery` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -317,17 +318,11 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `accountrecovery`
---
-ALTER TABLE `accountrecovery`
-  ADD CONSTRAINT `fk_accountRecovery_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `favorites`
