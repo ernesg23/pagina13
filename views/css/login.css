@@ -94,3 +94,7 @@ h2 {
 #sendBtn:active {
     background-color: #458DFA;
 }
+.haventCount{
+    color: 458DFA;
+    text-decoration:underline;
+}

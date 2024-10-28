@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="module" src="./views/js/login.js"></script>
+    <!-- <script type="module" src="./views/js/login.js"></script> -->
 
 </head>
 
@@ -28,6 +28,7 @@
                     <input name="password" id="password" placeholder="Introduce tu contraseña" type="password" required>
                 </form>
                 <a href="./modules/users/forgotten.php" id="forgotten-password">¿Olvidaste tu contraseña?</a>
+                <p class="haventCount">no tienes cuenta? registrate ahora</p>
                 <div>
                     <b>
                         <label><input type="checkbox" id="cbox1" value="first_checkbox" />Recordar contraseña</label><br>

@@ -28,7 +28,7 @@ navMen.addEventListener("click", (event) => {
     dropContent.classList.add("active");
     dropContent.style.display = "block";
     dropContent.style.pointerEvents = "auto";
-    dropContent.style.animation = "appear 0.4s forwards";
+   // dropContent.style.animation = "appear 0.4s forwards";
   }
 });
 document.addEventListener("click", (event) => {
@@ -231,7 +231,7 @@ searchBar.addEventListener("click", (event) => {
 document.addEventListener("click", (event) => {
   if (
     resultsContainer.classList.contains("active") &&
-    !resultsContainer.contains(event.target) &&
+    // !resultsContainer.contains(event.target) && --esta linea hace que la barra de busqueda no desaparesca cuando haces click en un resultado--
     !event.target.closest(".searchBar")
   ) {
     resultsContainer.style.animation = "vanish 0.3s forwards";

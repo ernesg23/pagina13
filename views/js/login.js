@@ -48,3 +48,20 @@ $(sendBtn).click(() => {
     });
   }
 });
+  const account = document.querySelectorAll(".haventCount");
+  account.forEach(haventCount => {
+    haventCount.addEventListener("click", function (e) {
+      e.stopPropagation();
+      let id = this.id;
+      $.ajax({
+        url: "./modules/users/register.php",
+        data: { articleId: id },
+        dataType: "html",
+        method: "POST",
+        success: (data) => {
+          console.log("anda");
+          $("#content").html(data);
+        },
+      });
+    });
+  });

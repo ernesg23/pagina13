@@ -48,3 +48,21 @@ $(sendBtn).click(() => {
     });
   }
 });
+
+const account = document.querySelectorAll(".haveCount");
+account.forEach(haveCount => {
+  haveCount.addEventListener("click", function (e) {
+    e.stopPropagation();
+    let id = this.id;
+    $.ajax({
+      url: "./modules/users/login.php",
+      data: { articleId: id },
+      dataType: "html",
+      method: "POST",
+      success: (data) => {
+        console.log("anda");
+        $("#content").html(data);
+      },
+    });
+  });
+});
