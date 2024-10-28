@@ -54,46 +54,65 @@ $.ajax({
   success: (data) => {
     if (data != false) {
       let profile = `<p class='userName userActionsClick'>${data} </p>
-          <img src="./views/img/sin perfil.png" class='userImg userActionsClick' alt="${data} profile picture" loading="lazy">`;
+      <div class="userActionsClick"><img src="./views/img/sin perfil.png" class='userImg' alt="${data} profile picture" loading="lazy"></div>`;
+      
       const menuNav = document.querySelector(".navMenu");
       $(menuNav).html(profile);
+      
       const menu = document.querySelector(".actionsMenu");
-      const toggleButton = document.querySelector(".userActionsClick");
+      const toggleButtons = document.querySelectorAll(".userActionsClick");
 
-      toggleButton.addEventListener("click", (event) => {
-        event.stopPropagation();
-        toggleButton.style.pointerEvents = "none";
-        menu.classList.toggle("active");
+      let activeElement = null;
 
-        if (menu.classList.contains("active")) {
-          menu.style.display = "flex";
-          menu.style.animation = "appear 0.4s forwards";
-        } else {
-          menu.style.animation = "vanish 0.3s forwards";
-          menu.addEventListener(
-            "animationend",
-            () => {
-              menu.style.display = "none";
-              toggleButton.style.pointerEvents = "auto";
-            },
-            { once: true }
-          );
-        }
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+
+          if (activeElement === button) {
+            menu.style.animation = "vanish 0.3s forwards";
+            menu.addEventListener(
+              "animationend",
+              () => {
+                menu.classList.remove("active");
+                menu.style.display = "none";
+                activeElement = null;
+              },
+              { once: true }
+            );
+          } else {
+            if (menu.classList.contains("active")) {
+              menu.style.animation = "vanish 0.3s forwards";
+              menu.addEventListener(
+                "animationend",
+                () => {
+                  menu.classList.remove("active");
+                  menu.style.display = "none";
+                  menu.classList.add("active");
+                  menu.style.display = "flex";
+                  menu.style.animation = "appear 0.4s forwards";
+                  activeElement = button;
+                },
+                { once: true }
+              );
+            } else {
+              menu.classList.add("active");
+              menu.style.display = "flex";
+              menu.style.animation = "appear 0.4s forwards";
+              activeElement = button;
+            }
+          }
+        });
       });
 
       document.addEventListener("click", (event) => {
-        if (
-          menu.classList.contains("active") &&
-          !menu.contains(event.target) &&
-          !event.target.closest(".userActionsClick")
-        ) {
+        if (menu.classList.contains("active") && !menu.contains(event.target) && !event.target.closest(".userActionsClick")) {
           menu.style.animation = "vanish 0.3s forwards";
           menu.addEventListener(
             "animationend",
             () => {
               menu.classList.remove("active");
               menu.style.display = "none";
-              toggleButton.style.pointerEvents = "auto"; // Habilitar el botón cuando se hace clic fuera del menú
+              activeElement = null;
             },
             { once: true }
           );
@@ -102,6 +121,8 @@ $.ajax({
     }
   },
 });
+
+
 function expandSearchBar() {
   const searchBar = document.getElementById("searchBar");
   searchBar.focus();
