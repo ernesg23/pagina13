@@ -608,6 +608,7 @@ img.img.search-post-img {
   position: relative;
   right: 2.5rem;
   cursor: text;
+  color: #000;
 }
 body {
   background-color: rgb(33, 33, 33);
