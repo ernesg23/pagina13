@@ -96,7 +96,7 @@ sendBtn.addEventListener("click", () => {
         alert = ``;
         $("#alertError").html(alert);
         setTimeout(() => {
-          location.reload();
+  
         }, 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {
@@ -130,13 +130,13 @@ archiveBtn.addEventListener("click", () => {
     formData.append("file", file);
     formData.append("title", title);
     formData.append("subtitle", subtitle);
-    formData.append("description", description);
+    formData.append("desc", description);
     formData.append("sources", sources);
-    formData.append("categories", category);
+    formData.append("cat", category);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
-    formData.append("isArchived", 1);
+    formData.append("isArc", 1);
     $.ajax({
       url: "./modules/users/creatorSend.php",
       data: formData,
@@ -149,7 +149,7 @@ archiveBtn.addEventListener("click", () => {
         alert = ``;
         $("#alertError").html(alert);
         setTimeout(() => {
-          location.reload();
+
         }, 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {

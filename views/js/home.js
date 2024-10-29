@@ -9,6 +9,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
     dataType: "json",
     success: (dato) => {
       $.each(dato, (index, data) => {
+        console.log(data)
         // Cloning and populating the main template
         const clonedTemplate = template.content.cloneNode(true);
         const portraitImg = clonedTemplate.querySelector(".img");
@@ -23,7 +24,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         title.textContent = data["title"];
         category.textContent = data["name"];
         description.textContent = data["subtitle"];
-        portraitImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
+        portraitImg.src = data["img"].replace(/^(\.\.\/)+/, "");
 
         // Add classes by size
         if (index === 0) {
@@ -41,13 +42,13 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         const recentDescription = clonedRecentTemplate.querySelector(
           ".recent-description"
         );
-        const recentId = data["idPosts"];
+        const recentId = data["idPos"];
         const recentTitle = recentDescription.querySelector("h3");
         const recentDesc = recentDescription.querySelector("p");
         clonedRecentTemplate.querySelector(".recent-article").id = recentId;
         recentTitle.textContent = data["title"];
         recentDesc.textContent = data["subtitle"];
-        recentImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
+        recentImg.src = data["img"].replace(/^(\.\.\/)+/, "");
         recentPosts.push(clonedRecentTemplate);
         // call reader.php in recents
         const clickedRecentArticle =
@@ -75,7 +76,6 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
             dataType: "html",
             success: (postReaderData) => {
               $("#content").html(postReaderData);
-              
             },
           });
         });

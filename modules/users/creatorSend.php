@@ -46,7 +46,7 @@ if ($connection->connect_error) {
 // get actual date in format Y-m-d H:i:s
 $publishedDate = date("Y-m-d H:i:s");
 // Insert post evading SQL injections with prepare
-$queryCreatePost = $connection->prepare("INSERT INTO `post`(`title`, `subtitle`, `desc`, `img`, `created_at`, `users_idUsers`, `isArc`) 
+$queryCreatePost = $connection->prepare("INSERT INTO `pos`(`title`, `subtitle`, `desc`, `img`, `created_at`, `users_idUsers`, `isArc`) 
 VALUES (?, ?, ?, ?, ?, (SELECT idUsers FROM `users` WHERE email = ?), ?)");
 if ($queryCreatePost === false) {
     die("Error preparing queryCreatePost: " . $connection->error);
