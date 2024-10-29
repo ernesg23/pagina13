@@ -20,7 +20,7 @@
 <body>
     <header>
         <nav class="navigation">
-            <h1 class="MainTitle">Pagina 13</h1>
+            <h1 class="MainTitle">Página 13</h1>
             <search class="searchBarContainer">
                 <form class="searchBarForm">
                     <input class="searchBar" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchBtn'></i>
@@ -46,16 +46,16 @@
             </div>
         </nav>
         <div class="category-parent">
-            <p class="categoryOpen">Categorias</p>
+            <p class="categoryOpen">Categorías</p>
             <div class="categoryButtons">
                 <input class="category-buttonnav" type="button" value="Base de datos" />
-                <input class="category-buttonnav" type="button" value="Matematicas" />
-                <input class="category-buttonnav" type="button" value="Organizacion Computacional" />
-                <input class="category-buttonnav" type="button" value="Logica Computacional" />
+                <input class="category-buttonnav" type="button" value="Matemáticas" />
+                <input class="category-buttonnav" type="button" value="Organización Computacional" />
+                <input class="category-buttonnav" type="button" value="Lógica Computacional" />
                 <input class="category-buttonnav" type="button" value="Lengua y Literatura" />
-                <input class="category-buttonnav" type="button" value="Ingles tecnico" />
+                <input class="category-buttonnav" type="button" value="Inglés técnico" />
                 <input class="category-buttonnav" type="button" value="Laboratorio de Algoritmos" />
-                <input class="category-buttonnav" type="button" value="Proyecto Informatico" />
+                <input class="category-buttonnav" type="button" value="Proyecto Informático" />
                 <input class="category-buttonnav" type="button" value="Sistemas Operativos" id="buttonnav-10" />
             </div>
         </div>
@@ -63,9 +63,9 @@
             <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
             <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog iconActionMenu'></i></li>
-            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class='bx bx-pencil iconActionMenu'></i></li>
+            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear artículo <i class='bx bx-pencil iconActionMenu'></i></li>
             <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
-            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesion <i class='bx bx-power-off'></i></li>
+            <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesión <i class='bx bx-power-off'></i></li>
 
         </ul>
     </header>
@@ -80,19 +80,19 @@
             <ul>
                 <h4 class="text-title">Seguinos en las redes</h4>
                 <li><a href="https://x.com/Pagina194149" class="socialMedia" target="_blank"><i
-                            class='bx bxl-twitter'></i>Pagina13</a>
+                            class='bx bxl-twitter'></i>Página13</a>
                 </li>
                 <li><a href="https://www.instagram.com/pag13.oficial/" class="socialMedia" target="_blank"><i
-                            class='bx bxl-instagram bx-flip-horizontal'></i>Pagina13</a></li>
+                            class='bx bxl-instagram bx-flip-horizontal'></i>Página13</a></li>
                 <li><a href="https://github.com/et26alumnos/24-4.10-pagina13" class="socialMedia" target="_blank"><i
-                            class='bx bxl-github'></i>Pagina13</a></li>
+                            class='bx bxl-github'></i>Página13</a></li>
             </ul>
         </div>
         <div class="article-today">
             <h4>Artículos publicados recientemente</h4>
             <template id="articulo-template">
                 <div class="articulo">
-                    <h5 class="articulo-titulo" data-id="">Título Articulo</h5>
+                    <h5 class="articulo-titulo" data-id="">Título Artículo</h5>
                 </div>
             </template>
             <div id="articulos-container"></div>
