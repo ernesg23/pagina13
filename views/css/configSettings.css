@@ -14,7 +14,9 @@ body {
     max-width: 20rem;
     max-height: 20rem;
 }
-
+.alerts {
+    color: #000;
+}
 #userInfCont p {
     margin-bottom: 0;
 }
