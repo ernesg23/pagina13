@@ -1,5 +1,4 @@
 let creatorAccessCount = 0;
-
 $(".buttonnav").on("click", function () {
   var parts = $(this).attr("data-page").split("-");
 
