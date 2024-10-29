@@ -33,7 +33,7 @@ function addEventListeners() {
     });
   }
   $("#editPostBtn").on("click", function () {
-    const id = this.id;
+    const id = $(".writtenPosts").attr("id");
     console.log(id)
     $.ajax({
       method: "POST",
