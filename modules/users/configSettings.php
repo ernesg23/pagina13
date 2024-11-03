@@ -35,6 +35,8 @@
                 <div id="entireSettCont">
                     <div id="settings">
                         <form id="data">
+                            <div id="emailAlert" class="alerts"></div>
+                            <div id="alertAllGood" class="alerts"></div>
                             <h4 class="name">Modificar Nombre de Usuario</h4>
                             <input name="inputName" id="newName" class="newInput" placeholder="Ingrese un nuevo nombre">
                             <h4 class="email">Modificar Email</h4>
