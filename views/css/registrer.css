@@ -97,3 +97,9 @@ line-height: 2;
   min-height: 100dvh;
   display: grid;
 }
+.haveCount{
+  color: #458DFA;
+  text-decoration:underline;
+  padding-left: 1rem;
+  margin: 0rem;
+}

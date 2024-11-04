@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/registrer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="module" src="./views/js/register.js"></script>
+    <script src="./views/js/register.js"></script> 
 </head>
 
 <body>
@@ -52,6 +52,7 @@
                     <FONT COLOR="gray">Al menos un caracter especial</FONT><br>
                     <FONT COLOR="gray">Al menos una minúscula</strong></FONT><br>
                 </div>
+                <p class="haveCount">Tenés cuenta?</p>
                 <input type="button" class="password" value="Registrarse" id="sendButton" />
             </div>
         </div>

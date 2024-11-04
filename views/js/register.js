@@ -1,4 +1,4 @@
-const sendBtn = $("#sendButton");
+sendBtn = $("#sendButton");
 function verifyPass(pass) {
   const hasUpper = /[A-Z]/.test(pass);
   const hasLower = /[a-z]/.test(pass);
@@ -11,10 +11,10 @@ function verifyEmail(email) {
   return regex.test(email);
 }
 $(sendBtn).click(() => {
-  const name = $("#name").val();
-  const lastname = $("#lastname").val();
-  const userEmail = $("#userEmail").val();
-  const userPassword = $("#userPassword").val();
+name = $("#name").val();
+ lastname = $("#lastname").val();
+userEmail = $("#userEmail").val();
+userPassword = $("#userPassword").val();
   if (name == "" || lastname == "" || userEmail == "") {
     let alert= `Complete todos los campos para poder registrarse`
     $("#alertAll").html(alert)
@@ -25,7 +25,7 @@ $(sendBtn).click(() => {
     let alert = `Su contraseña no cumple con los requisitos explicados en el formulario`
     $("#passwordAlert").html(alert)
   } else {
-    const date = new Date()
+ date = new Date()
     let actualDate = date.getFullYear() + "-" + (date.getMonth()+ 1) + "-" + date.getDate();
     $.ajax({
       url: "./modules/users/registerSend.php",
@@ -47,4 +47,22 @@ $(sendBtn).click(() => {
       },
     });
   }
+});
+
+account = document.querySelectorAll(".haveCount");
+account.forEach(haveCount => {
+  haveCount.addEventListener("click", function (e) {
+    e.stopPropagation();
+    let id = this.id;
+    $.ajax({
+      url: "./modules/users/login.php",
+      data: { articleId: id },
+      dataType: "html",
+      method: "POST",
+      success: (data) => {
+        console.log("anda");
+        $("#content").html(data);
+      },
+    });
+  });
 });

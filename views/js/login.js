@@ -1,4 +1,4 @@
-const sendBtn = $("#sendBtn");
+sendBtn = $("#sendBtn");
 function verifyPass(pass) {
   const hasUpper = /[A-Z]/.test(pass);
   const hasLower = /[a-z]/.test(pass);
@@ -47,4 +47,21 @@ $(sendBtn).click(() => {
       }
     });
   }
+});
+account = document.querySelectorAll(".haventCount");
+account.forEach(haventCount => {
+  haventCount.addEventListener("click", function (e) {
+    e.stopPropagation();
+    let id = this.id;
+    $.ajax({
+      url: "./modules/users/register.php",
+      data: { Count: id },
+      dataType: "html",
+      method: "POST",
+      success: (data) => {
+        console.log("anda");
+        $("#content").html(data);
+      },
+    });
+  });
 });
