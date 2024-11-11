@@ -7,7 +7,6 @@
     <title>Página13 - Creador de Artículos</title>
     <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./views/css/layout.css">
     <link rel="stylesheet" href="./views/css/creator.css">
     <script type="module" src="./views/js/creator.js"></script>
 </head>
