@@ -784,7 +784,7 @@ h3 {
   height: 10rem;
   background-color: #0e2e59;
 }
-@media (max-width: 1388px) {
+@media (max-width: 1000px) {
   .buttonnav {
     height: none;
     margin: 0;
@@ -880,6 +880,7 @@ h3 {
     flex-direction: column;
   }
 }
+
 #content {
   display: flex;
   flex-direction: column;

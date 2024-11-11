@@ -24,11 +24,13 @@ resposiveCategory.addEventListener("click", () => {
 
 navMen.addEventListener("click", (event) => { 
   event.stopPropagation();
-  if (!dropContent.classList.contains("active")) {
+  
+  var viewportWidth = $(window).width();
+  if (!dropContent.classList.contains("active") && viewportWidth < 1000 ) {
     dropContent.classList.add("active");
     dropContent.style.display = "block";
     dropContent.style.pointerEvents = "auto";
-   // dropContent.style.animation = "appear 0.4s forwards";
+    dropContent.style.animation = "appear 0.4s forwards";
   }
 });
 document.addEventListener("click", (event) => {
@@ -120,6 +122,14 @@ $.ajax({
       });
     }
   },
+});
+
+$(window).resize(function () {
+  var viewportWidth = $(window).width();
+  if (viewportWidth > 1000) {
+      $(".dropdown-content").css("display","");
+      $(".dropdown-content").css("animation","");
+  }
 });
 
 
