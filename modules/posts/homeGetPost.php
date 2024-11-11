@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 $query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, pc.Categories_idCategories, 
 c.idCategories, c.name
           FROM posts p

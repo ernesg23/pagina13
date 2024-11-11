@@ -1,5 +1,5 @@
 <?php
-include "../users/connection.php";
+include "../../config.php";
 
 $userId = mysqli_real_escape_string($connection, $_COOKIE["userId"]);
 

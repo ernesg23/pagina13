@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include "../../config.php";
 session_start();
 $ActualName = $_SESSION["username"];
 $NewName = $_POST['inputName'];

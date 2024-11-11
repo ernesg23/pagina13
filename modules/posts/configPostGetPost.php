@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 $authorId = $_COOKIE["username"];
 $query = "
 SELECT 

@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 
 // prepare, to evade SQL injections
 $query = $connection->prepare("
