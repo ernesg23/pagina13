@@ -14,7 +14,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
-
 </head>
 
 <body>
@@ -89,7 +88,6 @@
 
             <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesión <i class='bx bx-power-off'></i></li>
-
         </ul>
     </header>
     <main>
