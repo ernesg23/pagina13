@@ -1,7 +1,7 @@
 const observer = new MutationObserver((mutations) => {
   mutations.forEach((mutation) => {
     if (mutation.type === "childList") {
-      attachEventListeners(); // Re-attach event listeners every time there is a change in #content
+      attachEventListeners(); // Re-attach event listeners every time there is a change in #content 
     }
   });
 });

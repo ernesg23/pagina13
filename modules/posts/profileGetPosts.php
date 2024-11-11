@@ -1,5 +1,5 @@
 <?php
-include "../users/connection.php";
+include "../../config.php";
 session_start();
 
 $authorName = mysqli_real_escape_string($connection, $_COOKIE["username"]);
@@ -30,7 +30,8 @@ INNER JOIN
     users u 
     ON p.Users_idUsers = u.idUsers
 WHERE 
-    u.name = '$authorName'
+    u.name = '$authorName' 
+    AND p.deleted_at IS NULL
 ORDER BY 
     p.idPosts DESC
 LIMIT 4

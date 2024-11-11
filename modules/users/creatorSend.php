@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include "../../config.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $target_dir = "../../views/img/uploads/";
     if (!is_dir($target_dir)) {

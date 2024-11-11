@@ -1,5 +1,5 @@
 <?php
-include "../users/connection.php";
+include "../../config.php";
 session_start();
 $authorName = $_SESSION["username"];
 $query = "SELECT p.idPosts, p.Users_idUsers, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, 

@@ -1,5 +1,5 @@
 <?php 
-include "../users/connection.php";
+include "../../config.php";
 if (isset($_POST['postId'])) {
     $postId = $_POST["postId"];
 }

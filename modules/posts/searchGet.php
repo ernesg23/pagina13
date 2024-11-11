@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 
 // prepare, to evade SQL injections
 $query = $connection->prepare("
@@ -8,8 +8,8 @@ $query = $connection->prepare("
     FROM posts p
     INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
     INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
-    WHERE (p.isArchived = 0 AND p.title LIKE ?) 
-       OR (p.isArchived = 0 AND c.name LIKE ?)
+    WHERE (p.isArchived = 0 AND p.title LIKE ? AND deleted_at IS NULL) 
+       OR (p.isArchived = 0 AND c.name LIKE ? AND deleted_at IS NULL)
     ORDER BY p.idPosts DESC
     LIMIT 6
 ");

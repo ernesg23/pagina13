@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 include './listGet.php';
 include './listGetPost.php'
 ?>
@@ -14,7 +14,6 @@ include './listGetPost.php'
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./views/css/list.css">
     <script type="module" src="./views/js/list.js"></script>
-    <link rel="stylesheet" href="./views/css/layout.css">
 </head>
 
 <body>

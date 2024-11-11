@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 include './readerGet.php';
 include './readerGetPost.php';
 include './favGet.php';

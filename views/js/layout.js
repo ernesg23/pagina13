@@ -48,6 +48,7 @@ document.addEventListener("click", (event) => {
       { once: true }
     );
   }
+  
 });
 
 $.ajax({

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 27, 2024 at 12:46 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-11-2024 a las 13:19:17
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pagina13`
+-- Base de datos: `pagina13`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accountrecovery`
+-- Estructura de tabla para la tabla `accountrecovery`
 --
 
 CREATE TABLE `accountrecovery` (
@@ -38,7 +38,7 @@ CREATE TABLE `accountrecovery` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
@@ -47,7 +47,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categories`
+-- Volcado de datos para la tabla `categories`
 --
 
 INSERT INTO `categories` (`idCategories`, `name`) VALUES
@@ -70,12 +70,17 @@ INSERT INTO `categories` (`idCategories`, `name`) VALUES
 (17, 'testa'),
 (18, 'testaa'),
 (19, 'tesa'),
-(20, 'anda?');
+(20, 'anda?'),
+(21, 'tu'),
+(22, 'noti'),
+(23, 'JOKE'),
+(24, 'asf'),
+(25, 'musica');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorites`
+-- Estructura de tabla para la tabla `favorites`
 --
 
 CREATE TABLE `favorites` (
@@ -85,7 +90,7 @@ CREATE TABLE `favorites` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `favorites`
+-- Volcado de datos para la tabla `favorites`
 --
 
 INSERT INTO `favorites` (`Posts_idPosts`, `Users_idUsers`, `deleted_at`) VALUES
@@ -101,12 +106,14 @@ INSERT INTO `favorites` (`Posts_idPosts`, `Users_idUsers`, `deleted_at`) VALUES
 (30, 13, '2024-10-25'),
 (31, 13, NULL),
 (32, 13, '2024-10-25'),
-(40, 13, '2024-10-25');
+(39, 21, NULL),
+(40, 13, '2024-10-25'),
+(41, 20, '2024-10-29');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Estructura de tabla para la tabla `posts`
 --
 
 CREATE TABLE `posts` (
@@ -123,7 +130,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `posts`
+-- Volcado de datos para la tabla `posts`
 --
 
 INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg`, `created_at`, `updated_at`, `deleted_at`, `Users_idUsers`, `isArchived`) VALUES
@@ -166,12 +173,17 @@ INSERT INTO `posts` (`idPosts`, `title`, `subtitle`, `description`, `portraitImg
 (37, 'porfavoranda', 'tesasdaw', '131a', '../../views/img/uploads/Screenshot 2024-09-14 201141.png', '2024-10-25 04:44:14', NULL, NULL, 13, 0),
 (38, 'noanda', 'd', 'd', '../../views/img/uploads/Screenshot 2024-09-28 203338.png', '2024-10-25 04:45:03', NULL, NULL, 13, 1),
 (39, 'anda', 'dwadaw', 'dwad', '../../views/img/uploads/Screenshot 2023-12-11 234603.png', '2024-10-25 04:50:29', NULL, NULL, 13, 0),
-(40, 'andasporfin?', 'dwadawsadaw', 'dwadsadwa', '../../views/img/uploads/Screenshot 2024-06-15 185520.png', '2024-10-25 04:50:04', NULL, NULL, 13, 0);
+(40, 'andasporfin?', 'dwadawsadaw', 'dwadsadwa', '../../views/img/uploads/Screenshot 2024-06-15 185520.png', '2024-10-25 04:50:04', NULL, NULL, 13, 0),
+(41, 'momo', 'Benicio despues de darse cuenta que ernesto nunca termino el modo claro y fue descartado por eso', 'hola', '../../views/img/uploads/Harry.jpg', '2024-10-29 14:26:48', NULL, NULL, 20, 0),
+(43, 'WHY SO SERIOUS', 'WHY SO', 'SERIOUS', '../../views/img/uploads/descarga (4).jfif', '2024-10-29 16:17:30', NULL, NULL, 21, 0),
+(44, 'dgj', 'gjj', 'HOLA', '../../views/img/uploads/Pong krell.jfif', '2024-11-11 12:48:07', NULL, NULL, 22, 0),
+(45, 'dgj', 'gjj', 'HOLA', '../../views/img/uploads/Pong krell.jfif', '2024-11-11 12:48:08', NULL, NULL, 22, 0),
+(46, 'Ahora te puedes marchar', 'SI NO SUPISTE AMAR', 'Si tú me hubieras dicho siempre la verdad\r\nSi hubieras respondido cuando te llamé\r\nSi hubieras amado cuando te amé\r\nSerías en mis sueños la mejor mujer\r\nSi no supiste amar\r\nAhora te puedes marchar\r\nSi tú supieras lo que yo sufrí por ti\r\nTeniendo que olvidarte sin saber porqué\r\nY ahora me llamas, me quieres ver\r\nMe juras que has cambiado y piensas en volver\r\nSi no supiste amar\r\nAhora te puedes marchar\r\nAléjate de mí\r\nNo hay nada más que hablar\r\nContigo yo perdí\r\nYa tengo con quien ganar\r\nYa sé que no hubo nadie que te diera lo que yo te di\r\nQue nadie te ha cuidado como te cuidé\r\nPor eso comprendo que estás aquí\r\nPero ha pasado el tiempo y yo también cambié\r\nSi no supiste amar\r\nAhora te puedes marchar\r\nAléjate de mí\r\nNo hay nada más que hablar\r\nContigo yo perdí\r\nYa tengo con quien ganar\r\nYa sé que no hubo nadie que te diera lo que yo te di\r\nQue nadie te ha cuidado como te cuidé\r\nPor eso comprendo que estás aquí\r\nPero ha pasado el tiempo y yo también cambié\r\nSi no supiste amar\r\nAhora te puedes marchar\r\nSi no supiste amar\r\nAhora te puedes marchar', '../../views/img/uploads/descarga (5).jfif', '2024-11-11 13:16:41', NULL, NULL, 22, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts_has_categories`
+-- Estructura de tabla para la tabla `posts_has_categories`
 --
 
 CREATE TABLE `posts_has_categories` (
@@ -180,7 +192,7 @@ CREATE TABLE `posts_has_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `posts_has_categories`
+-- Volcado de datos para la tabla `posts_has_categories`
 --
 
 INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) VALUES
@@ -208,12 +220,17 @@ INSERT INTO `posts_has_categories` (`Posts_idPosts`, `Categories_idCategories`) 
 (37, 20),
 (38, 20),
 (39, 20),
-(40, 20);
+(40, 20),
+(41, 21),
+(43, 23),
+(44, 24),
+(45, 24),
+(46, 25);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -229,7 +246,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `description`, `create_at`, `deleted_at`, `blackTheme`) VALUES
@@ -245,26 +262,30 @@ INSERT INTO `users` (`idUsers`, `name`, `email`, `password`, `profileImg`, `desc
 (15, 'Thiago Martinez', 'thiagomartinez969@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (16, 'Thiago Martinez', 'thiagomartinez930@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
 (17, 't t', 't@gmail.com', 'c21a809a0b2e17f4312b53eedf201aa72b1e13331e5997c8c8845de4f76ecfdcaac2c51f6af89ac4eff925a5ed25415d423926b20b21257d8b2faa8f09eced1d', NULL, NULL, '2024-10-04', NULL, 0x3000),
-(18, 'Pagina 13', 'pagina13oficial@gmail.com', 'caadfb23b8da956e47857f15f00bf4f86349b5852961ffb70e6e8b8fc73d241c73dd6f4c3bfccbe6ec4c50be927a1c9a423a805fe1d34d2bd97f2ca1c4eb216b', NULL, NULL, '2024-10-26', NULL, 0x3000);
+(18, 'Pagina 13', 'pagina13oficial@gmail.com', 'caadfb23b8da956e47857f15f00bf4f86349b5852961ffb70e6e8b8fc73d241c73dd6f4c3bfccbe6ec4c50be927a1c9a423a805fe1d34d2bd97f2ca1c4eb216b', NULL, NULL, '2024-10-26', NULL, 0x3000),
+(19, 'as das', 'prota@gmail.com', '9387b8bf99bf5a35c0c20d838186f54f621acb743a4d2c8eb355b3d8d4d44168db013782a342e571e46be9f125a8d067cd187438a4483d1d8f3f62bdc9fe6444', NULL, NULL, '2024-10-28', NULL, 0x3000),
+(20, 'moni argento', 'hola@gmail.com', 'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e', NULL, NULL, '2024-10-29', NULL, 0x3000),
+(21, 'mauro barraaza', 'lol@gmail.com', 'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e', NULL, NULL, '2024-10-29', NULL, 0x3000),
+(22, 'sif', 'ernestogallego2019@gmail.com', 'aab052952d49d24acd2be53b5c6fa1ba01cf5b75e66394ebd15a17f732658cf682dc734787495978d6e7685ce51f6b630897cdb47da95adb340c344f5d6512b1', NULL, NULL, '2024-11-11', NULL, 0x3000);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `accountrecovery`
+-- Indices de la tabla `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
   ADD PRIMARY KEY (`idRecovery`);
 
 --
--- Indexes for table `categories`
+-- Indices de la tabla `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`idCategories`);
 
 --
--- Indexes for table `favorites`
+-- Indices de la tabla `favorites`
 --
 ALTER TABLE `favorites`
   ADD PRIMARY KEY (`Posts_idPosts`,`Users_idUsers`),
@@ -272,14 +293,14 @@ ALTER TABLE `favorites`
   ADD KEY `fk_Posts_has_Users_Posts1_idx` (`Posts_idPosts`);
 
 --
--- Indexes for table `posts`
+-- Indices de la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`idPosts`,`Users_idUsers`),
   ADD KEY `fk_Posts_Users1_idx` (`Users_idUsers`);
 
 --
--- Indexes for table `posts_has_categories`
+-- Indices de la tabla `posts_has_categories`
 --
 ALTER TABLE `posts_has_categories`
   ADD PRIMARY KEY (`Posts_idPosts`,`Categories_idCategories`),
@@ -287,58 +308,58 @@ ALTER TABLE `posts_has_categories`
   ADD KEY `fk_Posts_has_Categories_Posts1_idx` (`Posts_idPosts`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`idUsers`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `accountrecovery`
+-- AUTO_INCREMENT de la tabla `accountrecovery`
 --
 ALTER TABLE `accountrecovery`
   MODIFY `idRecovery` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idCategories` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT de la tabla `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `idPosts` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idUsers` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `favorites`
+-- Filtros para la tabla `favorites`
 --
 ALTER TABLE `favorites`
   ADD CONSTRAINT `fk_Posts_has_Users_Posts1` FOREIGN KEY (`Posts_idPosts`) REFERENCES `posts` (`idPosts`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Posts_has_Users_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `posts`
+-- Filtros para la tabla `posts`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `fk_Posts_Users1` FOREIGN KEY (`Users_idUsers`) REFERENCES `users` (`idUsers`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `posts_has_categories`
+-- Filtros para la tabla `posts_has_categories`
 --
 ALTER TABLE `posts_has_categories`
   ADD CONSTRAINT `fk_Posts_has_Categories_Categories1` FOREIGN KEY (`Categories_idCategories`) REFERENCES `categories` (`idCategories`) ON DELETE NO ACTION ON UPDATE NO ACTION,
