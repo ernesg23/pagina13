@@ -27,7 +27,8 @@ INNER JOIN
     users u 
     ON p.Users_idUsers = u.idUsers
 WHERE 
-    u.name = '$authorId'
+    u.name = '$authorId' 
+    AND p.deleted_at IS NULL
 ORDER BY 
     p.idPosts DESC
 ";

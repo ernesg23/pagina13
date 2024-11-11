@@ -7,7 +7,7 @@ $query = "SELECT p.idPosts, p.Users_idUsers, p.title, p.subtitle, p.description,
           INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
           INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
           INNER JOIN users u ON p.Users_idUsers = u.idUsers
-          WHERE p.idPosts = '$postId'
+          WHERE p.idPosts = '$postId' 
           LIMIT 1;";
 
 $r = mysqli_query($connection, $query);
