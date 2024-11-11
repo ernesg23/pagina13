@@ -4,7 +4,7 @@ $query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p
           FROM posts p
           INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
           INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
-          WHERE p.isArchived = 0
+          WHERE p.isArchived = 0 AND deleted_at IS NULL
           ORDER BY p.idPosts DESC
           LIMIT 5;";
 
