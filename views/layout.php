@@ -63,12 +63,8 @@
             <li class="actionsMenuItem">Apariencia: <input type="checkbox" name="light-theme" id="lightmode-toggle"><label for="lightmode-toggle" id="toggle-light"> <i class='bx bx-moon moon'></i> <i class='bx bx-sun sun'></i></label></li>
             <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog iconActionMenu'></i></li>
-<<<<<<< HEAD
-            <li class="actionsMenuItem buttonnav" data-page="users-creator">Crear artículo <i class='bx bx-pencil iconActionMenu'></i></li>
-=======
             <?php
             include './modules/users/connection.php';
-            session_start();
             if (isset($_SESSION['userId'])) {
                 $userId = mysqli_real_escape_string($connection, $_SESSION['userId']);
                 $querySel = 'SELECT role FROM users WHERE idUsers = "' . $userId . '"';
@@ -91,7 +87,6 @@
             }
             ?>
 
->>>>>>> 642ae51a14da478ea9a055d95eb3f2c4a46869e8
             <li class="actionsMenuItem" id="search"><input class="responsiveSearch" name="searchBar" id="searchBar" placeholder="Buscar"> <i class='bx bx-search searchIconR iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" id="logOut" data-page="users-logOut">Cerrar sesión <i class='bx bx-power-off'></i></li>
 

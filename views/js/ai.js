@@ -31,7 +31,7 @@
             end = true
             $loading?.parentNode?.removeChild($loading)
             $button.removeAttribute('disabled')
-            addMessage("¡Hola! Soy un ChatGPT que se ejecuta completamente en tu navegador. ¿En qué puedo ayudarte hoy?", 'bot')
+            addMessage("¡Hola! Soy Andromeda, tu asistente para la creación de posts. ¿En qué puedo ayudarte hoy?", 'bot')
             $input.focus()
           }
         }
