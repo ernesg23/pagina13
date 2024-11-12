@@ -57,7 +57,6 @@ function addEventListeners() {
           success: (data) => {
             console.log(data);
             llmadodeemergencia();
-            
             devuelve();
           },
 
@@ -70,9 +69,6 @@ function llmadodeemergencia(){
     method: "GET",
     url: "./modules/posts/profileGetPosts.php",
     success: (data) => {
-      $("#previewPostsCont").html(data);
-      $("#writtenPostsList").html(data);
-
     },
 
   });
@@ -83,6 +79,7 @@ function devuelve(){
     url: "./modules/users/configPostsReset.php",
     success: (data) => {
       $("#contAllConfigPosts").html(data);
+
     },
 
   });
