@@ -4,8 +4,7 @@ session_start();
 
 $authorName = mysqli_real_escape_string($connection, $_COOKIE["username"]);
 
-$query = "
-SELECT 
+$query = "SELECT 
     p.idPosts, 
     p.Users_idUsers, 
     p.title, 
