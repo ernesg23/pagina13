@@ -365,3 +365,24 @@ $.ajax({
     });
   }
 });
+
+$(document).ready(function () {
+  const themeToggle = document.getElementById('lightmode-toggle');
+  const body = document.body;
+
+  themeToggle.addEventListener('change', () => {
+      const isLight = themeToggle.checked;
+      const themeClass = isLight ? 'light' : 'dark';
+
+      // Cambiar la clase en el cuerpo
+      body.classList.replace(isLight ? 'dark' : 'light', themeClass);
+
+      // Enviar al servidor
+      $.ajax({
+          url: './modules/users/saveTheme.php',
+          method: 'POST',
+          data: JSON.stringify({ theme: isLight ? 1 : 0 }),
+          contentType: 'application/json'
+      });
+  });
+});

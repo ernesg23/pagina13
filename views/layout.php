@@ -1,3 +1,38 @@
+<?php
+include "./config.php";
+
+$pdo = new PDO("mysql:host=localhost;dbname=pagina13;charset=utf8", "root", "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Iniciar la sesión
+session_start();
+
+// Verificar si el ID de usuario está almacenado en la sesión
+if (isset($_SESSION['user_id'])) {
+    // Acceder al ID del usuario
+    $user_id = $_SESSION['user_id'];
+    echo "El ID del usuario es: " . $user_id;
+    // Obtener el tema guardado del usuario
+    $stmt = $pdo->prepare("SELECT blackTheme FROM users WHERE id = ?");
+    $stmt->execute([$userId]);
+    $userTheme = $stmt->fetchColumn();
+
+    // Convertir el tema a una clase CSS (0 = oscuro, 1 = claro)
+    $themeClass = ($userTheme === '1') ? 'light' : 'dark';
+
+    // Obtener la página actual desde la URL (por ejemplo: index.php?page=home)
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+    // Verificar si el archivo PHP existe
+    $pageFile = $page . '.php';
+    if (!file_exists($pageFile)) {
+        $pageFile = 'home.php'; // Página por defecto
+    }
+} else {
+    //echo "El usuario no ha iniciado sesión.";
+}
+?>
+
 <html>
 
 <head>
@@ -6,12 +41,24 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="views/img/enterprise_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./views/css/layout.css">
+
+    <?php
+    // Incluir el CSS del contenido actual si existe
+    if (isset($_SESSION['user_id'])){
+        $cssFile = "css/{$page}.css";
+        if (file_exists($cssFile)) {
+            echo "<link rel='stylesheet' href='$cssFile'>";
+        }
+    }
+    ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="module" src="./views/js/navigation.js"></script>
     <script type="module" src="./views/js/layout.js"></script>
 </head>
