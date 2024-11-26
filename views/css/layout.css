@@ -789,7 +789,7 @@ h3 {
   height: 10rem;
   background-color: #0e2e59;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
   .buttonnav {
     height: none;
     margin: 0;
