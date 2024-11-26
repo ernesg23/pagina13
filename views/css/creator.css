@@ -27,7 +27,8 @@
 }
 .categories {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 0.2em 1.2em;
 }
 .buttonsContainer {

@@ -53,6 +53,7 @@
                                 class="textArea" id="sources"></textarea>
                         </div> -->
                     </div>
+                    <p style="text-align: center;">Categorias</p>
                     <div class="categories">
                         <button class="categoryCreator" data-category="Base de Datos" style="background-color: #1abc9c;">Base de Datos</button>
                         <button class="categoryCreator" data-category="Matemáticas" style="background-color: #3498db;">Matemáticas</button>

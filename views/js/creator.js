@@ -131,17 +131,16 @@ archiveBtn.addEventListener("click", () => {
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
-  const category = $(".categoryCreator").val();
+
   if (
     !file ||
     !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
-    !category
+    !selectedCategories.length === 0
   ) {
-    let alert = `Complete todos los campos para poder subir un articulo`;
-    $("#alertError").html(alert);
+    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
@@ -149,12 +148,16 @@ archiveBtn.addEventListener("click", () => {
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
-    formData.append("sources", sources);
-    formData.append("categories", category);
+    formData.append('sources', sources);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
+
+    selectedCategories.forEach(cat => {
+      formData.append("categories[]", cat);  // Enviar categorías como un array
+    });
+
     $.ajax({
       url: "./modules/users/creatorSend.php",
       data: formData,
@@ -162,13 +165,8 @@ archiveBtn.addEventListener("click", () => {
       contentType: false,
       processData: false,
       success: () => {
-        let alert = `Articulo creado con éxito`;
-        $("#alertGood").html(alert);
-        alert = ``;
-        $("#alertError").html(alert);
-        setTimeout(() => {
-          location.reload();
-        }, 500);
+        $("#alertGood").html("Artículo archivado con éxito");
+        setTimeout(() => location.reload(), 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {
         console.error("Error:", textStatus, errorThrown);
