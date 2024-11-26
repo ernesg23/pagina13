@@ -394,8 +394,13 @@ section {
 }
 .recent-description {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
   margin-left: 0.5rem;
+}
+.recent-description #text{
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.5rem;
 }
 .userName {
   font-size: 1rem;
@@ -1001,7 +1006,7 @@ section {
 }
 .recent-description {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
   margin-left: 0.5rem;
 }
 .userName {
@@ -1186,4 +1191,18 @@ img.img.search-post-img {
     font-size: 0.8rem;
     color: #fff;
   }
+}
+.recent-categories span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+.category-badge {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  margin-right: 5px;
+  font-size: 12px;
 }
