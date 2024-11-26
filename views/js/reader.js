@@ -40,7 +40,7 @@ function attachEventListeners() {
   $(".bx-star").off("click").on("click", function () {
     const id = $("#main-post").data("postId");
     const $star = $(this);
-    
+
     if ($star.hasClass("active")) {
       $.ajax({
         url: "./modules/posts/favoriteDelete.php",
@@ -73,14 +73,5 @@ function attachEventListeners() {
       });
     }
   });
-  
 }
-
-// Observe changes of #content
-observer.observe(document.querySelector("#content"), {
-  childList: true,
-  subtree: true,
-});
-
-// Initialize event-listeners
-attachEventListeners();
+attachEventListeners(); // Call the function initially to set the event listeners
