@@ -6,32 +6,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!is_dir($target_dir)) {
         mkdir($target_dir, 0777, true);
     }
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+    $fileUploaded = !empty($_FILES["file"]["tmp_name"]);
     $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $target_file = "";
 
-    // Verify image
-    $check = getimagesize($_FILES["file"]["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "El archivo no es una imagen.";
-        $uploadOk = 0;
-    }
+    if ($fileUploaded) {
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Verify size
-    if ($_FILES["file"]["size"] > 17000000) {
-        echo "Archivo muy pesado";
-        $uploadOk = 0;
-    }
-
-    if ($uploadOk == 0) {
-        echo "No se pudo subir el archivo";
-    } else {
-        if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            // echo "El archivo " . htmlspecialchars(basename($_FILES["file"]["name"])) . " ha sido subido.";
+        // Verify image
+        $check = getimagesize($_FILES["file"]["tmp_name"]);
+        if ($check !== false) {
+            $uploadOk = 1;
         } else {
-            echo "Error al subir tu archivo.";
+            echo "El archivo no es una imagen.";
+            $uploadOk = 0;
+        }
+
+        // Verify size
+        if ($_FILES["file"]["size"] > 17000000) {
+            echo "Archivo muy pesado";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "No se pudo subir el archivo";
+            exit();
+        } else {
+            if (!move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                echo "Error al subir tu archivo.";
+                exit();
+            }
         }
     }
 
@@ -58,12 +64,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $resultCheckPost = $queryCheckPost->get_result();
 
     if ($resultCheckPost->num_rows > 0) {
-        // Yes, then update
-        $queryUpdatePost = $connection->prepare("UPDATE `posts` SET `title` = ?, `subtitle` = ?, `description` = ?, `portraitImg` = ?, `created_at` = ?, `isArchived` = ? WHERE `idPosts` = ?");
+        // Prepare the update query with or without the image
+        if ($fileUploaded) {
+            $queryUpdatePost = $connection->prepare("UPDATE `posts` SET `title` = ?, `subtitle` = ?, `description` = ?, `portraitImg` = ?, `created_at` = ?, `isArchived` = ? WHERE `idPosts` = ?");
+            $queryUpdatePost->bind_param("ssssssi", $_POST['title'], $_POST['subtitle'], $_POST['description'], $target_file, $publishedDate, $_POST['isArchived'], $postId);
+        } else {
+            $queryUpdatePost = $connection->prepare("UPDATE `posts` SET `title` = ?, `subtitle` = ?, `description` = ?, `created_at` = ?, `isArchived` = ? WHERE `idPosts` = ?");
+            $queryUpdatePost->bind_param("sssssi", $_POST['title'], $_POST['subtitle'], $_POST['description'], $publishedDate, $_POST['isArchived'], $postId);
+        }
+
         if ($queryUpdatePost === false) {
             die("Error preparing queryUpdatePost: " . $connection->error);
         }
-        $queryUpdatePost->bind_param("ssssssi", $_POST['title'], $_POST['subtitle'], $_POST['description'], $target_file, $publishedDate, $_POST['isArchived'], $postId);
         if (!$queryUpdatePost->execute()) {
             die("Error executing queryUpdatePost: " . $queryUpdatePost->error);
         }
@@ -123,3 +135,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // close connection
 $connection->close();
+?>

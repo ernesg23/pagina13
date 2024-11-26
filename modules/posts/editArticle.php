@@ -43,9 +43,10 @@ include "./getEditPost.php"
                             <img src="" alt="" loading="lazy" class="imagePostCreator">
                             <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
                                 <div class="input_container">
-                                    <label for="files" class="btnLabel"><?php echo $rows['portraitImg'] = str_replace('../..', '', $rows['portraitImg']); ?></label>
+                                    <label for="files" class="btnLabel"><?php echo str_replace('../..', '', $rows['portraitImg']); ?></label>
                                     <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4">
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -53,7 +54,7 @@ include "./getEditPost.php"
                         <input class="categoryCreator" placeholder="Categoria" value="<?php echo $rows['name'] ?>">
 
                     </div>
-                    <div class="buttonsContainer" id="<?php echo $rows['idPosts']?>">
+                    <div class="buttonsContainer" id="<?php echo $rows['idPosts'] ?>">
                         <button id="archiveButtonEdit" class="buttonsCreator">Archivar</button>
                         <button id="sendButtonEdit" class="buttonsCreator">Guardar</button>
                     </div>

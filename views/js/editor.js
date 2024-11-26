@@ -54,18 +54,17 @@ document.querySelector("#files").onchange = function () {
   label.innerText = fileName ?? "Browse Files";
 };
 sendBtnEd.addEventListener("click", () => {
-    let formData = new FormData();
-    const id = $(".buttonsContainer").attr("id");
+  let formData = new FormData();
+  const id = $(".buttonsContainer").attr("id");
   let file = $("#files")[0].files[0];
-  const imagesAndVideos = $(".newImage").val();
+  const imagesAndVideos = $("label[for='files']").text(); // Obtener valor del label
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
-  // const sources = $("#sources").val();
   const category = $(".categoryCreator").val();
+
+  // Verificar que todos los campos requeridos estén presentes
   if (
-    !file ||
-    !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
@@ -76,14 +75,17 @@ sendBtnEd.addEventListener("click", () => {
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
-    formData.append("file", file);
+
+    if (file) {
+      formData.append("file", file);
+    } else {
+      formData.append("images", imagesAndVideos);
+    }
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
-    // formData.append('sources', sources);
     formData.append("categories", category);
     formData.append("author", author);
-    formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("id", id);
     formData.append("isArchived", 0);
@@ -111,17 +113,17 @@ sendBtnEd.addEventListener("click", () => {
 });
 archiveBtnEd.addEventListener("click", () => {
   let formData = new FormData();
-  let file = $("#files")[0].files[0];
   const id = $(".buttonsContainer").attr("id");
-  const imagesAndVideos = $(".newImage").val();
+  let file = $("#files")[0].files[0];
+  const imagesAndVideos = $("label[for='files']").text(); // Obtener valor del label
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
   const category = $(".categoryCreator").val();
+
+  // Verificar que todos los campos requeridos estén presentes
   if (
-    !file ||
-    !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
@@ -129,10 +131,15 @@ archiveBtnEd.addEventListener("click", () => {
   ) {
     let alert = `Complete todos los campos para poder subir un articulo`;
     $("#alertError").html(alert);
-  }else {
+  } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
-    formData.append("file", file);
+
+    if (file) {
+      formData.append("file", file);
+    } else {
+      formData.append("images", imagesAndVideos);
+    }
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
@@ -140,9 +147,9 @@ archiveBtnEd.addEventListener("click", () => {
     formData.append("categories", category);
     formData.append("id", id);
     formData.append("author", author);
-    formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
+
     $.ajax({
       url: "./modules/users/editorSend.php",
       data: formData,
