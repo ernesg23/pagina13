@@ -304,6 +304,29 @@ $(".categorySearch").click((event) => {
     },
   });
 });
+// Colores definidos para las categorías
+const categoryColors = {
+  "Base de datos": "#1abc9c",
+  "Matemáticas": "#3498db",
+  "Organización Computacional": "#9b59b6",
+  "Lógica Computacional": "#e67e22",
+  "Lengua y Literatura": "#e74c3c",
+  "Inglés técnico": "#34495e",
+  "Laboratorio de Algoritmos": "#f1c40f",
+  "Proyecto Informático": "#2ecc71",
+  "Sistemas Operativos": "#95a5a6",
+};
+
+// Obtener todos los botones con la clase 'category-buttonnav'
+const buttons = document.querySelectorAll('.category-buttonnav');
+
+// Iterar sobre cada botón y asignar el color correspondiente
+buttons.forEach(button => {
+  const categoryName = button.value;  // Obtener el valor del botón que corresponde al nombre de la categoría
+  if (categoryColors[categoryName]) {
+    button.style.backgroundColor = categoryColors[categoryName];  // Asignar el color de fondo
+  }
+});
 
 $.ajax({
   url: "./modules/users/layoutRecent.php",
