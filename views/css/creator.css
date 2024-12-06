@@ -27,12 +27,10 @@
 }
 .categories {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 0.2em 1.2em;
 }
-/* i.categoryAdd {
-  margin-left: 59px;
-} */
 .buttonsContainer {
   display: flex;
   justify-content: flex-end;
@@ -65,14 +63,25 @@
 }
 .categoryCreator {
   display: flex;
-  margin: 0;
-  width: 6rem;
+  margin: 0.5em;
+  height: 2.5rem;
+  width: auto;
+  padding: 0 1rem;
   background-color: #464646;
   border: 1px solid black;
   border-radius: 4px;
   text-align: center;
   justify-content: center;
   color: #fff;
+  cursor: pointer;
+  transition: border 0.3s, background-color 0.3s;
+}
+.categoryCreator:hover {
+  border-color: #c4c7c5;
+}
+.categoryCreator.active {
+  border-width: 1.5px;
+  border-color: #e3e3e3;
 }
 #creatorTitle {
   color: #fff;

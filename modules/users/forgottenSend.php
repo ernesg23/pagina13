@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../phpmailer/src/Exception.php';
 require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
-include 'connection.php';
+include "../../config.php";
 $email = $_POST['email'];
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);

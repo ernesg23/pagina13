@@ -24,11 +24,13 @@ resposiveCategory.addEventListener("click", () => {
 
 navMen.addEventListener("click", (event) => { 
   event.stopPropagation();
-  if (!dropContent.classList.contains("active")) {
+  
+  var viewportWidth = $(window).width();
+  if (!dropContent.classList.contains("active") && viewportWidth < 1000 ) {
     dropContent.classList.add("active");
     dropContent.style.display = "block";
     dropContent.style.pointerEvents = "auto";
-   // dropContent.style.animation = "appear 0.4s forwards";
+    dropContent.style.animation = "appear 0.4s forwards";
   }
 });
 document.addEventListener("click", (event) => {
@@ -121,6 +123,14 @@ $.ajax({
       });
     }
   },
+});
+
+$(window).resize(function () {
+  var viewportWidth = $(window).width();
+  if (viewportWidth > 1000) {
+      $(".dropdown-content").css("display","");
+      $(".dropdown-content").css("animation","");
+  }
 });
 
 
@@ -293,6 +303,29 @@ $(".categorySearch").click((event) => {
       initializeSearchList();
     },
   });
+});
+// Colores definidos para las categorías
+const categoryColors = {
+  "Base de datos": "#1abc9c",
+  "Matemáticas": "#3498db",
+  "Organización Computacional": "#9b59b6",
+  "Lógica Computacional": "#e67e22",
+  "Lengua y Literatura": "#e74c3c",
+  "Inglés técnico": "#34495e",
+  "Laboratorio de Algoritmos": "#f1c40f",
+  "Proyecto Informático": "#2ecc71",
+  "Sistemas Operativos": "#95a5a6",
+};
+
+// Obtener todos los botones con la clase 'category-buttonnav'
+const buttons = document.querySelectorAll('.category-buttonnav');
+
+// Iterar sobre cada botón y asignar el color correspondiente
+buttons.forEach(button => {
+  const categoryName = button.value;  // Obtener el valor del botón que corresponde al nombre de la categoría
+  if (categoryColors[categoryName]) {
+    button.style.backgroundColor = categoryColors[categoryName];  // Asignar el color de fondo
+  }
 });
 
 $.ajax({

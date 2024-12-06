@@ -1,5 +1,5 @@
 <?php
-include '../users/connection.php';
+include "../../config.php";
 
 // Get datetime
 $date = date('Y-m-d H:i:s');
