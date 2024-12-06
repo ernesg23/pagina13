@@ -8,6 +8,8 @@ const sendBtn = document.querySelector("#sendButton");
 const sendBtnEd = document.querySelector("#sendButtonEdit");
 const archiveBtn = document.querySelector("#archiveButton");
 const archiveBtnEd = document.querySelector("#archiveButtonEdit");
+const aiBtn = document.querySelector(".aiBtn")
+const aiCont = document.querySelector("#aiMessagesContainer")
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -23,6 +25,19 @@ function getCookie(cname) {
   }
   return "";
 }
+aiBtn.addEventListener("click", () => {
+    $.ajax({
+      url: "./modules/users/ai.html",
+      method: "post",
+      dataType: "html",
+      success: (response) => {
+        aiCont.classList.add("active");
+        aiBtn.classList.remove("active")
+        $(aiCont).html(response);
+      }
+    });
+});
+
 // Add class to the element
 write.addEventListener("click", function () {
   write.classList.add("active");

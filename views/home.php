@@ -36,7 +36,7 @@
                 </div>
                 <div id="recentArticlesListContainer">
                     <ul class="recent-post-list">
-                        <h4>Articulos recientes</h4>
+                        <h4>Artículos Recientes</h4>
 
                     </ul>
                 </div>
@@ -51,13 +51,13 @@
                 </template>
 
             </div>
-            <h3>Categorias mas visitadas</h3>
+            <h3>Categorías mas visitadas</h3>
             <div class="categoriesSearchContainer">
-                <input class="categorySearch" type="button" value="Matematicas" />
+                <input class="categorySearch" type="button" value="Matemáticas" />
                 <input class="categorySearch" type="button" value="Base de datos" />
-                <input class="categorySearch" type="button" value="Ingles tecnico" />
+                <input class="categorySearch" type="button" value="Inglés técnico" />
                 <input class="categorySearch" type="button" value="Sistemas Operativos" />
-                <input class="categorySearch" type="button" value="Logica Computacional" />
+                <input class="categorySearch" type="button" value="Lógica Computacional" />
             </div>
         </div>
     </section>
