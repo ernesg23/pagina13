@@ -11,7 +11,7 @@
         exit();
     }
 
-    include "../../config.php";
+    include "./connection.php";
 
     $querySel = "SELECT * FROM accountrecovery WHERE resetSelector = ? AND resetExprires >= ?";
     $stmt = mysqli_stmt_init($connection);

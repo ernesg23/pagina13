@@ -50,40 +50,10 @@ function addEventListeners() {
       url: "./modules/posts/deleteArticle.php",
       data: { id: id },
       success: (data) => {
-        console.log( data, "hola");
-        $.ajax({
-          method: "GET",
-          url: "./modules/posts/profileGetPosts.php",
-          success: (data) => {
-            console.log(data);
-            llmadodeemergencia();
-            devuelve();
-          },
-
-        });
+        console.log("Success:", data, "hola");
       },
     });
   });
-function llmadodeemergencia(){
-  $.ajax({
-    method: "GET",
-    url: "./modules/posts/profileGetPosts.php",
-    success: (data) => {
-    },
-
-  });
-}
-function devuelve(){
-  $.ajax({
-    method: "POST",
-    url: "./modules/users/configPostsReset.php",
-    success: (data) => {
-      $("#contAllConfigPosts").html(data);
-
-    },
-
-  });
-}
   $("#sendBtn").on("click", function () {
     const email = document.querySelector("#newEmail").value;
     const password = document.querySelector("#newPass").value;

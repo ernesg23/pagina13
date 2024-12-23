@@ -1,5 +1,5 @@
 <?php
-include "../../config.php";
+include 'connection.php';
 session_start();
 $name = mysqli_real_escape_string($connection, $_POST['name'] . " " . $_POST['lastname']);
 $email = mysqli_real_escape_string($connection, $_POST['email']);

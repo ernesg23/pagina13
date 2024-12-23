@@ -13,8 +13,8 @@ function getCookie(cname) {
   }
   return "";
 }
-edits = document.querySelectorAll(".editArticle");
-author = getCookie("username");
+const edits = document.querySelectorAll(".editArticle");
+const author = getCookie("username");
 
 edits.forEach(edit => {
     edit.addEventListener("click", function (e) {
@@ -39,7 +39,7 @@ $.ajax({
     method: "POST",
     success: (data) => {},
 });
-clickedArticles = document.querySelectorAll(".writtenPosts");
+const clickedArticles = document.querySelectorAll(".writtenPosts");
 clickedArticles.forEach(article => {
     article.addEventListener("click", function () {
         const id = this.id;

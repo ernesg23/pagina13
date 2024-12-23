@@ -32,11 +32,11 @@ section {
 }
 
 .category {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .category:hover {
@@ -124,15 +124,9 @@ hr {
 }
 
 .recent-description {
-  display: flex;
-  flex-wrap: nowrap;
   h3 {
     font-size: 1.2rem;
   }
-}
-.recent-text{
-  display: flex;
-  flex-direction: column;
 }
 #alertError {
   background-color: #f8d7da;

@@ -1,5 +1,5 @@
 <?php
-include "../../config.php";
+include '../users/connection.php';
 $authorId = $_COOKIE["username"];
 $query = "
 SELECT 
@@ -27,8 +27,7 @@ INNER JOIN
     users u 
     ON p.Users_idUsers = u.idUsers
 WHERE 
-    u.name = '$authorId' 
-    AND p.deleted_at IS NULL
+    u.name = '$authorId'
 ORDER BY 
     p.idPosts DESC
 ";

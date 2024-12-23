@@ -1,10 +1,11 @@
 <?php
-include "../../config.php";
+include "../users/connection.php";
 session_start();
 
 $authorName = mysqli_real_escape_string($connection, $_COOKIE["username"]);
 
-$query = "SELECT 
+$query = "
+SELECT 
     p.idPosts, 
     p.Users_idUsers, 
     p.title, 
@@ -29,8 +30,7 @@ INNER JOIN
     users u 
     ON p.Users_idUsers = u.idUsers
 WHERE 
-    u.name = '$authorName' 
-    AND p.deleted_at IS NULL
+    u.name = '$authorName'
 ORDER BY 
     p.idPosts DESC
 LIMIT 4

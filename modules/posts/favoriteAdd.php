@@ -1,5 +1,5 @@
 <?php
-include "../../config.php";
+include "../users/connection.php";
 
 function getCookie($cname) {
     if (!isset($_COOKIE[$cname])) {

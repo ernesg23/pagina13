@@ -53,25 +53,20 @@
                                 class="textArea" id="sources"></textarea>
                         </div> -->
                     </div>
-                    <p style="text-align: center;">Categorias</p>
                     <div class="categories">
-                        <button class="categoryCreator" data-category="Base de Datos" style="background-color: #1abc9c;">Base de Datos</button>
-                        <button class="categoryCreator" data-category="Matemáticas" style="background-color: #3498db;">Matemáticas</button>
-                        <button class="categoryCreator" data-category="Organización Computacional" style="background-color: #9b59b6;">Organización Computacional</button>
-                        <button class="categoryCreator" data-category="Lógica Computacional" style="background-color: #e67e22;">Lógica Computacional</button>
-                        <button class="categoryCreator" data-category="Lengua y Literatura" style="background-color: #e74c3c;">Lengua y Literatura</button>
-                        <button class="categoryCreator" data-category="Inglés Técnico" style="background-color: #34495e;">Inglés Técnico</button>
-                        <button class="categoryCreator" data-category="Laboratorio de Algoritmos" style="background-color: #f1c40f;">Laboratorio de Algoritmos</button>
-                        <button class="categoryCreator" data-category="Proyecto Informático" style="background-color: #2ecc71;">Proyecto Informático</button>
-                        <button class="categoryCreator" data-category="Sistemas Operativos" style="background-color: #95a5a6;">Sistemas Operativos</button>
+                        <input class="categoryCreator" placeholder="Categoría">
+                        <!-- <i class='bx bx-plus-medical categoryAdd'></i> -->
                     </div>
-
                     <div class="buttonsContainer">
                         <button id="archiveButton" class="buttonsCreator">Archivar</button>
                         <button id="sendButton" class="buttonsCreator">Enviar</button>
                     </div>
                 </div>
             </div>
+            <div class="aiBtn mirror active">
+                <i class='bx bxs-message-square-minus'></i>
+            </div>
+            <div id="aiMessagesContainer"></div>
         </section>
     </main>
 

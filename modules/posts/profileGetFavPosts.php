@@ -1,5 +1,5 @@
 <?php
-include "../../config.php";
+include "../users/connection.php";
 
 $userId = mysqli_real_escape_string($connection, $_COOKIE["userId"]);
 
@@ -33,7 +33,6 @@ INNER JOIN
       ON p.idPosts = f.Posts_idPosts
 WHERE
     f.Users_idUsers = $userId
-    AND p.deleted_at IS NULL
 ORDER BY
     f.Posts_idPosts
 LIMIT 4;

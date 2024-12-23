@@ -4,12 +4,12 @@ let imagesVideos = document.querySelector("#imagesVideos");
 let mediaContainer = document.querySelector(".mediaContainer");
 let sources = document.querySelector("#source");
 let sourcesContainer = document.querySelector(".sourcesContainer");
-let selectedCategories = [];
 const sendBtn = document.querySelector("#sendButton");
 const sendBtnEd = document.querySelector("#sendButtonEdit");
 const archiveBtn = document.querySelector("#archiveButton");
 const archiveBtnEd = document.querySelector("#archiveButtonEdit");
-const categoryButtons = document.querySelectorAll(".categoryCreator");
+const aiBtn = document.querySelector(".aiBtn")
+const aiCont = document.querySelector("#aiMessagesContainer")
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -25,6 +25,19 @@ function getCookie(cname) {
   }
   return "";
 }
+aiBtn.addEventListener("click", () => {
+    $.ajax({
+      url: "./modules/users/ai.html",
+      method: "post",
+      dataType: "html",
+      success: (response) => {
+        aiCont.classList.add("active");
+        aiBtn.classList.remove("active")
+        $(aiCont).html(response);
+      }
+    });
+});
+
 // Add class to the element
 write.addEventListener("click", function () {
   write.classList.add("active");
@@ -55,23 +68,6 @@ document.querySelector("#files").onchange = function () {
   const label = document.querySelector("label[for=files]");
   label.innerText = fileName ?? "Browse Files";
 };
-
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.dataset.category;
-
-    if (selectedCategories.includes(category)) {
-      // Deseleccionar categoría
-      selectedCategories = selectedCategories.filter((cat) => cat !== category);
-      button.classList.remove("active");
-    } else {
-      // Seleccionar categoría
-      selectedCategories.push(category);
-      button.classList.add("active");
-    }
-  });
-});
-
 sendBtn.addEventListener("click", () => {
   let formData = new FormData();
   let file = $("#files")[0].files[0];
@@ -80,16 +76,17 @@ sendBtn.addEventListener("click", () => {
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   // const sources = $("#sources").val();
-
+  const category = $(".categoryCreator").val();
   if (
     !file ||
     !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
-    !selectedCategories.length === 0
+    !category
   ) {
-    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
+    let alert = `Complete todos los campos para poder subir un articulo`;
+    $("#alertError").html(alert);
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
@@ -98,14 +95,11 @@ sendBtn.addEventListener("click", () => {
     formData.append("subtitle", subtitle);
     formData.append("description", description);
     // formData.append('sources', sources);
+    formData.append("categories", category);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 0);
-
-    selectedCategories.forEach(cat => {
-      formData.append("categories[]", cat);  // Enviar categorías como un array
-    });
 
     $.ajax({
       url: "./modules/users/creatorSend.php",
@@ -114,8 +108,13 @@ sendBtn.addEventListener("click", () => {
       contentType: false,
       processData: false,
       success: () => {
-        $("#alertGood").html("Artículo creado con éxito");
-        setTimeout(() => location.reload(), 500);
+        let alert = `Articulo creado con éxito`;
+        $("#alertGood").html(alert);
+        alert = ``;
+        $("#alertError").html(alert);
+        setTimeout(() => {
+          location.reload();
+        }, 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {
         console.error("Error:", textStatus, errorThrown);
@@ -131,33 +130,30 @@ archiveBtn.addEventListener("click", () => {
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
-
+  const category = $(".categoryCreator").val();
   if (
     !file ||
     !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
-    !selectedCategories.length === 0
+    !category
   ) {
-    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
-  } else {
+    let alert = `Complete todos los campos para poder subir un articulo`;
+    $("#alertError").html(alert);
+  }else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
     formData.append("file", file);
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
-    formData.append('sources', sources);
+    formData.append("sources", sources);
+    formData.append("categories", category);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
-
-    selectedCategories.forEach(cat => {
-      formData.append("categories[]", cat);  // Enviar categorías como un array
-    });
-
     $.ajax({
       url: "./modules/users/creatorSend.php",
       data: formData,
@@ -165,8 +161,13 @@ archiveBtn.addEventListener("click", () => {
       contentType: false,
       processData: false,
       success: () => {
-        $("#alertGood").html("Artículo archivado con éxito");
-        setTimeout(() => location.reload(), 500);
+        let alert = `Articulo creado con éxito`;
+        $("#alertGood").html(alert);
+        alert = ``;
+        $("#alertError").html(alert);
+        setTimeout(() => {
+          location.reload();
+        }, 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {
         console.error("Error:", textStatus, errorThrown);

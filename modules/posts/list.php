@@ -1,5 +1,5 @@
 <?php
-include "../../config.php";
+include '../users/connection.php';
 include './listGet.php';
 include './listGetPost.php'
 ?>
