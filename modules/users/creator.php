@@ -72,10 +72,6 @@
                     </div>
                 </div>
             </div>
-            <div class="aiBtn mirror active">
-                <i class='bx bxs-message-square-minus'></i>
-            </div>
-            <div id="aiMessagesContainer"></div>
         </section>
     </main>
 
