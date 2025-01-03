@@ -50,10 +50,28 @@ imagesVideos.addEventListener("click", function () {
 //   mediaContainer.classList.remove("active");
 // });
 document.querySelector("#files").onchange = function () {
-  const fileName = this.files[0]?.name;
-  const label = document.querySelector("label[for=files]");
-  label.innerText = fileName ?? "Browse Files";
+  const file = this.files[0];
+  const label = document.querySelector(".btnLabel");
+  const icon = document.querySelector("#iconPlus");
+  const preview = document.querySelector("#preview");
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.style.display = "block"; // Mostrar la imagen de vista previa
+      label.style.padding="0";
+      icon.style.display = "none"; // Ocultar el ícono
+    };
+    reader.readAsDataURL(file);
+  } else {
+    icon.style.display = "block"; // Mostrar el ícono si no hay archivo seleccionado
+    preview.style.display = "none"; // Ocultar la imagen de vista previa
+    preview.src = "";
+  }
 };
+
+
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {

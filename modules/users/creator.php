@@ -43,8 +43,12 @@
                             <img src="" alt="" loading="lazy" class="imagePostCreator">
                             <form id="uploadForm" method="post" action="" enctype="multipart/form-data">
                                 <div class="input_container">
-                                    <label for="files" class="btnLabel"><i class='bx bx-plus'></i></label>
-                                    <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4">
+                                    <label for="files" class="btnLabel">
+                                        <i class='bx bx-plus' id="iconPlus"></i>
+                                        <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4">
+                                        <img id="preview" src="" alt="Image Preview" style="display: none;" />
+                                    </label>
+
                                 </div>
                             </form>
                         </div>

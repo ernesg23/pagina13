@@ -7,6 +7,7 @@
         <title>Página13 - Home</title>
         <link rel="shortcut icon" href="../../views/img/enterprise_logo.png" type="image/x-icon">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="./views/css/layout.css">
         <script type="module" src="./views/js/home.js"></script>
     </head>
 

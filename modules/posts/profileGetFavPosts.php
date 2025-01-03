@@ -34,6 +34,7 @@ INNER JOIN
 WHERE
     f.Users_idUsers = $userId
     AND p.deleted_at IS NULL
+    AND f.deleted_at IS NULL
 ORDER BY
     f.Posts_idPosts
 LIMIT 4;

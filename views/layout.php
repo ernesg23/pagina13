@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html>
 
 <head>
@@ -63,7 +66,7 @@
             <li class="actionsMenuItem buttonnav" data-page="users-profile">Mi perfil <i class='bx bx-user iconActionMenu'></i></li>
             <li class="actionsMenuItem buttonnav" data-page="users-configSettings">Ajustes <i class='bx bx-cog iconActionMenu'></i></li>
             <?php
-            include './modules/users/connection.php';
+            include './config.php';
             if (isset($_SESSION['userId'])) {
                 $userId = mysqli_real_escape_string($connection, $_SESSION['userId']);
                 $querySel = 'SELECT role FROM users WHERE idUsers = "' . $userId . '"';
@@ -79,10 +82,10 @@
                         echo '<li class="actionsMenuItem buttonnav" data-page="users-creator">Crear articulo <i class="bx bx-pencil iconActionMenu"></i></li>';
                     }
                 } else {
-                    echo 'Error en la consulta: ' . mysqli_error($connection);
+                    echo '<li></li>';
                 }
             } else {
-                echo 'Usuario no identificado';
+                echo '<li></li>';
             }
             ?>
 
