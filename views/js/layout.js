@@ -153,21 +153,21 @@ searchForm.addEventListener("submit", (event) => {
   });
 });
 const searchIcon = document.querySelector(".searchIconR");
-searchIcon.addEventListener("click", (event) => {
-  const responsiveSearch = document.querySelector(".responsiveSearch");
-  const content = $(responsiveSearch).val();
-  event.preventDefault();
-  $.ajax({
-    url: "./modules/posts/list.php",
-    method: "post",
-    dataType: "html",
-    data: { content: content },
-    success: (data) => {
-      $("#content").html(data);
-      initializeSearchList();
-    },
-  });
-});
+// searchIcon.addEventListener("click", (event) => {
+//   const responsiveSearch = document.querySelector(".responsiveSearch");
+//   const content = $(responsiveSearch).val();
+//   event.preventDefault();
+//   $.ajax({
+//     url: "./modules/posts/list.php",
+//     method: "post",
+//     dataType: "html",
+//     data: { content: content },
+//     success: (data) => {
+//       $("#content").html(data);
+//       initializeSearchList();
+//     },
+//   });
+// });
 const initializeSearchList = () => {
   function articleClick() {
     const id = this.id;

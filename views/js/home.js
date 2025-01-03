@@ -5,13 +5,14 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
   let posts = [];
   let recentPosts = [];
 
+  // Petición para obtener los artículos principales
   $.ajax({
     url: "./modules/posts/homeGetPost.php",
     method: "POST",
     dataType: "json",
     success: (dato) => {
       $.each(dato, (index, data) => {
-        // Cloning and populating the main template
+        // Clonar y poblar el template principal
         const clonedTemplate = template.content.cloneNode(true);
         const portraitImg = clonedTemplate.querySelector(".img");
         const newPost = clonedTemplate.querySelector(".articlesDescriptions");
@@ -25,7 +26,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         description.textContent = data["subtitle"];
         portraitImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
 
-        // Add classes by size
+        // Agregar clases por tamaño
         if (index === 0) {
           clonedTemplate.querySelector(".article").classList.add("big");
         } else if (index === 1 || index === 2) {
@@ -35,35 +36,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         }
         posts.push(clonedTemplate);
 
-        // Cloning and populating the recent articles template
-        const clonedRecentTemplate = recentTemplate.content.cloneNode(true);
-        const recentImg = clonedRecentTemplate.querySelector(".img.recent");
-        const recentDescription = clonedRecentTemplate.querySelector(".recent-description");
-        const recentId = data["idPosts"];
-        const recentTitle = recentDescription.querySelector("h3");
-        const recentDesc = recentDescription.querySelector("p");
-        clonedRecentTemplate.querySelector(".recent-article").id = recentId;
-        recentTitle.textContent = data["title"];
-        recentDesc.textContent = data["subtitle"];
-        recentImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
-        recentPosts.push(clonedRecentTemplate);
-
-        // Call reader.php in recent articles
-        const clickedRecentArticle = clonedRecentTemplate.querySelector(".recent-article");
-        clickedRecentArticle.addEventListener("click", function () {
-          const id = this.id;
-          $.ajax({
-            url: "./modules/posts/reader.php",
-            method: "POST",
-            data: { articleId: id },
-            dataType: "html",
-            success: (postReaderData) => {
-              $("#content").html(postReaderData);
-            },
-          });
-        });
-
-        // Call reader.php in main articles
+        // Llamar a reader.php en artículos principales
         const clickedArticle = clonedTemplate.querySelector(".article");
         clickedArticle.addEventListener("click", function () {
           const id = this.id;
@@ -79,7 +52,7 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
         });
       });
 
-      // Add main articles to the containers
+      // Agregar artículos principales a los contenedores
       const bigMediumContainer = document.querySelector(".bigMediumArticlesContainer");
       const smallContainer = document.querySelector("#smallArticlesContainer");
       posts.forEach((post, index) => {
@@ -89,15 +62,54 @@ if (template && template.content && recentTemplate && recentTemplate.content) {
           smallContainer.appendChild(post);
         }
       });
+    },
+    error: (err) => console.error("Error al obtener los artículos:", err),
+  });
 
-      // Add recent articles to the container
+  // Petición para obtener los artículos recientes
+  $.ajax({
+    url: "./modules/users/layoutRecent.php",
+    method: "POST",
+    dataType: "json",
+    success: (dato) => {
+      $.each(dato, (index, data) => {
+        // Clonar y poblar el template de artículos recientes
+        const clonedRecentTemplate = recentTemplate.content.cloneNode(true);
+        const recentImg = clonedRecentTemplate.querySelector("img");
+        const recentDescription = clonedRecentTemplate.querySelector(".recent-description");
+        const recentId = data["idPosts"];
+        const recentTitle = recentDescription.querySelector("h3");
+        const recentDesc = recentDescription.querySelector("p");
+        clonedRecentTemplate.querySelector(".recent-article").id = recentId;
+        recentTitle.textContent = data["title"];
+        recentDesc.textContent = data["subtitle"];
+        recentImg.src = data["portraitImg"].replace(/^(\.\.\/)+/, "");
+        recentPosts.push(clonedRecentTemplate);
+
+        // Llamar a reader.php en artículos recientes
+        const clickedRecentArticle = clonedRecentTemplate.querySelector(".recent-article");
+        clickedRecentArticle.addEventListener("click", function () {
+          const id = this.id;
+          $.ajax({
+            url: "./modules/posts/reader.php",
+            method: "POST",
+            data: { articleId: id },
+            dataType: "html",
+            success: (postReaderData) => {
+              $("#content").html(postReaderData);
+            },
+          });
+        });
+      });
+
+      // Agregar artículos recientes al contenedor
       const recentArticlesListContainer = document.querySelector("#recentArticlesListContainer .recent-post-list");
       recentPosts.forEach((post) => {
         recentArticlesListContainer.appendChild(post);
       });
     },
-    error: (err) => console.error("Error fetching articles:", err),
+    error: (err) => console.error("Error al obtener los artículos recientes:", err),
   });
 } else {
-  console.error("One of the templates does not exist or has no content.");
+  console.error("Uno de los templates no existe o no tiene contenido.");
 }

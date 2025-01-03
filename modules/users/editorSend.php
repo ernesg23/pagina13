@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Verify image
+        // Verificar si es realmente una imagen
         $check = getimagesize($_FILES["file"]["tmp_name"]);
         if ($check !== false) {
             $uploadOk = 1;
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $uploadOk = 0;
         }
 
-        // Verify size
+        // Verificar el tamaño del archivo
         if ($_FILES["file"]["size"] > 17000000) {
             echo "Archivo muy pesado";
             $uploadOk = 0;
@@ -43,28 +43,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $email = urldecode($_COOKIE['email']);
 
-    // verify connection
+    // Verificar conexión
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
 
-    // get date
+    // Obtener la fecha actual
     $publishedDate = date("Y-m-d H:i:s");
 
-    // get idPost and evade sql injection
+    // Obtener ID del post y evitar inyecciones SQL
     $postId = mysqli_real_escape_string($connection, $_POST['id']);
 
-    // verify post existence
+    // Verificar existencia del post
     $queryCheckPost = $connection->prepare("SELECT idPosts FROM `posts` WHERE idPosts = ? AND Users_idUsers = (SELECT idUsers FROM `users` WHERE email = ?)");
     if ($queryCheckPost === false) {
-        die("Error preparing queryCheckPost: " . $connection->error);
+        die("Error preparando queryCheckPost: " . $connection->error);
     }
     $queryCheckPost->bind_param("is", $postId, $email);
     $queryCheckPost->execute();
     $resultCheckPost = $queryCheckPost->get_result();
 
     if ($resultCheckPost->num_rows > 0) {
-        // Prepare the update query with or without the image
+        // Preparar la consulta de actualización con o sin imagen
         if ($fileUploaded) {
             $queryUpdatePost = $connection->prepare("UPDATE `posts` SET `title` = ?, `subtitle` = ?, `description` = ?, `portraitImg` = ?, `created_at` = ?, `isArchived` = ? WHERE `idPosts` = ?");
             $queryUpdatePost->bind_param("ssssssi", $_POST['title'], $_POST['subtitle'], $_POST['description'], $target_file, $publishedDate, $_POST['isArchived'], $postId);
@@ -74,65 +74,66 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if ($queryUpdatePost === false) {
-            die("Error preparing queryUpdatePost: " . $connection->error);
+            die("Error preparando queryUpdatePost: " . $connection->error);
         }
         if (!$queryUpdatePost->execute()) {
-            die("Error executing queryUpdatePost: " . $queryUpdatePost->error);
+            die("Error ejecutando queryUpdatePost: " . $queryUpdatePost->error);
         }
     } else {
         echo "El post no existe.";
         exit();
     }
 
-    // Verify if category exists
-    $category = mysqli_real_escape_string($connection, $_POST['categories']);
-    $queryCheckCategory = $connection->prepare("SELECT idCategories FROM categories WHERE name = ?");
-    if ($queryCheckCategory === false) {
-        die("Error preparing queryCheckCategory: " . $connection->error);
+    // Eliminar relaciones anteriores de categorías con el post
+    $queryDeletePostCategories = $connection->prepare("DELETE FROM `posts_has_categories` WHERE `Posts_idPosts` = ?");
+    if ($queryDeletePostCategories === false) {
+        die("Error preparando queryDeletePostCategories: " . $connection->error);
     }
-    $queryCheckCategory->bind_param("s", $category);
-    $queryCheckCategory->execute();
-    $resultCheckCategory = $queryCheckCategory->get_result();
-    $categoryId = null;
+    $queryDeletePostCategories->bind_param("i", $postId);
+    if (!$queryDeletePostCategories->execute()) {
+        die("Error ejecutando queryDeletePostCategories: " . $queryDeletePostCategories->error);
+    }
 
-    if ($resultCheckCategory->num_rows > 0) {
-        $row = $resultCheckCategory->fetch_assoc();
-        $categoryId = $row['idCategories'];
+    // Recibir las categorías seleccionadas
+    $categories = $_POST['categories'];
 
-        // create a relation
-        $queryPostCategory = $connection->prepare("SELECT COUNT(*) as count FROM `posts_has_categories` WHERE `Posts_idPosts` = ? AND `Categories_idCategories` = ?");
-        if ($queryPostCategory === false) {
-            die("Error preparing queryPostCategory: " . $connection->error);
+    // Insertar categorías y hacer la relación con el post
+    foreach ($categories as $category) {
+        // Verificar si la categoría existe
+        $queryCheckCategory = $connection->prepare("SELECT idCategories FROM categories WHERE name = ?");
+        $queryCheckCategory->bind_param("s", $category);
+        $queryCheckCategory->execute();
+        $resultCheckCategory = $queryCheckCategory->get_result();
+
+        $categoryId = null;
+        if ($resultCheckCategory->num_rows == 0) {
+            // Si no existe, insertamos la categoría
+            $queryInsertCategory = $connection->prepare("INSERT INTO categories(name) VALUES (?)");
+            $queryInsertCategory->bind_param("s", $category);
+            $queryInsertCategory->execute();
+            $categoryId = $connection->insert_id;
+        } else {
+            // Si existe, obtenemos el id
+            $row = $resultCheckCategory->fetch_assoc();
+            $categoryId = $row['idCategories'];
         }
+
+        // Relacionar post con categoría
+        $queryPostCategory = $connection->prepare("INSERT INTO `posts_has_categories`(`Posts_idPosts`, `Categories_idCategories`) VALUES (?, ?)");
         $queryPostCategory->bind_param("ii", $postId, $categoryId);
         $queryPostCategory->execute();
-        $resultPostCategory = $queryPostCategory->get_result();
-        $rowPostCategory = $resultPostCategory->fetch_assoc();
-        
-        if ($rowPostCategory['count'] == 0) {
-            $queryInsertPostCategory = $connection->prepare("INSERT INTO `posts_has_categories`(`Posts_idPosts`, `Categories_idCategories`) VALUES (?, ?)");
-            if ($queryInsertPostCategory === false) {
-                die("Error preparing queryInsertPostCategory: " . $connection->error);
-            }
-            $queryInsertPostCategory->bind_param("ii", $postId, $categoryId);
-            if (!$queryInsertPostCategory->execute()) {
-                die("Error executing queryInsertPostCategory: " . $queryInsertPostCategory->error);
-            }
-            $queryInsertPostCategory->close();
-        }
-        
-    } else {
-        echo "La categoría no existe.";
-        exit();
     }
 
-    // close queries
+    // Cerrar conexiones
     $queryCheckPost->close();
     $queryUpdatePost->close();
+    $queryDeletePostCategories->close();
     $queryCheckCategory->close();
     $queryPostCategory->close();
+
+    echo "Post actualizado correctamente";
 }
 
-// close connection
+// Cerrar la conexión
 $connection->close();
 ?>

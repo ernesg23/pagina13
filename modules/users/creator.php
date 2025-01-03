@@ -57,17 +57,22 @@
                                 class="textArea" id="sources"></textarea>
                         </div> -->
                     </div>
-                    <p style="text-align: center;">Categorias</p>
-                    <div class="categories">
-                        <button class="categoryCreator" data-category="Base de Datos" style="background-color: #1abc9c;">Base de Datos</button>
-                        <button class="categoryCreator" data-category="Matemáticas" style="background-color: #3498db;">Matemáticas</button>
-                        <button class="categoryCreator" data-category="Organización Computacional" style="background-color: #9b59b6;">Organización Computacional</button>
-                        <button class="categoryCreator" data-category="Lógica Computacional" style="background-color: #e67e22;">Lógica Computacional</button>
-                        <button class="categoryCreator" data-category="Lengua y Literatura" style="background-color: #e74c3c;">Lengua y Literatura</button>
-                        <button class="categoryCreator" data-category="Inglés Técnico" style="background-color: #34495e;">Inglés Técnico</button>
-                        <button class="categoryCreator" data-category="Laboratorio de Algoritmos" style="background-color: #f1c40f;">Laboratorio de Algoritmos</button>
-                        <button class="categoryCreator" data-category="Proyecto Informático" style="background-color: #2ecc71;">Proyecto Informático</button>
-                        <button class="categoryCreator" data-category="Sistemas Operativos" style="background-color: #95a5a6;">Sistemas Operativos</button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Elige una categoría
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li class="dropdown-item" data-category="Base de Datos">Base de Datos</li>
+                            <li class="dropdown-item" data-category="Matematicas">Matemáticas</li>
+                            <li class="dropdown-item" data-category="Organizacion Computacional">Organización Computacional</li>
+                            <li class="dropdown-item" data-category="Logica Computacional">Lógica Computacional</li>
+                            <li class="dropdown-item" data-category="Lengua y Literatura">Lengua y Literatura</li>
+                            <li class="dropdown-item" data-category="Ingles Tecnico">Inglés Técnico</li>
+                            <li class="dropdown-item" data-category="Laboratorio de Algoritmos">Laboratorio de Algoritmos</li>
+                            <li class="dropdown-item" data-category="Proyecto Informatico">Proyecto Informático</li>
+                            <li class="dropdown-item" data-category="Analisis de sistemas">Análisis de Sistemas</li>
+                            <li class="dropdown-item" data-category="Otros">Otros</li>
+                        </ul>
                     </div>
 
                     <div class="buttonsContainer">
@@ -76,6 +81,10 @@
                     </div>
                 </div>
             </div>
+            <div class="aiBtn mirror active">
+                <i class='bx bxs-message-square-minus'></i>
+            </div>
+            <div id="aiMessagesContainer"></div>
         </section>
     </main>
 

@@ -10,7 +10,8 @@ const sendBtnEd = document.querySelector("#sendButtonEdit");
 const archiveBtn = document.querySelector("#archiveButton");
 const archiveBtnEd = document.querySelector("#archiveButtonEdit");
 const categoryButtons = document.querySelectorAll(".categoryCreator");
-
+const aiBtn = document.querySelector(".aiBtn");
+const aiCont = document.querySelector("#aiMessagesContainer");
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -26,7 +27,26 @@ function getCookie(cname) {
   }
   return "";
 }
-
+document.querySelectorAll(".dropdown-item").forEach((item) => {
+  item.addEventListener("click", function () {
+    const selectedCategory = this.getAttribute("data-category");
+    const button = document.querySelector("#dropdownMenuButton");
+    button.textContent = selectedCategory;
+    button.setAttribute("data-selected-category", selectedCategory); // Save value
+  });
+});
+aiBtn.addEventListener("click", () => {
+  $.ajax({
+    url: "./modules/users/ai.html",
+    method: "post",
+    dataType: "html",
+    success: (response) => {
+      aiCont.classList.add("active");
+      aiBtn.classList.remove("active");
+      $(aiCont).html(response);
+    },
+  });
+});
 // Agregar clases al hacer clic en las secciones
 write.addEventListener("click", function () {
   write.classList.add("active");
@@ -41,65 +61,41 @@ imagesVideos.addEventListener("click", function () {
   writecontainer.classList.remove("active");
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Verificamos que `window.selectedCategories` esté disponible
-  console.log(window.selectedCategories); // Verificar en la consola si llega el array correctamente
-
-  // Las categorías preseleccionadas se pasan desde PHP como un array JSON
-  const preselectedCategories = window.selectedCategories || []; // Usamos `window.selectedCategories` que está definida desde PHP
-
-  // Seleccionamos todos los botones de categoría
-  const categoryButtons = document.querySelectorAll(".categoryCreator");
-
-  // Recorremos los botones de categorías y los activamos si están en el array de categorías seleccionadas
-  categoryButtons.forEach((button) => {
-    const category = button.dataset.category;
-    if (preselectedCategories.includes(category)) {
-      button.classList.add("active");  // Marcamos como activa la categoría si está seleccionada
-      selectedCategories.push(category); // Aseguramos que se mantengan en el array de categorías seleccionadas
-    }
-  });
-
-  // Manejar selección de categorías
-  categoryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = button.dataset.category;
-      if (selectedCategories.includes(category)) {
-        selectedCategories = selectedCategories.filter((cat) => cat !== category);
-        button.classList.remove("active");
-      } else {
-        selectedCategories.push(category);
-        button.classList.add("active");
-      }
-    });
-  });
-});
-
-// Manejo del cambio de archivo
 document.querySelector("#files").onchange = function () {
-  const fileName = this.files[0]?.name;
-  const label = document.querySelector("label[for=files]");
-  label.innerText = fileName ?? "Browse Files";
+  const file = this.files[0];
+  const label = document.querySelector(".btnLabel");
+  const preview = document.querySelector("#preview");
+  const icon = document.querySelector("#iconPlus");
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      preview.style.display = "block"; // Mostrar la imagen de vista previa
+      label.style.padding = "0"; // Quitar padding del label
+    };
+    reader.readAsDataURL(file);
+  } else {
+    icon.style.display = "block"; // Mostrar el ícono si no hay archivo seleccionado
+    preview.style.display = "none"; // Ocultar la imagen de vista previa
+    preview.src = "";
+    label.style.padding = ""; // Restaurar padding del label
+  }
 };
 
 // Enviar el artículo
 sendBtnEd.addEventListener("click", () => {
-    let formData = new FormData();
-    const id = $(".buttonsContainer").attr("id");
+  let formData = new FormData();
+  const id = $(".buttonsContainer").attr("id");
   let file = $("#files")[0].files[0];
   const imagesAndVideos = $("label[for='files']").text(); // Obtener valor del label
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
-  // const sources = $("#sources").val();
-  const category = $(".categoryCreator").val();
-  if (
-    !title ||
-    !subtitle ||
-    !description ||
-    selectedCategories.length === 0 // Validar que se haya seleccionado al menos una categoría
-  ) {
-    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
+  const selectedCategory = $("#dropdownMenuButton").data("selected-category");
+
+  if (!title || !subtitle || !description || selectedCategory === "Elige una categoría") {
+    $("#alertError").html("Complete todos los campos y seleccione una categoría.");
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
@@ -112,16 +108,11 @@ sendBtnEd.addEventListener("click", () => {
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
-    // formData.append('sources', sources);
-    formData.append("categories", category);
     formData.append("author", author);
     formData.append("email", authorEmail);
     formData.append("isArchived", 0);
-
-    // Enviar categorías como un array
-    selectedCategories.forEach(cat => {
-      formData.append("categories[]", cat);
-    });
+    formData.append("categories[]", selectedCategory);
+    formData.append("id", id);
 
     $.ajax({
       url: "./modules/users/editorSend.php",
@@ -129,8 +120,8 @@ sendBtnEd.addEventListener("click", () => {
       method: "POST",
       contentType: false,
       processData: false,
-      success: () => {
-        $("#alertGood").html("Artículo editado y creado con éxito");
+      success: (response) => {
+        $("#alertGood").html(response);  // Mostrar la respuesta del servidor
         setTimeout(() => location.reload(), 500);
       },
       error: (jqXHR, textStatus, errorThrown) => {
@@ -150,12 +141,12 @@ archiveBtnEd.addEventListener("click", () => {
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
-  const category = $(".categoryCreator").val();
+  const selectedCategory = $("#dropdownMenuButton").data("selected-category");
   if (
     !title ||
     !subtitle ||
     !description ||
-    selectedCategories.length === 0 // Validar que se haya seleccionado al menos una categoría
+    selectedCategory === "Elige una categoría"
   ) {
     let alert = `Complete todos los campos para poder subir un articulo`;
     $("#alertError").html(alert);
@@ -175,6 +166,7 @@ archiveBtnEd.addEventListener("click", () => {
     formData.append("author", author);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
+    formData.append("categories[]", selectedCategory)
     $.ajax({
       url: "./modules/users/editorSend.php",
       data: formData,

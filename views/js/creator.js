@@ -9,6 +9,8 @@ const sendBtn = document.querySelector("#sendButton");
 const sendBtnEd = document.querySelector("#sendButtonEdit");
 const archiveBtn = document.querySelector("#archiveButton");
 const archiveBtnEd = document.querySelector("#archiveButtonEdit");
+const aiBtn = document.querySelector(".aiBtn");
+const aiCont = document.querySelector("#aiMessagesContainer");
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -24,6 +26,26 @@ function getCookie(cname) {
   }
   return "";
 }
+document.querySelectorAll(".dropdown-item").forEach((item) => {
+  item.addEventListener("click", function () {
+    const selectedCategory = this.getAttribute("data-category");
+    const button = document.querySelector("#dropdownMenuButton");
+    button.textContent = selectedCategory;
+    button.setAttribute("data-selected-category", selectedCategory); // Save value
+  });
+});
+aiBtn.addEventListener("click", () => {
+  $.ajax({
+    url: "./modules/users/ai.html",
+    method: "post",
+    dataType: "html",
+    success: (response) => {
+      aiCont.classList.add("active");
+      aiBtn.classList.remove("active");
+      $(aiCont).html(response);
+    },
+  });
+});
 // Add class to the element
 write.addEventListener("click", function () {
   write.classList.add("active");
@@ -60,7 +82,7 @@ document.querySelector("#files").onchange = function () {
     reader.onload = function (e) {
       preview.src = e.target.result;
       preview.style.display = "block"; // Mostrar la imagen de vista previa
-      label.style.padding="0";
+      label.style.padding = "0";
       icon.style.display = "none"; // Ocultar el ícono
     };
     reader.readAsDataURL(file);
@@ -70,25 +92,6 @@ document.querySelector("#files").onchange = function () {
     preview.src = "";
   }
 };
-
-
-
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.dataset.category;
-
-    if (selectedCategories.includes(category)) {
-      // Deseleccionar categoría
-      selectedCategories = selectedCategories.filter((cat) => cat !== category);
-      button.classList.remove("active");
-    } else {
-      // Seleccionar categoría
-      selectedCategories.push(category);
-      button.classList.add("active");
-    }
-  });
-});
-
 sendBtn.addEventListener("click", () => {
   let formData = new FormData();
   let file = $("#files")[0].files[0];
@@ -96,17 +99,20 @@ sendBtn.addEventListener("click", () => {
   const title = $(".titletextArea").val();
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
-  // const sources = $("#sources").val();
+  const selectedCategory = $("#dropdownMenuButton").data("selected-category");
 
+  const sources = $("#sources").val();
   if (
     !file ||
     !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
-    !selectedCategories.length === 0
+    selectedCategory === "Elige una categoría"
   ) {
-    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
+    $("#alertError").html(
+      "Complete todos los campos y seleccione una categoría."
+    );
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
@@ -119,10 +125,7 @@ sendBtn.addEventListener("click", () => {
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 0);
-
-    selectedCategories.forEach(cat => {
-      formData.append("categories[]", cat);  // Enviar categorías como un array
-    });
+    formData.append("categories[]", selectedCategory)
 
     $.ajax({
       url: "./modules/users/creatorSend.php",
@@ -148,16 +151,18 @@ archiveBtn.addEventListener("click", () => {
   const subtitle = $(".subtitletextArea").val();
   const description = $(".descriptiontextArea").val();
   const sources = $("#sources").val();
-
+  const selectedCategory = $("#dropdownMenuButton").data("selected-category");
   if (
     !file ||
     !imagesAndVideos ||
     !title ||
     !subtitle ||
     !description ||
-    !selectedCategories.length === 0
+    selectedCategory === "Elige una categoría"
   ) {
-    $("#alertError").html("Complete todos los campos y seleccione al menos una categoría.");
+    $("#alertError").html(
+      "Complete todos los campos y seleccione al menos una categoría."
+    );
   } else {
     const author = getCookie("username");
     const authorEmail = getCookie("email");
@@ -165,15 +170,12 @@ archiveBtn.addEventListener("click", () => {
     formData.append("title", title);
     formData.append("subtitle", subtitle);
     formData.append("description", description);
-    formData.append('sources', sources);
+    formData.append("sources", sources);
     formData.append("author", author);
     formData.append("images", imagesAndVideos);
     formData.append("email", authorEmail);
     formData.append("isArchived", 1);
-
-    selectedCategories.forEach(cat => {
-      formData.append("categories[]", cat);  // Enviar categorías como un array
-    });
+    formData.append("categories[]", selectedCategory)
 
     $.ajax({
       url: "./modules/users/creatorSend.php",

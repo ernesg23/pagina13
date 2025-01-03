@@ -58,7 +58,7 @@ session_start();
                 <input class="category-buttonnav" type="button" value="Inglés técnico" />
                 <input class="category-buttonnav" type="button" value="Laboratorio de Algoritmos" />
                 <input class="category-buttonnav" type="button" value="Proyecto Informático" />
-                <input class="category-buttonnav" type="button" value="Sistemas Operativos" id="buttonnav-10" />
+                <input class="category-buttonnav" type="button" value="Analisis de sistemas" id="buttonnav-10" />
             </div>
         </div>
         <ul class='actionsMenu'>

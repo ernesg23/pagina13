@@ -7,12 +7,10 @@ $query = "SELECT p.idPosts, p.title, p.subtitle, p.description, p.portraitImg, p
           INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories
           WHERE p.isArchived = 0
           ORDER BY p.idPosts DESC
-          LIMIT 5;";
+          LIMIT 5 offset 5";
 $result = mysqli_query($mysqli, $query);
 $articulos = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $articulos[] = $row;
 }
-echo json_encode([
-    'articulos' => $articulos
-]);
+echo json_encode($articulos);

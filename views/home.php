@@ -18,10 +18,7 @@
                 </div>
                 <div id="smallAndRecentContainer">
                     <div id="smallArticlesContainer">
-                        <div class="article small">
-                            <img class="img" src="./views/img/advertisement.webp">
-                        </div>
-                        <div class="article small">
+                        <div class="article small advertisement">
                             <img class="img" src="./views/img/advertisement.webp">
                         </div>
                         <template id="article-template">
