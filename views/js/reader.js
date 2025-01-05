@@ -6,6 +6,8 @@ const observer = new MutationObserver((mutations) => {
   });
 });
 
+observer.observe(document.getElementById('content'), { childList: true, subtree: true });
+
 function attachEventListeners() {
   const recentArticles = document.querySelectorAll(".recent");
   recentArticles.forEach((article) => {
@@ -20,6 +22,9 @@ function attachEventListeners() {
         success: (postReaderData) => {
           $("#content").html(postReaderData);
         },
+        error: () => {
+          console.log("Error al cargar la publicación.");
+        }
       });
     });
   });
@@ -34,11 +39,14 @@ function attachEventListeners() {
       success: (data) => {
         $("#content").html(data);
       },
+      error: () => {
+        console.log("Error al cargar las categorías.");
+      }
     });
   });
 
   $(".bx-star").off("click").on("click", function () {
-    const id = $("#main-post").data("postId");
+    const id = $("#main-post").data("post-id");
     const $star = $(this);
 
     if ($star.hasClass("active")) {
@@ -48,13 +56,16 @@ function attachEventListeners() {
         data: { postId: id },
         success: (data) => {
           console.log(data);
-          if (data == "true") {
+          if (data === "true") {
             $star.removeClass("active");
           } else {
             const alert = "Hubo un error al intentar quitar de favoritos este post";
             $("#alertError").html(alert);
           }
         },
+        error: () => {
+          console.log("Error al intentar quitar de favoritos.");
+        }
       });
     } else {
       $.ajax({
@@ -63,13 +74,16 @@ function attachEventListeners() {
         data: { postId: id },
         success: (data) => {
           console.log(data);
-          if (data == "true") {
+          if (data === "true") {
             $star.addClass("active");
           } else {
             const alert = "Inicie sesión o regístrese para poder marcar este post como favorito";
             $("#alertError").html(alert);
           }
         },
+        error: () => {
+          console.log("Error al intentar agregar a favoritos.");
+        }
       });
     }
   });

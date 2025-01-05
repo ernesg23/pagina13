@@ -40,30 +40,12 @@ $categories = $stmt->fetchAll();
         <section>
             <div id="main-post" data-post-id="<?php echo $rows[0]['idPosts']; ?>">
                 <div id="categoriesReader">
-                    <?php
-                    // Lista de colores de categorías
-                    $category_colors = [
-                        'Base de Datos' => '#1abc9c',
-                        'Matemáticas' => '#3498db',
-                        'Organización Computacional' => '#9b59b6',
-                        'Lógica Computacional' => '#e67e22',
-                        'Lengua y Literatura' => '#e74c3c',
-                        'Inglés Técnico' => '#34495e',
-                        'Laboratorio de Algoritmos' => '#f1c40f',
-                        'Proyecto Informático' => '#2ecc71',
-                        'Sistemas Operativos' => '#95a5a6'
-                    ];
-
-                    // Mostrar las categorías asignadas al artículo con su color
-                    foreach ($categories as $category) {
-                        echo '<p class="category" style="background-color: ' . $category_colors[$category['name']] . ';" data-content="' . $category['name'] . '"></p>';
-                    }
-                    ?>
+                    <p id="category1" class="category" style="background-color: rgb(244, 164, 49); cursor:pointer;" data-content="<?php echo $rows[0]['name']; ?>"><?php echo $rows[0]['name'] ?></p>
                 </div>
                 <h2 id="readerTitle"><?php echo $rows[0]['title'] ?></h2>
                 <div id="reader">
                     <p id="readerSubtitle"><?php echo $rows[0]['subtitle'] ?></p>
-                    <img id="readerPortrait" src="<?php echo $rows[0]['portraitImg'] = str_replace('../', '', $rows[0]['portraitImg']); ?>">
+                    <img id="readerPortrait" src="<?php echo str_replace('../', '', $rows[0]['portraitImg']); ?>">
                     <div id="writFavCont">
                         <div id="author">
                             <img src="./views/img/sin perfil.png">
@@ -95,39 +77,30 @@ $categories = $stmt->fetchAll();
                             <img src="<?php echo str_replace('../../', '', $post['portraitImg']); ?>" class="img" alt="Imagen del artículo">
                             <div class="recent-description">
                                 <div class="recent-text">
-                                <h3><?php
-                                    if (strlen($post['title']) > 25) {
-                                        $post['title'] = substr($post['title'], 0, 25);
-                                        $lastSpace = strrpos($post['title'], ' ');
-                                        if ($lastSpace !== false) {
-                                            $post['title'] = substr($post['title'], 0, $lastSpace);
+                                    <h3><?php
+                                        if (strlen($post['title']) > 25) {
+                                            $post['title'] = substr($post['title'], 0, 25);
+                                            $lastSpace = strrpos($post['title'], ' ');
+                                            if ($lastSpace !== false) {
+                                                $post['title'] = substr($post['title'], 0, $lastSpace);
+                                            }
+                                            echo $post['title'] . '...';
+                                        } else {
+                                            echo $post['title'];
                                         }
-                                        echo $post['title'] . '...';
-                                    } else {
-                                        echo $post['title'];
-                                    }
-                                    ?></h3>
-                                <p><?php
-                                    if (strlen($post['subtitle']) > 30) {
-                                        $post['subtitle'] = substr($post['subtitle'], 0, 30);
-                                        $lastSpace = strrpos($post['subtitle'], ' ');
-                                        if ($lastSpace !== false) {
-                                            $post['subtitle'] = substr($post['subtitle'], 0, $lastSpace);
+                                        ?></h3>
+                                    <p><?php
+                                        if (strlen($post['subtitle']) > 30) {
+                                            $post['subtitle'] = substr($post['subtitle'], 0, 30);
+                                            $lastSpace = strrpos($post['subtitle'], ' ');
+                                            if ($lastSpace !== false) {
+                                                $post['subtitle'] = substr($post['subtitle'], 0, $lastSpace);
+                                            }
+                                            echo $post['subtitle'] . '...';
+                                        } else {
+                                            echo $post['subtitle'];
                                         }
-                                        echo $post['subtitle'] . '...';
-                                    } else {
-                                        echo $post['subtitle'];
-                                    }
-                                    ?></p>
-                                </div>
-                                
-                                <div class="category-list">
-                                    <?php
-                                    // Mostrar las categorías del artículo reciente con sus colores
-                                    foreach ($recent_categories as $category):
-                                        echo '<span class="category" style="background-color: ' . $category_colors[$category['name']] . '"></span>';
-                                    endforeach;
-                                    ?>
+                                        ?></p>
                                 </div>
                             </div>
                         </li>

@@ -32,11 +32,10 @@ section {
 }
 
 .category {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .category:hover {
@@ -78,7 +77,7 @@ section {
   color: gold;
 }
 .bx-star.active::before {
-  content: '\eeb8';
+  content: "\eeb8";
 }
 
 #author:hover {
@@ -130,9 +129,16 @@ hr {
     font-size: 1.2rem;
   }
 }
-.recent-text{
+.recent-text {
   display: flex;
   flex-direction: column;
+  margin-right: 0.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  hyphens: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #alertError {
   background-color: #f8d7da;
@@ -153,7 +159,7 @@ hr {
   align-items: center;
   background-color: #0e0e0e;
   border-radius: 0.5em;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .recent:hover {
@@ -181,6 +187,7 @@ hr {
 
 .recent div {
   padding: 5px 5px 5px 0;
+  max-height: 80px;
 }
 
 @media (max-width: 1820px) {
@@ -188,7 +195,6 @@ hr {
     grid-column-start: 2;
     grid-column-end: 13;
   }
-
 
   #recentPosts {
     grid-column-start: 13;

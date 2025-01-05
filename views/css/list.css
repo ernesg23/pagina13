@@ -5,7 +5,7 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-body{
+body {
   color: #fff;
 }
 .articles-containers {
@@ -20,24 +20,23 @@ body{
   background-color: #000;
   border-radius: 0.5rem;
   margin-bottom: 5px;
-  transition: .3s ease;
+  transition: 0.3s ease;
   break-inside: avoid-column;
 }
 .articleSearch:hover {
-    background-color: #3a3a3a;
-    cursor: pointer;
-    box-shadow: 0 0 10px #666666;
-  }
+  background-color: #3a3a3a;
+  cursor: pointer;
+  box-shadow: 0 0 10px #666666;
+}
 .postDesc {
   display: flex;
   flex-direction: column;
-  
 }
 .categoryPost {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    color: #929292;
-    cursor: pointer;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #929292;
+  cursor: pointer;
 }
 .subtitlePost {
   font-size: 1rem;
@@ -77,11 +76,12 @@ body{
 .recent-article-search {
   height: 6rem;
   margin-top: 0.5rem;
+  max-width: 30rem;
   width: -webkit-fill-available;
   display: flex;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  transition: .3s ease;
+  transition: 0.3s ease;
   background-color: #000;
   img {
     max-width: 12rem;
@@ -93,20 +93,21 @@ body{
   box-shadow: 0 0 10px #666666;
 }
 a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 .recent-description {
   display: flex;
   width: -webkit-fill-available;
   flex-direction: column;
   margin-left: 1rem;
+  overflow: hidden;
   h3 {
     font-size: 1em;
     margin-bottom: 1em;
   }
   p {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 .recent-image {
@@ -171,7 +172,7 @@ a {
     margin-bottom: 5px;
     justify-content: space-evenly;
   }
-  
+
   .recent-articles {
     margin-left: 0;
     padding: 1rem;
