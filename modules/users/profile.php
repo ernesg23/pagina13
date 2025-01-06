@@ -1,6 +1,7 @@
 <?php
 include "../posts/profileGetPosts.php";
 include "../posts/profileGetFavPosts.php";
+include "../users/profileGetInfo.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,13 +23,31 @@ include "../posts/profileGetFavPosts.php";
 <body>
     <div id="userProfCont">
         <div id="userInfCont">
-            <img src="./views/img/sin perfil.png" loading="lazy" />
+            <img src="<?php
+                        if ($userInfo[0]['profileImg'] == "") {
+                            echo './views/img/sin perfil.png';
+                        } else {
+                            echo str_replace('../', '', $userInfo[0]['profileImg']);
+                        }
+                        ?>" loading="lazy" />
             <div id="infoDescCont">
-                <h5 id="userName"><?php echo $_COOKIE["username"]; ?></h5>
-                <p class="userEmail"><?php echo $_COOKIE["email"] ?></p>
-                <p class="userRol">Rol de Usuario</p>
+                <h5 id="userName"><?php echo $userInfo[0]['name'] ?></h5>
+                <p class="userEmail"><?php echo $userInfo[0]['email'] ?></p>
+                <p class="userRol"><?php
+                                    if ($userInfo[0]['role'] == "reader") {
+                                        echo 'Lector';
+                                    } else {
+                                        echo 'Escritor';
+                                    }
+                                    ?></p>
                 <p id="userDesc">Descripción</p>
-                <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
+                <p class="userDescription"><?php
+                                            if ($userInfo[0]['description'] == "") {
+                                                echo "Todavía no cuentas con una descripción. Ve a ajustes y escribe una";
+                                            } else {
+                                                echo $userInfo[0]['description'];
+                                            }
+                                            ?></p>
             </div>
         </div>
         <div id="posts">
@@ -51,7 +70,7 @@ include "../posts/profileGetFavPosts.php";
                 </div>
             </div>
             <div id="favoritesCont">
-              <h3>Artículos Favoritos</h3>
+                <h3>Artículos Favoritos</h3>
                 <div class="favoritePostContainer">
                     <?php foreach ($rows2 as $post): ?>
                         <div class="writtenPosts" id="<?php echo $post['idPosts']; ?>">

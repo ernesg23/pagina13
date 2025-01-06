@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "../users/profileGetInfo.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,19 +19,37 @@
 <body>
     <div id="userSettCont">
         <div id="userInfCont">
-            <img src="./views/img/sin perfil.png" loading="lazy" />
+            <img src="<?php
+                        if ($userInfo[0]['profileImg'] == "") {
+                            echo './views/img/sin perfil.png';
+                        } else {
+                            echo str_replace('../', '', $userInfo[0]['profileImg']);
+                        }
+                        ?>" loading="lazy" />
             <div id="infoDescCont">
-                <h5 id="userName"><?php echo $_COOKIE["username"]; ?></h5>
-                <p class="userEmail"><?php echo $_COOKIE["email"] ?></p>
-                <p class="userRol">Rol de Usuario</p>
+                <h5 id="userName"><?php echo $userInfo[0]['name'] ?></h5>
+                <p class="userEmail"><?php echo $userInfo[0]['email'] ?></p>
+                <p class="userRol"><?php
+                                    if ($userInfo[0]['role'] == "reader") {
+                                        echo 'Lector';
+                                    } else {
+                                        echo 'Escritor';
+                                    }
+                                    ?></p>
                 <p id="userDesc">Descripción</p>
-                <p class="userDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde consectetur reprehenderit, vero placeat sequi doloremque aspernatur necessitatibus enim nihil odit optio amet cupiditate laboriosam? Necessitatibus atque neque sed iste.</p>
+                <p class="userDescription"><?php
+                                            if ($userInfo[0]['description'] == "") {
+                                                echo "Todavía no cuentas con una descripción.";
+                                            } else {
+                                                echo $userInfo[0]['description'];
+                                            }
+                                            ?></p>
             </div>
         </div>
         <div class="contSett">
             <div class="buttonsCont">
-                    <button id="users-configSettings" class="buttons">Ajustes</button>
-                    <button id="users-configPosts" class="buttons">Mis Artículos</button>
+                <button id="users-configSettings" class="buttons">Ajustes</button>
+                <button id="users-configPosts" class="buttons">Mis Artículos</button>
             </div>
             <div id="principalCont">
                 <h4 class="settings">Ajustes</h4>
