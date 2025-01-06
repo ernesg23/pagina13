@@ -1,0 +1,183 @@
+body {
+    color: white;
+}
+
+#userInfCont {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+#userInfCont img {
+    max-width: 20rem;
+    max-height: 20rem;
+}
+
+#userInfCont p {
+    margin-bottom: 0;
+}
+
+#userInfCont h5 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+#userProfCont {
+    background: linear-gradient(180deg, #0E2E59, #000000);
+    margin: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+#infoDescCont {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.userEmail {
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.userRol {
+    color: rgb(99, 99, 99);
+    font-size: 1.5rem;
+}
+
+#userDesc, .userDescription {
+    font-size: 1.5rem;
+}
+.writtenPosts {
+    background-color: #000000;
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    color: #fff;
+    padding: 0.5rem;
+    transition: 0.2s ease;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        padding-bottom: 1rem;
+    }
+    #titleEdit {
+        display: flex;
+        justify-content: space-between;   
+        align-items: center;
+    }
+}
+.writtenPosts:hover {
+    background-color: #3a3a3a;
+    cursor: pointer;
+    box-shadow: 0 0 10px #666666;
+}
+.categoryPost {
+    color: #929292;
+}
+.editArticle {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.writtenPostContainer, .favoritePostContainer, #posts {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100rem;
+}
+#posts h3 {
+    padding-left: 1rem;
+}
+#written, #favoritesCont {
+    display: flex;
+    flex-direction: column;
+}
+.postDescription {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+@media (max-width:1200px) and (min-width:900px) {
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .writtenPostContainer, .favoritePostContainer, #posts {
+        display: block;
+        justify-content: space-evenly;
+        column-count: 2;
+        max-width: 100rem;
+    }
+    #written, #favoritesCont {
+        margin-bottom: 2rem;
+    }
+    .writtenPosts {
+        break-inside: avoid-column;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
+    }
+}
+@media (max-width:899px) {
+    #userInfCont {
+        flex-direction: column;
+    }
+    #userInfCont img {
+        max-width: 14rem;
+        max-height: 14rem;
+    }
+    .writtenPostContainer, .favoritePostContainer, #posts {
+        flex-direction: column;
+    }   
+    #userProfCont {
+        margin: 2rem;
+    } 
+    #userDesc, .userDescription {
+        font-size: 1rem;
+    }
+    .userRol {
+        font-size: 1rem;
+    }
+    .userEmail {
+        font-size: 1rem;
+    }
+    #userInfCont h5 {
+        font-size: 2rem;
+    }
+    .writtenPosts{
+        margin: 0;
+        margin-bottom: 5px;
+    }
+}
+@media(max-width:2560px){
+    .favoritePostContainer{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
+    }
+    .writtenPostContainer{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
+    }
+    #posts{
+        display: flex;
+        justify-content: space-between;
+        max-width: 140rem;
+    }
+}

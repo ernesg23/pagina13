@@ -1,0 +1,8 @@
+.btnLabel {
+    border: 1px solid #000;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 0;
+    transition: 0.5s;
+    color: #000;
+}

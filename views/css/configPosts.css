@@ -1,0 +1,147 @@
+.writtenPosts {
+  background-color: #000000;
+  margin: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.5rem;
+  transition: 0.2s ease;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 1rem;
+  }
+  #titleEdit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.postBtn {
+  width: 6rem;
+  border: none;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  transition: 0.4s ease;
+}
+#editPostBtn {
+  background-color: #4d7fba;
+  border: 2px solid #00a3ff;
+  transition: 0.4s ease;
+}
+#editPostBtn:hover {
+  background-color: #6bacf7;
+}
+#deletePostBtn {
+  background-color: #720907;
+  border: 2px solid #c00f0c;
+  transition: 0.4s ease;
+}
+#deletePostBtn:hover {
+  background-color: #b40f0c;
+}
+#postButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+#previewPost {
+  margin-left: 7rem;
+}
+#contPosts {
+  display: flex;
+  justify-content: space-between;
+}
+#writtenPostsList {
+  list-style: none;
+  max-width: 30rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background: #7979792e;
+  border-radius: 0.5rem;
+  overflow: scroll;
+}
+.written {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 0.5rem;
+  max-height: 10rem;
+  width: -webkit-fill-available;
+  align-items: center;
+  background-color: #0e0e0e;
+  border-radius: 0.5em;
+  transition: 0.4s ease;
+}
+.written:hover {
+  background-color: #3a3a3a;
+  cursor: pointer;
+  box-shadow: 0 0 10px #666666;
+}
+.imgWritten {
+  height: 20%;
+  width: 20%;
+  object-fit: cover;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.categoryPost {
+  color: #929292;
+}
+#contAllConfigPosts {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(181deg, #3d3b3b, #dddddd00);
+  h4 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1200px) and (min-width: 425px) {
+  #writtenPostsList {
+    max-width: 20rem;
+  }
+  #entireSettCont {
+    flex-direction: column;
+  }
+  #userSettCont {
+    margin: 2rem;
+  }
+  #contPosts {
+    flex-direction: column;
+  }
+  .buttons {
+    width: 7rem;
+  }
+}
+@media (max-width: 424px) {
+  #writtenPostsList {
+    max-width: 20rem;
+  }
+  #entireSettCont {
+    flex-direction: column;
+  }
+  #userSettCont {
+    margin: 0rem;
+  }
+  #contPosts {
+    flex-direction: column;
+  }
+  .buttons {
+    width: 7rem;
+  }
+  .writtenPosts {
+    margin: 5px;
+    width: 96%;
+  }
+}
