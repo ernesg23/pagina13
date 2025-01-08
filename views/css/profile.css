@@ -4,7 +4,7 @@ body {
 
 #userInfCont {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 1rem;
     border-bottom: 2px solid black;
     margin-bottom: 1rem;

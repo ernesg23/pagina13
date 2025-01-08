@@ -1,194 +1,204 @@
 body {
-    color: #fff;
+  color: #fff;
 }
-#userInfCont {
+#changeImg {
+  h4 {
     display: flex;
     justify-content: center;
-    padding: 1rem;
-    border-bottom: 2px solid black;
-    margin-bottom: 1rem;
-    align-items: center;
+  }
+}
+#userInfCont {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-bottom: 2px solid black;
+  margin-bottom: 1rem;
+  align-items: center;
 }
 
 #userInfCont img {
-    max-width: 20rem;
-    max-height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
 }
 .alerts {
-    color: #000;
+  color: #000;
 }
 #userInfCont p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #userInfCont h5 {
-    margin-bottom: 0;
-    font-size: 3rem;
+  margin-bottom: 0;
+  font-size: 3rem;
 }
 
 #userSettCont {
-    background: linear-gradient(180deg, #0E2E59, #000000);
-    margin: 10rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 2rem;
-    padding: 1rem;
+  background: linear-gradient(180deg, #0e2e59, #000000);
+  margin: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+  padding: 1rem;
 }
 
 #infoDescCont {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
 }
 
 .userEmail {
-    font-size: 1.5rem;
-    text-decoration: underline;
+  font-size: 1.5rem;
+  text-decoration: underline;
 }
 .newInput {
-    width: 25rem;
-    border: none;
-    background-color: #11111129;
-    border-radius: 0.9rem;
-    height: 3rem;
-    padding-left: 1rem;
-    border-bottom: 2px solid #000;
-    color: #fff;
+  width: 25rem;
+  border: none;
+  background-color: #11111129;
+  border-radius: 0.9rem;
+  height: 3rem;
+  padding-left: 1rem;
+  border-bottom: 2px solid #000;
+  color: #fff;
 }
 #sendBtn {
-    border: none;
-    margin-top: 1rem;
-    background-color: #0037f973;
-    border: 2px solid #2844D7;
-    color: #fff;
-    border-radius: 0.5rem;
-    height: 4rem;
-    width: -webkit-fill-available;
+  border: none;
+  margin-top: 1rem;
+  background-color: #0037f973;
+  border: 2px solid #2844d7;
+  color: #fff;
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: -webkit-fill-available;
 }
 .userRol {
-    color: rgb(99, 99, 99);
-    font-size: 1.5rem;
+  color: rgb(99, 99, 99);
+  font-size: 1.5rem;
 }
 .buttonsCont {
-    background-color: #00000052;
-    display: flex;
-    flex-direction: column;
+  background-color: #00000052;
+  display: flex;
+  flex-direction: column;
 }
 .buttons {
-    border: none;
-    width: 10rem;
-    height: 3rem;
-    background: transparent;
-    color: #fff;
-    font-size: 1.1rem;
-    transition: .4s ease;
+  border: none;
+  width: 10rem;
+  height: 3rem;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: 0.4s ease;
 }
 .buttons:hover {
-    background-color: #00000063;
+  background-color: #00000063;
 }
 #principalCont {
-    display: flex;
-    flex-direction: column;
-    width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  min-height: 45rem;
 }
 .settings {
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(181deg, #3d3b3b, #dddddd00);
-    text-align: center;
-    padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(181deg, #3d3b3b, #dddddd00);
+  text-align: center;
+  padding: 1rem;
 }
 h4 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 #data h4 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 #data input {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 #entireSettCont {
-    display: flex;
-    justify-content: space-evenly;
-    width: -webkit-fill-available;
-    padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  width: -webkit-fill-available;
+  padding: 1rem;
 }
 #changeImg {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .imgChange {
-    width: 20rem;
+  width: 20rem;
 }
 .contSett {
+  width: -webkit-fill-available;
+  background-color: #c2c2c23b;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+#userDesc,
+.userDescription {
+  font-size: 1.5rem;
+}
+@media (max-width: 1200px) {
+  .newInput {
     width: -webkit-fill-available;
-    background-color: #c2c2c23b;
-    border-radius: 1rem;
-    overflow: hidden;
-    display: flex;
-}
-#userDesc, .userDescription {
+  }
+  #data h4 {
     font-size: 1.5rem;
+  }
+  #changeImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgChange {
+    width: 15rem;
+  }
+  #userDesc,
+  .userDescription {
+    font-size: 1rem;
+  }
+  .userRol {
+    font-size: 1rem;
+  }
+  .userEmail {
+    font-size: 1rem;
+  }
+  #userInfCont h5 {
+    font-size: 2rem;
+  }
+  .buttons {
+    width: 10rem;
+  }
 }
-@media (max-width:1200px)  {
-    .newInput {
-        width: -webkit-fill-available;
-    }
-    #data h4 {
-        font-size: 1.5rem;
-    }
-    #changeImg {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .imgChange {
-        width: 15rem;
-    }
-    #userDesc, .userDescription {
-        font-size: 1rem;
-    }
-    .userRol {
-        font-size: 1rem;
-    }
-    .userEmail {
-        font-size: 1rem;
-    }
-    #userInfCont h5 {
-        font-size: 2rem;
-    }
-    .buttons{
-        width: 10rem;
-    }
-}
-@media (max-width:899px) {
-    #userInfCont {
-        flex-direction: column;
-    }
-    #userInfCont img {
-        max-width: 14rem;
-        max-height: 14rem;
-    }
-    #userProfCont {
-        margin: 2rem;
-    } 
-    #userDesc, .userDescription {
-        font-size: 1rem;
-    }
-    .userRol {
-        font-size: 1rem;
-    }
-    .userEmail {
-        font-size: 1rem;
-    }
-    #userInfCont h5 {
-        font-size: 2rem;
-    }
-    .buttons{
-        width: 10rem;
-    }
+@media (max-width: 899px) {
+  #userInfCont {
+    flex-direction: column;
+  }
+  #userInfCont img {
+    max-width: 14rem;
+    max-height: 14rem;
+  }
+  #userProfCont {
+    margin: 2rem;
+  }
+  #userDesc,
+  .userDescription {
+    font-size: 1rem;
+  }
+  .userRol {
+    font-size: 1rem;
+  }
+  .userEmail {
+    font-size: 1rem;
+  }
+  #userInfCont h5 {
+    font-size: 2rem;
+  }
+  .buttons {
+    width: 10rem;
+  }
 }

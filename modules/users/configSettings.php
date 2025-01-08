@@ -37,13 +37,14 @@ include "../users/profileGetInfo.php";
                                     }
                                     ?></p>
                 <p id="userDesc">Descripción</p>
-                <p class="userDescription"><?php
-                                            if ($userInfo[0]['description'] == "") {
-                                                echo "Todavía no cuentas con una descripción.";
-                                            } else {
-                                                echo $userInfo[0]['description'];
-                                            }
-                                            ?></p>
+                <p class="userDescription">
+                    <?php
+                    if ($userInfo[0]['description'] == "") {
+                        echo "Todavía no cuentas con una descripción.";
+                    } else {
+                        echo $userInfo[0]['description'];
+                    }
+                    ?></p>
             </div>
         </div>
         <div class="contSett">
@@ -62,12 +63,25 @@ include "../users/profileGetInfo.php";
                             <input name="inputName" id="newName" class="newInput" placeholder="Ingrese un nuevo nombre">
                             <h4 class="email">Modificar Email</h4>
                             <input name="inputEmail" id="newEmail" class="newInput" placeholder="Ingrese un nuevo email">
+                            <h4 class="email">Modificar Descripción</h4>
+                            <textarea name="inputDesc" id="newDesc" class="newInput" placeholder="Ingrese una nueva descripción"></textarea>
                             <h4 class="password">Cambiar contraseña</h4>
                             <input name="inputPass" id="newPass" class="newInput" placeholder="Ingrese una nueva contraseña">
+                            <h4 class="password">Ingrese su contraseña actual</h4>
+                            <input name="oldPass" id="oldPass" class="newInput" placeholder="Ingrese su contraseña actual para confirmar cambios">
                         </form>
                     </div>
                     <div id="changeImg">
-                        <img class="imgChange" src="./views/img/sin perfil.png" />
+                        <h4 class="password">Cambiar foto de perfil</h4>
+                        <label for="files" class="btnLabel"> <input id="files" class="newImage" style="display:none;" type="file" accept="image/png, image/jpeg, image/jpg, image/webp, video/mp4"> <img id="preview" class="imgChange" src="
+                        <?php switch ($userInfo[0]['profileImg']) {
+                            case "":
+                                echo './views/img/sin perfil.png';
+                                break;
+                            default:
+                                echo str_replace('../', '', $userInfo[0]['profileImg']);
+                                break;
+                        } ?>" alt="Image Preview" style="display: block;" /> </label>
                         <input type="button" class="saveBtn" value="Guardar" id="sendBtn" />
                     </div>
                 </div>
