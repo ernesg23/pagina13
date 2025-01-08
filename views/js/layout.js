@@ -5,7 +5,7 @@ const resultsContainer = document.querySelector(".searchResults");
 const searchBar = document.querySelector(".searchBar");
 const searchForm = document.querySelector(".searchBarForm");
 const dropContent = document.querySelector(".dropdown-content");
-const navMen = document.querySelector(".navMenu")
+const navMen = document.querySelector(".navMenu");
 $(".MainTitle").click(() => {
   location.reload();
 });
@@ -22,11 +22,11 @@ resposiveCategory.addEventListener("click", () => {
   });
 });
 
-navMen.addEventListener("click", (event) => { 
+navMen.addEventListener("click", (event) => {
   event.stopPropagation();
-  
+
   var viewportWidth = $(window).width();
-  if (!dropContent.classList.contains("active") && viewportWidth < 1000 ) {
+  if (!dropContent.classList.contains("active") && viewportWidth < 1000) {
     dropContent.classList.add("active");
     dropContent.style.display = "block";
     dropContent.style.pointerEvents = "auto";
@@ -34,9 +34,11 @@ navMen.addEventListener("click", (event) => {
   }
 });
 document.addEventListener("click", (event) => {
-  if (dropContent.classList.contains("active") && 
-  !dropContent.contains(event.target) && 
-  !navMen.contains(event.target)) {
+  if (
+    dropContent.classList.contains("active") &&
+    !dropContent.contains(event.target) &&
+    !navMen.contains(event.target)
+  ) {
     dropContent.style.animation = "vanish 0.3s forwards";
     dropContent.addEventListener(
       "animationend",
@@ -48,20 +50,24 @@ document.addEventListener("click", (event) => {
       { once: true }
     );
   }
-  
 });
 
 $.ajax({
   url: "./modules/users/layoutVerify.php",
-  dataType: "html",
+  dataType: "json",
   success: (data) => {
+    console.log(data);
     if (data != false) {
-      let profile = `<p class='userName userActionsClick'>${data} </p>
-      <div class="userActionsClick"><img src="./views/img/sin perfil.png" class='userImg' alt="${data} profile picture" loading="lazy"></div>`;
-      
+      let profileImg =
+        data[0]["profileImg"] === ""
+          ? "./views/img/sin perfil.png"
+          : data[0]["profileImg"].replace('../../', "");
+      let profile = `<p class='userName userActionsClick'>${data[0]["name"]}</p>
+      <div class="userActionsClick"><img src="${profileImg}" class='userImg' alt="${data[0]["name"]} profile picture" loading="lazy"></div>`;
+
       const menuNav = document.querySelector(".navMenu");
       $(menuNav).html(profile);
-      
+
       const menu = document.querySelector(".actionsMenu");
       const toggleButtons = document.querySelectorAll(".userActionsClick");
 
@@ -108,7 +114,11 @@ $.ajax({
       });
 
       document.addEventListener("click", (event) => {
-        if (menu.classList.contains("active") && !menu.contains(event.target) && !event.target.closest(".userActionsClick")) {
+        if (
+          menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !event.target.closest(".userActionsClick")
+        ) {
           menu.style.animation = "vanish 0.3s forwards";
           menu.addEventListener(
             "animationend",
@@ -128,11 +138,10 @@ $.ajax({
 $(window).resize(function () {
   var viewportWidth = $(window).width();
   if (viewportWidth > 1000) {
-      $(".dropdown-content").css("display","");
-      $(".dropdown-content").css("animation","");
+    $(".dropdown-content").css("display", "");
+    $(".dropdown-content").css("animation", "");
   }
 });
-
 
 function expandSearchBar() {
   const searchBar = document.getElementById("searchBar");
@@ -318,7 +327,7 @@ $(".categorySearch").click((event) => {
 // };
 
 // Obtener todos los botones con la clase 'category-buttonnav'
-const buttons = document.querySelectorAll('.category-buttonnav');
+const buttons = document.querySelectorAll(".category-buttonnav");
 
 // Iterar sobre cada botón y asignar el color correspondiente
 // buttons.forEach(button => {
@@ -335,11 +344,15 @@ $.ajax({
     const articulos = data.articulos || [];
     const articuloTemplate = document.getElementById("articulo-template");
     const articulosContainer = document.getElementById("articulos-container");
-    articulos.slice(0, 3).forEach(articulo => {
-      const { idPosts = "#", title = "Título faltante", categoria_nombre = "Categoría faltante" } = articulo;
+    articulos.slice(0, 3).forEach((articulo) => {
+      const {
+        idPosts = "#",
+        title = "Título faltante",
+        categoria_nombre = "Categoría faltante",
+      } = articulo;
       const articuloClone = articuloTemplate.content.cloneNode(true);
       const tituloElemento = articuloClone.querySelector(".articulo-titulo");
-      
+
       tituloElemento.textContent = title;
       tituloElemento.setAttribute("data-id", idPosts);
       articulosContainer.appendChild(articuloClone);
@@ -355,7 +368,7 @@ $.ajax({
           },
           error: function () {
             console.log("Error al cargar la publicación.");
-          }
+          },
         });
       });
     });
@@ -363,10 +376,12 @@ $.ajax({
       acc[categoria_nombre] = (acc[categoria_nombre] || 0) + 1;
       return acc;
     }, {});
-    const categoriasOrdenadas = Object.keys(categoriasContador).sort((a, b) => categoriasContador[b] - categoriasContador[a]);
+    const categoriasOrdenadas = Object.keys(categoriasContador).sort(
+      (a, b) => categoriasContador[b] - categoriasContador[a]
+    );
     const categoriaTemplate = document.getElementById("categoria-template");
     const categoriasContainer = document.getElementById("categorias-container");
-    categoriasOrdenadas.slice(0, 3).forEach(categoria => {
+    categoriasOrdenadas.slice(0, 3).forEach((categoria) => {
       const categoriaClone = categoriaTemplate.content.cloneNode(true);
       const categoriaTitulo = categoriaClone.querySelector(".categoria-titulo");
       categoriaTitulo.textContent = categoria || "Categoría faltante";
@@ -382,9 +397,9 @@ $.ajax({
           success: (data) => {
             $("#content").html(data);
             initializeSearchList();
-          }
+          },
         });
       });
     });
-  }
+  },
 });
