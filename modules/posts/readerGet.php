@@ -1,6 +1,6 @@
 <?php
 $query = "SELECT p.idPosts, p.Users_idUsers, p.title, p.subtitle, p.description, p.portraitImg, p.isArchived, p.created_at, 
-pc.Categories_idCategories, c.idCategories, c.name, u.name AS authorName
+pc.Categories_idCategories, c.idCategories, c.name, u.name AS authorName, u.profileImg, u.idUsers
 FROM posts p
 INNER JOIN posts_has_categories pc ON p.idPosts = pc.Posts_idPosts
 INNER JOIN categories c ON pc.Categories_idCategories = c.idCategories

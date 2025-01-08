@@ -48,7 +48,13 @@ $categories = $stmt->fetchAll();
                     <img id="readerPortrait" src="<?php echo str_replace('../', '', $rows[0]['portraitImg']); ?>">
                     <div id="writFavCont">
                         <div id="author">
-                            <img src="./views/img/sin perfil.png">
+                            <img src="<?php
+                            if ($rows[0]['profileImg'] != "") {
+                                echo str_replace('../../', '',$rows[0]['profileImg']);
+                            } else {
+                                echo "./views/img/sin perfil.png";
+                            }
+                            ?>">
                             <p><?php echo $rows[0]['authorName'] ?></p>
                         </div>
                         <i class="bx bx-star <?php echo $activeClass; ?>"></i>

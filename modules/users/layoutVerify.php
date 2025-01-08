@@ -1,11 +1,11 @@
 <?php
 session_start();
-if (isset($_COOKIE['username'])) {
-    $username = $_COOKIE['username'];
-    echo $username;
-} else if (isset(($_SESSION['username']))) {
-    $username = $_SESSION['username'];
-    echo $username;
-} else {
-    echo false;
+include '../../config.php';
+$userId = mysqli_real_escape_string($connection, $_SESSION["userId"]);
+$query = "SELECT name, email, profileImg, description, role FROM USERS WHERE idUsers = $userId";
+$response = mysqli_query($connection, $query);
+$userInfo = [];
+while ($r =mysqli_fetch_assoc($response)){
+    $userInfo[] = $r;
 }
+echo json_encode($userInfo);
